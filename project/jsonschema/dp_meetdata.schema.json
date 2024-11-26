@@ -1,206 +1,1689 @@
 {
     "$defs": {
-        "NamedThing": {
-            "additionalProperties": false,
-            "description": "A generic grouping for any identifiable entity",
-            "properties": {
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "id": {
-                    "description": "A unique identifier for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "id"
-            ],
-            "title": "NamedThing",
-            "type": "object"
-        },
-        "Person": {
-            "additionalProperties": false,
-            "description": "Represents a Person",
-            "properties": {
-                "age_in_years": {
-                    "description": "Number of years since birth",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "birth_date": {
-                    "description": "Date on which a person is born",
-                    "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "id": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "primary_email": {
-                    "description": "The main email address of a person",
-                    "pattern": "^\\S+@[\\S+\\.]+\\S+",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "vital_status": {
-                    "$ref": "#/$defs/PersonStatus",
-                    "description": "living or dead status"
-                }
-            },
-            "required": [
-                "id"
-            ],
-            "title": "Person",
-            "type": "object"
-        },
-        "PersonCollection": {
-            "additionalProperties": false,
-            "description": "A holder for Person objects",
-            "properties": {
-                "entries": {
-                    "additionalProperties": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Person__identifier_optional"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "type": [
-                        "object",
-                        "null"
-                    ]
-                }
-            },
-            "title": "PersonCollection",
-            "type": "object"
-        },
-        "PersonStatus": {
-            "description": "",
+        "AccumulationKind": {
+            "description": "Kind of accumulation behaviour for read / measured values from individual end points.",
             "enum": [
-                "ALIVE",
-                "DEAD",
-                "UNKNOWN"
+                "boundedQuantity",
+                "bulkQuantity",
+                "continuousCumulative",
+                "cumulative",
+                "deltaData",
+                "indicating",
+                "instantaneous",
+                "latchingQuantity",
+                "none",
+                "summation",
+                "timeDelay"
             ],
-            "title": "PersonStatus",
+            "title": "AccumulationKind",
             "type": "string"
         },
-        "Person__identifier_optional": {
+        "AggregateKind": {
+            "description": "Kind of aggregation for read / measured values from multiple end points.",
+            "enum": [
+                "average",
+                "excess",
+                "fifthMaximum",
+                "fourthMaximum",
+                "highThreshold",
+                "lowThreshold",
+                "maximum",
+                "minimum",
+                "nominal",
+                "none",
+                "normal",
+                "secondMaximum",
+                "secondMinimum",
+                "sum",
+                "thirdMaximum"
+            ],
+            "title": "AggregateKind",
+            "type": "string"
+        },
+        "Asset": {
             "additionalProperties": false,
-            "description": "Represents a Person",
+            "description": "Tangible resource of the utility, including power system equipment, various end devices, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role.",
             "properties": {
-                "age_in_years": {
-                    "description": "Number of years since birth",
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
                     "type": [
-                        "integer",
+                        "string",
                         "null"
                     ]
                 },
-                "birth_date": {
-                    "description": "Date on which a person is born",
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Asset",
+            "type": "object"
+        },
+        "AssetContainer": {
+            "additionalProperties": false,
+            "description": "Asset that is aggregation of other assets such as conductors, transformers, switchgear, land, fences, buildings, equipment, vehicles, etc.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AssetContainer",
+            "type": "object"
+        },
+        "BaseReading": {
+            "additionalProperties": false,
+            "description": "Common representation for reading values. Note that a reading value may have multiple qualities, as produced by various systems ('ReadingQuality.source').",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "reading_qualities": {
+                    "description": "All qualities of this reading.",
+                    "items": {
+                        "$ref": "#/$defs/ReadingQuality"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "time_period": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/DateTimeInterval"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Start and end of the period for those readings whose type has a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'.\r\n"
+                },
+                "time_stamp": {
+                    "description": "The time when the value was last updated.",
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
+                "value": {
+                    "description": "Value of this reading.\r\n",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "id": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "primary_email": {
-                    "description": "The main email address of a person",
-                    "pattern": "^\\S+@[\\S+\\.]+\\S+",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "vital_status": {
-                    "$ref": "#/$defs/PersonStatus",
-                    "description": "living or dead status"
                 }
             },
-            "required": [],
-            "title": "Person",
+            "title": "BaseReading",
+            "type": "object"
+        },
+        "CommodityKind": {
+            "description": "Kind of commodity being measured.",
+            "enum": [
+                "air",
+                "carbon",
+                "ch4",
+                "co2",
+                "communication",
+                "coolingFluid",
+                "electricityPrimaryMetered",
+                "electricitySecondaryMetered",
+                "hch",
+                "heatingFluid",
+                "insulativeGas",
+                "insulativeOil",
+                "internet",
+                "naturalGas",
+                "none",
+                "nonpotableWater",
+                "nox",
+                "pfc",
+                "potableWater",
+                "propane",
+                "refuse",
+                "sf6",
+                "so2",
+                "steam",
+                "tvLicence",
+                "wasteWater"
+            ],
+            "title": "CommodityKind",
+            "type": "string"
+        },
+        "Currency": {
+            "description": "Monetary currencies.  ISO 4217 standard including 3-character currency code.",
+            "enum": [
+                "AED",
+                "AFN",
+                "ALL",
+                "AMD",
+                "ANG",
+                "AOA",
+                "ARS",
+                "AUD",
+                "AWG",
+                "AZN",
+                "BAM",
+                "BBD",
+                "BDT",
+                "BGN",
+                "BHD",
+                "BIF",
+                "BMD",
+                "BND",
+                "BOB",
+                "BOV",
+                "BRL",
+                "BSD",
+                "BTN",
+                "BWP",
+                "BYR",
+                "BZD",
+                "CAD",
+                "CDF",
+                "CHF",
+                "CLF",
+                "CLP",
+                "CNY",
+                "COP",
+                "COU",
+                "CRC",
+                "CUC",
+                "CUP",
+                "CVE",
+                "CZK",
+                "DJF",
+                "DKK",
+                "DOP",
+                "DZD",
+                "EEK",
+                "EGP",
+                "ERN",
+                "ETB",
+                "EUR",
+                "FJD",
+                "FKP",
+                "GBP",
+                "GEL",
+                "GHS",
+                "GIP",
+                "GMD",
+                "GNF",
+                "GTQ",
+                "GYD",
+                "HKD",
+                "HNL",
+                "HRK",
+                "HTG",
+                "HUF",
+                "IDR",
+                "ILS",
+                "INR",
+                "IQD",
+                "IRR",
+                "ISK",
+                "JMD",
+                "JOD",
+                "JPY",
+                "KES",
+                "KGS",
+                "KHR",
+                "KMF",
+                "KPW",
+                "KRW",
+                "KWD",
+                "KYD",
+                "KZT",
+                "LAK",
+                "LBP",
+                "LKR",
+                "LRD",
+                "LSL",
+                "LTL",
+                "LVL",
+                "LYD",
+                "MAD",
+                "MDL",
+                "MGA",
+                "MKD",
+                "MMK",
+                "MNT",
+                "MOP",
+                "MRO",
+                "MUR",
+                "MVR",
+                "MWK",
+                "MXN",
+                "MYR",
+                "MZN",
+                "NAD",
+                "NGN",
+                "NIO",
+                "NOK",
+                "NPR",
+                "NZD",
+                "OMR",
+                "PAB",
+                "PEN",
+                "PGK",
+                "PHP",
+                "PKR",
+                "PLN",
+                "PYG",
+                "QAR",
+                "RON",
+                "RSD",
+                "RUB",
+                "RWF",
+                "SAR",
+                "SBD",
+                "SCR",
+                "SDG",
+                "SEK",
+                "SGD",
+                "SHP",
+                "SLL",
+                "SOS",
+                "SRD",
+                "STD",
+                "SYP",
+                "SZL",
+                "THB",
+                "TJS",
+                "TMT",
+                "TND",
+                "TOP",
+                "TRY",
+                "TTD",
+                "TWD",
+                "TZS",
+                "UAH",
+                "UGX",
+                "USD",
+                "UYU",
+                "UZS",
+                "VEF",
+                "VND",
+                "VUV",
+                "WST",
+                "XAF",
+                "XCD",
+                "XOF",
+                "XPF",
+                "YER",
+                "ZAR",
+                "ZMK",
+                "ZWL"
+            ],
+            "title": "Currency",
+            "type": "string"
+        },
+        "Customer": {
+            "additionalProperties": false,
+            "description": "Organisation receiving services from service supplier.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "kind": {
+                    "$ref": "#/$defs/CustomerKind",
+                    "description": "Kind of customer."
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Customer",
+            "type": "object"
+        },
+        "CustomerKind": {
+            "description": "Kind of customer.",
+            "enum": [
+                "commercialIndustrial",
+                "energyServiceScheduler",
+                "energyServiceSupplier",
+                "enterprise",
+                "internalUse",
+                "other",
+                "pumpingLoad",
+                "regionalOperator",
+                "residential",
+                "residentialAndCommercial",
+                "residentialAndStreetlight",
+                "residentialFarmService",
+                "residentialStreetlightOthers",
+                "subsidiary",
+                "windMachine"
+            ],
+            "title": "CustomerKind",
+            "type": "string"
+        },
+        "DateTimeInterval": {
+            "additionalProperties": false,
+            "description": "Interval between two date and time points, where the interval includes the start time but excludes end time.",
+            "properties": {
+                "end": {
+                    "description": "End date and time of this interval.  The end date and time where the interval is defined up to, but excluded.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "start": {
+                    "description": "Start date and time of this interval.  The start date and time is included in the defined interval.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "DateTimeInterval",
+            "type": "object"
+        },
+        "EndDevice": {
+            "additionalProperties": false,
+            "description": "Asset container that performs one or more end device functions. One type of end device is a meter which can perform metering, load management, connect/disconnect, accounting functions, etc. Some end devices, such as ones monitoring and controlling air conditioners, refrigerators, pool pumps may be connected to a meter. All end devices may have communication capability defined by the associated communication function(s). An end device may be owned by a consumer, a service provider, utility or otherwise.\r\nThere may be a related end device function that identifies a sensor or control point within a metering application or communications systems (e.g., water, gas, electricity).\r\nSome devices may use an optical port that conforms to the ANSI C12.18 standard for communications.",
+            "properties": {
+                "customer": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Customer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Customer owning this end device."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "install_code": {
+                    "description": "Installation code.\r\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "EndDevice",
+            "type": "object"
+        },
+        "FlowDirectionKind": {
+            "description": "Kind of flow direction for reading/measured  values proper to some commodities such as, for example, energy, power, demand.",
+            "enum": [
+                "forward",
+                "lagging",
+                "leading",
+                "net",
+                "none",
+                "q1minusQ4",
+                "q1plusQ2",
+                "q1plusQ3",
+                "q1plusQ4",
+                "q2minusQ3",
+                "q2plusQ3",
+                "q2plusQ4",
+                "q3minusQ2",
+                "q3plusQ4",
+                "quadrant1",
+                "quadrant2",
+                "quadrant3",
+                "quadrant4",
+                "reverse",
+                "total",
+                "totalByPhase"
+            ],
+            "title": "FlowDirectionKind",
+            "type": "string"
+        },
+        "IOPoint": {
+            "additionalProperties": false,
+            "description": "The class describe a measurement or control value. The purpose is to enable having attributes and associations common for measurement and control.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IOPoint",
+            "type": "object"
+        },
+        "IdentifiedObject": {
+            "additionalProperties": false,
+            "description": "This is a root class to provide common identification for all classes needing identification and naming attributes.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IdentifiedObject",
+            "type": "object"
+        },
+        "IntervalBlock": {
+            "additionalProperties": false,
+            "description": "Time sequence of readings of the same reading type. Contained interval readings may need conversion through the application of an offset and a scalar defined in associated pending.\r\nTable 548 shows all association ends of IntervalBlock with other classes.\r\nTable 548 \u2013 Association ends of Metering::IntervalBlock with other classes\r\nAssociations\r\nname\r\nmult to\r\ntype\r\ndescription\r\n\r\n0..*\r\nPendingCalculation\r\n0..1\r\nPendingCalculation\r\nPending calculation to apply to interval reading values contained by this block (after which the resulting reading type is different than the original because it reflects the conversion result).\r\n\r\n0..*\r\nIntervalReadings\r\n0..*\r\nIntervalReading\r\nInterval reading contained in this block.\r\n\r\n0..*\r\nReadingType\r\n0..1\r\nReadingType\r\nType information for interval reading values contained in this block.\r\n\r\n0..*\r\nMeterReading\r\n0..1\r\nMeterReading\r\nMeter reading containing this interval block.\r\n\r\n\r\nIntervalReading\r\nData captured at regular intervals of time. Interval data could be captured as incremental data, absolute data, or relative data. The source for the data is usually a tariff quantity or an engineering quantity. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.\r\nNote: Interval Data is sometimes also called \"Interval Data Readings\" (IDR).",
+            "properties": {
+                "interval_readings": {
+                    "description": "Interval reading contained in this block.",
+                    "items": {
+                        "$ref": "#/$defs/IntervalReading"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "reading_type": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ReadingType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Type information for interval reading values contained in this block."
+                }
+            },
+            "title": "IntervalBlock",
+            "type": "object"
+        },
+        "IntervalReading": {
+            "additionalProperties": false,
+            "description": "Data captured at regular intervals of time. Interval data could be captured as incremental data, absolute data, or relative data. The source for the data is usually a tariff quantity or an engineering quantity. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.\r\nNote: Interval Data is sometimes also called \"Interval Data Readings\" (IDR).",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "reading_qualities": {
+                    "description": "All qualities of this reading.",
+                    "items": {
+                        "$ref": "#/$defs/ReadingQuality"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "time_period": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/DateTimeInterval"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Start and end of the period for those readings whose type has a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'.\r\n"
+                },
+                "time_stamp": {
+                    "description": "The time when the value was last updated.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "Value of this reading.\r\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IntervalReading",
+            "type": "object"
+        },
+        "MacroPeriodKind": {
+            "description": "Kind of macro period for calculations on read / measured values.",
+            "enum": [
+                "billingPeriod",
+                "daily",
+                "monthly",
+                "none",
+                "seasonal",
+                "specifiedPeriod",
+                "weekly"
+            ],
+            "title": "MacroPeriodKind",
+            "type": "string"
+        },
+        "MeasurementKind": {
+            "description": "Kind of read / measured value.",
+            "enum": [
+                "alarm",
+                "apparentPowerFactor",
+                "applicationContext",
+                "apTitle",
+                "assetNumber",
+                "audibleVolume",
+                "bandwidth",
+                "batteryCarryover",
+                "batteryVoltage",
+                "billCarryover",
+                "billLastPeriod",
+                "billToDate",
+                "broadcastAddress",
+                "connectionFee",
+                "currency",
+                "current",
+                "currentAngle",
+                "currentImbalance",
+                "dataOverflowAlarm",
+                "date",
+                "demand",
+                "demandLimit",
+                "demandReset",
+                "deviceAddressType1",
+                "deviceAddressType2",
+                "deviceAddressType3",
+                "deviceAddressType4",
+                "deviceClass",
+                "diagnostic",
+                "distance",
+                "distortionPowerFactor",
+                "distortionVoltAmp",
+                "electronicSerialNumber",
+                "emergencyLimit",
+                "encoderTamper",
+                "endDeviceID",
+                "energization",
+                "energizationLoadSide",
+                "energy",
+                "fan",
+                "frequency",
+                "frequencyExcursion",
+                "fund",
+                "groupAddressType1",
+                "groupAddressType2",
+                "groupAddressType3",
+                "groupAddressType4",
+                "ieee1366ASAI",
+                "ieee1366ASIDI",
+                "ieee1366ASIFI",
+                "ieee1366CAIDI",
+                "ieee1366CAIFI",
+                "ieee1366CEMIn",
+                "ieee1366CEMSMIn",
+                "ieee1366CTAIDI",
+                "ieee1366MAIFI",
+                "ieee1366MAIFIe",
+                "ieee1366MomentaryInterruption",
+                "ieee1366MomentaryInterruptionEvent",
+                "ieee1366SAIDI",
+                "ieee1366SAIFI",
+                "ieee1366SustainedInterruption",
+                "interruptionBehaviour",
+                "inversionTamper",
+                "ipAddress",
+                "lineLoss",
+                "loadInterrupt",
+                "loadShed",
+                "loss",
+                "macAddress",
+                "maintenance",
+                "mfgAssignedConfigurationID",
+                "mfgAssignedPhysicalSerialNumber",
+                "mfgAssignedProductNumber",
+                "mfgAssignedUniqueCommunicationAddress",
+                "multiCastAddress",
+                "negativeSequence",
+                "none",
+                "oneWayAddress",
+                "phasorPowerFactor",
+                "phasorReactivePower",
+                "physicalTamper",
+                "positiveSequence",
+                "power",
+                "powerFactor",
+                "powerLossTamper",
+                "powerOutage",
+                "powerQuality",
+                "powerRestoration",
+                "programmed",
+                "pushbutton",
+                "quantityPower",
+                "relayActivation",
+                "relayCycle",
+                "removalTamper",
+                "reprogrammingTamper",
+                "reverseRotationTamper",
+                "sag",
+                "signalStrength",
+                "signaltoNoiseRatio",
+                "swell",
+                "switchArmed",
+                "switchDisabled",
+                "switchPosition",
+                "tamper",
+                "tapPosition",
+                "tariffRate",
+                "temperature",
+                "totalHarmonicDistortion",
+                "transformerLoss",
+                "twoWayAddress",
+                "unipedeVoltageDip10to15",
+                "unipedeVoltageDip15to30",
+                "unipedeVoltageDip30to60",
+                "unipedeVoltageDip60to90",
+                "unipedeVoltageDip90to100",
+                "voltage",
+                "voltageAngle",
+                "voltageExcursion",
+                "voltageImbalance",
+                "volume",
+                "volumetricFlow",
+                "watchdogTimeout",
+                "zeroFlowDuration",
+                "zeroSequence"
+            ],
+            "title": "MeasurementKind",
+            "type": "string"
+        },
+        "MeasurementValue": {
+            "additionalProperties": false,
+            "description": "The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "time_stamp": {
+                    "description": "The time when the value was last updated.",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "MeasurementValue",
+            "type": "object"
+        },
+        "MeasuringPeriodKind": {
+            "description": "Kind of period for reading / measuring values.",
+            "enum": [
+                "fifteenMinute",
+                "fiveMinute",
+                "fixedBlock10Min",
+                "fixedBlock15Min",
+                "fixedBlock1Min",
+                "fixedBlock20Min",
+                "fixedBlock30Min",
+                "fixedBlock5Min",
+                "fixedBlock60Min",
+                "none",
+                "oneMinute",
+                "present",
+                "previous",
+                "rollingBlock10MinIntvl1MinSubIntvl",
+                "rollingBlock10MinIntvl2MinSubIntvl",
+                "rollingBlock10MinIntvl5MinSubIntvl",
+                "rollingBlock15MinIntvl1MinSubIntvl",
+                "rollingBlock15MinIntvl3MinSubIntvl",
+                "rollingBlock15MinIntvl5MinSubIntvl",
+                "rollingBlock30MinIntvl10MinSubIntvl",
+                "rollingBlock30MinIntvl15MinSubIntvl",
+                "rollingBlock30MinIntvl2MinSubIntvl",
+                "rollingBlock30MinIntvl3MinSubIntvl",
+                "rollingBlock30MinIntvl5MinSubIntvl",
+                "rollingBlock30MinIntvl6MinSubIntvl",
+                "rollingBlock5MinIntvl1MinSubIntvl",
+                "rollingBlock60MinIntvl10MinSubIntvl",
+                "rollingBlock60MinIntvl12MinSubIntvl",
+                "rollingBlock60MinIntvl15MinSubIntvl",
+                "rollingBlock60MinIntvl20MinSubIntvl",
+                "rollingBlock60MinIntvl30MinSubIntvl",
+                "rollingBlock60MinIntvl4MinSubIntvl",
+                "rollingBlock60MinIntvl5MinSubIntvl",
+                "rollingBlock60MinIntvl6MinSubIntvl",
+                "sixtyMinute",
+                "tenMinute",
+                "thirtyMinute",
+                "threeMinute",
+                "twentyfourHour",
+                "twentyMinute",
+                "twoMinute"
+            ],
+            "title": "MeasuringPeriodKind",
+            "type": "string"
+        },
+        "Meter": {
+            "additionalProperties": false,
+            "description": "Physical asset that performs the metering role of the usage point. Used for measuring consumption and detection of events.",
+            "properties": {
+                "customer": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Customer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Customer owning this end device."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "install_code": {
+                    "description": "Installation code.\r\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "meter_readings": {
+                    "description": "All meter readings provided by this meter.",
+                    "items": {
+                        "$ref": "#/$defs/MeterReading"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Meter",
+            "type": "object"
+        },
+        "MeterReading": {
+            "additionalProperties": false,
+            "description": "Set of values obtained from the meter.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interval_blocks": {
+                    "description": "All interval blocks contained in this meter reading.",
+                    "items": {
+                        "$ref": "#/$defs/IntervalBlock"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "values_interval": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/DateTimeInterval"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Date and time interval of the data items contained within this meter reading."
+                }
+            },
+            "title": "MeterReading",
+            "type": "object"
+        },
+        "MeterReadingDataSet": {
+            "additionalProperties": false,
+            "description": "A single instance of a published dataset.",
+            "properties": {
+                "conforms_to": {
+                    "type": "string"
+                },
+                "contact_point": {
+                    "type": "string"
+                },
+                "identifier": {
+                    "type": "string"
+                },
+                "release_date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "usage_points": {
+                    "description": "Usage points.",
+                    "items": {
+                        "$ref": "#/$defs/UsagePoint"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identifier",
+                "contact_point",
+                "conforms_to",
+                "release_date",
+                "version"
+            ],
+            "title": "MeterReadingDataSet",
+            "type": "object"
+        },
+        "Name": {
+            "additionalProperties": false,
+            "description": "The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.",
+            "properties": {
+                "identified_object": {
+                    "$ref": "#/$defs/IdentifiedObject",
+                    "description": "Identified object that this name designates."
+                },
+                "name_type": {
+                    "$ref": "#/$defs/NameType",
+                    "description": "Type of this name."
+                }
+            },
+            "required": [
+                "name_type",
+                "identified_object"
+            ],
+            "title": "Name",
+            "type": "object"
+        },
+        "NameType": {
+            "additionalProperties": false,
+            "description": "Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:\r\nThe localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.",
+            "properties": {
+                "description": {
+                    "description": "Description of the name type.\r\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name_type_authority": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/NameTypeAuthority"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Authority responsible for managing names of this type."
+                },
+                "names": {
+                    "description": "All names of this type.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "NameType",
+            "type": "object"
+        },
+        "NameTypeAuthority": {
+            "additionalProperties": false,
+            "description": "Authority responsible for creation and management of names of a given type; typically an organization or an enterprise system.",
+            "properties": {
+                "description": {
+                    "description": "Description of the name type authority.\r\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name_types": {
+                    "description": "All name types managed by this authority.",
+                    "items": {
+                        "$ref": "#/$defs/NameType"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "NameTypeAuthority",
+            "type": "object"
+        },
+        "OrganisationRole": {
+            "additionalProperties": false,
+            "description": "Identifies a way in which an organisation may participate in the utility enterprise (e.g., customer, manufacturer, etc).",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "OrganisationRole",
+            "type": "object"
+        },
+        "PhaseCode": {
+            "description": "An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.\r\nResidential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.\r\nThe integer values are from IEC 61968-9 to support revenue metering applications.",
+            "enum": [
+                "A",
+                "AB",
+                "ABC",
+                "ABCN",
+                "ABN",
+                "AC",
+                "ACN",
+                "AN",
+                "B",
+                "BC",
+                "BCN",
+                "BN",
+                "C",
+                "CN",
+                "N",
+                "none",
+                "s1",
+                "s12",
+                "s12N",
+                "s1N",
+                "s2",
+                "s2N",
+                "X",
+                "XN",
+                "XY",
+                "XYN"
+            ],
+            "title": "PhaseCode",
+            "type": "string"
+        },
+        "RationalNumber": {
+            "additionalProperties": false,
+            "description": "Rational number = 'numerator' / 'denominator'.",
+            "properties": {
+                "denominator": {
+                    "description": "Denominator. Value 1 indicates the number is a simple integer.\r\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "numerator": {
+                    "description": "Numerator.\r\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "title": "RationalNumber",
+            "type": "object"
+        },
+        "ReadingInterharmonic": {
+            "additionalProperties": false,
+            "description": "Interharmonics are represented as a rational number 'numerator' / 'denominator', and harmonics are represented using the same mechanism and identified by 'denominator'=1.",
+            "properties": {
+                "denominator": {
+                    "description": "Interharmonic denominator. Value 0 means not applicable. Value 2 is used in combination with 'numerator'=1 to represent interharmonic 1/2. Finally, value 1 indicates the harmonic of the order specified with 'numerator'.\r\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "numerator": {
+                    "description": "Interharmonic numerator. Value 0 means not applicable. Value 1 is used in combination with 'denominator'=2 to represent interharmonic 1/2, and with 'denominator'=1 it represents fundamental frequency. Finally, values greater than 1 indicate the harmonic of that order (e.g., 'numerator'=5 is the fifth harmonic).\r\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ReadingInterharmonic",
+            "type": "object"
+        },
+        "ReadingQuality": {
+            "additionalProperties": false,
+            "description": "Quality of a specific reading value or interval reading value. Note that more than one quality may be applicable to a given reading. Typically not used unless problems or unusual conditions occur (i.e., quality for each reading is assumed to be good unless stated otherwise in associated reading quality type). It can also be used with the corresponding reading quality type to indicate that the validation has been performed and succeeded.",
+            "properties": {
+                "comment": {
+                    "description": "Elaboration on the quality code.\r\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "reading": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/BaseReading"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Reading value to which this quality applies."
+                }
+            },
+            "title": "ReadingQuality",
+            "type": "object"
+        },
+        "ReadingType": {
+            "additionalProperties": false,
+            "description": "Detailed description for a type of a reading value. Values in attributes allow for the creation of recommended codes to be used for identifying reading value types as follows: <macroPeriod>.<aggregate>.<measuringPeriod>.<accumulation>.<flowDirection>.<commodity>.<measurementKind>.<interharmonic.numerator>.<interharmonic.denominator>.<argument.numerator>.<argument.denominator>.<tou>.<cpp>.<consumptionTier>.<phases>.<multiplier>.<unit>.<currency>.",
+            "properties": {
+                "accumulation": {
+                    "$ref": "#/$defs/AccumulationKind",
+                    "description": "Accumulation behaviour of a reading over time, usually 'measuringPeriod', to be used with individual endpoints (as opposed to 'macroPeriod' and 'aggregate' that are used to describe aggregations of data from individual endpoints)."
+                },
+                "aggregate": {
+                    "$ref": "#/$defs/AggregateKind",
+                    "description": "Salient attribute of the reading data aggregated from individual endpoints. This is mainly used to define a mathematical operation carried out over 'macroPeriod', but may also be used to describe an attribute of the data when the 'macroPeriod' is not defined."
+                },
+                "argument": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RationalNumber"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Argument used to introduce numbers into the unit of measure description where they are needed (e.g., 4 where the measure needs an argument such as CEMI(n=4)). Most arguments used in practice however will be integers (i.e., 'denominator'=1).\r\nValue 0 in 'numerator' and 'denominator' means not applicable.\r\n"
+                },
+                "commodity": {
+                    "$ref": "#/$defs/CommodityKind",
+                    "description": "Commodity being measured."
+                },
+                "consumption_tier": {
+                    "description": "In case of common flat-rate pricing for power, in which all purchases are at a given rate, 'consumptionTier'=0. Otherwise, the value indicates the consumption tier, which can be used in conjunction with TOU or CPP pricing.\r\nConsumption tier pricing refers to the method of billing in which a certain \"block\" of energy is purchased/sold at one price, after which the next block of energy is purchased at another price, and so on, all throughout a defined period. At the start of the defined period, consumption is initially zero, and any usage is measured against the first consumption tier ('consumptionTier'=1). If this block of energy is consumed before the end of the period, energy consumption moves to be reconed against the second consumption tier ('consumptionTier'=2), and so on. At the end of the defined period, the consumption accumulator is reset, and usage within the 'consumptionTier'=1 restarts.\r\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cpp": {
+                    "description": "Critical peak period (CPP) bucket the reading value is attributed to. Value 0 means not applicable. Even though CPP is usually considered a specialised form of time of use 'tou', this attribute is defined explicitly for flexibility.\r\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "currency": {
+                    "$ref": "#/$defs/Currency",
+                    "description": "Metering-specific currency."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "flow_direction": {
+                    "$ref": "#/$defs/FlowDirectionKind",
+                    "description": "Flow direction for a reading where the direction of flow of the commodity is important (for electricity measurements this includes current, energy, power, and demand)."
+                },
+                "interharmonic": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ReadingInterharmonic"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indication of a \"harmonic\" or \"interharmonic\" basis for the measurement. Value 0 in 'numerator' and 'denominator' means not applicable.\r\n"
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "macro_period": {
+                    "$ref": "#/$defs/MacroPeriodKind",
+                    "description": "Time period of interest that reflects how the reading is viewed or captured over a long period of time."
+                },
+                "measurement_kind": {
+                    "$ref": "#/$defs/MeasurementKind",
+                    "description": "Identifies \"what\" is being measured, as refinement of 'commodity'. When combined with 'unit', it provides detail to the unit of measure. For example, 'energy' with a unit of measure of 'kWh' indicates to the user that active energy is being measured, while with 'kVAh' or 'kVArh', it indicates apparent energy and reactive energy, respectively. 'power' can be combined in a similar way with various power units of measure: Distortion power ('distortionVoltAmperes') with 'kVA' is different from 'power' with 'kVA'."
+                },
+                "measuring_period": {
+                    "$ref": "#/$defs/MeasuringPeriodKind",
+                    "description": "Time attribute inherent or fundamental to the reading value (as opposed to 'macroPeriod' that supplies an \"adjective\" to describe aspects of a time period with regard to the measurement). It refers to the way the value was originally measured and not to the frequency at which it is reported or presented. For example, an hourly interval of consumption data would have value 'hourly' as an attribute. However in the case of an hourly sampled voltage value, the meterReadings schema would carry the 'hourly' interval size information.\r\nIt is common for meters to report demand in a form that is measured over the course of a portion of an hour, while enterprise applications however commonly assume the demand (in kW or kVAr) normalised to 1 hour. The system that receives readings directly from the meter therefore shall perform this transformation before publishing readings for use by the other enterprise systems. The scalar used is chosen based on the block size (not any sub-interval size)."
+                },
+                "multiplier": {
+                    "$ref": "#/$defs/UnitMultiplier",
+                    "description": "Metering-specific multiplier."
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "phases": {
+                    "$ref": "#/$defs/PhaseCode",
+                    "description": "Metering-specific phase code."
+                },
+                "tou": {
+                    "description": "Time of use (TOU) bucket the reading value is attributed to. Value 0 means not applicable.\r\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "unit": {
+                    "$ref": "#/$defs/UnitSymbol",
+                    "description": "Metering-specific unit."
+                }
+            },
+            "title": "ReadingType",
+            "type": "object"
+        },
+        "UnitMultiplier": {
+            "description": "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. \r\n\r\nFor example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol \"\u00de\" represents the derived unit \"m2Pers\", then applying the multiplier \"k\" can be conceptualized simply as \"k\u00de\".\r\n\r\nFor example, the SI unit for mass is \"kg\" and not \"g\".  If the unit symbol is defined as \"kg\", then the multiplier is applied to \"kg\" as a whole and does not replace the \"k\" in front of the \"g\". In this case, the multiplier of \"m\" would be used with the unit symbol of \"kg\" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the \"kg\" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the \"kg\" were replaced by a symbol \"\u00de\", then it is easier to conceptualize the multiplier \"m\" as creating the proper unit \"m\u00de\", and not the forbidden unit \"mkg\".",
+            "enum": [
+                "a",
+                "c",
+                "d",
+                "da",
+                "E",
+                "f",
+                "G",
+                "h",
+                "k",
+                "m",
+                "M",
+                "micro",
+                "n",
+                "none",
+                "p",
+                "P",
+                "T",
+                "y",
+                "Y",
+                "z",
+                "Z"
+            ],
+            "title": "UnitMultiplier",
+            "type": "string"
+        },
+        "UnitSymbol": {
+            "description": "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as \"F\" instead of \"CPerV\". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as \"kgPerm3\". With the exception of the \"kg\", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole. \r\nEvery unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.\r\nTo allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol \"/\" is replaced by the letters \"Per\". Exponents are written in plain text after the unit as \"m3\" instead of being formatted as \"m\" with a superscript of 3  or introducing a symbol as in \"m^3\". The degree symbol \"\u00b0\" is replaced with the letters \"deg\". Any clarification of the meaning for a substitution is included in the description for the unit symbol.\r\nNon-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units. \r\nThe integer values are used for harmonization with IEC 61850.",
+            "enum": [
+                "A",
+                "A2",
+                "A2h",
+                "A2s",
+                "Ah",
+                "anglemin",
+                "anglesec",
+                "APerA",
+                "APerm",
+                "As",
+                "bar",
+                "Bq",
+                "Btu",
+                "C",
+                "cd",
+                "character",
+                "charPers",
+                "cosPhi",
+                "count",
+                "CPerkg",
+                "CPerm2",
+                "CPerm3",
+                "d",
+                "dB",
+                "dBm",
+                "deg",
+                "degC",
+                "F",
+                "FPerm",
+                "ft3",
+                "G",
+                "gal",
+                "gPerg",
+                "Gy",
+                "GyPers",
+                "H",
+                "h",
+                "ha",
+                "HPerm",
+                "Hz",
+                "HzPerHz",
+                "HzPers",
+                "J",
+                "JPerK",
+                "JPerkg",
+                "JPerkgK",
+                "JPerm2",
+                "JPerm3",
+                "JPermol",
+                "JPermolK",
+                "JPers",
+                "K",
+                "kat",
+                "katPerm3",
+                "kg",
+                "kgm",
+                "kgm2",
+                "kgPerJ",
+                "kgPerm3",
+                "kn",
+                "KPers",
+                "l",
+                "lm",
+                "lPerh",
+                "lPerl",
+                "lPers",
+                "lx",
+                "m",
+                "M",
+                "m2",
+                "m2Pers",
+                "m3",
+                "m3Compensated",
+                "m3Perh",
+                "m3Perkg",
+                "m3Pers",
+                "m3Uncompensated",
+                "min",
+                "mmHg",
+                "mol",
+                "molPerkg",
+                "molPerm3",
+                "molPermol",
+                "mPerm3",
+                "mPers",
+                "mPers2",
+                "Mx",
+                "N",
+                "Nm",
+                "none",
+                "NPerm",
+                "Oe",
+                "ohm",
+                "ohmm",
+                "ohmPerm",
+                "onePerHz",
+                "onePerm",
+                "Pa",
+                "PaPers",
+                "Pas",
+                "ppm",
+                "Q",
+                "Qh",
+                "rad",
+                "radPers",
+                "radPers2",
+                "rev",
+                "rotPers",
+                "s",
+                "S",
+                "SPerm",
+                "sPers",
+                "sr",
+                "Sv",
+                "T",
+                "therm",
+                "tonne",
+                "V",
+                "V2",
+                "V2h",
+                "VA",
+                "VAh",
+                "VAr",
+                "VArh",
+                "Vh",
+                "VPerHz",
+                "VPerm",
+                "VPerV",
+                "VPerVA",
+                "VPerVAr",
+                "Vs",
+                "W",
+                "Wb",
+                "Wh",
+                "WPerA",
+                "WPerm2",
+                "WPerm2sr",
+                "WPermK",
+                "WPers",
+                "WPersr",
+                "WPerW"
+            ],
+            "title": "UnitSymbol",
+            "type": "string"
+        },
+        "UsagePoint": {
+            "additionalProperties": false,
+            "description": "Logical or physical point in the network to which readings or events may be attributed. Used at the place where a physical or virtual meter may be located; however, it is not required that a meter be present.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "end_devices": {
+                    "description": "All end devices at this usage point.",
+                    "items": {
+                        "$ref": "#/$defs/EndDevice"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "european_article_number_ean": {
+                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 16 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "UsagePoint",
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/Netbeheer-Nederland/dp-meetdata",
+    "$id": "http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "A holder for Person objects",
+    "description": "A single instance of a published dataset.",
     "metamodel_version": "1.7.0",
     "properties": {
-        "entries": {
-            "additionalProperties": {
-                "anyOf": [
-                    {
-                        "$ref": "#/$defs/Person__identifier_optional"
-                    },
-                    {
-                        "type": "null"
-                    }
-                ]
+        "conforms_to": {
+            "type": "string"
+        },
+        "contact_point": {
+            "type": "string"
+        },
+        "identifier": {
+            "type": "string"
+        },
+        "release_date": {
+            "format": "date",
+            "type": "string"
+        },
+        "usage_points": {
+            "description": "Usage points.",
+            "items": {
+                "$ref": "#/$defs/UsagePoint"
             },
             "type": [
-                "object",
+                "array",
                 "null"
             ]
+        },
+        "version": {
+            "type": "string"
         }
     },
-    "title": "dp-meetdata",
+    "required": [
+        "identifier",
+        "contact_point",
+        "conforms_to",
+        "release_date",
+        "version"
+    ],
+    "title": "MeetdataDataproduct",
     "type": "object",
     "version": null
 }
