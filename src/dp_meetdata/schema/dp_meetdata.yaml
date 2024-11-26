@@ -2009,12 +2009,6 @@ classes:
         multivalued: false
         range: string
         required: false
-      reading:
-        description: Reading value to which this quality applies.
-        slot_uri: cim:ReadingQuality.Reading
-        multivalued: false
-        range: BaseReading
-        required: false
     class_uri: cim:ReadingQuality
   MeasurementValue:
     description: "The current state for a measurement. A state value is an instance\
