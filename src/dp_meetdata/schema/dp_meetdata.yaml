@@ -1770,6 +1770,8 @@ classes:
         multivalued: true
         range: MeterReading
         required: false
+    exact_mappings:
+      - nbnl:meetinrichting
     class_uri: cim:Meter
   IdentifiedObject:
     description: This is a root class to provide common identification for all classes
