@@ -125,8 +125,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about/">
-        Conceptual Model
+<a class="md-nav__link" href="../solution_design/">
+        Design (NL)
       </a>
 </li>
 </ul>
@@ -202,9 +202,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-measurementvalue">Class: MeasurementValue</h1>
-<p>_The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.
-_</p>
-<p>__</p>
+<p><em>The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.</em></p>
 <p>URI: <a href="https://cim.ucaiug.io/ns#MeasurementValue">cim:MeasurementValue</a></p>
 <pre class="mermaid"><code> classDiagram
     class MeasurementValue
@@ -312,9 +310,9 @@ _</p>
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementValue</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"The</span><span class="nv"> </span><span class="s">current</span><span class="nv"> </span><span class="s">state</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">measurement.</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">state</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of\</span>
-<span class="w">  </span><span class="s">\ a</span><span class="nv"> </span><span class="s">measurement</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">specific</span><span class="nv"> </span><span class="s">source.</span><span class="nv"> </span><span class="s">Measurements</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">many\</span>
-<span class="w">  </span><span class="s">\ state</span><span class="nv"> </span><span class="s">values,</span><span class="nv"> </span><span class="s">each</span><span class="nv"> </span><span class="s">representing</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">different</span><span class="nv"> </span><span class="s">source</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">measurement.\r\n"</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The current state for a measurement. A state value is an instance of</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">a measurement from a specific source. Measurements can be associated with many state</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">values, each representing a different source for the measurement.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IOPoint</span>
@@ -336,9 +334,9 @@ _</p>
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementValue</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"The</span><span class="nv"> </span><span class="s">current</span><span class="nv"> </span><span class="s">state</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">measurement.</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">state</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">instance</span><span class="nv"> </span><span class="s">of\</span>
-<span class="w">  </span><span class="s">\ a</span><span class="nv"> </span><span class="s">measurement</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">specific</span><span class="nv"> </span><span class="s">source.</span><span class="nv"> </span><span class="s">Measurements</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">many\</span>
-<span class="w">  </span><span class="s">\ state</span><span class="nv"> </span><span class="s">values,</span><span class="nv"> </span><span class="s">each</span><span class="nv"> </span><span class="s">representing</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">different</span><span class="nv"> </span><span class="s">source</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">measurement.\r\n"</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The current state for a measurement. A state value is an instance of</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">a measurement from a specific source. Measurements can be associated with many state</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">values, each representing a different source for the measurement.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IOPoint</span>

@@ -125,8 +125,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about/">
-        Conceptual Model
+<a class="md-nav__link" href="../solution_design/">
+        Design (NL)
       </a>
 </li>
 </ul>
@@ -202,9 +202,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-readinginterharmonic">Class: ReadingInterharmonic</h1>
-<p>_Interharmonics are represented as a rational number 'numerator' / 'denominator', and harmonics are represented using the same mechanism and identified by 'denominator'=1.
-_</p>
-<p>__</p>
+<p><em>Interharmonics are represented as a rational number 'numerator' / 'denominator', and harmonics are represented using the same mechanism and identified by 'denominator'=1.</em></p>
 <p>URI: <a href="https://cim.ucaiug.io/ns#ReadingInterharmonic">cim:ReadingInterharmonic</a></p>
 <pre class="mermaid"><code> classDiagram
     class ReadingInterharmonic
@@ -288,18 +286,16 @@ _</p>
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingInterharmonic</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Interharmonics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">rational</span><span class="nv"> </span><span class="s">number</span><span class="nv"> </span><span class="s">'numerator'</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">'denominator',\</span>
-<span class="w">  </span><span class="s">\ and</span><span class="nv"> </span><span class="s">harmonics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">using</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">mechanism</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">identified</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">'denominator'=1.\r\</span>
-<span class="w">  </span><span class="s">\n"</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Interharmonics are represented as a rational number 'numerator' / 'denominator',</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">and harmonics are represented using the same mechanism and identified by 'denominator'=1.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">denominator</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">denominator</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Interharmonic</span><span class="nv"> </span><span class="s">denominator.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">2\</span>
-<span class="w">      </span><span class="s">\ is</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">combination</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">'numerator'=1</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">represent</span><span class="nv"> </span><span class="s">interharmonic</span><span class="nv"> </span><span class="s">1/2.\</span>
-<span class="w">      </span><span class="s">\ Finally,</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">indicates</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">harmonic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">order</span><span class="nv"> </span><span class="s">specified</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">'numerator'.\r\</span>
-<span class="w">      </span><span class="s">\n"</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Interharmonic denominator. Value 0 means not applicable. Value 2</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">is used in combination with 'numerator'=1 to represent interharmonic 1/2. Finally,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">value 1 indicates the harmonic of the order specified with 'numerator'.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingInterharmonic.denominator</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -310,11 +306,11 @@ _</p>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">numerator</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numerator</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Interharmonic</span><span class="nv"> </span><span class="s">numerator.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">is\</span>
-<span class="w">      </span><span class="s">\ used</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">combination</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">'denominator'=2</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">represent</span><span class="nv"> </span><span class="s">interharmonic</span><span class="nv"> </span><span class="s">1/2,</span><span class="nv"> </span><span class="s">and\</span>
-<span class="w">      </span><span class="s">\ with</span><span class="nv"> </span><span class="s">'denominator'=1</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">represents</span><span class="nv"> </span><span class="s">fundamental</span><span class="nv"> </span><span class="s">frequency.</span><span class="nv"> </span><span class="s">Finally,</span><span class="nv"> </span><span class="s">values\</span>
-<span class="w">      </span><span class="s">\ greater</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">indicate</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">harmonic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">order</span><span class="nv"> </span><span class="s">(e.g.,</span><span class="nv"> </span><span class="s">'numerator'=5</span><span class="nv"> </span><span class="s">is\</span>
-<span class="w">      </span><span class="s">\ the</span><span class="nv"> </span><span class="s">fifth</span><span class="nv"> </span><span class="s">harmonic).\r\n"</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Interharmonic numerator. Value 0 means not applicable. Value 1 is</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">used in combination with 'denominator'=2 to represent interharmonic 1/2, and</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">with 'denominator'=1 it represents fundamental frequency. Finally, values greater</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">than 1 indicate the harmonic of that order (e.g., 'numerator'=5 is the fifth</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">harmonic).</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingInterharmonic.numerator</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
@@ -329,18 +325,16 @@ _</p>
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingInterharmonic</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Interharmonics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">rational</span><span class="nv"> </span><span class="s">number</span><span class="nv"> </span><span class="s">'numerator'</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">'denominator',\</span>
-<span class="w">  </span><span class="s">\ and</span><span class="nv"> </span><span class="s">harmonics</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">represented</span><span class="nv"> </span><span class="s">using</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">mechanism</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">identified</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">'denominator'=1.\r\</span>
-<span class="w">  </span><span class="s">\n"</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Interharmonics are represented as a rational number 'numerator' / 'denominator',</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">and harmonics are represented using the same mechanism and identified by 'denominator'=1.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">denominator</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">denominator</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Interharmonic</span><span class="nv"> </span><span class="s">denominator.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">2\</span>
-<span class="w">      </span><span class="s">\ is</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">combination</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">'numerator'=1</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">represent</span><span class="nv"> </span><span class="s">interharmonic</span><span class="nv"> </span><span class="s">1/2.\</span>
-<span class="w">      </span><span class="s">\ Finally,</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">indicates</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">harmonic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">order</span><span class="nv"> </span><span class="s">specified</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">'numerator'.\r\</span>
-<span class="w">      </span><span class="s">\n"</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Interharmonic denominator. Value 0 means not applicable. Value 2</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">is used in combination with 'numerator'=1 to represent interharmonic 1/2. Finally,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">value 1 indicates the harmonic of the order specified with 'numerator'.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingInterharmonic.denominator</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">denominator</span>
@@ -353,11 +347,11 @@ _</p>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">numerator</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numerator</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Interharmonic</span><span class="nv"> </span><span class="s">numerator.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">is\</span>
-<span class="w">      </span><span class="s">\ used</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">combination</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">'denominator'=2</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">represent</span><span class="nv"> </span><span class="s">interharmonic</span><span class="nv"> </span><span class="s">1/2,</span><span class="nv"> </span><span class="s">and\</span>
-<span class="w">      </span><span class="s">\ with</span><span class="nv"> </span><span class="s">'denominator'=1</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">represents</span><span class="nv"> </span><span class="s">fundamental</span><span class="nv"> </span><span class="s">frequency.</span><span class="nv"> </span><span class="s">Finally,</span><span class="nv"> </span><span class="s">values\</span>
-<span class="w">      </span><span class="s">\ greater</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">indicate</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">harmonic</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">order</span><span class="nv"> </span><span class="s">(e.g.,</span><span class="nv"> </span><span class="s">'numerator'=5</span><span class="nv"> </span><span class="s">is\</span>
-<span class="w">      </span><span class="s">\ the</span><span class="nv"> </span><span class="s">fifth</span><span class="nv"> </span><span class="s">harmonic).\r\n"</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Interharmonic numerator. Value 0 means not applicable. Value 1 is</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">used in combination with 'denominator'=2 to represent interharmonic 1/2, and</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">with 'denominator'=1 it represents fundamental frequency. Finally, values greater</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">than 1 indicate the harmonic of that order (e.g., 'numerator'=5 is the fifth</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">harmonic).</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingInterharmonic.numerator</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numerator</span>

@@ -125,8 +125,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about/">
-        Conceptual Model
+<a class="md-nav__link" href="../solution_design/">
+        Design (NL)
       </a>
 </li>
 </ul>
@@ -202,79 +202,8 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-intervalblock">Class: IntervalBlock</h1>
-<p>_Time sequence of readings of the same reading type. Contained interval readings may need conversion through the application of an offset and a scalar defined in associated pending.
-_</p>
-<p>_Table 548 shows all association ends of IntervalBlock with other classes.
-_</p>
-<p>_Table 548 – Association ends of Metering::IntervalBlock with other classes
-_</p>
-<p>_Associations
-_</p>
-<p>_name
-_</p>
-<p>_mult to
-_</p>
-<p>_type
-_</p>
-<p>_description
-_</p>
-<p>_
-_</p>
-<p>_0..*
-_</p>
-<p>_PendingCalculation
-_</p>
-<p>_0..1
-_</p>
-<p>_PendingCalculation
-_</p>
-<p>_Pending calculation to apply to interval reading values contained by this block (after which the resulting reading type is different than the original because it reflects the conversion result).
-_</p>
-<p>_
-_</p>
-<p>_0..*
-_</p>
-<p>_IntervalReadings
-_</p>
-<p>_0..*
-_</p>
-<p>_IntervalReading
-_</p>
-<p>_Interval reading contained in this block.
-_</p>
-<p>_
-_</p>
-<p>_0..*
-_</p>
-<p>_ReadingType
-_</p>
-<p>_0..1
-_</p>
-<p>_ReadingType
-_</p>
-<p>_Type information for interval reading values contained in this block.
-_</p>
-<p>_
-_</p>
-<p>_0..*
-_</p>
-<p>_MeterReading
-_</p>
-<p>_0..1
-_</p>
-<p>_MeterReading
-_</p>
-<p>_Meter reading containing this interval block.
-_</p>
-<p>_
-_</p>
-<p>_
-_</p>
-<p>_IntervalReading
-_</p>
-<p>_Data captured at regular intervals of time. Interval data could be captured as incremental data, absolute data, or relative data. The source for the data is usually a tariff quantity or an engineering quantity. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.
-_</p>
-<p><em>Note: Interval Data is sometimes also called "Interval Data Readings" (IDR).</em></p>
+<p><em>Time sequence of readings of the same reading type. Contained interval readings may need conversion through the application of an offset and a scalar defined in associated pending. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.</em></p>
+<p><em>Note: Interval Data is sometimes also called <em>Interval Data Readings</em> (IDR).</em></p>
 <p>URI: <a href="https://cim.ucaiug.io/ns#IntervalBlock">cim:IntervalBlock</a></p>
 <pre class="mermaid"><code> classDiagram
     class IntervalBlock
@@ -372,24 +301,12 @@ _</p>
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IntervalBlock</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Time</span><span class="nv"> </span><span class="s">sequence</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">readings</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">type.</span><span class="nv"> </span><span class="s">Contained</span><span class="nv"> </span><span class="s">interval\</span>
-<span class="w">  </span><span class="s">\ readings</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">need</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">through</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">application</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">offset</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">scalar\</span>
-<span class="w">  </span><span class="s">\ defined</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">pending.\r\nTable</span><span class="nv"> </span><span class="s">548</span><span class="nv"> </span><span class="s">shows</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">association</span><span class="nv"> </span><span class="s">ends</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">IntervalBlock\</span>
-<span class="w">  </span><span class="s">\ with</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">classes.\r\nTable</span><span class="nv"> </span><span class="s">548</span><span class="nv"> </span><span class="s">–</span><span class="nv"> </span><span class="s">Association</span><span class="nv"> </span><span class="s">ends</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Metering::IntervalBlock\</span>
-<span class="w">  </span><span class="s">\ with</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">classes\r\nAssociations\r\nname\r\nmult</span><span class="nv"> </span><span class="s">to\r\ntype\r\ndescription\r\</span>
-<span class="w">  </span><span class="s">\n\r\n0..*\r\nPendingCalculation\r\n0..1\r\nPendingCalculation\r\nPending</span><span class="nv"> </span><span class="s">calculation\</span>
-<span class="w">  </span><span class="s">\ to</span><span class="nv"> </span><span class="s">apply</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">interval</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">contained</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">block</span><span class="nv"> </span><span class="s">(after</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">resulting\</span>
-<span class="w">  </span><span class="s">\ reading</span><span class="nv"> </span><span class="s">type</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">different</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">because</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">reflects</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">conversion\</span>
-<span class="w">  </span><span class="s">\ result).\r\n\r\n0..*\r\nIntervalReadings\r\n0..*\r\nIntervalReading\r\nInterval\</span>
-<span class="w">  </span><span class="s">\ reading</span><span class="nv"> </span><span class="s">contained</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">block.\r\n\r\n0..*\r\nReadingType\r\n0..1\r\nReadingType\r\</span>
-<span class="w">  </span><span class="s">\nType</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">interval</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">contained</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">block.\r\n\r\n\</span>
-<span class="w">  </span><span class="s">0..*\r\nMeterReading\r\n0..1\r\nMeterReading\r\nMeter</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">containing</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">interval\</span>
-<span class="w">  </span><span class="s">\ block.\r\n\r\n\r\nIntervalReading\r\nData</span><span class="nv"> </span><span class="s">captured</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">regular</span><span class="nv"> </span><span class="s">intervals</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time.\</span>
-<span class="w">  </span><span class="s">\ Interval</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">could</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">captured</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">incremental</span><span class="nv"> </span><span class="s">data,</span><span class="nv"> </span><span class="s">absolute</span><span class="nv"> </span><span class="s">data,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">relative\</span>
-<span class="w">  </span><span class="s">\ data.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">source</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">usually</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">tariff</span><span class="nv"> </span><span class="s">quantity</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">engineering</span><span class="nv"> </span><span class="s">quantity.\</span>
-<span class="w">  </span><span class="s">\ Data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">typically</span><span class="nv"> </span><span class="s">captured</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">time-tagged,</span><span class="nv"> </span><span class="s">uniform,</span><span class="nv"> </span><span class="s">fixed-length</span><span class="nv"> </span><span class="s">intervals</span><span class="nv"> </span><span class="s">of\</span>
-<span class="w">  </span><span class="s">\ 5</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">min.\r\nNote:</span><span class="nv"> </span><span class="s">Interval</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">sometimes\</span>
-<span class="w">  </span><span class="s">\ also</span><span class="nv"> </span><span class="s">called</span><span class="nv"> </span><span class="s">\"Interval</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">Readings\"</span><span class="nv"> </span><span class="s">(IDR)."</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Time</span><span class="nv"> </span><span class="s">sequence</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">readings</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">type.</span><span class="nv"> </span><span class="s">Contained</span><span class="nv"> </span><span class="s">interval</span>
+<span class="w">  </span><span class="s">readings</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">need</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">through</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">application</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">offset</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">scalar</span><span class="nv"> </span><span class="s">defined</span>
+<span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">pending.</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">typically</span><span class="nv"> </span><span class="s">captured</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">time-tagged,</span><span class="nv"> </span><span class="s">uniform,</span><span class="nv"> </span><span class="s">fixed-length</span>
+<span class="w">  </span><span class="s">intervals</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">5</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">min.</span>
+
+<span class="w">  </span><span class="s">Note:</span><span class="nv"> </span><span class="s">Interval</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">sometimes</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">called</span><span class="nv"> </span><span class="s">*Interval</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">Readings*</span><span class="nv"> </span><span class="s">(IDR).'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">attributes</span><span class="p">:</span>
@@ -421,24 +338,12 @@ _</p>
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IntervalBlock</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Time</span><span class="nv"> </span><span class="s">sequence</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">readings</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">type.</span><span class="nv"> </span><span class="s">Contained</span><span class="nv"> </span><span class="s">interval\</span>
-<span class="w">  </span><span class="s">\ readings</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">need</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">through</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">application</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">offset</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">scalar\</span>
-<span class="w">  </span><span class="s">\ defined</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">pending.\r\nTable</span><span class="nv"> </span><span class="s">548</span><span class="nv"> </span><span class="s">shows</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">association</span><span class="nv"> </span><span class="s">ends</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">IntervalBlock\</span>
-<span class="w">  </span><span class="s">\ with</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">classes.\r\nTable</span><span class="nv"> </span><span class="s">548</span><span class="nv"> </span><span class="s">–</span><span class="nv"> </span><span class="s">Association</span><span class="nv"> </span><span class="s">ends</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Metering::IntervalBlock\</span>
-<span class="w">  </span><span class="s">\ with</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">classes\r\nAssociations\r\nname\r\nmult</span><span class="nv"> </span><span class="s">to\r\ntype\r\ndescription\r\</span>
-<span class="w">  </span><span class="s">\n\r\n0..*\r\nPendingCalculation\r\n0..1\r\nPendingCalculation\r\nPending</span><span class="nv"> </span><span class="s">calculation\</span>
-<span class="w">  </span><span class="s">\ to</span><span class="nv"> </span><span class="s">apply</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">interval</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">contained</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">block</span><span class="nv"> </span><span class="s">(after</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">resulting\</span>
-<span class="w">  </span><span class="s">\ reading</span><span class="nv"> </span><span class="s">type</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">different</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">original</span><span class="nv"> </span><span class="s">because</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">reflects</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">conversion\</span>
-<span class="w">  </span><span class="s">\ result).\r\n\r\n0..*\r\nIntervalReadings\r\n0..*\r\nIntervalReading\r\nInterval\</span>
-<span class="w">  </span><span class="s">\ reading</span><span class="nv"> </span><span class="s">contained</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">block.\r\n\r\n0..*\r\nReadingType\r\n0..1\r\nReadingType\r\</span>
-<span class="w">  </span><span class="s">\nType</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">interval</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">contained</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">block.\r\n\r\n\</span>
-<span class="w">  </span><span class="s">0..*\r\nMeterReading\r\n0..1\r\nMeterReading\r\nMeter</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">containing</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">interval\</span>
-<span class="w">  </span><span class="s">\ block.\r\n\r\n\r\nIntervalReading\r\nData</span><span class="nv"> </span><span class="s">captured</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">regular</span><span class="nv"> </span><span class="s">intervals</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time.\</span>
-<span class="w">  </span><span class="s">\ Interval</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">could</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">captured</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">incremental</span><span class="nv"> </span><span class="s">data,</span><span class="nv"> </span><span class="s">absolute</span><span class="nv"> </span><span class="s">data,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">relative\</span>
-<span class="w">  </span><span class="s">\ data.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">source</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">usually</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">tariff</span><span class="nv"> </span><span class="s">quantity</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">engineering</span><span class="nv"> </span><span class="s">quantity.\</span>
-<span class="w">  </span><span class="s">\ Data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">typically</span><span class="nv"> </span><span class="s">captured</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">time-tagged,</span><span class="nv"> </span><span class="s">uniform,</span><span class="nv"> </span><span class="s">fixed-length</span><span class="nv"> </span><span class="s">intervals</span><span class="nv"> </span><span class="s">of\</span>
-<span class="w">  </span><span class="s">\ 5</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">min.\r\nNote:</span><span class="nv"> </span><span class="s">Interval</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">sometimes\</span>
-<span class="w">  </span><span class="s">\ also</span><span class="nv"> </span><span class="s">called</span><span class="nv"> </span><span class="s">\"Interval</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">Readings\"</span><span class="nv"> </span><span class="s">(IDR)."</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Time</span><span class="nv"> </span><span class="s">sequence</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">readings</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">same</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">type.</span><span class="nv"> </span><span class="s">Contained</span><span class="nv"> </span><span class="s">interval</span>
+<span class="w">  </span><span class="s">readings</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">need</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">through</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">application</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">offset</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">scalar</span><span class="nv"> </span><span class="s">defined</span>
+<span class="w">  </span><span class="s">in</span><span class="nv"> </span><span class="s">associated</span><span class="nv"> </span><span class="s">pending.</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">typically</span><span class="nv"> </span><span class="s">captured</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">time-tagged,</span><span class="nv"> </span><span class="s">uniform,</span><span class="nv"> </span><span class="s">fixed-length</span>
+<span class="w">  </span><span class="s">intervals</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">5</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">15</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">min,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">min.</span>
+
+<span class="w">  </span><span class="s">Note:</span><span class="nv"> </span><span class="s">Interval</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">sometimes</span><span class="nv"> </span><span class="s">also</span><span class="nv"> </span><span class="s">called</span><span class="nv"> </span><span class="s">*Interval</span><span class="nv"> </span><span class="s">Data</span><span class="nv"> </span><span class="s">Readings*</span><span class="nv"> </span><span class="s">(IDR).'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">attributes</span><span class="p">:</span>

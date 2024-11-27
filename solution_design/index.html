@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://Netbeheer-Nederland.github.io/dp-meetdata/usage_points/">
+        <link rel="canonical" href="https://Netbeheer-Nederland.github.io/dp-meetdata/solution_design/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: usage_points - dp-meetdata</title>
+        <title>Design (NL) - dp-meetdata</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-usage_points" class="md-skip">
+        <a href="#inleiding" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: usage_points
+              Design (NL)
             
           </span>
         </div>
@@ -224,11 +224,21 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
-        Conceptual Model
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Design (NL)
       </a>
+      
     </li>
   
 
@@ -253,62 +263,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
-    Applicable Classes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    Identifier and Mapping Information
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-source" class="md-nav__link">
-    Schema Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linkml-source" class="md-nav__link">
-    LinkML Source
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -321,83 +275,226 @@
                 
                   
 
-  <a href="https://github.com/Netbeheer-Nederland/dp-meetdata/edit/master/docs/usage_points.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/Netbeheer-Nederland/dp-meetdata/edit/master/docs/solution_design.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-usage_points">Slot: usage_points</h1>
-<p><em>Usage points.</em></p>
-<p>URI: <a href="http://data.netbeheernederland.nl/dp-meetdata/def#MeterReadingDataSet.usage_points">this:MeterReadingDataSet.usage_points</a></p>
-<!-- no inheritance hierarchy -->
-
-<h2 id="applicable-classes">Applicable Classes</h2>
+<h1 id="inleiding">Inleiding</h1>
+<p>Dit ontwerp beschrijft de beoogde gebruiksscenario's voor het dataproduct <em>GV
+Meetdata</em>, alsmede de achterliggende architectuur en gemaakte keuzes.</p>
+<h1 id="reikwijdte">Reikwijdte</h1>
+<p>Er is steeds meer behoefte aan inzicht in data over energieverbruik en
+energieopwekking van grootverbruikers (GV) om optimaal gebruik te maken van de
+beschikbare energiecapaciteit. Deze data is bijvoorbeeld relevant voor
+bedrijven die willen samenwerken op een industrieterrein of voor organisaties
+die individuele bedrijven willen helpen met duurzame energie oplossingen en
+energiebesparingen. De GV-klant is eigenaar van deze data en moet toestemming
+geven aan andere partijen om de data te gebruiken. Een erkend
+meetverantwoordelijke (MV) verzorgt de metingen van deze data.</p>
+<p>Dit ontwerp beschrijft het proces om tot ontsluiting van het bijbehorende
+dataproduct te komen en de betekenis &amp; structuur van het dataproduct.</p>
+<h1 id="achtergrond">Achtergrond</h1>
+<p>Onderstaand wordt kort de achtergrond toegelicht m.b.t. dataproducten.</p>
+<h2 id="dataproduct">Dataproduct</h2>
+<p>Voor alle data-uitwisseling binnen de scope van de visie is expliciet gekozen
+voor het denken over data in de vorm van dataproducten. Een dataproduct
+combineert de semantische-, technische- en gebruiksaspecten van
+data-uitwisseling. Om dit invulling te geven bestaat een dataproduct uit de
+volgende componenten:</p>
+<ul>
+<li><em>dataset</em>: de daadwerkelijke gegevens die worden uitgewisseld. Zie een
+  dataset als een tabel met gegevens, waarbij de kolommen beschrijven wat er op
+  elke rij van de data aan gegevens wordt geleverd. Een dataset voor
+  aansluitingen zal minstens een kolom "Aansluitingsnummer" bevatten, waarbij
+  elke rij in de dataset een aansluiting beschrijft;</li>
+<li><em>dataservice</em>: de technische manier van verspreiden van de dataset. Dit gaat
+  over hoe de data ontsloten wordt (als bestand, API, database of <em>file
+  server</em>);</li>
+<li><em>voorwaarden</em>: er kunnen voorwaarden liggen op beschikbaarheid, kwaliteit,
+  classificatie en doelbinding bij gebruik van het dataproduct.</li>
+</ul>
+<p>Het dataproduct combineert de <em>dataset</em> en <em>dataservice</em>, verrijkt met
+<em>voorwaarden</em> voor gebruik.</p>
+<h2 id="volume-variety-veracity-velocity">Volume, variety, veracity, velocity</h2>
+<p>Data kent vier kenmerken:</p>
+<ul>
+<li><em>volume</em>: data kent een volume, een hoeveelheid;</li>
+<li><em>variety</em> (variëteit): data is te verdelen in gestructureerde en
+  ongestructureerde data. Ongestructureerde data kent geen metamodel;</li>
+<li><em>veracity</em> (betrouwbaarheid): de mate waarin de data vertrouwd kan worden
+  voor de toepassing;</li>
+<li><em>velocity</em> (snelheid): de frequentie waarmee data verandert.</li>
+</ul>
+<h1 id="functionele-eisen">Functionele eisen</h1>
+<p>Het dataproduct is onderheving aan functionele eisen.</p>
 <table>
 <thead>
 <tr>
-<th>Name</th>
-<th>Description</th>
-<th>Modifies Slot</th>
+<th>Als</th>
+<th>Wil ik</th>
+<th>Want</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../MeterReadingDataSet/">MeterReadingDataSet</a></td>
-<td>A single instance of a published dataset</td>
-<td>no</td>
+<td>Netbeheerder</td>
+<td>Een geldigheid van 90 dagen op een verleende toestemming</td>
+<td>Ik beperk het aantal toestemmingverzoeken.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
+<h1 id="dataservice">Dataservice</h1>
+<p>In beide gebruiksscenario's vraagt de GV-klant of een <em>derde</em> (zoals een
+adviesbureau of ontwikkelbedrijf) meetgegevens op bij de netbeheerder van een
+GV-klant. Indien een derde meetgegevens opvraagt dient toestemming verleend te
+worden door de aangeslotene. Hierbij vervult de GV-klant de rol van
+<em>aangeslotene</em>.</p>
+<blockquote>
+<p>[!IMPORTANT]
+Beide gebruiksscenario's gaan uit van <em>geauthenticeerde rollen</em>. Voor
+authenticatie dient aangesloten te worden op bestaande processen. Indien er
+geen <em>enrolment- en authenticatieproces</em> is <em>moet</em> deze worden ingericht.</p>
+</blockquote>
+<p>De gebruiksscenario's beschrijven niet het uitvalproces (<em>happy flow</em>), deze
+stappen dienen apart beschreven en geïmplementeerd te worden.</p>
+<h2 id="gebruiksscenario-centraal-dataproduct">Gebruiksscenario: centraal dataproduct</h2>
+<p><img alt="Gebruiksscenario" src="../assets/use_case_01-20241125.svg" /></p>
+<ol>
+<li>een <em>GV-klant</em> of een <em>derde</em> (e.g. een ontwikkelbedrijf) vraagt
+   meetgegevens op voor één of meerdere aansluitingen bij het <em>EDSN
+   meetdataregister</em>.  GV-klanten vragen meetdata aan voor eigen
+   aansluiting(en), derden voor te specificeren aansluitingen;</li>
+<li>het meetdataregister toetst of er toestemming is verleend voor de combinatie
+   derde/aansluiting. Indien de GV-klant meetdata voor eigen aansluiting(en)
+   aanvraagt is toestemming niet vereist en wordt de meetdata geleverd (stap
+   6);</li>
+<li>indien er geen toestemming is voor opvragen van de meetdata wordt de
+   <em>aangeslotene</em> gevraagd deze te verlenen. De aangeslotene kan potentieel
+   weken wachten voordat toestemming verleend of afgewezen wordt;</li>
+<li>de verleende toestemming wordt vastgelegd in het Toestemmingplatform;</li>
+<li>het Toestemmingplatform notificeert het meetdataregister dat toestemming
+   verleend is door de aangeslotene;</li>
+<li>het meetdataregister levert de meetgegevens, onder het <em>uniforme schema</em>.</li>
+</ol>
+<p>Het beschreven scenario kent een aantal varianten voor implementatie:</p>
 <ul>
-<li>
-<p>Range: <a href="../UsagePoint/">UsagePoint</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
+<li>de netbeheerder leidt <em>GV-klanten</em> vanuit de <em>Mijn-omgeving</em> door naar het
+  meetdataregister;</li>
+<li>de netbeheerder leidt <em>derden</em> door naar het meetdataregister;</li>
+<li>de netbeheerder ontsluit het meetdataregister vanuit de Mijn-omgeving.
+  Hiervoor vraagt de netbeheerder onder eigen autorisatie de meetgegevens op
+  voor de geauthenticeerde GV-klant;</li>
+<li>de netbeheerder ontsluit het meetdataregister vanuit de partner- of
+  derdenomgeving. Een derde vraagt voor specifieke aansluiting(en) meetgegevens
+  op, welke na toestemming van de aangeslotene worden geleverd. Niet alle
+  netbeheerders kennen een dergelijke partneromgeving.</li>
 </ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
+<h2 id="gebruikersscenario-decentraal-dataproduct">Gebruikersscenario: decentraal dataproduct</h2>
+<p><img alt="Gebruiksscenario" src="../assets/use_case_02-20241125.svg" /></p>
+<ol>
+<li>een <em>GV-klant</em> of een <em>derde</em> (e.g. een ontwikkelbedrijf) vraagt
+   meetgegevens op voor één of meerdere aansluitingen bij de netbeheerder.
+   GV-klanten vragen meetdata aan voor eigen aansluiting(en), derden voor te
+   specificeren aansluitingen;</li>
+<li>de netbeheerder toetst of er toestemming is verleend voor de combinatie
+   derde/aansluiting. Indien de GV-klant meetdata voor eigen aansluiting(en)
+   aanvraagt is toestemming niet vereist en wordt de meetdata geleverd (stap
+   5);</li>
+<li>indien er geen toestemming is voor opvragen van de meetdata wordt de
+   <em>aangeslotene</em> gevraagd deze te verlenen. De aangeslotene kan potentieel
+   weken wachten voordat toestemming verleend of afgewezen wordt;</li>
+<li>de verleende toestemming wordt vastgelegd in de administratie van de
+   netbeheerder;</li>
+<li>de netbeheerder levert de meetgegevens, onder het <em>uniforme schema</em>.</li>
+</ol>
+<p>Het beschreven scenario kent een aantal varianten voor implementatie:</p>
 <ul>
-<li>from schema: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</li>
+<li>de netbeheerder levert meetdata als voor de <em>GV-klant</em> vanuit de <em>Mijn-omgeving</em>;</li>
+<li>de netbeheerder levert meetdata als <em>maatwerkverzoek</em> vanuit de eigen <em>service
+  desk</em>, of gedelegeerd naar <em>Partners in Energie</em>.</li>
 </ul>
-<h2 id="mappings">Mappings</h2>
+<h2 id="architectuur">Architectuur</h2>
+<p>Vanuit architectuurperspectief zijn de volgende keuzes gemaakt:</p>
+<p><img alt="Architectuur" src="../assets/architecture-20241118.svg" /></p>
+<ul>
+<li>de structuur (logisch model) van de dataset is gebaseerd op het <a href="https://begrippen.netbeheernederland.nl/">conceptuele
+  model Begrippenmodel NBNL</a> en het
+  <a href="https://cim-mg.ucaiug.io/latest/">Common Information Model</a>;</li>
+<li>het dataproduct <em>GV Meetdata</em> is vindbaar via het EDSN Dataportaal.</li>
+</ul>
+<h1 id="dataset">Dataset</h1>
+<h2 id="volume-variety-veracity-velocity_1">Volume, variety, veracity, velocity</h2>
 <table>
 <thead>
 <tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
+<th>Type</th>
+<th>Beschrijving</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>self</td>
-<td>this:MeterReadingDataSet.usage_points</td>
+<td>Volume</td>
+<td>Laag, &lt; 100MB (ongecomprimeerd).</td>
 </tr>
 <tr>
-<td>native</td>
-<td>cim:usage_points</td>
+<td>Variety</td>
+<td>Gestructureerd.</td>
+</tr>
+<tr>
+<td>Veracity</td>
+<td>Hoog, de dataset wordt samengesteld uit brongegevens die ook voor facturatie worden ingezet.</td>
+</tr>
+<tr>
+<td>Velocity</td>
+<td>Laag, datasets worden op verzoek samengesteld.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="linkml-source">LinkML Source</h2>
-<details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usage_points</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Usage points.</span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this:MeterReadingDataSet.usage_points</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usage_points</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeterReadingDataSet</span>
-<span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeterReadingDataSet</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UsagePoint</span>
-<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
-</details>
+<h1 id="voorwaarden">Voorwaarden</h1>
+<p>Dit dataproduct wordt als <a href="https://github.com/Netbeheer-Nederland/am-doelarchitectuur-datadelen/blob/cebef14d35eaedd808cf9cb9ec7e931d0c5178c3/assets/20230217_NBNL_T5_Visie%20op%20datadelen_V1.01.pdf">gesloten
+data</a>
+aangeboden, onder de <a href="https://www.autoriteitpersoonsgegevens.nl/themas/basis-avg/avg-algemeen/grondslag-toestemming">Grondslag
+toestemming</a>.
+De grondslag is vereist indien een derde de aanvraag doet, voor een GV-klant is
+toestemming <strong>niet</strong> vereist indien het om meetdata van de eigen
+aansluiting(en) gaat.</p>
+<h1 id="beslissingen-en-aannames">Beslissingen en aannames</h1>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aanname</td>
+<td>Netbeheerders hebben de gevraagde meetgegevens (dataset) beschikbaar voor levering als decentraal dataproduct.</td>
+</tr>
+<tr>
+<td>Aanname</td>
+<td>EDSN maakt geen aanpassingen in de bestaande interface(s) voor het decentrale dataproduct.</td>
+</tr>
+<tr>
+<td>Aanname</td>
+<td>De aangeslotene verleent toestemming over toegang tot <em>al</em> haar meetdata behorende bij een aansluiting. Dit voorkomt toestemmingverzoeken voor meetgegevens in een tijdsperiode.</td>
+</tr>
+<tr>
+<td>Aanname</td>
+<td>Zowel GV-klant, als aangeslotene, als derde zijn te identificeren, authenticeren en te benaderen voor communicatie.</td>
+</tr>
+<tr>
+<td>Aanname</td>
+<td>Toestemming wordt verleend op basis van de combinatie derde/aansluiting.</td>
+</tr>
+<tr>
+<td>Aanname</td>
+<td><em>Partners in Energie</em> stopt met het invullen van maatwerkverzoeken voor meetdata na implementatie van het centrale dataproduct.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -415,6 +512,27 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Index
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

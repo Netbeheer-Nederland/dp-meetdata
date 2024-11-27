@@ -2,426 +2,430 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/AccumulationKind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/AggregateKind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Asset/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/AssetContainer/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/BaseReading/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Boolean/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/CommodityKind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Curie/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Currency/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Customer/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/CustomerKind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Date/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/DateOrDatetime/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/DateTimeInterval/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Datetime/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Decimal/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Double/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/EndDevice/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Float/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/FlowDirectionKind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/IOPoint/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/IdentifiedObject/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Integer/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/IntervalBlock/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/IntervalReading/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Jsonpath/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Jsonpointer/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/MacroPeriodKind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/MarketEvaluationPoint/</loc>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/MeasurementKind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/MeasurementValue/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/MeasuringPeriodKind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/MeetdataDataproduct/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Meter/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/MeterReading/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/MeterReadingDataSet/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Name/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/NameType/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/NameTypeAuthority/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Ncname/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Nodeidentifier/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Objectidentifier/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/OrganisationRole/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/PhaseCode/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/RationalNumber/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/ReadingInterharmonic/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/ReadingQuality/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/ReadingType/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Sparqlpath/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/String/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Time/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/UnitMultiplier/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/UnitSymbol/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Uri/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/Uriorcurie/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/UsagePoint/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/about/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/accumulation/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/aggregate/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/argument/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/comment/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/commodity/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/conforms_to/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/consumption_tier/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/contact_point/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/cpp/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/currency/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/customer/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/denominator/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/description/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/end/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/end_devices/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/european_article_number_ean/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/flow_direction/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/identified_object/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/identifier/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/install_code/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/interharmonic/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/interval_blocks/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/interval_readings/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/kind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/m_rid/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/macro_period/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/market_evaluation_points/</loc>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/measurement_kind/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/measuring_period/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/meter_readings/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/multiplier/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/name_type/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/name_type_authority/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/name_types/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/names/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/numerator/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/phases/</loc>
-         <lastmod>2024-11-26</lastmod>
-    </url>
-    <url>
-         <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/reading/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/reading_qualities/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/reading_type/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/release_date/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/solution_design/</loc>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/start/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/time_period/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/time_stamp/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/tou/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/unit/</loc>
-         <lastmod>2024-11-26</lastmod>
-    </url>
-    <url>
-         <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/usage_points/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/value/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/values_interval/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
          <loc>https://Netbeheer-Nederland.github.io/dp-meetdata/version/</loc>
-         <lastmod>2024-11-26</lastmod>
+         <lastmod>2024-11-27</lastmod>
     </url>
 </urlset>
