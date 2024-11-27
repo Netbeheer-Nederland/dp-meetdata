@@ -15,7 +15,8 @@ plugins:
 nav:
   # - Home: home.md
   - Index: index.md
-  - Conceptual Model: about.md
+  # - Conceptual Model: about.md
+  - Design (NL): solution_design.md
 markdown_extensions:
   - pymdownx.betterem
   - pymdownx.superfences:

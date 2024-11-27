@@ -44,7 +44,7 @@ description: |-
       string comment
       BaseReading reading
   }
-  class UsagePoint {
+  class MarketEvaluationPoint {
       string european_article_number_ean
       EndDevice end_devices
       string description
@@ -78,7 +78,7 @@ description: |-
       string conforms_to
       date release_date
       string version
-      UsagePoint usage_points
+      MarketEvaluationPoint market_evaluation_points
   }
 
   MeterReading --> IntervalBlock : interval_blocks
@@ -87,8 +87,8 @@ description: |-
   IntervalBlock --> IntervalReading : interval_readings
   IntervalBlock --> ReadingType : reading_type
   IntervalReading --> ReadingQuality : reading_qualities
-  UsagePoint --> Meter : end_devices
-  MeterReadingDataSet --> UsagePoint : usage_points
+  MarketEvaluationPoint --> Meter : end_devices
+  MeterReadingDataSet --> MarketEvaluationPoint : market_evaluation_points
   ```
 
   ## Additional schemas
@@ -1477,11 +1477,11 @@ classes:
         slot_uri: owl:versionInfo
         multivalued: false
         required: true
-      usage_points:
-        slot_uri: this:MeterReadingDataSet.usage_points
-        description: Usage points.
+      market_evaluation_points:
+        slot_uri: this:MeterReadingDataSet.marketEvaluationPoints
+        description: Market evalution points.
         multivalued: true
-        range: UsagePoint
+        range: MarketEvaluationPoint
         required: false
     class_uri: this:MeterReadingDataSet
   MeterReading:
@@ -1523,6 +1523,13 @@ classes:
         range: date
         required: false
     class_uri: cim:DateTimeInterval
+  MarketEvaluationPoint:
+    description: The identification of an entity where energy products are measured
+      or computed.
+    is_a: UsagePoint
+    exact_mappings:
+      - nbnl:aansluiting
+    class_uri: cim:MarketEvaluationPoint
   UsagePoint:
     description: Logical or physical point in the network to which readings or events
       may be attributed. Used at the place where a physical or virtual meter may be

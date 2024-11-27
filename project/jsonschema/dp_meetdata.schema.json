@@ -708,6 +708,55 @@
             "title": "MacroPeriodKind",
             "type": "string"
         },
+        "MarketEvaluationPoint": {
+            "additionalProperties": false,
+            "description": "The identification of an entity where energy products are measured or computed.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "end_devices": {
+                    "description": "All end devices at this usage point.",
+                    "items": {
+                        "$ref": "#/$defs/EndDevice"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "european_article_number_ean": {
+                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 16 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "m_rid": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "description": "All names of this identified object.",
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "MarketEvaluationPoint",
+            "type": "object"
+        },
         "MeasurementKind": {
             "description": "Kind of read / measured value.",
             "enum": [
@@ -1054,19 +1103,19 @@
                 "identifier": {
                     "type": "string"
                 },
-                "release_date": {
-                    "format": "date",
-                    "type": "string"
-                },
-                "usage_points": {
-                    "description": "Usage points.",
+                "market_evaluation_points": {
+                    "description": "Market evalution points.",
                     "items": {
-                        "$ref": "#/$defs/UsagePoint"
+                        "$ref": "#/$defs/MarketEvaluationPoint"
                     },
                     "type": [
                         "array",
                         "null"
                     ]
+                },
+                "release_date": {
+                    "format": "date",
+                    "type": "string"
                 },
                 "version": {
                     "type": "string"
@@ -1282,17 +1331,6 @@
                         "string",
                         "null"
                     ]
-                },
-                "reading": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/BaseReading"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Reading value to which this quality applies."
                 }
             },
             "title": "ReadingQuality",
@@ -1658,19 +1696,19 @@
         "identifier": {
             "type": "string"
         },
-        "release_date": {
-            "format": "date",
-            "type": "string"
-        },
-        "usage_points": {
-            "description": "Usage points.",
+        "market_evaluation_points": {
+            "description": "Market evalution points.",
             "items": {
-                "$ref": "#/$defs/UsagePoint"
+                "$ref": "#/$defs/MarketEvaluationPoint"
             },
             "type": [
                 "array",
                 "null"
             ]
+        },
+        "release_date": {
+            "format": "date",
+            "type": "string"
         },
         "version": {
             "type": "string"
