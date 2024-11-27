@@ -1,95 +1,28 @@
 name: MeetdataDataproduct
 description: |-
-  Information model for the 'meetdata' data product.
+  The *Meetdata* data product describes the metered data for a single or
+  multiple market evaluation points (*Aansluiting*). The [Solution
+  Design](solution_design.md) provides more detail on the use cases and
+  implementation of the data product for DSOs. This data product follows the
+  EUMED Profile, as standardised in *ISO/IEC 61968-9:2024: Interfaces for meter
+  reading and control*. This data product aligns with the implementation by
+  other EU Member States.
 
-  ```mermaid
-  classDiagram
-  direction LR
+  ![Data Product](assets/dp_meetdata-20241127.svg)
 
-  class MeterReading {
-      DateTimeInterval values_interval
-      IntervalBlock interval_blocks
-      string description
-      string m_rid
-      Name names
-  }
-  class Meter {
-      MeterReading meter_readings
-      string install_code
-      Customer customer
-      string description
-      string m_rid
-      Name names
-  }
-  class Customer {
-      CustomerKind kind
-      string description
-      string m_rid
-      Name names
-  }
-  class IntervalBlock {
-      IntervalReading interval_readings
-      ReadingType reading_type
-  }
-  class IntervalReading {
-      DateTimeInterval time_period
-      string value
-      ReadingQuality reading_qualities
-      date time_stamp
-      string description
-      string m_rid
-      Name names
-  }
-  class ReadingQuality {
-      string comment
-      BaseReading reading
-  }
-  class MarketEvaluationPoint {
-      string european_article_number_ean
-      EndDevice end_devices
-      string description
-      string m_rid
-      Name names
-  }
-  class ReadingType {
-      AccumulationKind accumulation
-      AggregateKind aggregate
-      RationalNumber argument
-      CommodityKind commodity
-      integer consumption_tier
-      integer cpp
-      Currency currency
-      FlowDirectionKind flow_direction
-      ReadingInterharmonic interharmonic
-      MacroPeriodKind macro_period
-      MeasurementKind measurement_kind
-      MeasuringPeriodKind measuring_period
-      UnitMultiplier multiplier
-      PhaseCode phases
-      integer tou
-      UnitSymbol unit
-      string description
-      string m_rid
-      Name names
-  }
-  class MeterReadingDataSet {
-      string identifier
-      string contact_point
-      string conforms_to
-      date release_date
-      string version
-      MarketEvaluationPoint market_evaluation_points
-  }
+  The data is intended to be represented as a hierarchy with a
+  [MeterReadingDataSet](MeterReadingDataSet.md) at its root, followed by
+  [MarketEvaluationPoint-s](MarketEvaluationPoint.md) nested inside the
+  *MeterReadingDataSet*. Each marketEvaluationPoint has one or more
+  [Meter-s](Meter.md), where a *Meter* can have an associated
+  [Customer](Customer.md) and one or more [MeterReading-s](MeterReading.md).
 
-  MeterReading --> IntervalBlock : interval_blocks
-  Meter --> MeterReading : meter_readings
-  Meter --> Customer : customer
-  IntervalBlock --> IntervalReading : interval_readings
-  IntervalBlock --> ReadingType : reading_type
-  IntervalReading --> ReadingQuality : reading_qualities
-  MarketEvaluationPoint --> Meter : end_devices
-  MeterReadingDataSet --> MarketEvaluationPoint : market_evaluation_points
-  ```
+  A *MeterReading* has one or more [IntervalBlock-s](IntervalBlock.md), which
+  defines the time period for which the [IntervalReading-s](IntervalReading.md)
+  are applicable. A [ReadingType](ReadingType.md) defines attributes for the
+  *IntervalReading-s*. Each *IntervalReading* can be provided a
+  [ReadingQuality](ReadingQuality.md), defining data quality for the
+  *IntervalReading*.
 
   ## Additional schemas
   * [JSON Schema](https://raw.githubusercontent.com/Netbeheer-Nederland/dp-meetdata/refs/heads/main/project/jsonschema/dp_meetdata.schema.json)
@@ -1073,7 +1006,7 @@ enums:
       Z:
         meaning: cim:UnitMultiplier.Z
   PhaseCode:
-    description: "An unordered enumeration of phase identifiers.  Allows designation\
+    description: "An unordered enumeration of phase identifiers. Allows designation\
       \ of phases for both transmission and distribution equipment, circuits and loads.\
       \   The enumeration, by itself, does not describe how the phases are connected\
       \ together or connected to ground.  Ground is not explicitly denoted as a phase.\r\
@@ -1505,18 +1438,18 @@ classes:
     class_uri: cim:MeterReading
   DateTimeInterval:
     description: 'Interval between two date and time points, where the interval includes
-      the start time but excludes end time.  '
+      the start time but excludes end time.'
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Domain
     attributes:
       end:
-        description: End date and time of this interval.  The end date and time where
+        description: End date and time of this interval. The end date and time where
           the interval is defined up to, but excluded.
         slot_uri: cim:DateTimeInterval.end
         multivalued: false
         range: date
         required: false
       start:
-        description: Start date and time of this interval.  The start date and time
+        description: Start date and time of this interval. The start date and time
           is included in the defined interval.
         slot_uri: cim:DateTimeInterval.start
         multivalued: false
@@ -1594,25 +1527,14 @@ classes:
         required: false
     class_uri: cim:Customer
   IntervalBlock:
-    description: "Time sequence of readings of the same reading type. Contained interval\
-      \ readings may need conversion through the application of an offset and a scalar\
-      \ defined in associated pending.\r\nTable 548 shows all association ends of\
-      \ IntervalBlock with other classes.\r\nTable 548 \u2013 Association ends of\
-      \ Metering::IntervalBlock with other classes\r\nAssociations\r\nname\r\nmult\
-      \ to\r\ntype\r\ndescription\r\n\r\n0..*\r\nPendingCalculation\r\n0..1\r\nPendingCalculation\r\
-      \nPending calculation to apply to interval reading values contained by this\
-      \ block (after which the resulting reading type is different than the original\
-      \ because it reflects the conversion result).\r\n\r\n0..*\r\nIntervalReadings\r\
-      \n0..*\r\nIntervalReading\r\nInterval reading contained in this block.\r\n\r\
-      \n0..*\r\nReadingType\r\n0..1\r\nReadingType\r\nType information for interval\
-      \ reading values contained in this block.\r\n\r\n0..*\r\nMeterReading\r\n0..1\r\
-      \nMeterReading\r\nMeter reading containing this interval block.\r\n\r\n\r\n\
-      IntervalReading\r\nData captured at regular intervals of time. Interval data\
-      \ could be captured as incremental data, absolute data, or relative data. The\
-      \ source for the data is usually a tariff quantity or an engineering quantity.\
-      \ Data is typically captured in time-tagged, uniform, fixed-length intervals\
-      \ of 5 min, 10 min, 15 min, 30 min, or 60 min.\r\nNote: Interval Data is sometimes\
-      \ also called \"Interval Data Readings\" (IDR)."
+    description: "Time sequence of readings of the same reading type. Contained
+      interval readings may need conversion through the application of an
+      offset and a scalar defined in associated pending. Data is typically
+      captured in time-tagged, uniform, fixed-length intervals of 5 min, 10
+      min, 15 min, 30 min, or 60 min.
+
+      Note: Interval Data is sometimes also called *Interval Data Readings*
+      (IDR)."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     attributes:
       interval_readings:
@@ -1721,9 +1643,9 @@ classes:
         range: FlowDirectionKind
         required: false
       interharmonic:
-        description: "Indication of a \"harmonic\" or \"interharmonic\" basis for\
-          \ the measurement. Value 0 in 'numerator' and 'denominator' means not applicable.\r\
-          \n"
+        description: "Indication of a \"harmonic\" or \"interharmonic\" basis
+          for the measurement. Value 0 in 'numerator' and 'denominator' means
+          not applicable."
         slot_uri: cim:ReadingType.interharmonic
         multivalued: false
         range: ReadingInterharmonic
@@ -1794,18 +1716,17 @@ classes:
         required: false
     class_uri: cim:ReadingType
   RationalNumber:
-    description: "Rational number = 'numerator' / 'denominator'.\r\n"
+    description: "Rational number = 'numerator' / 'denominator'."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     attributes:
       denominator:
-        description: "Denominator. Value 1 indicates the number is a simple integer.\r\
-          \n"
+        description: "Denominator. Value 1 indicates the number is a simple integer."
         slot_uri: cim:RationalNumber.denominator
         multivalued: false
         range: integer
         required: false
       numerator:
-        description: "Numerator.\r\n"
+        description: "Numerator."
         slot_uri: cim:RationalNumber.numerator
         multivalued: false
         range: integer
@@ -1814,14 +1735,14 @@ classes:
   ReadingInterharmonic:
     description: "Interharmonics are represented as a rational number 'numerator'\
       \ / 'denominator', and harmonics are represented using the same mechanism and\
-      \ identified by 'denominator'=1.\r\n"
+      \ identified by 'denominator'=1."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     attributes:
       denominator:
         description: "Interharmonic denominator. Value 0 means not applicable. Value\
           \ 2 is used in combination with 'numerator'=1 to represent interharmonic\
           \ 1/2. Finally, value 1 indicates the harmonic of the order specified with\
-          \ 'numerator'.\r\n"
+          \ 'numerator'."
         slot_uri: cim:ReadingInterharmonic.denominator
         multivalued: false
         range: integer
@@ -1831,7 +1752,7 @@ classes:
           \ 1 is used in combination with 'denominator'=2 to represent interharmonic\
           \ 1/2, and with 'denominator'=1 it represents fundamental frequency. Finally,\
           \ values greater than 1 indicate the harmonic of that order (e.g., 'numerator'=5\
-          \ is the fifth harmonic).\r\n"
+          \ is the fifth harmonic)."
         slot_uri: cim:ReadingInterharmonic.numerator
         multivalued: false
         range: integer
@@ -1839,7 +1760,7 @@ classes:
     class_uri: cim:ReadingInterharmonic
   Meter:
     description: "Physical asset that performs the metering role of the usage point.\
-      \ Used for measuring consumption and detection of events.\r\n"
+      \ Used for measuring consumption and detection of events."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     is_a: EndDevice
     attributes:
@@ -1884,7 +1805,7 @@ classes:
     description: "The Name class provides the means to define any number of human\
       \ readable  names for an object. A name is <b>not</b> to be used for defining\
       \ inter-object relationships. For inter-object relationships instead use the\
-      \ object identification 'mRID'.\r\n"
+      \ object identification 'mRID'."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
     attributes:
       name_type:
@@ -1911,11 +1832,11 @@ classes:
       \ hierarchy similar to a file directory structure. A power system related naming\
       \ hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the\
       \ same parent in such a hierarchy have names that typically are unique among\
-      \ them.\r\n"
+      \ them."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
     attributes:
       description:
-        description: "Description of the name type.\r\n"
+        description: "Description of the name type."
         slot_uri: cim:NameType.description
         multivalued: false
         range: string
@@ -1935,11 +1856,11 @@ classes:
     class_uri: cim:NameType
   NameTypeAuthority:
     description: "Authority responsible for creation and management of names of a\
-      \ given type; typically an organization or an enterprise system.\r\n"
+      \ given type; typically an organization or an enterprise system."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
     attributes:
       description:
-        description: "Description of the name type authority.\r\n"
+        description: "Description of the name type authority."
         slot_uri: cim:NameTypeAuthority.description
         multivalued: false
         range: string
@@ -1969,7 +1890,7 @@ classes:
     class_uri: cim:Asset
   OrganisationRole:
     description: "Identifies a way in which an organisation may participate in the\
-      \ utility enterprise (e.g., customer, manufacturer, etc).\r\n"
+      \ utility enterprise (e.g., customer, manufacturer, etc)."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
     is_a: IdentifiedObject
     class_uri: cim:OrganisationRole
@@ -1982,14 +1903,13 @@ classes:
     attributes:
       time_period:
         description: "Start and end of the period for those readings whose type has\
-          \ a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'.\r\
-          \n"
+          \ a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'."
         slot_uri: cim:BaseReading.timePeriod
         multivalued: false
         range: DateTimeInterval
         required: false
       value:
-        description: "Value of this reading.\r\n"
+        description: "Value of this reading."
         slot_uri: cim:BaseReading.value
         multivalued: false
         range: string
@@ -2011,7 +1931,7 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     attributes:
       comment:
-        description: "Elaboration on the quality code.\r\n"
+        description: "Elaboration on the quality code."
         slot_uri: cim:ReadingQuality.comment
         multivalued: false
         range: string
@@ -2020,8 +1940,7 @@ classes:
   MeasurementValue:
     description: "The current state for a measurement. A state value is an instance\
       \ of a measurement from a specific source. Measurements can be associated with\
-      \ many state values, each representing a different source for the measurement.\r\
-      \n"
+      \ many state values, each representing a different source for the measurement."
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
     is_a: IOPoint
     attributes:

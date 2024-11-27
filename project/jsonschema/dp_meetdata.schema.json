@@ -151,7 +151,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Start and end of the period for those readings whose type has a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'.\r\n"
+                    "description": "Start and end of the period for those readings whose type has a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'."
                 },
                 "time_stamp": {
                     "description": "The time when the value was last updated.",
@@ -162,7 +162,7 @@
                     ]
                 },
                 "value": {
-                    "description": "Value of this reading.\r\n",
+                    "description": "Value of this reading.",
                     "type": [
                         "string",
                         "null"
@@ -436,7 +436,7 @@
             "description": "Interval between two date and time points, where the interval includes the start time but excludes end time.",
             "properties": {
                 "end": {
-                    "description": "End date and time of this interval.  The end date and time where the interval is defined up to, but excluded.",
+                    "description": "End date and time of this interval. The end date and time where the interval is defined up to, but excluded.",
                     "format": "date",
                     "type": [
                         "string",
@@ -444,7 +444,7 @@
                     ]
                 },
                 "start": {
-                    "description": "Start date and time of this interval.  The start date and time is included in the defined interval.",
+                    "description": "Start date and time of this interval. The start date and time is included in the defined interval.",
                     "format": "date",
                     "type": [
                         "string",
@@ -599,7 +599,7 @@
         },
         "IntervalBlock": {
             "additionalProperties": false,
-            "description": "Time sequence of readings of the same reading type. Contained interval readings may need conversion through the application of an offset and a scalar defined in associated pending.\r\nTable 548 shows all association ends of IntervalBlock with other classes.\r\nTable 548 \u2013 Association ends of Metering::IntervalBlock with other classes\r\nAssociations\r\nname\r\nmult to\r\ntype\r\ndescription\r\n\r\n0..*\r\nPendingCalculation\r\n0..1\r\nPendingCalculation\r\nPending calculation to apply to interval reading values contained by this block (after which the resulting reading type is different than the original because it reflects the conversion result).\r\n\r\n0..*\r\nIntervalReadings\r\n0..*\r\nIntervalReading\r\nInterval reading contained in this block.\r\n\r\n0..*\r\nReadingType\r\n0..1\r\nReadingType\r\nType information for interval reading values contained in this block.\r\n\r\n0..*\r\nMeterReading\r\n0..1\r\nMeterReading\r\nMeter reading containing this interval block.\r\n\r\n\r\nIntervalReading\r\nData captured at regular intervals of time. Interval data could be captured as incremental data, absolute data, or relative data. The source for the data is usually a tariff quantity or an engineering quantity. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.\r\nNote: Interval Data is sometimes also called \"Interval Data Readings\" (IDR).",
+            "description": "Time sequence of readings of the same reading type. Contained interval readings may need conversion through the application of an offset and a scalar defined in associated pending. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.\nNote: Interval Data is sometimes also called *Interval Data Readings* (IDR).",
             "properties": {
                 "interval_readings": {
                     "description": "Interval reading contained in this block.",
@@ -673,7 +673,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Start and end of the period for those readings whose type has a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'.\r\n"
+                    "description": "Start and end of the period for those readings whose type has a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'."
                 },
                 "time_stamp": {
                     "description": "The time when the value was last updated.",
@@ -684,7 +684,7 @@
                     ]
                 },
                 "value": {
-                    "description": "Value of this reading.\r\n",
+                    "description": "Value of this reading.",
                     "type": [
                         "string",
                         "null"
@@ -1156,7 +1156,7 @@
             "description": "Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:\r\nThe localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.",
             "properties": {
                 "description": {
-                    "description": "Description of the name type.\r\n",
+                    "description": "Description of the name type.",
                     "type": [
                         "string",
                         "null"
@@ -1192,7 +1192,7 @@
             "description": "Authority responsible for creation and management of names of a given type; typically an organization or an enterprise system.",
             "properties": {
                 "description": {
-                    "description": "Description of the name type authority.\r\n",
+                    "description": "Description of the name type authority.",
                     "type": [
                         "string",
                         "null"
@@ -1245,7 +1245,7 @@
             "type": "object"
         },
         "PhaseCode": {
-            "description": "An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.\r\nResidential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.\r\nThe integer values are from IEC 61968-9 to support revenue metering applications.",
+            "description": "An unordered enumeration of phase identifiers. Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.\r\nResidential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.\r\nThe integer values are from IEC 61968-9 to support revenue metering applications.",
             "enum": [
                 "A",
                 "AB",
@@ -1282,14 +1282,14 @@
             "description": "Rational number = 'numerator' / 'denominator'.",
             "properties": {
                 "denominator": {
-                    "description": "Denominator. Value 1 indicates the number is a simple integer.\r\n",
+                    "description": "Denominator. Value 1 indicates the number is a simple integer.",
                     "type": [
                         "integer",
                         "null"
                     ]
                 },
                 "numerator": {
-                    "description": "Numerator.\r\n",
+                    "description": "Numerator.",
                     "type": [
                         "integer",
                         "null"
@@ -1304,14 +1304,14 @@
             "description": "Interharmonics are represented as a rational number 'numerator' / 'denominator', and harmonics are represented using the same mechanism and identified by 'denominator'=1.",
             "properties": {
                 "denominator": {
-                    "description": "Interharmonic denominator. Value 0 means not applicable. Value 2 is used in combination with 'numerator'=1 to represent interharmonic 1/2. Finally, value 1 indicates the harmonic of the order specified with 'numerator'.\r\n",
+                    "description": "Interharmonic denominator. Value 0 means not applicable. Value 2 is used in combination with 'numerator'=1 to represent interharmonic 1/2. Finally, value 1 indicates the harmonic of the order specified with 'numerator'.",
                     "type": [
                         "integer",
                         "null"
                     ]
                 },
                 "numerator": {
-                    "description": "Interharmonic numerator. Value 0 means not applicable. Value 1 is used in combination with 'denominator'=2 to represent interharmonic 1/2, and with 'denominator'=1 it represents fundamental frequency. Finally, values greater than 1 indicate the harmonic of that order (e.g., 'numerator'=5 is the fifth harmonic).\r\n",
+                    "description": "Interharmonic numerator. Value 0 means not applicable. Value 1 is used in combination with 'denominator'=2 to represent interharmonic 1/2, and with 'denominator'=1 it represents fundamental frequency. Finally, values greater than 1 indicate the harmonic of that order (e.g., 'numerator'=5 is the fifth harmonic).",
                     "type": [
                         "integer",
                         "null"
@@ -1326,7 +1326,7 @@
             "description": "Quality of a specific reading value or interval reading value. Note that more than one quality may be applicable to a given reading. Typically not used unless problems or unusual conditions occur (i.e., quality for each reading is assumed to be good unless stated otherwise in associated reading quality type). It can also be used with the corresponding reading quality type to indicate that the validation has been performed and succeeded.",
             "properties": {
                 "comment": {
-                    "description": "Elaboration on the quality code.\r\n",
+                    "description": "Elaboration on the quality code.",
                     "type": [
                         "string",
                         "null"
@@ -1401,7 +1401,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Indication of a \"harmonic\" or \"interharmonic\" basis for the measurement. Value 0 in 'numerator' and 'denominator' means not applicable.\r\n"
+                    "description": "Indication of a \"harmonic\" or \"interharmonic\" basis for the measurement. Value 0 in 'numerator' and 'denominator' means not applicable."
                 },
                 "m_rid": {
                     "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
