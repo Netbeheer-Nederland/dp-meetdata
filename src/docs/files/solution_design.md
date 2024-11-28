@@ -60,7 +60,7 @@ Het dataproduct is onderheving aan functionele eisen.
 
 | Als          | Wil ik | Want                                                |
 |--------------|--------|-----------------------------------------------------|
-| Netbeheerder | Een geldigheid van 90 dagen op een verleende toestemming | Ik beperk het aantal toestemmingverzoeken. |
+| GV-Klant     | Een overzicht van gemeten energieverbruik, in kwartierwaarden per meter | Ik wens inzicht in mijn verbruik. |
 
 # Dataservice
 
@@ -178,3 +178,4 @@ aansluiting(en) gaat.
 | Aanname    | Zowel GV-klant, als aangeslotene, als derde zijn te identificeren, authenticeren en te benaderen voor communicatie. |
 | Aanname    | Toestemming wordt verleend op basis van de combinatie derde/aansluiting. |
 | Aanname    | *Partners in Energie* stopt met het invullen van maatwerkverzoeken voor meetdata na implementatie van het centrale dataproduct. |
+| Aanname    | De geldigheid van een verleende toestemming is minstens 90 dagen, om aantal toestemmingsverzoeken te beperken |
