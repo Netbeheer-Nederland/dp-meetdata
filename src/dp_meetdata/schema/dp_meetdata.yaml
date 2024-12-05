@@ -14,8 +14,7 @@ description: |-
   [MeterReadingDataSet](MeterReadingDataSet.md) at its root, followed by
   [MarketEvaluationPoint-s](MarketEvaluationPoint.md) nested inside the
   *MeterReadingDataSet*. Each marketEvaluationPoint has one or more
-  [Meter-s](Meter.md), where a *Meter* can have an associated
-  [Customer](Customer.md) and one or more [MeterReading-s](MeterReading.md).
+  [MeterReading-s](MeterReading.md).
 
   A *MeterReading* has one or more [IntervalBlock-s](IntervalBlock.md), which
   defines the time period for which the [IntervalReading-s](IntervalReading.md)
@@ -38,47 +37,13 @@ prefixes:
   dcat: http://www.w3.org/ns/dcat#
   dct: http://purl.org/dc/terms/
   nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  liander: http://data.liander.nl/markt/def#
   this: http://data.netbeheernederland.nl/dp-meetdata/def#
 default_curi_maps:
 - semweb_context
 default_prefix: cim
 default_range: string
 enums:
-  CustomerKind:
-    description: Kind of customer.
-    from_schema: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0
-    enum_uri: cim:CustomerKind
-    permissible_values:
-      commercialIndustrial:
-        meaning: cim:CustomerKind.commercialIndustrial
-      energyServiceScheduler:
-        meaning: cim:CustomerKind.energyServiceScheduler
-      energyServiceSupplier:
-        meaning: cim:CustomerKind.energyServiceSupplier
-      enterprise:
-        meaning: cim:CustomerKind.enterprise
-      internalUse:
-        meaning: cim:CustomerKind.internalUse
-      other:
-        meaning: cim:CustomerKind.other
-      pumpingLoad:
-        meaning: cim:CustomerKind.pumpingLoad
-      regionalOperator:
-        meaning: cim:CustomerKind.regionalOperator
-      residential:
-        meaning: cim:CustomerKind.residential
-      residentialAndCommercial:
-        meaning: cim:CustomerKind.residentialAndCommercial
-      residentialAndStreetlight:
-        meaning: cim:CustomerKind.residentialAndStreetlight
-      residentialFarmService:
-        meaning: cim:CustomerKind.residentialFarmService
-      residentialStreetlightOthers:
-        meaning: cim:CustomerKind.residentialStreetlightOthers
-      subsidiary:
-        meaning: cim:CustomerKind.subsidiary
-      windMachine:
-        meaning: cim:CustomerKind.windMachine
   AccumulationKind:
     description: Kind of accumulation behaviour for read / measured values from individual
       end points.
@@ -143,391 +108,6 @@ enums:
         meaning: cim:AggregateKind.sum
       thirdMaximum:
         meaning: cim:AggregateKind.thirdMaximum
-  CommodityKind:
-    description: Kind of commodity being measured.
-    from_schema: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0
-    enum_uri: cim:CommodityKind
-    permissible_values:
-      air:
-        meaning: cim:CommodityKind.air
-      carbon:
-        meaning: cim:CommodityKind.carbon
-      ch4:
-        meaning: cim:CommodityKind.ch4
-      co2:
-        meaning: cim:CommodityKind.co2
-      communication:
-        meaning: cim:CommodityKind.communication
-      coolingFluid:
-        meaning: cim:CommodityKind.coolingFluid
-      electricityPrimaryMetered:
-        meaning: cim:CommodityKind.electricityPrimaryMetered
-      electricitySecondaryMetered:
-        meaning: cim:CommodityKind.electricitySecondaryMetered
-      hch:
-        meaning: cim:CommodityKind.hch
-      heatingFluid:
-        meaning: cim:CommodityKind.heatingFluid
-      insulativeGas:
-        meaning: cim:CommodityKind.insulativeGas
-      insulativeOil:
-        meaning: cim:CommodityKind.insulativeOil
-      internet:
-        meaning: cim:CommodityKind.internet
-      naturalGas:
-        meaning: cim:CommodityKind.naturalGas
-      none:
-        meaning: cim:CommodityKind.none
-      nonpotableWater:
-        meaning: cim:CommodityKind.nonpotableWater
-      nox:
-        meaning: cim:CommodityKind.nox
-      pfc:
-        meaning: cim:CommodityKind.pfc
-      potableWater:
-        meaning: cim:CommodityKind.potableWater
-      propane:
-        meaning: cim:CommodityKind.propane
-      refuse:
-        meaning: cim:CommodityKind.refuse
-      sf6:
-        meaning: cim:CommodityKind.sf6
-      so2:
-        meaning: cim:CommodityKind.so2
-      steam:
-        meaning: cim:CommodityKind.steam
-      tvLicence:
-        meaning: cim:CommodityKind.tvLicence
-      wasteWater:
-        meaning: cim:CommodityKind.wasteWater
-  Currency:
-    description: Monetary currencies.  ISO 4217 standard including 3-character currency
-      code.
-    from_schema: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0
-    enum_uri: cim:Currency
-    permissible_values:
-      AED:
-        meaning: cim:Currency.AED
-      AFN:
-        meaning: cim:Currency.AFN
-      ALL:
-        meaning: cim:Currency.ALL
-      AMD:
-        meaning: cim:Currency.AMD
-      ANG:
-        meaning: cim:Currency.ANG
-      AOA:
-        meaning: cim:Currency.AOA
-      ARS:
-        meaning: cim:Currency.ARS
-      AUD:
-        meaning: cim:Currency.AUD
-      AWG:
-        meaning: cim:Currency.AWG
-      AZN:
-        meaning: cim:Currency.AZN
-      BAM:
-        meaning: cim:Currency.BAM
-      BBD:
-        meaning: cim:Currency.BBD
-      BDT:
-        meaning: cim:Currency.BDT
-      BGN:
-        meaning: cim:Currency.BGN
-      BHD:
-        meaning: cim:Currency.BHD
-      BIF:
-        meaning: cim:Currency.BIF
-      BMD:
-        meaning: cim:Currency.BMD
-      BND:
-        meaning: cim:Currency.BND
-      BOB:
-        meaning: cim:Currency.BOB
-      BOV:
-        meaning: cim:Currency.BOV
-      BRL:
-        meaning: cim:Currency.BRL
-      BSD:
-        meaning: cim:Currency.BSD
-      BTN:
-        meaning: cim:Currency.BTN
-      BWP:
-        meaning: cim:Currency.BWP
-      BYR:
-        meaning: cim:Currency.BYR
-      BZD:
-        meaning: cim:Currency.BZD
-      CAD:
-        meaning: cim:Currency.CAD
-      CDF:
-        meaning: cim:Currency.CDF
-      CHF:
-        meaning: cim:Currency.CHF
-      CLF:
-        meaning: cim:Currency.CLF
-      CLP:
-        meaning: cim:Currency.CLP
-      CNY:
-        meaning: cim:Currency.CNY
-      COP:
-        meaning: cim:Currency.COP
-      COU:
-        meaning: cim:Currency.COU
-      CRC:
-        meaning: cim:Currency.CRC
-      CUC:
-        meaning: cim:Currency.CUC
-      CUP:
-        meaning: cim:Currency.CUP
-      CVE:
-        meaning: cim:Currency.CVE
-      CZK:
-        meaning: cim:Currency.CZK
-      DJF:
-        meaning: cim:Currency.DJF
-      DKK:
-        meaning: cim:Currency.DKK
-      DOP:
-        meaning: cim:Currency.DOP
-      DZD:
-        meaning: cim:Currency.DZD
-      EEK:
-        meaning: cim:Currency.EEK
-      EGP:
-        meaning: cim:Currency.EGP
-      ERN:
-        meaning: cim:Currency.ERN
-      ETB:
-        meaning: cim:Currency.ETB
-      EUR:
-        meaning: cim:Currency.EUR
-      FJD:
-        meaning: cim:Currency.FJD
-      FKP:
-        meaning: cim:Currency.FKP
-      GBP:
-        meaning: cim:Currency.GBP
-      GEL:
-        meaning: cim:Currency.GEL
-      GHS:
-        meaning: cim:Currency.GHS
-      GIP:
-        meaning: cim:Currency.GIP
-      GMD:
-        meaning: cim:Currency.GMD
-      GNF:
-        meaning: cim:Currency.GNF
-      GTQ:
-        meaning: cim:Currency.GTQ
-      GYD:
-        meaning: cim:Currency.GYD
-      HKD:
-        meaning: cim:Currency.HKD
-      HNL:
-        meaning: cim:Currency.HNL
-      HRK:
-        meaning: cim:Currency.HRK
-      HTG:
-        meaning: cim:Currency.HTG
-      HUF:
-        meaning: cim:Currency.HUF
-      IDR:
-        meaning: cim:Currency.IDR
-      ILS:
-        meaning: cim:Currency.ILS
-      INR:
-        meaning: cim:Currency.INR
-      IQD:
-        meaning: cim:Currency.IQD
-      IRR:
-        meaning: cim:Currency.IRR
-      ISK:
-        meaning: cim:Currency.ISK
-      JMD:
-        meaning: cim:Currency.JMD
-      JOD:
-        meaning: cim:Currency.JOD
-      JPY:
-        meaning: cim:Currency.JPY
-      KES:
-        meaning: cim:Currency.KES
-      KGS:
-        meaning: cim:Currency.KGS
-      KHR:
-        meaning: cim:Currency.KHR
-      KMF:
-        meaning: cim:Currency.KMF
-      KPW:
-        meaning: cim:Currency.KPW
-      KRW:
-        meaning: cim:Currency.KRW
-      KWD:
-        meaning: cim:Currency.KWD
-      KYD:
-        meaning: cim:Currency.KYD
-      KZT:
-        meaning: cim:Currency.KZT
-      LAK:
-        meaning: cim:Currency.LAK
-      LBP:
-        meaning: cim:Currency.LBP
-      LKR:
-        meaning: cim:Currency.LKR
-      LRD:
-        meaning: cim:Currency.LRD
-      LSL:
-        meaning: cim:Currency.LSL
-      LTL:
-        meaning: cim:Currency.LTL
-      LVL:
-        meaning: cim:Currency.LVL
-      LYD:
-        meaning: cim:Currency.LYD
-      MAD:
-        meaning: cim:Currency.MAD
-      MDL:
-        meaning: cim:Currency.MDL
-      MGA:
-        meaning: cim:Currency.MGA
-      MKD:
-        meaning: cim:Currency.MKD
-      MMK:
-        meaning: cim:Currency.MMK
-      MNT:
-        meaning: cim:Currency.MNT
-      MOP:
-        meaning: cim:Currency.MOP
-      MRO:
-        meaning: cim:Currency.MRO
-      MUR:
-        meaning: cim:Currency.MUR
-      MVR:
-        meaning: cim:Currency.MVR
-      MWK:
-        meaning: cim:Currency.MWK
-      MXN:
-        meaning: cim:Currency.MXN
-      MYR:
-        meaning: cim:Currency.MYR
-      MZN:
-        meaning: cim:Currency.MZN
-      NAD:
-        meaning: cim:Currency.NAD
-      NGN:
-        meaning: cim:Currency.NGN
-      NIO:
-        meaning: cim:Currency.NIO
-      NOK:
-        meaning: cim:Currency.NOK
-      NPR:
-        meaning: cim:Currency.NPR
-      NZD:
-        meaning: cim:Currency.NZD
-      OMR:
-        meaning: cim:Currency.OMR
-      PAB:
-        meaning: cim:Currency.PAB
-      PEN:
-        meaning: cim:Currency.PEN
-      PGK:
-        meaning: cim:Currency.PGK
-      PHP:
-        meaning: cim:Currency.PHP
-      PKR:
-        meaning: cim:Currency.PKR
-      PLN:
-        meaning: cim:Currency.PLN
-      PYG:
-        meaning: cim:Currency.PYG
-      QAR:
-        meaning: cim:Currency.QAR
-      RON:
-        meaning: cim:Currency.RON
-      RSD:
-        meaning: cim:Currency.RSD
-      RUB:
-        meaning: cim:Currency.RUB
-      RWF:
-        meaning: cim:Currency.RWF
-      SAR:
-        meaning: cim:Currency.SAR
-      SBD:
-        meaning: cim:Currency.SBD
-      SCR:
-        meaning: cim:Currency.SCR
-      SDG:
-        meaning: cim:Currency.SDG
-      SEK:
-        meaning: cim:Currency.SEK
-      SGD:
-        meaning: cim:Currency.SGD
-      SHP:
-        meaning: cim:Currency.SHP
-      SLL:
-        meaning: cim:Currency.SLL
-      SOS:
-        meaning: cim:Currency.SOS
-      SRD:
-        meaning: cim:Currency.SRD
-      STD:
-        meaning: cim:Currency.STD
-      SYP:
-        meaning: cim:Currency.SYP
-      SZL:
-        meaning: cim:Currency.SZL
-      THB:
-        meaning: cim:Currency.THB
-      TJS:
-        meaning: cim:Currency.TJS
-      TMT:
-        meaning: cim:Currency.TMT
-      TND:
-        meaning: cim:Currency.TND
-      TOP:
-        meaning: cim:Currency.TOP
-      TRY:
-        meaning: cim:Currency.TRY
-      TTD:
-        meaning: cim:Currency.TTD
-      TWD:
-        meaning: cim:Currency.TWD
-      TZS:
-        meaning: cim:Currency.TZS
-      UAH:
-        meaning: cim:Currency.UAH
-      UGX:
-        meaning: cim:Currency.UGX
-      USD:
-        meaning: cim:Currency.USD
-      UYU:
-        meaning: cim:Currency.UYU
-      UZS:
-        meaning: cim:Currency.UZS
-      VEF:
-        meaning: cim:Currency.VEF
-      VND:
-        meaning: cim:Currency.VND
-      VUV:
-        meaning: cim:Currency.VUV
-      WST:
-        meaning: cim:Currency.WST
-      XAF:
-        meaning: cim:Currency.XAF
-      XCD:
-        meaning: cim:Currency.XCD
-      XOF:
-        meaning: cim:Currency.XOF
-      XPF:
-        meaning: cim:Currency.XPF
-      YER:
-        meaning: cim:Currency.YER
-      ZAR:
-        meaning: cim:Currency.ZAR
-      ZMK:
-        meaning: cim:Currency.ZMK
-      ZWL:
-        meaning: cim:Currency.ZWL
   FlowDirectionKind:
     description: Kind of flow direction for reading/measured  values proper to some
       commodities such as, for example, energy, power, demand.
@@ -576,367 +156,6 @@ enums:
         meaning: cim:FlowDirectionKind.total
       totalByPhase:
         meaning: cim:FlowDirectionKind.totalByPhase
-  MacroPeriodKind:
-    description: Kind of macro period for calculations on read / measured values.
-    from_schema: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0
-    enum_uri: cim:MacroPeriodKind
-    permissible_values:
-      billingPeriod:
-        meaning: cim:MacroPeriodKind.billingPeriod
-      daily:
-        meaning: cim:MacroPeriodKind.daily
-      monthly:
-        meaning: cim:MacroPeriodKind.monthly
-      none:
-        meaning: cim:MacroPeriodKind.none
-      seasonal:
-        meaning: cim:MacroPeriodKind.seasonal
-      specifiedPeriod:
-        meaning: cim:MacroPeriodKind.specifiedPeriod
-      weekly:
-        meaning: cim:MacroPeriodKind.weekly
-  MeasurementKind:
-    description: Kind of read / measured value.
-    from_schema: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0
-    enum_uri: cim:MeasurementKind
-    permissible_values:
-      alarm:
-        meaning: cim:MeasurementKind.alarm
-      apparentPowerFactor:
-        meaning: cim:MeasurementKind.apparentPowerFactor
-      applicationContext:
-        meaning: cim:MeasurementKind.applicationContext
-      apTitle:
-        meaning: cim:MeasurementKind.apTitle
-      assetNumber:
-        meaning: cim:MeasurementKind.assetNumber
-      audibleVolume:
-        meaning: cim:MeasurementKind.audibleVolume
-      bandwidth:
-        meaning: cim:MeasurementKind.bandwidth
-      batteryCarryover:
-        meaning: cim:MeasurementKind.batteryCarryover
-      batteryVoltage:
-        meaning: cim:MeasurementKind.batteryVoltage
-      billCarryover:
-        meaning: cim:MeasurementKind.billCarryover
-      billLastPeriod:
-        meaning: cim:MeasurementKind.billLastPeriod
-      billToDate:
-        meaning: cim:MeasurementKind.billToDate
-      broadcastAddress:
-        meaning: cim:MeasurementKind.broadcastAddress
-      connectionFee:
-        meaning: cim:MeasurementKind.connectionFee
-      currency:
-        meaning: cim:MeasurementKind.currency
-      current:
-        meaning: cim:MeasurementKind.current
-      currentAngle:
-        meaning: cim:MeasurementKind.currentAngle
-      currentImbalance:
-        meaning: cim:MeasurementKind.currentImbalance
-      dataOverflowAlarm:
-        meaning: cim:MeasurementKind.dataOverflowAlarm
-      date:
-        meaning: cim:MeasurementKind.date
-      demand:
-        meaning: cim:MeasurementKind.demand
-      demandLimit:
-        meaning: cim:MeasurementKind.demandLimit
-      demandReset:
-        meaning: cim:MeasurementKind.demandReset
-      deviceAddressType1:
-        meaning: cim:MeasurementKind.deviceAddressType1
-      deviceAddressType2:
-        meaning: cim:MeasurementKind.deviceAddressType2
-      deviceAddressType3:
-        meaning: cim:MeasurementKind.deviceAddressType3
-      deviceAddressType4:
-        meaning: cim:MeasurementKind.deviceAddressType4
-      deviceClass:
-        meaning: cim:MeasurementKind.deviceClass
-      diagnostic:
-        meaning: cim:MeasurementKind.diagnostic
-      distance:
-        meaning: cim:MeasurementKind.distance
-      distortionPowerFactor:
-        meaning: cim:MeasurementKind.distortionPowerFactor
-      distortionVoltAmp:
-        meaning: cim:MeasurementKind.distortionVoltAmp
-      electronicSerialNumber:
-        meaning: cim:MeasurementKind.electronicSerialNumber
-      emergencyLimit:
-        meaning: cim:MeasurementKind.emergencyLimit
-      encoderTamper:
-        meaning: cim:MeasurementKind.encoderTamper
-      endDeviceID:
-        meaning: cim:MeasurementKind.endDeviceID
-      energization:
-        meaning: cim:MeasurementKind.energization
-      energizationLoadSide:
-        meaning: cim:MeasurementKind.energizationLoadSide
-      energy:
-        meaning: cim:MeasurementKind.energy
-      fan:
-        meaning: cim:MeasurementKind.fan
-      frequency:
-        meaning: cim:MeasurementKind.frequency
-      frequencyExcursion:
-        meaning: cim:MeasurementKind.frequencyExcursion
-      fund:
-        meaning: cim:MeasurementKind.fund
-      groupAddressType1:
-        meaning: cim:MeasurementKind.groupAddressType1
-      groupAddressType2:
-        meaning: cim:MeasurementKind.groupAddressType2
-      groupAddressType3:
-        meaning: cim:MeasurementKind.groupAddressType3
-      groupAddressType4:
-        meaning: cim:MeasurementKind.groupAddressType4
-      ieee1366ASAI:
-        meaning: cim:MeasurementKind.ieee1366ASAI
-      ieee1366ASIDI:
-        meaning: cim:MeasurementKind.ieee1366ASIDI
-      ieee1366ASIFI:
-        meaning: cim:MeasurementKind.ieee1366ASIFI
-      ieee1366CAIDI:
-        meaning: cim:MeasurementKind.ieee1366CAIDI
-      ieee1366CAIFI:
-        meaning: cim:MeasurementKind.ieee1366CAIFI
-      ieee1366CEMIn:
-        meaning: cim:MeasurementKind.ieee1366CEMIn
-      ieee1366CEMSMIn:
-        meaning: cim:MeasurementKind.ieee1366CEMSMIn
-      ieee1366CTAIDI:
-        meaning: cim:MeasurementKind.ieee1366CTAIDI
-      ieee1366MAIFI:
-        meaning: cim:MeasurementKind.ieee1366MAIFI
-      ieee1366MAIFIe:
-        meaning: cim:MeasurementKind.ieee1366MAIFIe
-      ieee1366MomentaryInterruption:
-        meaning: cim:MeasurementKind.ieee1366MomentaryInterruption
-      ieee1366MomentaryInterruptionEvent:
-        meaning: cim:MeasurementKind.ieee1366MomentaryInterruptionEvent
-      ieee1366SAIDI:
-        meaning: cim:MeasurementKind.ieee1366SAIDI
-      ieee1366SAIFI:
-        meaning: cim:MeasurementKind.ieee1366SAIFI
-      ieee1366SustainedInterruption:
-        meaning: cim:MeasurementKind.ieee1366SustainedInterruption
-      interruptionBehaviour:
-        meaning: cim:MeasurementKind.interruptionBehaviour
-      inversionTamper:
-        meaning: cim:MeasurementKind.inversionTamper
-      ipAddress:
-        meaning: cim:MeasurementKind.ipAddress
-      lineLoss:
-        meaning: cim:MeasurementKind.lineLoss
-      loadInterrupt:
-        meaning: cim:MeasurementKind.loadInterrupt
-      loadShed:
-        meaning: cim:MeasurementKind.loadShed
-      loss:
-        meaning: cim:MeasurementKind.loss
-      macAddress:
-        meaning: cim:MeasurementKind.macAddress
-      maintenance:
-        meaning: cim:MeasurementKind.maintenance
-      mfgAssignedConfigurationID:
-        meaning: cim:MeasurementKind.mfgAssignedConfigurationID
-      mfgAssignedPhysicalSerialNumber:
-        meaning: cim:MeasurementKind.mfgAssignedPhysicalSerialNumber
-      mfgAssignedProductNumber:
-        meaning: cim:MeasurementKind.mfgAssignedProductNumber
-      mfgAssignedUniqueCommunicationAddress:
-        meaning: cim:MeasurementKind.mfgAssignedUniqueCommunicationAddress
-      multiCastAddress:
-        meaning: cim:MeasurementKind.multiCastAddress
-      negativeSequence:
-        meaning: cim:MeasurementKind.negativeSequence
-      none:
-        meaning: cim:MeasurementKind.none
-      oneWayAddress:
-        meaning: cim:MeasurementKind.oneWayAddress
-      phasorPowerFactor:
-        meaning: cim:MeasurementKind.phasorPowerFactor
-      phasorReactivePower:
-        meaning: cim:MeasurementKind.phasorReactivePower
-      physicalTamper:
-        meaning: cim:MeasurementKind.physicalTamper
-      positiveSequence:
-        meaning: cim:MeasurementKind.positiveSequence
-      power:
-        meaning: cim:MeasurementKind.power
-      powerFactor:
-        meaning: cim:MeasurementKind.powerFactor
-      powerLossTamper:
-        meaning: cim:MeasurementKind.powerLossTamper
-      powerOutage:
-        meaning: cim:MeasurementKind.powerOutage
-      powerQuality:
-        meaning: cim:MeasurementKind.powerQuality
-      powerRestoration:
-        meaning: cim:MeasurementKind.powerRestoration
-      programmed:
-        meaning: cim:MeasurementKind.programmed
-      pushbutton:
-        meaning: cim:MeasurementKind.pushbutton
-      quantityPower:
-        meaning: cim:MeasurementKind.quantityPower
-      relayActivation:
-        meaning: cim:MeasurementKind.relayActivation
-      relayCycle:
-        meaning: cim:MeasurementKind.relayCycle
-      removalTamper:
-        meaning: cim:MeasurementKind.removalTamper
-      reprogrammingTamper:
-        meaning: cim:MeasurementKind.reprogrammingTamper
-      reverseRotationTamper:
-        meaning: cim:MeasurementKind.reverseRotationTamper
-      sag:
-        meaning: cim:MeasurementKind.sag
-      signalStrength:
-        meaning: cim:MeasurementKind.signalStrength
-      signaltoNoiseRatio:
-        meaning: cim:MeasurementKind.signaltoNoiseRatio
-      swell:
-        meaning: cim:MeasurementKind.swell
-      switchArmed:
-        meaning: cim:MeasurementKind.switchArmed
-      switchDisabled:
-        meaning: cim:MeasurementKind.switchDisabled
-      switchPosition:
-        meaning: cim:MeasurementKind.switchPosition
-      tamper:
-        meaning: cim:MeasurementKind.tamper
-      tapPosition:
-        meaning: cim:MeasurementKind.tapPosition
-      tariffRate:
-        meaning: cim:MeasurementKind.tariffRate
-      temperature:
-        meaning: cim:MeasurementKind.temperature
-      totalHarmonicDistortion:
-        meaning: cim:MeasurementKind.totalHarmonicDistortion
-      transformerLoss:
-        meaning: cim:MeasurementKind.transformerLoss
-      twoWayAddress:
-        meaning: cim:MeasurementKind.twoWayAddress
-      unipedeVoltageDip10to15:
-        meaning: cim:MeasurementKind.unipedeVoltageDip10to15
-      unipedeVoltageDip15to30:
-        meaning: cim:MeasurementKind.unipedeVoltageDip15to30
-      unipedeVoltageDip30to60:
-        meaning: cim:MeasurementKind.unipedeVoltageDip30to60
-      unipedeVoltageDip60to90:
-        meaning: cim:MeasurementKind.unipedeVoltageDip60to90
-      unipedeVoltageDip90to100:
-        meaning: cim:MeasurementKind.unipedeVoltageDip90to100
-      voltage:
-        meaning: cim:MeasurementKind.voltage
-      voltageAngle:
-        meaning: cim:MeasurementKind.voltageAngle
-      voltageExcursion:
-        meaning: cim:MeasurementKind.voltageExcursion
-      voltageImbalance:
-        meaning: cim:MeasurementKind.voltageImbalance
-      volume:
-        meaning: cim:MeasurementKind.volume
-      volumetricFlow:
-        meaning: cim:MeasurementKind.volumetricFlow
-      watchdogTimeout:
-        meaning: cim:MeasurementKind.watchdogTimeout
-      zeroFlowDuration:
-        meaning: cim:MeasurementKind.zeroFlowDuration
-      zeroSequence:
-        meaning: cim:MeasurementKind.zeroSequence
-  MeasuringPeriodKind:
-    description: Kind of period for reading / measuring values.
-    from_schema: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0
-    enum_uri: cim:MeasuringPeriodKind
-    permissible_values:
-      fifteenMinute:
-        meaning: cim:MeasuringPeriodKind.fifteenMinute
-      fiveMinute:
-        meaning: cim:MeasuringPeriodKind.fiveMinute
-      fixedBlock10Min:
-        meaning: cim:MeasuringPeriodKind.fixedBlock10Min
-      fixedBlock15Min:
-        meaning: cim:MeasuringPeriodKind.fixedBlock15Min
-      fixedBlock1Min:
-        meaning: cim:MeasuringPeriodKind.fixedBlock1Min
-      fixedBlock20Min:
-        meaning: cim:MeasuringPeriodKind.fixedBlock20Min
-      fixedBlock30Min:
-        meaning: cim:MeasuringPeriodKind.fixedBlock30Min
-      fixedBlock5Min:
-        meaning: cim:MeasuringPeriodKind.fixedBlock5Min
-      fixedBlock60Min:
-        meaning: cim:MeasuringPeriodKind.fixedBlock60Min
-      none:
-        meaning: cim:MeasuringPeriodKind.none
-      oneMinute:
-        meaning: cim:MeasuringPeriodKind.oneMinute
-      present:
-        meaning: cim:MeasuringPeriodKind.present
-      previous:
-        meaning: cim:MeasuringPeriodKind.previous
-      rollingBlock10MinIntvl1MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock10MinIntvl1MinSubIntvl
-      rollingBlock10MinIntvl2MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock10MinIntvl2MinSubIntvl
-      rollingBlock10MinIntvl5MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock10MinIntvl5MinSubIntvl
-      rollingBlock15MinIntvl1MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock15MinIntvl1MinSubIntvl
-      rollingBlock15MinIntvl3MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock15MinIntvl3MinSubIntvl
-      rollingBlock15MinIntvl5MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock15MinIntvl5MinSubIntvl
-      rollingBlock30MinIntvl10MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock30MinIntvl10MinSubIntvl
-      rollingBlock30MinIntvl15MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock30MinIntvl15MinSubIntvl
-      rollingBlock30MinIntvl2MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock30MinIntvl2MinSubIntvl
-      rollingBlock30MinIntvl3MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock30MinIntvl3MinSubIntvl
-      rollingBlock30MinIntvl5MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock30MinIntvl5MinSubIntvl
-      rollingBlock30MinIntvl6MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock30MinIntvl6MinSubIntvl
-      rollingBlock5MinIntvl1MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock5MinIntvl1MinSubIntvl
-      rollingBlock60MinIntvl10MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock60MinIntvl10MinSubIntvl
-      rollingBlock60MinIntvl12MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock60MinIntvl12MinSubIntvl
-      rollingBlock60MinIntvl15MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock60MinIntvl15MinSubIntvl
-      rollingBlock60MinIntvl20MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock60MinIntvl20MinSubIntvl
-      rollingBlock60MinIntvl30MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock60MinIntvl30MinSubIntvl
-      rollingBlock60MinIntvl4MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock60MinIntvl4MinSubIntvl
-      rollingBlock60MinIntvl5MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock60MinIntvl5MinSubIntvl
-      rollingBlock60MinIntvl6MinSubIntvl:
-        meaning: cim:MeasuringPeriodKind.rollingBlock60MinIntvl6MinSubIntvl
-      sixtyMinute:
-        meaning: cim:MeasuringPeriodKind.sixtyMinute
-      tenMinute:
-        meaning: cim:MeasuringPeriodKind.tenMinute
-      thirtyMinute:
-        meaning: cim:MeasuringPeriodKind.thirtyMinute
-      threeMinute:
-        meaning: cim:MeasuringPeriodKind.threeMinute
-      twentyfourHour:
-        meaning: cim:MeasuringPeriodKind.twentyfourHour
-      twentyMinute:
-        meaning: cim:MeasuringPeriodKind.twentyMinute
-      twoMinute:
-        meaning: cim:MeasuringPeriodKind.twoMinute
   UnitMultiplier:
     description: "The unit multipliers defined for the CIM.  When applied to unit\
       \ symbols, the unit symbol is treated as a derived unit. Regardless of the contents\
@@ -1005,73 +224,6 @@ enums:
         meaning: cim:UnitMultiplier.z
       Z:
         meaning: cim:UnitMultiplier.Z
-  PhaseCode:
-    description: "An unordered enumeration of phase identifiers. Allows designation\
-      \ of phases for both transmission and distribution equipment, circuits and loads.\
-      \   The enumeration, by itself, does not describe how the phases are connected\
-      \ together or connected to ground.  Ground is not explicitly denoted as a phase.\r\
-      \nResidential and small commercial loads are often served from single-phase,\
-      \ or split-phase, secondary circuits. For the example of s12N, phases 1 and\
-      \ 2 refer to hot wires that are 180 degrees out of phase, while N refers to\
-      \ the neutral wire. Through single-phase transformer connections, these secondary\
-      \ circuits may be served from one or two of the primary phases A, B, and C.\
-      \ For three-phase loads, use the A, B, C phase codes instead of s12N.\r\nThe\
-      \ integer values are from IEC 61968-9 to support revenue metering applications."
-    from_schema: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0
-    enum_uri: cim:PhaseCode
-    permissible_values:
-      A:
-        meaning: cim:PhaseCode.A
-      AB:
-        meaning: cim:PhaseCode.AB
-      ABC:
-        meaning: cim:PhaseCode.ABC
-      ABCN:
-        meaning: cim:PhaseCode.ABCN
-      ABN:
-        meaning: cim:PhaseCode.ABN
-      AC:
-        meaning: cim:PhaseCode.AC
-      ACN:
-        meaning: cim:PhaseCode.ACN
-      AN:
-        meaning: cim:PhaseCode.AN
-      B:
-        meaning: cim:PhaseCode.B
-      BC:
-        meaning: cim:PhaseCode.BC
-      BCN:
-        meaning: cim:PhaseCode.BCN
-      BN:
-        meaning: cim:PhaseCode.BN
-      C:
-        meaning: cim:PhaseCode.C
-      CN:
-        meaning: cim:PhaseCode.CN
-      N:
-        meaning: cim:PhaseCode.N
-      none:
-        meaning: cim:PhaseCode.none
-      s1:
-        meaning: cim:PhaseCode.s1
-      s12:
-        meaning: cim:PhaseCode.s12
-      s12N:
-        meaning: cim:PhaseCode.s12N
-      s1N:
-        meaning: cim:PhaseCode.s1N
-      s2:
-        meaning: cim:PhaseCode.s2
-      s2N:
-        meaning: cim:PhaseCode.s2N
-      X:
-        meaning: cim:PhaseCode.X
-      XN:
-        meaning: cim:PhaseCode.XN
-      XY:
-        meaning: cim:PhaseCode.XY
-      XYN:
-        meaning: cim:PhaseCode.XYN
   UnitSymbol:
     description: "The derived units defined for usage in the CIM. In some cases, the\
       \ derived unit is equal to an SI unit. Whenever possible, the standard derived\
@@ -1386,7 +538,6 @@ enums:
         meaning: cim:UnitSymbol.WPerW
 classes:
   MeterReadingDataSet:
-    tree_root: true
     description: A single instance of a published dataset.
     attributes:
       identifier:
@@ -1411,12 +562,27 @@ classes:
         multivalued: false
         required: true
       market_evaluation_points:
-        slot_uri: this:MeterReadingDataSet.marketEvaluationPoints
         description: Market evalution points.
+        slot_uri: this:MeterReadingDataSet.marketEvaluationPoints
         multivalued: true
         range: MarketEvaluationPoint
         required: false
     class_uri: this:MeterReadingDataSet
+    tree_root: true
+  MarketEvaluationPoint:
+    description: The identification of an entity where energy products are measured
+      or computed.
+    exact_mappings:
+    - nbnl:aansluiting
+    is_a: UsagePoint
+    attributes:
+      meter_readings:
+        description: All meter readings provided by this meter.
+        slot_uri: nbnl:MarketEvaluationPoint.MeterReadings
+        multivalued: true
+        range: MeterReading
+        required: false
+    class_uri: cim:MarketEvaluationPoint
   MeterReading:
     description: Set of values obtained from the meter.
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
@@ -1425,10 +591,24 @@ classes:
       values_interval:
         description: Date and time interval of the data items contained within this
           meter reading.
+        broad_mappings:
+        - liander:geldigVanaf
+        - liander:geldigTot
         slot_uri: cim:MeterReading.ValuesInterval
         multivalued: false
         range: DateTimeInterval
+        required: true
+      active:
+        description: Current active record for purposes of history and mutations (Huidig
+          geldende record i.h.k.v. historie/mutaties).
+        exact_mappings:
+        - liander:actiefIndicator
+        slot_uri: nbnl:active
+        multivalued: false
+        range: integer
         required: false
+        minimum_value: 0
+        maximum_value: 1
       interval_blocks:
         description: All interval blocks contained in this meter reading.
         slot_uri: cim:MeterReading.IntervalBlocks
@@ -1437,8 +617,8 @@ classes:
         required: false
     class_uri: cim:MeterReading
   DateTimeInterval:
-    description: 'Interval between two date and time points, where the interval includes
-      the start time but excludes end time.'
+    description: Interval between two date and time points, where the interval includes
+      the start time but excludes end time.
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Domain
     attributes:
       end:
@@ -1456,85 +636,13 @@ classes:
         range: date
         required: false
     class_uri: cim:DateTimeInterval
-  MarketEvaluationPoint:
-    description: The identification of an entity where energy products are measured
-      or computed.
-    is_a: UsagePoint
-    exact_mappings:
-      - nbnl:aansluiting
-    class_uri: cim:MarketEvaluationPoint
-  UsagePoint:
-    description: Logical or physical point in the network to which readings or events
-      may be attributed. Used at the place where a physical or virtual meter may be
-      located; however, it is not required that a meter be present.
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
-    is_a: IdentifiedObject
-    attributes:
-      european_article_number_ean:
-        description: The attribute is used for an exchange of the EAN code (European
-          Article Number). The length of the string is 16 characters as defined by
-          the EAN code. For details on EAN scheme please refer to the [Codebesluit
-          toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).
-        slot_uri: nl:IdentifiedObject.europeanArticleNumberEAN
-        multivalued: false
-        range: string
-        required: false
-      end_devices:
-        description: All end devices at this usage point.
-        slot_uri: cim:UsagePoint.EndDevices
-        multivalued: true
-        range: EndDevice
-        required: false
-    class_uri: cim:UsagePoint
-  EndDevice:
-    description: "Asset container that performs one or more end device functions.\
-      \ One type of end device is a meter which can perform metering, load management,\
-      \ connect/disconnect, accounting functions, etc. Some end devices, such as ones\
-      \ monitoring and controlling air conditioners, refrigerators, pool pumps may\
-      \ be connected to a meter. All end devices may have communication capability\
-      \ defined by the associated communication function(s). An end device may be\
-      \ owned by a consumer, a service provider, utility or otherwise.\r\nThere may\
-      \ be a related end device function that identifies a sensor or control point\
-      \ within a metering application or communications systems (e.g., water, gas,\
-      \ electricity).\r\nSome devices may use an optical port that conforms to the\
-      \ ANSI C12.18 standard for communications."
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
-    is_a: AssetContainer
-    attributes:
-      install_code:
-        description: "Installation code.\r\n"
-        slot_uri: cim:EndDevice.installCode
-        multivalued: false
-        range: string
-        required: false
-      customer:
-        description: Customer owning this end device.
-        slot_uri: cim:EndDevice.Customer
-        multivalued: false
-        range: Customer
-        required: false
-    class_uri: cim:EndDevice
-  Customer:
-    description: Organisation receiving services from service supplier.
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Customers
-    is_a: OrganisationRole
-    attributes:
-      kind:
-        description: Kind of customer.
-        slot_uri: cim:Customer.kind
-        multivalued: false
-        range: CustomerKind
-        required: false
-    class_uri: cim:Customer
   IntervalBlock:
-    description: "Time sequence of readings of the same reading type. Contained
-      interval readings may need conversion through the application of an
-      offset and a scalar defined in associated pending. Data is typically
-      captured in time-tagged, uniform, fixed-length intervals of 5 min, 10
-      min, 15 min, 30 min, or 60 min.
+    description: 'Time sequence of readings of the same reading type. Contained interval
+      readings may need conversion through the application of an offset and a scalar
+      defined in associated pending. Data is typically captured in time-tagged, uniform,
+      fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.
 
-      Note: Interval Data is sometimes also called *Interval Data Readings*
-      (IDR)."
+      Note: Interval Data is sometimes also called *Interval Data Readings* (IDR).'
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     attributes:
       interval_readings:
@@ -1568,14 +676,6 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     is_a: IdentifiedObject
     attributes:
-      accumulation:
-        description: Accumulation behaviour of a reading over time, usually 'measuringPeriod',
-          to be used with individual endpoints (as opposed to 'macroPeriod' and 'aggregate'
-          that are used to describe aggregations of data from individual endpoints).
-        slot_uri: cim:ReadingType.accumulation
-        multivalued: false
-        range: AccumulationKind
-        required: false
       aggregate:
         description: Salient attribute of the reading data aggregated from individual
           endpoints. This is mainly used to define a mathematical operation carried
@@ -1585,194 +685,50 @@ classes:
         multivalued: false
         range: AggregateKind
         required: false
-      argument:
-        description: "Argument used to introduce numbers into the unit of measure\
-          \ description where they are needed (e.g., 4 where the measure needs an\
-          \ argument such as CEMI(n=4)). Most arguments used in practice however will\
-          \ be integers (i.e., 'denominator'=1).\r\nValue 0 in 'numerator' and 'denominator'\
-          \ means not applicable.\r\n"
-        slot_uri: cim:ReadingType.argument
-        multivalued: false
-        range: RationalNumber
-        required: false
-      commodity:
-        description: Commodity being measured.
-        slot_uri: cim:ReadingType.commodity
-        multivalued: false
-        range: CommodityKind
-        required: false
-      consumption_tier:
-        description: "In case of common flat-rate pricing for power, in which all\
-          \ purchases are at a given rate, 'consumptionTier'=0. Otherwise, the value\
-          \ indicates the consumption tier, which can be used in conjunction with\
-          \ TOU or CPP pricing.\r\nConsumption tier pricing refers to the method of\
-          \ billing in which a certain \"block\" of energy is purchased/sold at one\
-          \ price, after which the next block of energy is purchased at another price,\
-          \ and so on, all throughout a defined period. At the start of the defined\
-          \ period, consumption is initially zero, and any usage is measured against\
-          \ the first consumption tier ('consumptionTier'=1). If this block of energy\
-          \ is consumed before the end of the period, energy consumption moves to\
-          \ be reconed against the second consumption tier ('consumptionTier'=2),\
-          \ and so on. At the end of the defined period, the consumption accumulator\
-          \ is reset, and usage within the 'consumptionTier'=1 restarts.\r\n"
-        slot_uri: cim:ReadingType.consumptionTier
-        multivalued: false
-        range: integer
-        required: false
-      cpp:
-        description: "Critical peak period (CPP) bucket the reading value is attributed\
-          \ to. Value 0 means not applicable. Even though CPP is usually considered\
-          \ a specialised form of time of use 'tou', this attribute is defined explicitly\
-          \ for flexibility.\r\n"
-        slot_uri: cim:ReadingType.cpp
-        multivalued: false
-        range: integer
-        required: false
-      currency:
-        description: Metering-specific currency.
-        slot_uri: cim:ReadingType.currency
-        multivalued: false
-        range: Currency
-        required: false
       flow_direction:
         description: Flow direction for a reading where the direction of flow of the
           commodity is important (for electricity measurements this includes current,
           energy, power, and demand).
+        exact_mappings:
+        - liander:invoedingAfname
         slot_uri: cim:ReadingType.flowDirection
         multivalued: false
         range: FlowDirectionKind
-        required: false
-      interharmonic:
-        description: "Indication of a \"harmonic\" or \"interharmonic\" basis
-          for the measurement. Value 0 in 'numerator' and 'denominator' means
-          not applicable."
-        slot_uri: cim:ReadingType.interharmonic
-        multivalued: false
-        range: ReadingInterharmonic
-        required: false
-      macro_period:
-        description: Time period of interest that reflects how the reading is viewed
-          or captured over a long period of time.
-        slot_uri: cim:ReadingType.macroPeriod
-        multivalued: false
-        range: MacroPeriodKind
-        required: false
-      measurement_kind:
-        description: 'Identifies "what" is being measured, as refinement of ''commodity''.
-          When combined with ''unit'', it provides detail to the unit of measure.
-          For example, ''energy'' with a unit of measure of ''kWh'' indicates to the
-          user that active energy is being measured, while with ''kVAh'' or ''kVArh'',
-          it indicates apparent energy and reactive energy, respectively. ''power''
-          can be combined in a similar way with various power units of measure: Distortion
-          power (''distortionVoltAmperes'') with ''kVA'' is different from ''power''
-          with ''kVA''.'
-        slot_uri: cim:ReadingType.measurementKind
-        multivalued: false
-        range: MeasurementKind
-        required: false
-      measuring_period:
-        description: "Time attribute inherent or fundamental to the reading value\
-          \ (as opposed to 'macroPeriod' that supplies an \"adjective\" to describe\
-          \ aspects of a time period with regard to the measurement). It refers to\
-          \ the way the value was originally measured and not to the frequency at\
-          \ which it is reported or presented. For example, an hourly interval of\
-          \ consumption data would have value 'hourly' as an attribute. However in\
-          \ the case of an hourly sampled voltage value, the meterReadings schema\
-          \ would carry the 'hourly' interval size information.\r\nIt is common for\
-          \ meters to report demand in a form that is measured over the course of\
-          \ a portion of an hour, while enterprise applications however commonly assume\
-          \ the demand (in kW or kVAr) normalised to 1 hour. The system that receives\
-          \ readings directly from the meter therefore shall perform this transformation\
-          \ before publishing readings for use by the other enterprise systems. The\
-          \ scalar used is chosen based on the block size (not any sub-interval size)."
-        slot_uri: cim:ReadingType.measuringPeriod
-        multivalued: false
-        range: MeasuringPeriodKind
-        required: false
+        required: true
       multiplier:
         description: Metering-specific multiplier.
         slot_uri: cim:ReadingType.multiplier
         multivalued: false
         range: UnitMultiplier
         required: false
-      phases:
-        description: Metering-specific phase code.
-        slot_uri: cim:ReadingType.phases
-        multivalued: false
-        range: PhaseCode
-        required: false
-      tou:
-        description: "Time of use (TOU) bucket the reading value is attributed to.\
-          \ Value 0 means not applicable.\r\n"
-        slot_uri: cim:ReadingType.tou
-        multivalued: false
-        range: integer
-        required: false
       unit:
         description: Metering-specific unit.
+        exact_mappings:
+        - liander:volume
         slot_uri: cim:ReadingType.unit
         multivalued: false
         range: UnitSymbol
-        required: false
+        required: true
     class_uri: cim:ReadingType
-  RationalNumber:
-    description: "Rational number = 'numerator' / 'denominator'."
+  UsagePoint:
+    description: Logical or physical point in the network to which readings or events
+      may be attributed. Used at the place where a physical or virtual meter may be
+      located; however, it is not required that a meter be present.
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
+    is_a: IdentifiedObject
     attributes:
-      denominator:
-        description: "Denominator. Value 1 indicates the number is a simple integer."
-        slot_uri: cim:RationalNumber.denominator
+      european_article_number_ean:
+        description: The attribute is used for an exchange of the EAN code (European
+          Article Number). The length of the string is 16 characters as defined by
+          the EAN code. For details on EAN scheme please refer to the [Codebesluit
+          toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).
+        exact_mappings:
+        - nbnl:EAN
+        slot_uri: nl:IdentifiedObject.europeanArticleNumberEAN
         multivalued: false
-        range: integer
+        range: string
         required: false
-      numerator:
-        description: "Numerator."
-        slot_uri: cim:RationalNumber.numerator
-        multivalued: false
-        range: integer
-        required: false
-    class_uri: cim:RationalNumber
-  ReadingInterharmonic:
-    description: "Interharmonics are represented as a rational number 'numerator'\
-      \ / 'denominator', and harmonics are represented using the same mechanism and\
-      \ identified by 'denominator'=1."
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
-    attributes:
-      denominator:
-        description: "Interharmonic denominator. Value 0 means not applicable. Value\
-          \ 2 is used in combination with 'numerator'=1 to represent interharmonic\
-          \ 1/2. Finally, value 1 indicates the harmonic of the order specified with\
-          \ 'numerator'."
-        slot_uri: cim:ReadingInterharmonic.denominator
-        multivalued: false
-        range: integer
-        required: false
-      numerator:
-        description: "Interharmonic numerator. Value 0 means not applicable. Value\
-          \ 1 is used in combination with 'denominator'=2 to represent interharmonic\
-          \ 1/2, and with 'denominator'=1 it represents fundamental frequency. Finally,\
-          \ values greater than 1 indicate the harmonic of that order (e.g., 'numerator'=5\
-          \ is the fifth harmonic)."
-        slot_uri: cim:ReadingInterharmonic.numerator
-        multivalued: false
-        range: integer
-        required: false
-    class_uri: cim:ReadingInterharmonic
-  Meter:
-    description: "Physical asset that performs the metering role of the usage point.\
-      \ Used for measuring consumption and detection of events."
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
-    is_a: EndDevice
-    attributes:
-      meter_readings:
-        description: All meter readings provided by this meter.
-        slot_uri: cim:Meter.MeterReadings
-        multivalued: true
-        range: MeterReading
-        required: false
-    exact_mappings:
-      - nbnl:meetinrichting
-    class_uri: cim:Meter
+    class_uri: cim:UsagePoint
   IdentifiedObject:
     description: This is a root class to provide common identification for all classes
       needing identification and naming attributes.
@@ -1804,10 +760,9 @@ classes:
         required: false
     class_uri: cim:IdentifiedObject
   Name:
-    description: "The Name class provides the means to define any number of human\
-      \ readable  names for an object. A name is <b>not</b> to be used for defining\
-      \ inter-object relationships. For inter-object relationships instead use the\
-      \ object identification 'mRID'."
+    description: The Name class provides the means to define any number of human readable  names
+      for an object. A name is <b>not</b> to be used for defining inter-object relationships.
+      For inter-object relationships instead use the object identification 'mRID'.
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
     attributes:
       name_type:
@@ -1838,7 +793,7 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
     attributes:
       description:
-        description: "Description of the name type."
+        description: Description of the name type.
         slot_uri: cim:NameType.description
         multivalued: false
         range: string
@@ -1857,12 +812,12 @@ classes:
         required: false
     class_uri: cim:NameType
   NameTypeAuthority:
-    description: "Authority responsible for creation and management of names of a\
-      \ given type; typically an organization or an enterprise system."
+    description: Authority responsible for creation and management of names of a given
+      type; typically an organization or an enterprise system.
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
     attributes:
       description:
-        description: "Description of the name type authority."
+        description: Description of the name type authority.
         slot_uri: cim:NameTypeAuthority.description
         multivalued: false
         range: string
@@ -1874,28 +829,6 @@ classes:
         range: NameType
         required: false
     class_uri: cim:NameTypeAuthority
-  AssetContainer:
-    description: Asset that is aggregation of other assets such as conductors, transformers,
-      switchgear, land, fences, buildings, equipment, vehicles, etc.
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Assets
-    is_a: Asset
-    class_uri: cim:AssetContainer
-  Asset:
-    description: Tangible resource of the utility, including power system equipment,
-      various end devices, cabinets, buildings, etc. For electrical network equipment,
-      the role of the asset is defined through PowerSystemResource and its subclasses,
-      defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires).
-      Asset description places emphasis on the physical characteristics of the equipment
-      fulfilling that role.
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Assets
-    is_a: IdentifiedObject
-    class_uri: cim:Asset
-  OrganisationRole:
-    description: "Identifies a way in which an organisation may participate in the\
-      \ utility enterprise (e.g., customer, manufacturer, etc)."
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
-    is_a: IdentifiedObject
-    class_uri: cim:OrganisationRole
   BaseReading:
     description: "Common representation for reading values. Note that a reading value\
       \ may have multiple qualities, as produced by various systems ('ReadingQuality.source').\r\
@@ -1903,17 +836,29 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     is_a: MeasurementValue
     attributes:
-      time_period:
-        description: "Start and end of the period for those readings whose type has\
-          \ a time attribute such as 'billing', seasonal' or 'forTheSpecifiedPeriod'."
-        slot_uri: cim:BaseReading.timePeriod
-        multivalued: false
-        range: DateTimeInterval
-        required: false
       value:
-        description: "Value of this reading."
+        description: Value of this reading.
+        exact_mappings:
+        - liander:volume
         slot_uri: cim:BaseReading.value
         multivalued: false
+        range: string
+        required: true
+      status_code:
+        description: Origin code for the energy. This is a number between 1 and 255.
+        exact_mappings:
+        - liander:statusCode
+        slot_uri: nbnl:BaseReading.statusCode
+        range: integer
+        required: false
+        minimum_value: 1
+        maximum_value: 255
+      status_description:
+        description: Origin of the energy, in text. E.g. is this reading measured
+          or estimated?
+        exact_mappings:
+        - liander:statusDescription
+        slot_uri: nbnl:BaseReading.statusDescription
         range: string
         required: false
       reading_qualities:
@@ -1933,16 +878,16 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Metering
     attributes:
       comment:
-        description: "Elaboration on the quality code."
+        description: Elaboration on the quality code.
         slot_uri: cim:ReadingQuality.comment
         multivalued: false
         range: string
         required: false
     class_uri: cim:ReadingQuality
   MeasurementValue:
-    description: "The current state for a measurement. A state value is an instance\
-      \ of a measurement from a specific source. Measurements can be associated with\
-      \ many state values, each representing a different source for the measurement."
+    description: The current state for a measurement. A state value is an instance
+      of a measurement from a specific source. Measurements can be associated with
+      many state values, each representing a different source for the measurement.
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
     is_a: IOPoint
     attributes:
@@ -1951,7 +896,9 @@ classes:
         slot_uri: cim:MeasurementValue.timeStamp
         multivalued: false
         range: date
-        required: false
+        required: true
+        exact_mappings:
+        - liander:datumTijd
     class_uri: cim:MeasurementValue
   IOPoint:
     description: The class describe a measurement or control value. The purpose is
