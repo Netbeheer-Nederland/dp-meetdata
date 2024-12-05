@@ -424,8 +424,7 @@ other EU Member States.</p>
 <a href="MeterReadingDataSet/">MeterReadingDataSet</a> at its root, followed by
 <a href="MarketEvaluationPoint/">MarketEvaluationPoint-s</a> nested inside the
 <em>MeterReadingDataSet</em>. Each marketEvaluationPoint has one or more
-<a href="Meter/">Meter-s</a>, where a <em>Meter</em> can have an associated
-<a href="Customer/">Customer</a> and one or more <a href="MeterReading/">MeterReading-s</a>.</p>
+<a href="MeterReading/">MeterReading-s</a>.</p>
 <p>A <em>MeterReading</em> has one or more <a href="IntervalBlock/">IntervalBlock-s</a>, which
 defines the time period for which the <a href="IntervalReading/">IntervalReading-s</a>
 are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for the
@@ -449,28 +448,12 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 </thead>
 <tbody>
 <tr>
-<td><a href="Asset/">Asset</a></td>
-<td>Tangible resource of the utility, including power system equipment, various e...</td>
-</tr>
-<tr>
-<td><a href="AssetContainer/">AssetContainer</a></td>
-<td>Asset that is aggregation of other assets such as conductors, transformers, s...</td>
-</tr>
-<tr>
 <td><a href="BaseReading/">BaseReading</a></td>
 <td>Common representation for reading values</td>
 </tr>
 <tr>
-<td><a href="Customer/">Customer</a></td>
-<td>Organisation receiving services from service supplier</td>
-</tr>
-<tr>
 <td><a href="DateTimeInterval/">DateTimeInterval</a></td>
 <td>Interval between two date and time points, where the interval includes the st...</td>
-</tr>
-<tr>
-<td><a href="EndDevice/">EndDevice</a></td>
-<td>Asset container that performs one or more end device functions</td>
 </tr>
 <tr>
 <td><a href="IdentifiedObject/">IdentifiedObject</a></td>
@@ -497,10 +480,6 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 <td>The current state for a measurement</td>
 </tr>
 <tr>
-<td><a href="Meter/">Meter</a></td>
-<td>Physical asset that performs the metering role of the usage point</td>
-</tr>
-<tr>
 <td><a href="MeterReading/">MeterReading</a></td>
 <td>Set of values obtained from the meter</td>
 </tr>
@@ -519,18 +498,6 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 <tr>
 <td><a href="NameTypeAuthority/">NameTypeAuthority</a></td>
 <td>Authority responsible for creation and management of names of a given type; t...</td>
-</tr>
-<tr>
-<td><a href="OrganisationRole/">OrganisationRole</a></td>
-<td>Identifies a way in which an organisation may participate in the utility ente...</td>
-</tr>
-<tr>
-<td><a href="RationalNumber/">RationalNumber</a></td>
-<td>Rational number = 'numerator' / 'denominator'</td>
-</tr>
-<tr>
-<td><a href="ReadingInterharmonic/">ReadingInterharmonic</a></td>
-<td>Interharmonics are represented as a rational number 'numerator' / 'denominato...</td>
 </tr>
 <tr>
 <td><a href="ReadingQuality/">ReadingQuality</a></td>
@@ -556,52 +523,24 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 </thead>
 <tbody>
 <tr>
-<td><a href="accumulation/">accumulation</a></td>
-<td>Accumulation behaviour of a reading over time, usually 'measuringPeriod', to ...</td>
+<td><a href="active/">active</a></td>
+<td>Current active record for purposes of history and mutations (Huidig geldende ...</td>
 </tr>
 <tr>
 <td><a href="aggregate/">aggregate</a></td>
 <td>Salient attribute of the reading data aggregated from individual endpoints</td>
 </tr>
 <tr>
-<td><a href="argument/">argument</a></td>
-<td>Argument used to introduce numbers into the unit of measure description where...</td>
-</tr>
-<tr>
 <td><a href="comment/">comment</a></td>
 <td>Elaboration on the quality code</td>
-</tr>
-<tr>
-<td><a href="commodity/">commodity</a></td>
-<td>Commodity being measured</td>
 </tr>
 <tr>
 <td><a href="conforms_to/">conforms_to</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="consumption_tier/">consumption_tier</a></td>
-<td>In case of common flat-rate pricing for power, in which all purchases are at ...</td>
-</tr>
-<tr>
 <td><a href="contact_point/">contact_point</a></td>
 <td></td>
-</tr>
-<tr>
-<td><a href="cpp/">cpp</a></td>
-<td>Critical peak period (CPP) bucket the reading value is attributed to</td>
-</tr>
-<tr>
-<td><a href="currency/">currency</a></td>
-<td>Metering-specific currency</td>
-</tr>
-<tr>
-<td><a href="customer/">customer</a></td>
-<td>Customer owning this end device</td>
-</tr>
-<tr>
-<td><a href="denominator/">denominator</a></td>
-<td>Denominator</td>
 </tr>
 <tr>
 <td><a href="description/">description</a></td>
@@ -610,10 +549,6 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 <tr>
 <td><a href="end/">end</a></td>
 <td>End date and time of this interval</td>
-</tr>
-<tr>
-<td><a href="end_devices/">end_devices</a></td>
-<td>All end devices at this usage point</td>
 </tr>
 <tr>
 <td><a href="european_article_number_ean/">european_article_number_ean</a></td>
@@ -632,14 +567,6 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 <td></td>
 </tr>
 <tr>
-<td><a href="install_code/">install_code</a></td>
-<td>Installation code</td>
-</tr>
-<tr>
-<td><a href="interharmonic/">interharmonic</a></td>
-<td>Indication of a "harmonic" or "interharmonic" basis for the measurement</td>
-</tr>
-<tr>
 <td><a href="interval_blocks/">interval_blocks</a></td>
 <td>All interval blocks contained in this meter reading</td>
 </tr>
@@ -648,28 +575,12 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 <td>Interval reading contained in this block</td>
 </tr>
 <tr>
-<td><a href="kind/">kind</a></td>
-<td>Kind of customer</td>
-</tr>
-<tr>
 <td><a href="m_rid/">m_rid</a></td>
 <td>Master resource identifier issued by a model authority</td>
 </tr>
 <tr>
-<td><a href="macro_period/">macro_period</a></td>
-<td>Time period of interest that reflects how the reading is viewed or captured o...</td>
-</tr>
-<tr>
 <td><a href="market_evaluation_points/">market_evaluation_points</a></td>
 <td>Market evalution points</td>
-</tr>
-<tr>
-<td><a href="measurement_kind/">measurement_kind</a></td>
-<td>Identifies "what" is being measured, as refinement of 'commodity'</td>
-</tr>
-<tr>
-<td><a href="measuring_period/">measuring_period</a></td>
-<td>Time attribute inherent or fundamental to the reading value (as opposed to 'm...</td>
 </tr>
 <tr>
 <td><a href="meter_readings/">meter_readings</a></td>
@@ -696,14 +607,6 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 <td>All names of this identified object</td>
 </tr>
 <tr>
-<td><a href="numerator/">numerator</a></td>
-<td>Numerator</td>
-</tr>
-<tr>
-<td><a href="phases/">phases</a></td>
-<td>Metering-specific phase code</td>
-</tr>
-<tr>
 <td><a href="reading_qualities/">reading_qualities</a></td>
 <td>All qualities of this reading</td>
 </tr>
@@ -720,16 +623,16 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 <td>Start date and time of this interval</td>
 </tr>
 <tr>
-<td><a href="time_period/">time_period</a></td>
-<td>Start and end of the period for those readings whose type has a time attribut...</td>
+<td><a href="status_code/">status_code</a></td>
+<td>Origin code for the energy</td>
+</tr>
+<tr>
+<td><a href="status_description/">status_description</a></td>
+<td>Origin of the energy, in text</td>
 </tr>
 <tr>
 <td><a href="time_stamp/">time_stamp</a></td>
 <td>The time when the value was last updated</td>
-</tr>
-<tr>
-<td><a href="tou/">tou</a></td>
-<td>Time of use (TOU) bucket the reading value is attributed to</td>
 </tr>
 <tr>
 <td><a href="unit/">unit</a></td>
@@ -767,36 +670,8 @@ are applicable. A <a href="ReadingType/">ReadingType</a> defines attributes for 
 <td>Kind of aggregation for read / measured values from multiple end points</td>
 </tr>
 <tr>
-<td><a href="CommodityKind/">CommodityKind</a></td>
-<td>Kind of commodity being measured</td>
-</tr>
-<tr>
-<td><a href="Currency/">Currency</a></td>
-<td>Monetary currencies</td>
-</tr>
-<tr>
-<td><a href="CustomerKind/">CustomerKind</a></td>
-<td>Kind of customer</td>
-</tr>
-<tr>
 <td><a href="FlowDirectionKind/">FlowDirectionKind</a></td>
 <td>Kind of flow direction for reading/measured  values proper to some commoditie...</td>
-</tr>
-<tr>
-<td><a href="MacroPeriodKind/">MacroPeriodKind</a></td>
-<td>Kind of macro period for calculations on read / measured values</td>
-</tr>
-<tr>
-<td><a href="MeasurementKind/">MeasurementKind</a></td>
-<td>Kind of read / measured value</td>
-</tr>
-<tr>
-<td><a href="MeasuringPeriodKind/">MeasuringPeriodKind</a></td>
-<td>Kind of period for reading / measuring values</td>
-</tr>
-<tr>
-<td><a href="PhaseCode/">PhaseCode</a></td>
-<td>An unordered enumeration of phase identifiers</td>
 </tr>
 <tr>
 <td><a href="UnitMultiplier/">UnitMultiplier</a></td>

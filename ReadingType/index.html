@@ -215,15 +215,6 @@
       IdentifiedObject &lt;|-- ReadingType
         click IdentifiedObject href "../IdentifiedObject"
 
-      ReadingType : accumulation
-
-
-
-
-    ReadingType --&gt; "0..1" AccumulationKind : accumulation
-    click AccumulationKind href "../AccumulationKind"
-
-
       ReadingType : aggregate
 
 
@@ -233,37 +224,6 @@
     click AggregateKind href "../AggregateKind"
 
 
-      ReadingType : argument
-
-
-
-
-    ReadingType --&gt; "0..1" RationalNumber : argument
-    click RationalNumber href "../RationalNumber"
-
-
-      ReadingType : commodity
-
-
-
-
-    ReadingType --&gt; "0..1" CommodityKind : commodity
-    click CommodityKind href "../CommodityKind"
-
-
-      ReadingType : consumption_tier
-
-      ReadingType : cpp
-
-      ReadingType : currency
-
-
-
-
-    ReadingType --&gt; "0..1" Currency : currency
-    click Currency href "../Currency"
-
-
       ReadingType : description
 
       ReadingType : flow_direction
@@ -271,47 +231,11 @@
 
 
 
-    ReadingType --&gt; "0..1" FlowDirectionKind : flow_direction
+    ReadingType --&gt; "1" FlowDirectionKind : flow_direction
     click FlowDirectionKind href "../FlowDirectionKind"
 
 
-      ReadingType : interharmonic
-
-
-
-
-    ReadingType --&gt; "0..1" ReadingInterharmonic : interharmonic
-    click ReadingInterharmonic href "../ReadingInterharmonic"
-
-
       ReadingType : m_rid
-
-      ReadingType : macro_period
-
-
-
-
-    ReadingType --&gt; "0..1" MacroPeriodKind : macro_period
-    click MacroPeriodKind href "../MacroPeriodKind"
-
-
-      ReadingType : measurement_kind
-
-
-
-
-    ReadingType --&gt; "0..1" MeasurementKind : measurement_kind
-    click MeasurementKind href "../MeasurementKind"
-
-
-      ReadingType : measuring_period
-
-
-
-
-    ReadingType --&gt; "0..1" MeasuringPeriodKind : measuring_period
-    click MeasuringPeriodKind href "../MeasuringPeriodKind"
-
 
       ReadingType : multiplier
 
@@ -331,23 +255,12 @@
     click Name href "../Name"
 
 
-      ReadingType : phases
-
-
-
-
-    ReadingType --&gt; "0..1" PhaseCode : phases
-    click PhaseCode href "../PhaseCode"
-
-
-      ReadingType : tou
-
       ReadingType : unit
 
 
 
 
-    ReadingType --&gt; "0..1" UnitSymbol : unit
+    ReadingType --&gt; "1" UnitSymbol : unit
     click UnitSymbol href "../UnitSymbol"
 
 
@@ -371,75 +284,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../accumulation/">accumulation</a></td>
-<td>0..1 <br/> <a href="../AccumulationKind/">AccumulationKind</a></td>
-<td>Accumulation behaviour of a reading over time, usually 'measuringPeriod', to ...</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../aggregate/">aggregate</a></td>
 <td>0..1 <br/> <a href="../AggregateKind/">AggregateKind</a></td>
 <td>Salient attribute of the reading data aggregated from individual endpoints</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../argument/">argument</a></td>
-<td>0..1 <br/> <a href="../RationalNumber/">RationalNumber</a></td>
-<td>Argument used to introduce numbers into the unit of measure description where...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../commodity/">commodity</a></td>
-<td>0..1 <br/> <a href="../CommodityKind/">CommodityKind</a></td>
-<td>Commodity being measured</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../consumption_tier/">consumption_tier</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>In case of common flat-rate pricing for power, in which all purchases are at ...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cpp/">cpp</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Critical peak period (CPP) bucket the reading value is attributed to</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../currency/">currency</a></td>
-<td>0..1 <br/> <a href="../Currency/">Currency</a></td>
-<td>Metering-specific currency</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../flow_direction/">flow_direction</a></td>
-<td>0..1 <br/> <a href="../FlowDirectionKind/">FlowDirectionKind</a></td>
+<td>1 <br/> <a href="../FlowDirectionKind/">FlowDirectionKind</a></td>
 <td>Flow direction for a reading where the direction of flow of the commodity is ...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../interharmonic/">interharmonic</a></td>
-<td>0..1 <br/> <a href="../ReadingInterharmonic/">ReadingInterharmonic</a></td>
-<td>Indication of a "harmonic" or "interharmonic" basis for the measurement</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../macro_period/">macro_period</a></td>
-<td>0..1 <br/> <a href="../MacroPeriodKind/">MacroPeriodKind</a></td>
-<td>Time period of interest that reflects how the reading is viewed or captured o...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../measurement_kind/">measurement_kind</a></td>
-<td>0..1 <br/> <a href="../MeasurementKind/">MeasurementKind</a></td>
-<td>Identifies "what" is being measured, as refinement of 'commodity'</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../measuring_period/">measuring_period</a></td>
-<td>0..1 <br/> <a href="../MeasuringPeriodKind/">MeasuringPeriodKind</a></td>
-<td>Time attribute inherent or fundamental to the reading value (as opposed to 'm...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -449,20 +302,8 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../phases/">phases</a></td>
-<td>0..1 <br/> <a href="../PhaseCode/">PhaseCode</a></td>
-<td>Metering-specific phase code</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../tou/">tou</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Time of use (TOU) bucket the reading value is attributed to</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../unit/">unit</a></td>
-<td>0..1 <br/> <a href="../UnitSymbol/">UnitSymbol</a></td>
+<td>1 <br/> <a href="../UnitSymbol/">UnitSymbol</a></td>
 <td>Metering-specific unit</td>
 <td>direct</td>
 </tr>
@@ -541,19 +382,6 @@
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IdentifiedObject</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">accumulation</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accumulation</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Accumulation behaviour of a reading over time, usually 'measuringPeriod',</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">to be used with individual endpoints (as opposed to 'macroPeriod' and 'aggregate'</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">that are used to describe aggregations of data from individual endpoints).</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.accumulation</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AccumulationKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">aggregate</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aggregate</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Salient attribute of the reading data aggregated from individual</span>
@@ -568,155 +396,20 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AggregateKind</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">argument</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argument</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Argument</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">introduce</span><span class="nv"> </span><span class="s">numbers</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure</span><span class="nv"> </span><span class="s">description\</span>
-<span class="w">      </span><span class="s">\ where</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">needed</span><span class="nv"> </span><span class="s">(e.g.,</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">measure</span><span class="nv"> </span><span class="s">needs</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">argument</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as\</span>
-<span class="w">      </span><span class="s">\ CEMI(n=4)).</span><span class="nv"> </span><span class="s">Most</span><span class="nv"> </span><span class="s">arguments</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">practice</span><span class="nv"> </span><span class="s">however</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">integers</span><span class="nv"> </span><span class="s">(i.e.,\</span>
-<span class="w">      </span><span class="s">\ 'denominator'=1).\r\nValue</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">'numerator'</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">'denominator'</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.\r\</span>
-<span class="w">      </span><span class="s">\n"</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.argument</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RationalNumber</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">commodity</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commodity</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commodity being measured.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.commodity</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CommodityKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">consumption_tier</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumption_tier</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"In</span><span class="nv"> </span><span class="s">case</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">common</span><span class="nv"> </span><span class="s">flat-rate</span><span class="nv"> </span><span class="s">pricing</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">power,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">purchases\</span>
-<span class="w">      </span><span class="s">\ are</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">given</span><span class="nv"> </span><span class="s">rate,</span><span class="nv"> </span><span class="s">'consumptionTier'=0.</span><span class="nv"> </span><span class="s">Otherwise,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">indicates</span><span class="nv"> </span><span class="s">the\</span>
-<span class="w">      </span><span class="s">\ consumption</span><span class="nv"> </span><span class="s">tier,</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">conjunction</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">TOU</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">CPP</span><span class="nv"> </span><span class="s">pricing.\r\</span>
-<span class="w">      </span><span class="s">\nConsumption</span><span class="nv"> </span><span class="s">tier</span><span class="nv"> </span><span class="s">pricing</span><span class="nv"> </span><span class="s">refers</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">method</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">billing</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">certain\</span>
-<span class="w">      </span><span class="s">\ \"block\"</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">purchased/sold</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">price,</span><span class="nv"> </span><span class="s">after</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">next</span><span class="nv"> </span><span class="s">block\</span>
-<span class="w">      </span><span class="s">\ of</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">purchased</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">another</span><span class="nv"> </span><span class="s">price,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">so</span><span class="nv"> </span><span class="s">on,</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">throughout</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">defined\</span>
-<span class="w">      </span><span class="s">\ period.</span><span class="nv"> </span><span class="s">At</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">start</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">defined</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">initially</span><span class="nv"> </span><span class="s">zero,\</span>
-<span class="w">      </span><span class="s">\ and</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">usage</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">measured</span><span class="nv"> </span><span class="s">against</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">tier</span><span class="nv"> </span><span class="s">('consumptionTier'=1).\</span>
-<span class="w">      </span><span class="s">\ If</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">block</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">consumed</span><span class="nv"> </span><span class="s">before</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">end</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">consumption\</span>
-<span class="w">      </span><span class="s">\ moves</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">reconed</span><span class="nv"> </span><span class="s">against</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">second</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">tier</span><span class="nv"> </span><span class="s">('consumptionTier'=2),\</span>
-<span class="w">      </span><span class="s">\ and</span><span class="nv"> </span><span class="s">so</span><span class="nv"> </span><span class="s">on.</span><span class="nv"> </span><span class="s">At</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">end</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">defined</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">accumulator</span><span class="nv"> </span><span class="s">is\</span>
-<span class="w">      </span><span class="s">\ reset,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">usage</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">'consumptionTier'=1</span><span class="nv"> </span><span class="s">restarts.\r\n"</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.consumptionTier</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">cpp</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpp</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Critical</span><span class="nv"> </span><span class="s">peak</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">(CPP)</span><span class="nv"> </span><span class="s">bucket</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">attributed\</span>
-<span class="w">      </span><span class="s">\ to.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.</span><span class="nv"> </span><span class="s">Even</span><span class="nv"> </span><span class="s">though</span><span class="nv"> </span><span class="s">CPP</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">usually</span><span class="nv"> </span><span class="s">considered</span><span class="nv"> </span><span class="s">a\</span>
-<span class="w">      </span><span class="s">\ specialised</span><span class="nv"> </span><span class="s">form</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">'tou',</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">attribute</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">defined</span><span class="nv"> </span><span class="s">explicitly\</span>
-<span class="w">      </span><span class="s">\ for</span><span class="nv"> </span><span class="s">flexibility.\r\n"</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.cpp</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">currency</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">currency</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metering-specific currency.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.currency</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Currency</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">flow_direction</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flow_direction</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow direction for a reading where the direction of flow of the commodity</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">is important (for electricity measurements this includes current, energy, power,</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">and demand).</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liander:invoedingAfname</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.flowDirection</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FlowDirectionKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">interharmonic</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">interharmonic</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indication of a "harmonic" or "interharmonic" basis for the measurement.</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Value 0 in 'numerator' and 'denominator' means not applicable.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.interharmonic</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingInterharmonic</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">macro_period</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">macro_period</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Time period of interest that reflects how the reading is viewed or</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">captured over a long period of time.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.macroPeriod</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MacroPeriodKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">measurement_kind</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_kind</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Identifies</span><span class="nv"> </span><span class="s">"what"</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">measured,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">refinement</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="se">''</span><span class="s">commodity</span><span class="se">''</span><span class="s">.</span>
-<span class="w">      </span><span class="s">When</span><span class="nv"> </span><span class="s">combined</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="se">''</span><span class="s">unit</span><span class="se">''</span><span class="s">,</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">provides</span><span class="nv"> </span><span class="s">detail</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure.</span><span class="nv"> </span><span class="s">For</span>
-<span class="w">      </span><span class="s">example,</span><span class="nv"> </span><span class="se">''</span><span class="s">energy</span><span class="se">''</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="se">''</span><span class="s">kWh</span><span class="se">''</span><span class="nv"> </span><span class="s">indicates</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">user</span>
-<span class="w">      </span><span class="s">that</span><span class="nv"> </span><span class="s">active</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">measured,</span><span class="nv"> </span><span class="s">while</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="se">''</span><span class="s">kVAh</span><span class="se">''</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="se">''</span><span class="s">kVArh</span><span class="se">''</span><span class="s">,</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">indicates</span>
-<span class="w">      </span><span class="s">apparent</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">reactive</span><span class="nv"> </span><span class="s">energy,</span><span class="nv"> </span><span class="s">respectively.</span><span class="nv"> </span><span class="se">''</span><span class="s">power</span><span class="se">''</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">combined</span>
-<span class="w">      </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">similar</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">various</span><span class="nv"> </span><span class="s">power</span><span class="nv"> </span><span class="s">units</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure:</span><span class="nv"> </span><span class="s">Distortion</span><span class="nv"> </span><span class="s">power</span><span class="nv"> </span><span class="s">(</span><span class="se">''</span><span class="s">distortionVoltAmperes</span><span class="se">''</span><span class="s">)</span>
-<span class="w">      </span><span class="s">with</span><span class="nv"> </span><span class="se">''</span><span class="s">kVA</span><span class="se">''</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">different</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="se">''</span><span class="s">power</span><span class="se">''</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="se">''</span><span class="s">kVA</span><span class="se">''</span><span class="s">.'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.measurementKind</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">measuring_period</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measuring_period</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Time</span><span class="nv"> </span><span class="s">attribute</span><span class="nv"> </span><span class="s">inherent</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">fundamental</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">(as\</span>
-<span class="w">      </span><span class="s">\ opposed</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">'macroPeriod'</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">supplies</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">\"adjective\"</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">describe</span><span class="nv"> </span><span class="s">aspects\</span>
-<span class="w">      </span><span class="s">\ of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">regard</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">measurement).</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">refers</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">the\</span>
-<span class="w">      </span><span class="s">\ value</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">originally</span><span class="nv"> </span><span class="s">measured</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">frequency</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">reported\</span>
-<span class="w">      </span><span class="s">\ or</span><span class="nv"> </span><span class="s">presented.</span><span class="nv"> </span><span class="s">For</span><span class="nv"> </span><span class="s">example,</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">hourly</span><span class="nv"> </span><span class="s">interval</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">would</span><span class="nv"> </span><span class="s">have\</span>
-<span class="w">      </span><span class="s">\ value</span><span class="nv"> </span><span class="s">'hourly'</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">attribute.</span><span class="nv"> </span><span class="s">However</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">case</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">hourly</span><span class="nv"> </span><span class="s">sampled</span><span class="nv"> </span><span class="s">voltage\</span>
-<span class="w">      </span><span class="s">\ value,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">meterReadings</span><span class="nv"> </span><span class="s">schema</span><span class="nv"> </span><span class="s">would</span><span class="nv"> </span><span class="s">carry</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">'hourly'</span><span class="nv"> </span><span class="s">interval</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">information.\r\</span>
-<span class="w">      </span><span class="s">\nIt</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">common</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">meters</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">report</span><span class="nv"> </span><span class="s">demand</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">form</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">measured</span><span class="nv"> </span><span class="s">over</span><span class="nv"> </span><span class="s">the\</span>
-<span class="w">      </span><span class="s">\ course</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">portion</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">hour,</span><span class="nv"> </span><span class="s">while</span><span class="nv"> </span><span class="s">enterprise</span><span class="nv"> </span><span class="s">applications</span><span class="nv"> </span><span class="s">however</span><span class="nv"> </span><span class="s">commonly\</span>
-<span class="w">      </span><span class="s">\ assume</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">demand</span><span class="nv"> </span><span class="s">(in</span><span class="nv"> </span><span class="s">kW</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">kVAr)</span><span class="nv"> </span><span class="s">normalised</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">hour.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">system</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">receives\</span>
-<span class="w">      </span><span class="s">\ readings</span><span class="nv"> </span><span class="s">directly</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">meter</span><span class="nv"> </span><span class="s">therefore</span><span class="nv"> </span><span class="s">shall</span><span class="nv"> </span><span class="s">perform</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">transformation\</span>
-<span class="w">      </span><span class="s">\ before</span><span class="nv"> </span><span class="s">publishing</span><span class="nv"> </span><span class="s">readings</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">enterprise</span><span class="nv"> </span><span class="s">systems.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">scalar\</span>
-<span class="w">      </span><span class="s">\ used</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">chosen</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">block</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">(not</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">sub-interval</span><span class="nv"> </span><span class="s">size)."</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.measuringPeriod</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasuringPeriodKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">multiplier</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">multiplier</span>
@@ -729,39 +422,18 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitMultiplier</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">phases</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phases</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metering-specific phase code.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.phases</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PhaseCode</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">tou</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tou</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Time</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">(TOU)</span><span class="nv"> </span><span class="s">bucket</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">attributed</span><span class="nv"> </span><span class="s">to.</span><span class="nv"> </span><span class="s">Value\</span>
-<span class="w">      </span><span class="s">\ 0</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.\r\n"</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.tou</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metering-specific unit.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liander:volume</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.unit</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitSymbol</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType</span>
 </code></pre></div>
@@ -776,21 +448,6 @@
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IdentifiedObject</span>
 <span class="nt">attributes</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">accumulation</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accumulation</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Accumulation behaviour of a reading over time, usually 'measuringPeriod',</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">to be used with individual endpoints (as opposed to 'macroPeriod' and 'aggregate'</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">that are used to describe aggregations of data from individual endpoints).</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.accumulation</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accumulation</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AccumulationKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">aggregate</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aggregate</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Salient attribute of the reading data aggregated from individual</span>
@@ -807,95 +464,14 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AggregateKind</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">argument</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argument</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Argument</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">introduce</span><span class="nv"> </span><span class="s">numbers</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure</span><span class="nv"> </span><span class="s">description\</span>
-<span class="w">      </span><span class="s">\ where</span><span class="nv"> </span><span class="s">they</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">needed</span><span class="nv"> </span><span class="s">(e.g.,</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">measure</span><span class="nv"> </span><span class="s">needs</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">argument</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as\</span>
-<span class="w">      </span><span class="s">\ CEMI(n=4)).</span><span class="nv"> </span><span class="s">Most</span><span class="nv"> </span><span class="s">arguments</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">practice</span><span class="nv"> </span><span class="s">however</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">integers</span><span class="nv"> </span><span class="s">(i.e.,\</span>
-<span class="w">      </span><span class="s">\ 'denominator'=1).\r\nValue</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">'numerator'</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">'denominator'</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.\r\</span>
-<span class="w">      </span><span class="s">\n"</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.argument</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argument</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RationalNumber</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">commodity</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commodity</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commodity being measured.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.commodity</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commodity</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CommodityKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">consumption_tier</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumption_tier</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"In</span><span class="nv"> </span><span class="s">case</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">common</span><span class="nv"> </span><span class="s">flat-rate</span><span class="nv"> </span><span class="s">pricing</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">power,</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">purchases\</span>
-<span class="w">      </span><span class="s">\ are</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">given</span><span class="nv"> </span><span class="s">rate,</span><span class="nv"> </span><span class="s">'consumptionTier'=0.</span><span class="nv"> </span><span class="s">Otherwise,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">indicates</span><span class="nv"> </span><span class="s">the\</span>
-<span class="w">      </span><span class="s">\ consumption</span><span class="nv"> </span><span class="s">tier,</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">conjunction</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">TOU</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">CPP</span><span class="nv"> </span><span class="s">pricing.\r\</span>
-<span class="w">      </span><span class="s">\nConsumption</span><span class="nv"> </span><span class="s">tier</span><span class="nv"> </span><span class="s">pricing</span><span class="nv"> </span><span class="s">refers</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">method</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">billing</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">certain\</span>
-<span class="w">      </span><span class="s">\ \"block\"</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">purchased/sold</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">price,</span><span class="nv"> </span><span class="s">after</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">next</span><span class="nv"> </span><span class="s">block\</span>
-<span class="w">      </span><span class="s">\ of</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">purchased</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">another</span><span class="nv"> </span><span class="s">price,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">so</span><span class="nv"> </span><span class="s">on,</span><span class="nv"> </span><span class="s">all</span><span class="nv"> </span><span class="s">throughout</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">defined\</span>
-<span class="w">      </span><span class="s">\ period.</span><span class="nv"> </span><span class="s">At</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">start</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">defined</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">initially</span><span class="nv"> </span><span class="s">zero,\</span>
-<span class="w">      </span><span class="s">\ and</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">usage</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">measured</span><span class="nv"> </span><span class="s">against</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">tier</span><span class="nv"> </span><span class="s">('consumptionTier'=1).\</span>
-<span class="w">      </span><span class="s">\ If</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">block</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">consumed</span><span class="nv"> </span><span class="s">before</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">end</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">consumption\</span>
-<span class="w">      </span><span class="s">\ moves</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">reconed</span><span class="nv"> </span><span class="s">against</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">second</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">tier</span><span class="nv"> </span><span class="s">('consumptionTier'=2),\</span>
-<span class="w">      </span><span class="s">\ and</span><span class="nv"> </span><span class="s">so</span><span class="nv"> </span><span class="s">on.</span><span class="nv"> </span><span class="s">At</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">end</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">defined</span><span class="nv"> </span><span class="s">period,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">accumulator</span><span class="nv"> </span><span class="s">is\</span>
-<span class="w">      </span><span class="s">\ reset,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">usage</span><span class="nv"> </span><span class="s">within</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">'consumptionTier'=1</span><span class="nv"> </span><span class="s">restarts.\r\n"</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.consumptionTier</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumption_tier</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">cpp</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpp</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Critical</span><span class="nv"> </span><span class="s">peak</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">(CPP)</span><span class="nv"> </span><span class="s">bucket</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">attributed\</span>
-<span class="w">      </span><span class="s">\ to.</span><span class="nv"> </span><span class="s">Value</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.</span><span class="nv"> </span><span class="s">Even</span><span class="nv"> </span><span class="s">though</span><span class="nv"> </span><span class="s">CPP</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">usually</span><span class="nv"> </span><span class="s">considered</span><span class="nv"> </span><span class="s">a\</span>
-<span class="w">      </span><span class="s">\ specialised</span><span class="nv"> </span><span class="s">form</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">'tou',</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">attribute</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">defined</span><span class="nv"> </span><span class="s">explicitly\</span>
-<span class="w">      </span><span class="s">\ for</span><span class="nv"> </span><span class="s">flexibility.\r\n"</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.cpp</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpp</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">currency</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">currency</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metering-specific currency.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.currency</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">currency</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Currency</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">flow_direction</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flow_direction</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow direction for a reading where the direction of flow of the commodity</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">is important (for electricity measurements this includes current, energy, power,</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">and demand).</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liander:invoedingAfname</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.flowDirection</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flow_direction</span>
@@ -903,79 +479,7 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FlowDirectionKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">interharmonic</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">interharmonic</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indication of a "harmonic" or "interharmonic" basis for the measurement.</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Value 0 in 'numerator' and 'denominator' means not applicable.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.interharmonic</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">interharmonic</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingInterharmonic</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">macro_period</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">macro_period</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Time period of interest that reflects how the reading is viewed or</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">captured over a long period of time.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.macroPeriod</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">macro_period</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MacroPeriodKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">measurement_kind</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_kind</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Identifies</span><span class="nv"> </span><span class="s">"what"</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">measured,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">refinement</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="se">''</span><span class="s">commodity</span><span class="se">''</span><span class="s">.</span>
-<span class="w">      </span><span class="s">When</span><span class="nv"> </span><span class="s">combined</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="se">''</span><span class="s">unit</span><span class="se">''</span><span class="s">,</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">provides</span><span class="nv"> </span><span class="s">detail</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure.</span><span class="nv"> </span><span class="s">For</span>
-<span class="w">      </span><span class="s">example,</span><span class="nv"> </span><span class="se">''</span><span class="s">energy</span><span class="se">''</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="se">''</span><span class="s">kWh</span><span class="se">''</span><span class="nv"> </span><span class="s">indicates</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">user</span>
-<span class="w">      </span><span class="s">that</span><span class="nv"> </span><span class="s">active</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">being</span><span class="nv"> </span><span class="s">measured,</span><span class="nv"> </span><span class="s">while</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="se">''</span><span class="s">kVAh</span><span class="se">''</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="se">''</span><span class="s">kVArh</span><span class="se">''</span><span class="s">,</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">indicates</span>
-<span class="w">      </span><span class="s">apparent</span><span class="nv"> </span><span class="s">energy</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">reactive</span><span class="nv"> </span><span class="s">energy,</span><span class="nv"> </span><span class="s">respectively.</span><span class="nv"> </span><span class="se">''</span><span class="s">power</span><span class="se">''</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">combined</span>
-<span class="w">      </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">similar</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">various</span><span class="nv"> </span><span class="s">power</span><span class="nv"> </span><span class="s">units</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure:</span><span class="nv"> </span><span class="s">Distortion</span><span class="nv"> </span><span class="s">power</span><span class="nv"> </span><span class="s">(</span><span class="se">''</span><span class="s">distortionVoltAmperes</span><span class="se">''</span><span class="s">)</span>
-<span class="w">      </span><span class="s">with</span><span class="nv"> </span><span class="se">''</span><span class="s">kVA</span><span class="se">''</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">different</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="se">''</span><span class="s">power</span><span class="se">''</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="se">''</span><span class="s">kVA</span><span class="se">''</span><span class="s">.'</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.measurementKind</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measurement_kind</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasurementKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">measuring_period</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measuring_period</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Time</span><span class="nv"> </span><span class="s">attribute</span><span class="nv"> </span><span class="s">inherent</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">fundamental</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">(as\</span>
-<span class="w">      </span><span class="s">\ opposed</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">'macroPeriod'</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">supplies</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">\"adjective\"</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">describe</span><span class="nv"> </span><span class="s">aspects\</span>
-<span class="w">      </span><span class="s">\ of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">time</span><span class="nv"> </span><span class="s">period</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">regard</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">measurement).</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">refers</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">way</span><span class="nv"> </span><span class="s">the\</span>
-<span class="w">      </span><span class="s">\ value</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">originally</span><span class="nv"> </span><span class="s">measured</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">frequency</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">reported\</span>
-<span class="w">      </span><span class="s">\ or</span><span class="nv"> </span><span class="s">presented.</span><span class="nv"> </span><span class="s">For</span><span class="nv"> </span><span class="s">example,</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">hourly</span><span class="nv"> </span><span class="s">interval</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">consumption</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">would</span><span class="nv"> </span><span class="s">have\</span>
-<span class="w">      </span><span class="s">\ value</span><span class="nv"> </span><span class="s">'hourly'</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">attribute.</span><span class="nv"> </span><span class="s">However</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">case</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">hourly</span><span class="nv"> </span><span class="s">sampled</span><span class="nv"> </span><span class="s">voltage\</span>
-<span class="w">      </span><span class="s">\ value,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">meterReadings</span><span class="nv"> </span><span class="s">schema</span><span class="nv"> </span><span class="s">would</span><span class="nv"> </span><span class="s">carry</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">'hourly'</span><span class="nv"> </span><span class="s">interval</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">information.\r\</span>
-<span class="w">      </span><span class="s">\nIt</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">common</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">meters</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">report</span><span class="nv"> </span><span class="s">demand</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">form</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">measured</span><span class="nv"> </span><span class="s">over</span><span class="nv"> </span><span class="s">the\</span>
-<span class="w">      </span><span class="s">\ course</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">portion</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">hour,</span><span class="nv"> </span><span class="s">while</span><span class="nv"> </span><span class="s">enterprise</span><span class="nv"> </span><span class="s">applications</span><span class="nv"> </span><span class="s">however</span><span class="nv"> </span><span class="s">commonly\</span>
-<span class="w">      </span><span class="s">\ assume</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">demand</span><span class="nv"> </span><span class="s">(in</span><span class="nv"> </span><span class="s">kW</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">kVAr)</span><span class="nv"> </span><span class="s">normalised</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">hour.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">system</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">receives\</span>
-<span class="w">      </span><span class="s">\ readings</span><span class="nv"> </span><span class="s">directly</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">meter</span><span class="nv"> </span><span class="s">therefore</span><span class="nv"> </span><span class="s">shall</span><span class="nv"> </span><span class="s">perform</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">transformation\</span>
-<span class="w">      </span><span class="s">\ before</span><span class="nv"> </span><span class="s">publishing</span><span class="nv"> </span><span class="s">readings</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">enterprise</span><span class="nv"> </span><span class="s">systems.</span><span class="nv"> </span><span class="s">The</span><span class="nv"> </span><span class="s">scalar\</span>
-<span class="w">      </span><span class="s">\ used</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">chosen</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">block</span><span class="nv"> </span><span class="s">size</span><span class="nv"> </span><span class="s">(not</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">sub-interval</span><span class="nv"> </span><span class="s">size)."</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.measuringPeriod</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measuring_period</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasuringPeriodKind</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">multiplier</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">multiplier</span>
@@ -990,37 +494,12 @@
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitMultiplier</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">phases</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phases</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metering-specific phase code.</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.phases</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phases</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PhaseCode</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">  </span><span class="nt">tou</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tou</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Time</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">(TOU)</span><span class="nv"> </span><span class="s">bucket</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">reading</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">attributed</span><span class="nv"> </span><span class="s">to.</span><span class="nv"> </span><span class="s">Value\</span>
-<span class="w">      </span><span class="s">\ 0</span><span class="nv"> </span><span class="s">means</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">applicable.\r\n"</span>
-<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
-<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.tou</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tou</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">unit</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metering-specific unit.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
+<span class="w">    </span><span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liander:volume</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.unit</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span>
@@ -1028,7 +507,7 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitSymbol</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>

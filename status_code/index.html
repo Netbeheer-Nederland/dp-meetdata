@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://Netbeheer-Nederland.github.io/dp-meetdata/commodity/">
+        <link rel="canonical" href="https://Netbeheer-Nederland.github.io/dp-meetdata/status_code/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: commodity - dp-meetdata</title>
+        <title>Slot: status_code - dp-meetdata</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-commodity" class="md-skip">
+        <a href="#slot-status_code" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: commodity
+              Slot: status_code
             
           </span>
         </div>
@@ -321,15 +321,15 @@
                 
                   
 
-  <a href="https://github.com/Netbeheer-Nederland/dp-meetdata/edit/master/docs/commodity.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/Netbeheer-Nederland/dp-meetdata/edit/master/docs/status_code.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-commodity">Slot: commodity</h1>
-<p><em>Commodity being measured.</em></p>
-<p>URI: <a href="https://cim.ucaiug.io/ns#ReadingType.commodity">cim:ReadingType.commodity</a></p>
+<h1 id="slot-status_code">Slot: status_code</h1>
+<p><em>Origin code for the energy. This is a number between 1 and 255.</em></p>
+<p>URI: <a href="https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/BaseReading.statusCode">nbnl:BaseReading.statusCode</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -343,15 +343,28 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../ReadingType/">ReadingType</a></td>
-<td>Detailed description for a type of a reading value</td>
+<td><a href="../BaseReading/">BaseReading</a></td>
+<td>Common representation for reading values</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../IntervalReading/">IntervalReading</a></td>
+<td>Data captured at regular intervals of time</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../CommodityKind/">CommodityKind</a></li>
+<li>
+<p>Range: <a href="../Integer/">Integer</a></p>
+</li>
+<li>
+<p>Minimum Value: 1</p>
+</li>
+<li>
+<p>Maximum Value: 255</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -369,28 +382,35 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>cim:ReadingType.commodity</td>
+<td>nbnl:BaseReading.statusCode</td>
 </tr>
 <tr>
 <td>native</td>
-<td>cim:commodity</td>
+<td>cim:status_code</td>
+</tr>
+<tr>
+<td>exact</td>
+<td>liander:statusCode</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commodity</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commodity being measured.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status_code</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Origin code for the energy. This is a number between 1 and 255.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0</span>
+<span class="nt">exact_mappings</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liander:statusCode</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cim:ReadingType.commodity</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commodity</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nbnl:BaseReading.statusCode</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status_code</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BaseReading</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadingType</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CommodityKind</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BaseReading</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">maximum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">255</span>
 </code></pre></div>
 </details>
 
