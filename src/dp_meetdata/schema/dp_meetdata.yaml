@@ -27,17 +27,18 @@ description: |-
   * [JSON Schema](https://raw.githubusercontent.com/Netbeheer-Nederland/dp-meetdata/refs/heads/main/project/jsonschema/dp_meetdata.schema.json)
   ## Identifiers
 title: Meetdata Dataproduct
-id: http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0
+id: http://data.netbeheernederland.nl/dp-meetdata/version/1.0.0
 imports:
 - linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
-  github: https://github.com/
   cim: https://cim.ucaiug.io/ns#
   dcat: http://www.w3.org/ns/dcat#
   dct: http://purl.org/dc/terms/
-  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  github: https://github.com/
   liander: http://data.liander.nl/markt/def#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: http://iec.ch/TC57/CIM100-Netherlands#
   this: http://data.netbeheernederland.nl/dp-meetdata/def#
 default_curi_maps:
 - semweb_context
