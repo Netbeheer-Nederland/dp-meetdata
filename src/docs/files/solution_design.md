@@ -60,7 +60,7 @@ Het dataproduct is onderheving aan functionele eisen.
 
 | Als          | Wil ik | Want                                                |
 |--------------|--------|-----------------------------------------------------|
-| GV-klant     | Een uniform overzicht van gemeten energieverbruik (E & G, invoeding en afname), in kwartierwaarden per meetinstallatie | Ik wens inzicht in mijn verbruik |
+| GV-klant     | Een uniform overzicht van gemeten energieverbruik (E&G, invoeding en afname), in kwartier of uurwaarden per meetinstallatie | Ik wens inzicht in mijn verbruik |
 | GV-klant     | Via self-service (MijnOmgeving, centraal meetdataregister) mijn meetgegevens ophalen | Ik wens zo snel mogelijk mijn verbruiksgegevens ontvangen |
 | GV-klant     | Een service desk om online vragen te kunnen stellen | Ik wens ondersteuning bij gebruik van mijn verbruiksgegevens |
 | Derde        | Een uniform overzicht van gemeten energieverbruik (E & G, invoeding en afname), in kwartierwaarden per meetinstallatie | Ik wens inzicht in het verbruik van de aangeslotene(n) |
