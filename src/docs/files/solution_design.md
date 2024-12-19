@@ -65,10 +65,11 @@ Het dataproduct is onderheving aan functionele eisen.
 | GV-klant     | Een service desk om online vragen te kunnen stellen | Ik wens ondersteuning bij gebruik van mijn verbruiksgegevens |
 | Derde        | Een uniform overzicht van gemeten energieverbruik (E & G, invoeding en afname), in kwartierwaarden per meetinstallatie | Ik wens inzicht in het verbruik van de aangeslotene(n) |
 | Derde        | Een service desk om online vragen te kunnen stellen | Ik wens ondersteuning bij gebruik van het dataproduct |
-| Netbeheerder | gemeten energieverbruik via MijnOmgeving ontsluiten | Ik wil mijn klant faciliteren in het inzicht in verbruiksgegevens |
+| Netbeheerder | Gemeten energieverbruik via de MijnOmgeving ontsluiten | Ik wil mijn klant faciliteren in het inzicht in verbruiksgegevens |
 | Netbeheerder | Een uniform overzicht van gemeten energieverbruik kunnen ontsluiten via de MijnOmgeving | Ik wens mijn GV-klant te ondersteunen bij inzicht in de verbruiksgegevens |
-| Netbeheerder | Een service desk om tweede- en derdelijns vragen te kunnen stellen over leverantie van het gemeten energieverbruik | Ik ondervind mogelijk problemen bij het leveren van verbruiksgegevens |
+| Netbeheerder | Een service desk om tweede- en derdelijns vragen te kunnen stellen over levering via de MijnOmgeving | Ik ondervind mogelijk problemen bij het leveren van verbruiksgegevens |
 | Netbeheerder | GV-klanten en derden doorverwijzen naar een *Centraal Dataportaal* | Ik wens een uniforme ontsluiting van verbruiksgegevens voor zowel GV-klant als derde |
+| Netbeheerder | Verbruiksgegevens onder de juiste grondslag kunnen leveren voor GV-klant en derde | Ik wens in lijn te zijn met wet- en regelgeving |
 
 # Dataservice
 
