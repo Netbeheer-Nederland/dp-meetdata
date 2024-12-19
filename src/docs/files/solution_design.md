@@ -60,7 +60,15 @@ Het dataproduct is onderheving aan functionele eisen.
 
 | Als          | Wil ik | Want                                                |
 |--------------|--------|-----------------------------------------------------|
-| GV-Klant     | Een overzicht van gemeten energieverbruik, in kwartierwaarden per meter | Ik wens inzicht in mijn verbruik. |
+| GV-klant     | Een uniform overzicht van gemeten energieverbruik (E & G, invoeding en afname), in kwartierwaarden per meetinstallatie | Ik wens inzicht in mijn verbruik |
+| GV-klant     | Via self-service (MijnOmgeving, centraal meetdataregister) mijn meetgegevens ophalen | Ik wens zo snel mogelijk mijn verbruiksgegevens ontvangen |
+| GV-klant     | Een service desk om online vragen te kunnen stellen | Ik wens ondersteuning bij gebruik van mijn verbruiksgegevens |
+| Derde        | Een uniform overzicht van gemeten energieverbruik (E & G, invoeding en afname), in kwartierwaarden per meetinstallatie | Ik wens inzicht in het verbruik van de aangeslotene(n) |
+| Derde        | Een service desk om online vragen te kunnen stellen | Ik wens ondersteuning bij gebruik van het dataproduct |
+| Netbeheerder | gemeten energieverbruik via MijnOmgeving ontsluiten | Ik wil mijn klant faciliteren in het inzicht in verbruiksgegevens |
+| Netbeheerder | Een uniform overzicht van gemeten energieverbruik kunnen ontsluiten via de MijnOmgeving | Ik wens mijn GV-klant te ondersteunen bij inzicht in de verbruiksgegevens |
+| Netbeheerder | Een service desk om tweede- en derdelijns vragen te kunnen stellen over leverantie van het gemeten energieverbruik | Ik ondervind mogelijk problemen bij het leveren van verbruiksgegevens |
+| Netbeheerder | GV-klanten en derden doorverwijzen naar een *Centraal Dataportaal* | Ik wens een uniforme ontsluiting van verbruiksgegevens voor zowel GV-klant als derde |
 
 # Dataservice
 
@@ -70,7 +78,6 @@ GV-klant. Indien een derde meetgegevens opvraagt dient toestemming verleend te
 worden door de aangeslotene. Hierbij vervult de GV-klant de rol van
 *aangeslotene*.
 
-> [!IMPORTANT]
 > Beide gebruiksscenario's gaan uit van *geauthenticeerde rollen*. Voor
 > authenticatie dient aangesloten te worden op bestaande processen. Indien er
 > geen *enrolment- en authenticatieproces* is *moet* deze worden ingericht.
@@ -172,10 +179,11 @@ aansluiting(en) gaat.
 
 | Type       | Beschrijving                                                   |
 |------------|----------------------------------------------------------------|
-| Aanname    | Netbeheerders hebben de gevraagde meetgegevens (dataset) beschikbaar voor levering als decentraal dataproduct. |
-| Aanname    | EDSN maakt geen aanpassingen in de bestaande interface(s) voor het decentrale dataproduct. |
-| Aanname    | De aangeslotene verleent toestemming over toegang tot *al* haar meetdata behorende bij een aansluiting. Dit voorkomt toestemmingverzoeken voor meetgegevens in een tijdsperiode. |
-| Aanname    | Zowel GV-klant, als aangeslotene, als derde zijn te identificeren, authenticeren en te benaderen voor communicatie. |
-| Aanname    | Toestemming wordt verleend op basis van de combinatie derde/aansluiting. |
-| Aanname    | *Partners in Energie* stopt met het invullen van maatwerkverzoeken voor meetdata na implementatie van het centrale dataproduct. |
+| Aanname    | Netbeheerders hebben de gevraagde meetgegevens (dataset) beschikbaar voor levering als decentraal dataproduct |
+| Aanname    | EDSN maakt geen aanpassingen in de bestaande interface(s) voor het decentrale dataproduct |
+| Aanname    | De aangeslotene verleent toestemming over toegang tot *al* haar meetdata behorende bij een aansluiting. Dit voorkomt toestemmingverzoeken voor meetgegevens in een tijdsperiode |
+| Aanname    | Zowel GV-klant, als aangeslotene, als derde zijn te identificeren, authenticeren en te benaderen voor communicatie |
+| Aanname    | Toestemming wordt verleend op basis van de combinatie derde/aansluiting |
+| Aanname    | *Partners in Energie* stopt met het invullen van maatwerkverzoeken voor meetdata na implementatie van het centrale dataproduct |
 | Aanname    | De geldigheid van een verleende toestemming is minstens 90 dagen, om aantal toestemmingsverzoeken te beperken |
+| Aanname    | Er wordt op sectorniveau een *Centraal Dataportaal* gerealiseerd en het dataproduct meetdata wordt hierop aangeboden |
