@@ -118,20 +118,18 @@
                 "end": {
                     "description": "End date and time of this interval. The end date and time where the interval is defined up to, but excluded.",
                     "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "start": {
                     "description": "Start date and time of this interval. The start date and time is included in the defined interval.",
                     "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 }
             },
+            "required": [
+                "end",
+                "start"
+            ],
             "title": "DateTimeInterval",
             "type": "object"
         },
@@ -236,23 +234,17 @@
                     "items": {
                         "$ref": "#/$defs/IntervalReading"
                     },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
+                    "type": "array"
                 },
                 "reading_type": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/ReadingType"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "#/$defs/ReadingType",
                     "description": "Type information for interval reading values contained in this block."
                 }
             },
+            "required": [
+                "interval_readings",
+                "reading_type"
+            ],
             "title": "IntervalBlock",
             "type": "object"
         },
@@ -339,11 +331,8 @@
                     ]
                 },
                 "european_article_number_ean": {
-                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 16 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).",
+                    "type": "string"
                 },
                 "m_rid": {
                     "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
@@ -357,10 +346,7 @@
                     "items": {
                         "$ref": "#/$defs/MeterReading"
                     },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
+                    "type": "array"
                 },
                 "names": {
                     "description": "All names of this identified object.",
@@ -373,6 +359,10 @@
                     ]
                 }
             },
+            "required": [
+                "meter_readings",
+                "european_article_number_ean"
+            ],
             "title": "MarketEvaluationPoint",
             "type": "object"
         },
@@ -441,10 +431,7 @@
                     "items": {
                         "$ref": "#/$defs/IntervalBlock"
                     },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
+                    "type": "array"
                 },
                 "m_rid": {
                     "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
@@ -469,7 +456,8 @@
                 }
             },
             "required": [
-                "values_interval"
+                "values_interval",
+                "interval_blocks"
             ],
             "title": "MeterReading",
             "type": "object"
@@ -492,10 +480,7 @@
                     "items": {
                         "$ref": "#/$defs/MarketEvaluationPoint"
                     },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
+                    "type": "array"
                 },
                 "release_date": {
                     "format": "date",
@@ -510,7 +495,8 @@
                 "contact_point",
                 "conforms_to",
                 "release_date",
-                "version"
+                "version",
+                "market_evaluation_points"
             ],
             "title": "MeterReadingDataSet",
             "type": "object"
@@ -519,18 +505,13 @@
             "additionalProperties": false,
             "description": "The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.",
             "properties": {
-                "identified_object": {
-                    "$ref": "#/$defs/IdentifiedObject",
-                    "description": "Identified object that this name designates."
-                },
                 "name_type": {
                     "$ref": "#/$defs/NameType",
                     "description": "Type of this name."
                 }
             },
             "required": [
-                "name_type",
-                "identified_object"
+                "name_type"
             ],
             "title": "Name",
             "type": "object"
@@ -556,16 +537,6 @@
                         }
                     ],
                     "description": "Authority responsible for managing names of this type."
-                },
-                "names": {
-                    "description": "All names of this type.",
-                    "items": {
-                        "$ref": "#/$defs/Name"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
                 }
             },
             "title": "NameType",
@@ -581,16 +552,6 @@
                         "string",
                         "null"
                     ]
-                },
-                "name_types": {
-                    "description": "All name types managed by this authority.",
-                    "items": {
-                        "$ref": "#/$defs/NameType"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
                 }
             },
             "title": "NameTypeAuthority",
@@ -602,12 +563,12 @@
             "properties": {
                 "comment": {
                     "description": "Elaboration on the quality code.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 }
             },
+            "required": [
+                "comment"
+            ],
             "title": "ReadingQuality",
             "type": "object"
         },
@@ -851,11 +812,8 @@
                     ]
                 },
                 "european_article_number_ean": {
-                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 16 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).",
+                    "type": "string"
                 },
                 "m_rid": {
                     "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
@@ -875,11 +833,14 @@
                     ]
                 }
             },
+            "required": [
+                "european_article_number_ean"
+            ],
             "title": "UsagePoint",
             "type": "object"
         }
     },
-    "$id": "http://data.netbeheernederland.nl/dp-meetdata/version#1.0.0",
+    "$id": "http://data.netbeheernederland.nl/dp-meetdata/version/1.0.0",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "description": "A single instance of a published dataset.",
@@ -899,10 +860,7 @@
             "items": {
                 "$ref": "#/$defs/MarketEvaluationPoint"
             },
-            "type": [
-                "array",
-                "null"
-            ]
+            "type": "array"
         },
         "release_date": {
             "format": "date",
@@ -917,7 +875,8 @@
         "contact_point",
         "conforms_to",
         "release_date",
-        "version"
+        "version",
+        "market_evaluation_points"
     ],
     "title": "MeetdataDataproduct",
     "type": "object",

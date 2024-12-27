@@ -567,7 +567,7 @@ classes:
         slot_uri: this:MeterReadingDataSet.marketEvaluationPoints
         multivalued: true
         range: MarketEvaluationPoint
-        required: false
+        required: true
     class_uri: this:MeterReadingDataSet
     tree_root: true
   MarketEvaluationPoint:
@@ -582,7 +582,7 @@ classes:
         slot_uri: nbnl:MarketEvaluationPoint.MeterReadings
         multivalued: true
         range: MeterReading
-        required: false
+        required: true
     class_uri: cim:MarketEvaluationPoint
   MeterReading:
     description: Set of values obtained from the meter.
@@ -615,7 +615,7 @@ classes:
         slot_uri: cim:MeterReading.IntervalBlocks
         multivalued: true
         range: IntervalBlock
-        required: false
+        required: true
     class_uri: cim:MeterReading
   DateTimeInterval:
     description: Interval between two date and time points, where the interval includes
@@ -628,14 +628,14 @@ classes:
         slot_uri: cim:DateTimeInterval.end
         multivalued: false
         range: date
-        required: false
+        required: true
       start:
         description: Start date and time of this interval. The start date and time
           is included in the defined interval.
         slot_uri: cim:DateTimeInterval.start
         multivalued: false
         range: date
-        required: false
+        required: true
     class_uri: cim:DateTimeInterval
   IntervalBlock:
     description: 'Time sequence of readings of the same reading type. Contained interval
@@ -651,14 +651,14 @@ classes:
         slot_uri: cim:IntervalBlock.IntervalReadings
         multivalued: true
         range: IntervalReading
-        required: false
+        required: true
       reading_type:
         description: Type information for interval reading values contained in this
           block.
         slot_uri: cim:IntervalBlock.ReadingType
         multivalued: false
         range: ReadingType
-        required: false
+        required: true
     class_uri: cim:IntervalBlock
   IntervalReading:
     description: "Data captured at regular intervals of time. Interval data could\
@@ -728,7 +728,7 @@ classes:
         slot_uri: nl:IdentifiedObject.europeanArticleNumberEAN
         multivalued: false
         range: string
-        required: false
+        required: true
     class_uri: cim:UsagePoint
   IdentifiedObject:
     description: This is a root class to provide common identification for all classes
@@ -772,12 +772,6 @@ classes:
         multivalued: false
         range: NameType
         required: true
-      identified_object:
-        description: Identified object that this name designates.
-        slot_uri: cim:Name.IdentifiedObject
-        multivalued: false
-        range: IdentifiedObject
-        required: true
     class_uri: cim:Name
   NameType:
     description: "Type of name. Possible values for attribute 'name' are implementation\
@@ -805,12 +799,6 @@ classes:
         multivalued: false
         range: NameTypeAuthority
         required: false
-      names:
-        description: All names of this type.
-        slot_uri: cim:NameType.Names
-        multivalued: true
-        range: Name
-        required: false
     class_uri: cim:NameType
   NameTypeAuthority:
     description: Authority responsible for creation and management of names of a given
@@ -822,12 +810,6 @@ classes:
         slot_uri: cim:NameTypeAuthority.description
         multivalued: false
         range: string
-        required: false
-      name_types:
-        description: All name types managed by this authority.
-        slot_uri: cim:NameTypeAuthority.NameTypes
-        multivalued: true
-        range: NameType
         required: false
     class_uri: cim:NameTypeAuthority
   BaseReading:
@@ -883,7 +865,7 @@ classes:
         slot_uri: cim:ReadingQuality.comment
         multivalued: false
         range: string
-        required: false
+        required: true
     class_uri: cim:ReadingQuality
   MeasurementValue:
     description: The current state for a measurement. A state value is an instance
