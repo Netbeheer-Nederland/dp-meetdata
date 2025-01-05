@@ -96,7 +96,7 @@
                 },
                 "time_stamp": {
                     "description": "The time when the value was last updated.",
-                    "format": "date",
+                    "format": "date-time",
                     "type": "string"
                 },
                 "value": {
@@ -304,7 +304,7 @@
                 },
                 "time_stamp": {
                     "description": "The time when the value was last updated.",
-                    "format": "date",
+                    "format": "date-time",
                     "type": "string"
                 },
                 "value": {
@@ -396,7 +396,7 @@
                 },
                 "time_stamp": {
                     "description": "The time when the value was last updated.",
-                    "format": "date",
+                    "format": "date-time",
                     "type": "string"
                 }
             },
@@ -880,5 +880,5 @@
     ],
     "title": "MeetdataDataproduct",
     "type": "object",
-    "version": null
+    "version": "1.0.0"
 }

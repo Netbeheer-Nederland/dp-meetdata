@@ -28,6 +28,7 @@ description: |-
   ## Identifiers
 title: Meetdata Dataproduct
 id: http://data.netbeheernederland.nl/dp-meetdata/version/1.0.0
+version: 1.0.0
 imports:
 - linkml:types
 prefixes:
@@ -878,7 +879,7 @@ classes:
         description: The time when the value was last updated.
         slot_uri: cim:MeasurementValue.timeStamp
         multivalued: false
-        range: date
+        range: datetime
         required: true
         exact_mappings:
         - liander:datumTijd
