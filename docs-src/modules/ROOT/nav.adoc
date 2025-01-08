@@ -1,0 +1,1 @@
+* xref:dp-meetdata:information-model::index.adoc[Information model]
