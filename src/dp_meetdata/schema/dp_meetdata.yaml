@@ -118,6 +118,7 @@ enums:
     permissible_values:
       forward:
         meaning: cim:FlowDirectionKind.forward
+        description: Delivered or Imported as defined in IEC TS 61968-2.
       lagging:
         meaning: cim:FlowDirectionKind.lagging
       leading:
@@ -154,6 +155,10 @@ enums:
         meaning: cim:FlowDirectionKind.quadrant4
       reverse:
         meaning: cim:FlowDirectionKind.reverse
+        description: Reverse Active Energy is equivalent to "Received," or
+          "Exported" as defined in IEC TS 61968-2. NOTE The value passed as a
+          reverse value is always a positive value. It is understood by the
+          label "reverse" that it represents negative flow.
       total:
         meaning: cim:FlowDirectionKind.total
       totalByPhase:
@@ -607,10 +612,8 @@ classes:
         - liander:actiefIndicator
         slot_uri: nbnl:active
         multivalued: false
-        range: integer
+        range: boolean
         required: false
-        minimum_value: 0
-        maximum_value: 1
       interval_blocks:
         description: All interval blocks contained in this meter reading.
         slot_uri: cim:MeterReading.IntervalBlocks
@@ -702,7 +705,7 @@ classes:
         slot_uri: cim:ReadingType.multiplier
         multivalued: false
         range: UnitMultiplier
-        required: false
+        required: true
       unit:
         description: Metering-specific unit.
         exact_mappings:
@@ -826,7 +829,7 @@ classes:
         - liander:volume
         slot_uri: cim:BaseReading.value
         multivalued: false
-        range: string
+        range: float
         required: true
       status_code:
         description: Origin code for the energy. This is a number between 1 and 255.
@@ -876,7 +879,9 @@ classes:
     is_a: IOPoint
     attributes:
       time_stamp:
-        description: The time when the value was last updated.
+        description: The time when the value was last updated, formatted as an
+          ISO8601 datetime. NOTE follow the ECMAScript datetime notation
+          convention, i.e. '2024-11-22T13:00:00Z'.
         slot_uri: cim:MeasurementValue.timeStamp
         multivalued: false
         range: datetime

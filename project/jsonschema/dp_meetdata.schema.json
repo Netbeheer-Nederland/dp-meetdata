@@ -95,13 +95,13 @@
                     ]
                 },
                 "time_stamp": {
-                    "description": "The time when the value was last updated.",
+                    "description": "The time when the value was last updated, formatted as an ISO8601 datetime. NOTE follow the ECMAScript datetime notation convention, i.e. '2024-11-22T13:00:00Z'.",
                     "format": "date-time",
                     "type": "string"
                 },
                 "value": {
                     "description": "Value of this reading.",
-                    "type": "string"
+                    "type": "number"
                 }
             },
             "required": [
@@ -303,13 +303,13 @@
                     ]
                 },
                 "time_stamp": {
-                    "description": "The time when the value was last updated.",
+                    "description": "The time when the value was last updated, formatted as an ISO8601 datetime. NOTE follow the ECMAScript datetime notation convention, i.e. '2024-11-22T13:00:00Z'.",
                     "format": "date-time",
                     "type": "string"
                 },
                 "value": {
                     "description": "Value of this reading.",
-                    "type": "string"
+                    "type": "number"
                 }
             },
             "required": [
@@ -395,7 +395,7 @@
                     ]
                 },
                 "time_stamp": {
-                    "description": "The time when the value was last updated.",
+                    "description": "The time when the value was last updated, formatted as an ISO8601 datetime. NOTE follow the ECMAScript datetime notation convention, i.e. '2024-11-22T13:00:00Z'.",
                     "format": "date-time",
                     "type": "string"
                 }
@@ -412,10 +412,8 @@
             "properties": {
                 "active": {
                     "description": "Current active record for purposes of history and mutations (Huidig geldende record i.h.k.v. historie/mutaties).",
-                    "maximum": 1,
-                    "minimum": 0,
                     "type": [
-                        "integer",
+                        "boolean",
                         "null"
                     ]
                 },
@@ -619,6 +617,7 @@
             },
             "required": [
                 "flow_direction",
+                "multiplier",
                 "unit"
             ],
             "title": "ReadingType",
