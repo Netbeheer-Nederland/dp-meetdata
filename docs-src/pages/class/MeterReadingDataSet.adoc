@@ -1,0 +1,149 @@
+= `MeterReadingDataSet`
+
+
+
+--
+[cols="h,3",width=60%]
+|===
+| Kind
+| Class
+
+| Abstract
+| 
+
+| Mixin
+| 
+
+
+|===
+--
+
+== Class hierarchy
+* *`MeterReadingDataSet`*
+
+
+
+== Relations
+
+
+
+[d2,svg,theme=4,width=70%]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+MeterReadingDataSet -> MarketEvaluationPoint: market_evaluation_points
+----
+
+
+[cols="1,1,1,1,1,1"]
+|===
+| Name | URI | Cardinality | Destination class | Description | Inherited from
+
+| market_evaluation_points
+| http://data.netbeheernederland.nl/dp-meetdata/def#MeterReadingDataSet.marketEvaluationPoints[`this:MeterReadingDataSet.marketEvaluationPoints`]
+| 1..*
+| `MarketEvaluationPoint`
+| _+++Market evalution points.+++_
+| MeterReadingDataSet
+|===
+
+
+
+== Attributes
+
+
+
+[discrete]
+=== `identifier`
+
+
+[cols="h,2",width=60%]
+|===
+| URI
+| http://purl.org/dc/terms/identifier[`dct:identifier`]
+| Cardinality
+| 1..*
+| Data type
+| `None`
+
+| Inherited from
+| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
+
+|===
+
+[discrete]
+=== `contact_point`
+
+
+[cols="h,2",width=60%]
+|===
+| URI
+| http://www.w3.org/ns/dcat#contactPoint[`dcat:contactPoint`]
+| Cardinality
+| 1..*
+| Data type
+| `None`
+
+| Inherited from
+| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
+
+|===
+
+[discrete]
+=== `conforms_to`
+
+
+[cols="h,2",width=60%]
+|===
+| URI
+| http://purl.org/dc/terms/conformsTo[`dct:conformsTo`]
+| Cardinality
+| 1..*
+| Data type
+| `None`
+
+| Inherited from
+| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
+
+|===
+
+[discrete]
+=== `release_date`
+
+
+[cols="h,2",width=60%]
+|===
+| URI
+| http://purl.org/dc/terms/issued[`dct:issued`]
+| Cardinality
+| 1..*
+| Data type
+| `date`
+
+| Inherited from
+| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
+
+|===
+
+[discrete]
+=== `version`
+
+
+[cols="h,2",width=60%]
+|===
+| URI
+| http://www.w3.org/2002/07/owl#versionInfo[`owl:versionInfo`]
+| Cardinality
+| 1..*
+| Data type
+| `None`
+
+| Inherited from
+| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
+
+|===
+
+

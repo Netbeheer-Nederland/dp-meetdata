@@ -1,0 +1,54 @@
+= `NameTypeAuthority`
+
+
+
+--
+[cols="h,3",width=60%]
+|===
+| Kind
+| Class
+
+| Abstract
+| 
+
+| Mixin
+| 
+
+
+|===
+--
+
+== Class hierarchy
+* *`NameTypeAuthority`*
+
+
+
+== Relations
+
+
+This class is not the source of any relationship.
+
+
+== Attributes
+
+
+
+[discrete]
+=== `description`
++++Description of the name type authority.+++
+
+[cols="h,2",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#NameTypeAuthority.description[`cim:NameTypeAuthority.description`]
+| Cardinality
+| 1..*
+| Data type
+| `string`
+
+| Inherited from
+| xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
+
+|===
+
+

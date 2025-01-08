@@ -1,0 +1,54 @@
+= `ReadingQuality`
+
+
+
+--
+[cols="h,3",width=60%]
+|===
+| Kind
+| Class
+
+| Abstract
+| 
+
+| Mixin
+| 
+
+
+|===
+--
+
+== Class hierarchy
+* *`ReadingQuality`*
+
+
+
+== Relations
+
+
+This class is not the source of any relationship.
+
+
+== Attributes
+
+
+
+[discrete]
+=== `comment`
++++Elaboration on the quality code.+++
+
+[cols="h,2",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#ReadingQuality.comment[`cim:ReadingQuality.comment`]
+| Cardinality
+| 1..*
+| Data type
+| `string`
+
+| Inherited from
+| xref::class/ReadingQuality.adoc[`ReadingQuality`]
+
+|===
+
+

@@ -1,0 +1,58 @@
+= `Name`
+
+
+
+--
+[cols="h,3",width=60%]
+|===
+| Kind
+| Class
+
+| Abstract
+| 
+
+| Mixin
+| 
+
+
+|===
+--
+
+== Class hierarchy
+* *`Name`*
+
+
+
+== Relations
+
+
+
+[d2,svg,theme=4,width=70%]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+Name -> NameType: name_type
+----
+
+
+[cols="1,1,1,1,1,1"]
+|===
+| Name | URI | Cardinality | Destination class | Description | Inherited from
+
+| name_type
+| https://cim.ucaiug.io/ns#Name.NameType[`cim:Name.NameType`]
+| 1..*
+| `NameType`
+| _+++Type of this name.+++_
+| Name
+|===
+
+
+
+== Attributes
+
+
+This class has no attributes.

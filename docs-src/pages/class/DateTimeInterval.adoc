@@ -1,0 +1,72 @@
+= `DateTimeInterval`
+
+
+
+--
+[cols="h,3",width=60%]
+|===
+| Kind
+| Class
+
+| Abstract
+| 
+
+| Mixin
+| 
+
+
+|===
+--
+
+== Class hierarchy
+* *`DateTimeInterval`*
+
+
+
+== Relations
+
+
+This class is not the source of any relationship.
+
+
+== Attributes
+
+
+
+[discrete]
+=== `end`
++++End date and time of this interval. The end date and time where the interval is defined up to, but excluded.+++
+
+[cols="h,2",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#DateTimeInterval.end[`cim:DateTimeInterval.end`]
+| Cardinality
+| 1..*
+| Data type
+| `date`
+
+| Inherited from
+| xref::class/DateTimeInterval.adoc[`DateTimeInterval`]
+
+|===
+
+[discrete]
+=== `start`
++++Start date and time of this interval. The start date and time is included in the defined interval.+++
+
+[cols="h,2",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#DateTimeInterval.start[`cim:DateTimeInterval.start`]
+| Cardinality
+| 1..*
+| Data type
+| `date`
+
+| Inherited from
+| xref::class/DateTimeInterval.adoc[`DateTimeInterval`]
+
+|===
+
+

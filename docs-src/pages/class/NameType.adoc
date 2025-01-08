@@ -1,0 +1,77 @@
+= `NameType`
+
+
+
+--
+[cols="h,3",width=60%]
+|===
+| Kind
+| Class
+
+| Abstract
+| 
+
+| Mixin
+| 
+
+
+|===
+--
+
+== Class hierarchy
+* *`NameType`*
+
+
+
+== Relations
+
+
+
+[d2,svg,theme=4,width=70%]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+NameType -> NameTypeAuthority: name_type_authority
+----
+
+
+[cols="1,1,1,1,1,1"]
+|===
+| Name | URI | Cardinality | Destination class | Description | Inherited from
+
+| name_type_authority
+| https://cim.ucaiug.io/ns#NameType.NameTypeAuthority[`cim:NameType.NameTypeAuthority`]
+| 1..*
+| `NameTypeAuthority`
+| _+++Authority responsible for managing names of this type.+++_
+| NameType
+|===
+
+
+
+== Attributes
+
+
+
+[discrete]
+=== `description`
++++Description of the name type.+++
+
+[cols="h,2",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#NameType.description[`cim:NameType.description`]
+| Cardinality
+| 1..*
+| Data type
+| `string`
+
+| Inherited from
+| xref::class/NameType.adoc[`NameType`]
+
+|===
+
+

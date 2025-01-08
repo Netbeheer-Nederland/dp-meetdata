@@ -1,0 +1,66 @@
+= `IntervalBlock`
+
+
+
+--
+[cols="h,3",width=60%]
+|===
+| Kind
+| Class
+
+| Abstract
+| 
+
+| Mixin
+| 
+
+
+|===
+--
+
+== Class hierarchy
+* *`IntervalBlock`*
+
+
+
+== Relations
+
+
+
+[d2,svg,theme=4,width=70%]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+IntervalBlock -> IntervalReading: interval_readings
+IntervalBlock -> ReadingType: reading_type
+----
+
+
+[cols="1,1,1,1,1,1"]
+|===
+| Name | URI | Cardinality | Destination class | Description | Inherited from
+
+| interval_readings
+| https://cim.ucaiug.io/ns#IntervalBlock.IntervalReadings[`cim:IntervalBlock.IntervalReadings`]
+| 1..*
+| `IntervalReading`
+| _+++Interval reading contained in this block.+++_
+| IntervalBlock
+
+| reading_type
+| https://cim.ucaiug.io/ns#IntervalBlock.ReadingType[`cim:IntervalBlock.ReadingType`]
+| 1..*
+| `ReadingType`
+| _+++Type information for interval reading values contained in this block.+++_
+| IntervalBlock
+|===
+
+
+
+== Attributes
+
+
+This class has no attributes.
