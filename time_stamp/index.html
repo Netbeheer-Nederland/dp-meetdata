@@ -328,7 +328,7 @@
 
 
 <h1 id="slot-time_stamp">Slot: time_stamp</h1>
-<p><em>The time when the value was last updated.</em></p>
+<p><em>The time when the value was last updated, formatted as an ISO8601 datetime. NOTE follow the ECMAScript datetime notation convention, i.e. '2024-11-22T13:00:00Z'.</em></p>
 <p>URI: <a href="https://cim.ucaiug.io/ns#MeasurementValue.timeStamp">cim:MeasurementValue.timeStamp</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -343,13 +343,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../MeasurementValue/">MeasurementValue</a></td>
-<td>The current state for a measurement</td>
+<td><a href="../IntervalReading/">IntervalReading</a></td>
+<td>Data captured at regular intervals of time</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../IntervalReading/">IntervalReading</a></td>
-<td>Data captured at regular intervals of time</td>
+<td><a href="../MeasurementValue/">MeasurementValue</a></td>
+<td>The current state for a measurement</td>
 <td>no</td>
 </tr>
 <tr>
@@ -399,7 +399,8 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">time_stamp</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The time when the value was last updated.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The time when the value was last updated, formatted as an ISO8601 datetime.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">NOTE follow the ECMAScript datetime notation convention, i.e. &#39;2024-11-22T13:00:00Z&#39;.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://data.netbeheernederland.nl/dp-meetdata/version/1.0.0</span>
 <span class="nt">exact_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liander:datumTijd</span>
