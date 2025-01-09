@@ -37,6 +37,20 @@ vars: {
     pad: 20
   }
 }
+BaseReading {
+  style.fill: "#eccfcb"
+}
+
+
+ReadingQuality {
+  style.fill: "#eccfcb"
+}
+
+Name {
+  style.fill: "#eccfcb"
+}
+
+
 BaseReading -> ReadingQuality: reading_qualities
 BaseReading -> Name: names
 ----

@@ -36,6 +36,20 @@ vars: {
     pad: 20
   }
 }
+MarketEvaluationPoint {
+  style.fill: "#eccfcb"
+}
+
+
+MeterReading {
+  style.fill: "#eccfcb"
+}
+
+Name {
+  style.fill: "#eccfcb"
+}
+
+
 MarketEvaluationPoint -> MeterReading: meter_readings
 MarketEvaluationPoint -> Name: names
 ----

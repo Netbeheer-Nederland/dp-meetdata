@@ -34,6 +34,16 @@ vars: {
     pad: 20
   }
 }
+Name {
+  style.fill: "#eccfcb"
+}
+
+
+NameType {
+  style.fill: "#eccfcb"
+}
+
+
 Name -> NameType: name_type
 ----
 

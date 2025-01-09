@@ -34,6 +34,16 @@ vars: {
     pad: 20
   }
 }
+MeterReadingDataSet {
+  style.fill: "#cc0000"
+}
+
+
+MarketEvaluationPoint {
+  style.fill: "#eccfcb"
+}
+
+
 MeterReadingDataSet -> MarketEvaluationPoint: market_evaluation_points
 ----
 

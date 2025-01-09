@@ -35,6 +35,16 @@ vars: {
     pad: 20
   }
 }
+UsagePoint {
+  style.fill: "#eccfcb"
+}
+
+
+Name {
+  style.fill: "#eccfcb"
+}
+
+
 UsagePoint -> Name: names
 ----
 

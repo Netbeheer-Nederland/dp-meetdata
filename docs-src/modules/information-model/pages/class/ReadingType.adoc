@@ -35,6 +35,16 @@ vars: {
     pad: 20
   }
 }
+ReadingType {
+  style.fill: "#eccfcb"
+}
+
+
+Name {
+  style.fill: "#eccfcb"
+}
+
+
 ReadingType -> Name: names
 ----
 

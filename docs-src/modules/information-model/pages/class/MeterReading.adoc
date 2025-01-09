@@ -35,6 +35,24 @@ vars: {
     pad: 20
   }
 }
+MeterReading {
+  style.fill: "#eccfcb"
+}
+
+
+DateTimeInterval {
+  style.fill: "#eccfcb"
+}
+
+IntervalBlock {
+  style.fill: "#eccfcb"
+}
+
+Name {
+  style.fill: "#eccfcb"
+}
+
+
 MeterReading -> DateTimeInterval: values_interval
 MeterReading -> IntervalBlock: interval_blocks
 MeterReading -> Name: names

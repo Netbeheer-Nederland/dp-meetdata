@@ -34,6 +34,16 @@ vars: {
     pad: 20
   }
 }
+NameType {
+  style.fill: "#eccfcb"
+}
+
+
+NameTypeAuthority {
+  style.fill: "#eccfcb"
+}
+
+
 NameType -> NameTypeAuthority: name_type_authority
 ----
 

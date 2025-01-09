@@ -36,6 +36,16 @@ vars: {
     pad: 20
   }
 }
+MeasurementValue {
+  style.fill: "#eccfcb"
+}
+
+
+Name {
+  style.fill: "#eccfcb"
+}
+
+
 MeasurementValue -> Name: names
 ----
 

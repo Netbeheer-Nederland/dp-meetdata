@@ -34,6 +34,20 @@ vars: {
     pad: 20
   }
 }
+IntervalBlock {
+  style.fill: "#eccfcb"
+}
+
+
+IntervalReading {
+  style.fill: "#eccfcb"
+}
+
+ReadingType {
+  style.fill: "#eccfcb"
+}
+
+
 IntervalBlock -> IntervalReading: interval_readings
 IntervalBlock -> ReadingType: reading_type
 ----

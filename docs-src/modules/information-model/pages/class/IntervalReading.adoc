@@ -38,6 +38,20 @@ vars: {
     pad: 20
   }
 }
+IntervalReading {
+  style.fill: "#eccfcb"
+}
+
+
+ReadingQuality {
+  style.fill: "#eccfcb"
+}
+
+Name {
+  style.fill: "#eccfcb"
+}
+
+
 IntervalReading -> ReadingQuality: reading_qualities
 IntervalReading -> Name: names
 ----
