@@ -1,33 +1,26 @@
 = `NameType`
+:toclevels: 3
 
 
++++Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:
+The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.+++
 
---
+
 [cols="h,3",width=60%]
 |===
-| Kind
+| Type
 | Class
 
-| Abstract
-| 
 
-| Mixin
-| 
-
+| URI^xref:ROOT::uri_explanation.adoc[?]^
+| https://cim.ucaiug.io/ns#NameType[`cim:NameType`]
 
 |===
---
 
-== Class hierarchy
-* *`NameType`*
+'''
 
 
-
-== Relations
-
-
-
-[d2,svg,theme=4,width=70%]
+[d2,svg,theme=4]
 ----
 vars: {
   d2-config: {
@@ -35,53 +28,168 @@ vars: {
   }
 }
 NameType {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 
 NameTypeAuthority {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 
 NameType -> NameTypeAuthority: name_type_authority
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
 ----
 
 
-[cols="1,1,1,1,1,1"]
+== Class hierarchy
+* *`NameType`*
+
+
+== Fields
+
+
+.Reference of fields (attributes and relations)
+[cols="3,1,3,6",width=100%]
 |===
-| Name | URI | Cardinality | Destination class | Description | Inherited from
+| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
 
-| name_type_authority
-| https://cim.ucaiug.io/ns#NameType.NameTypeAuthority[`cim:NameType.NameTypeAuthority`]
-| 1..*
-| `NameTypeAuthority`
-| _+++Authority responsible for managing names of this type.+++_
-| NameType
+| <<name_type_authority,`name_type_authority`>>
+| `1..*`
+| xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
+//| +++Authority responsible for managing names of this type.+++
+|+++Authority responsible for managing names of this type.+++
+
+| <<description,`description`>>
+| `1..*`
+| `string` 
+//| +++Description of the name type.+++
+|+++Description of the name type.+++
 |===
 
-
-
-== Attributes
+=== Attributes
 
 
 
-[discrete]
-=== `description`
+//[discrete]
+[#description]
+==== `description`
 +++Description of the name type.+++
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | https://cim.ucaiug.io/ns#NameType.description[`cim:NameType.description`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `string`
 
 | Inherited from
 | xref::class/NameType.adoc[`NameType`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
+
+
+
+
+=== Relations
+
+
+
+//[discrete]
+[#name_type_authority]
+==== `name_type_authority`
++++Authority responsible for managing names of this type.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#NameType.NameTypeAuthority[`cim:NameType.NameTypeAuthority`]
+| Cardinality
+| `1..*`
+| Destination class
+| xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
+
+| Inherited from
+| xref::class/NameType.adoc[`NameType`]
+
+| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
 
 

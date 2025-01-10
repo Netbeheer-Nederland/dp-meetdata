@@ -1,34 +1,25 @@
 = `MeterReading`
+:toclevels: 3
 
 
++++Set of values obtained from the meter.+++
 
---
+
 [cols="h,3",width=60%]
 |===
-| Kind
+| Type
 | Class
 
-| Abstract
-| 
 
-| Mixin
-| 
-
+| URI^xref:ROOT::uri_explanation.adoc[?]^
+| https://cim.ucaiug.io/ns#MeterReading[`cim:MeterReading`]
 
 |===
---
 
-== Class hierarchy
-* xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-** *`MeterReading`*
+'''
 
 
-
-== Relations
-
-
-
-[d2,svg,theme=4,width=70%]
+[d2,svg,theme=4]
 ----
 vars: {
   d2-config: {
@@ -36,114 +27,331 @@ vars: {
   }
 }
 MeterReading {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 
 DateTimeInterval {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 IntervalBlock {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 Name {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 
 MeterReading -> DateTimeInterval: values_interval
 MeterReading -> IntervalBlock: interval_blocks
 MeterReading -> Name: names
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
 ----
 
 
-[cols="1,1,1,1,1,1"]
+== Class hierarchy
+* xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+** *`MeterReading`*
+
+
+== Fields
+
+
+.Reference of fields (attributes and relations)
+[cols="3,1,3,6",width=100%]
 |===
-| Name | URI | Cardinality | Destination class | Description | Inherited from
+| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
 
-| values_interval
-| https://cim.ucaiug.io/ns#MeterReading.ValuesInterval[`cim:MeterReading.ValuesInterval`]
-| 1..*
-| `DateTimeInterval`
-| _+++Date and time interval of the data items contained within this meter reading.+++_
-| MeterReading
+| <<values_interval,`values_interval`>>
+| `1..*`
+| xref::class/DateTimeInterval.adoc[`DateTimeInterval`]
+//| +++Date and time interval of the data items contained within this meter reading.+++
+|+++Date and time interval of the data items contained within this meter reading.+++
 
-| interval_blocks
-| https://cim.ucaiug.io/ns#MeterReading.IntervalBlocks[`cim:MeterReading.IntervalBlocks`]
-| 1..*
-| `IntervalBlock`
-| _+++All interval blocks contained in this meter reading.+++_
-| MeterReading
+| <<interval_blocks,`interval_blocks`>>
+| `1..*`
+| xref::class/IntervalBlock.adoc[`IntervalBlock`]
+//| +++All interval blocks contained in this meter reading.+++
+|+++All interval blocks contained in this meter reading.+++
 
-| names
-| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
-| 1..*
-| `Name`
-| _+++All names of this identified object.+++_
-| IdentifiedObject
+| <<names,`names`>>
+| `1..*`
+| xref::class/Name.adoc[`Name`]
+//| +++All names of this identified object.+++
+|+++All names of this identified object.+++
+
+| <<active,`active`>>
+| `1..*`
+| `boolean` 
+//| +++Current active record for purposes of history and mutations (Huidig geldende record i.h.k.v....+++
+|+++Current active record for purposes of history and mutations (Huidig geldende record i.h.k.v. historie/mutaties).+++
+
+| <<description,`description`>>
+| `1..*`
+| `string` 
+//| +++The description is a free human readable text describing or naming the object. It may be non...+++
+|+++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
+
+| <<m_rid,`m_rid`>>
+| `1..*`
+| `string` 
+//| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange...+++
+|+++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 |===
 
-
-
-== Attributes
+=== Attributes
 
 
 
-[discrete]
-=== `active`
+//[discrete]
+[#active]
+==== `active`
 +++Current active record for purposes of history and mutations (Huidig geldende record i.h.k.v. historie/mutaties).+++
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/active[`nbnl:active`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `boolean`
 
 | Inherited from
 | xref::class/MeterReading.adoc[`MeterReading`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
-[discrete]
-=== `description`
+//[discrete]
+[#description]
+==== `description`
 +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | https://cim.ucaiug.io/ns#IdentifiedObject.description[`cim:IdentifiedObject.description`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `string`
 
 | Inherited from
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
-[discrete]
-=== `m_rid`
+//[discrete]
+[#m_rid]
+==== `m_rid`
 +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | https://cim.ucaiug.io/ns#IdentifiedObject.mRID[`cim:IdentifiedObject.mRID`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `string`
 
 | Inherited from
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
+
+
+
+
+=== Relations
+
+
+
+//[discrete]
+[#values_interval]
+==== `values_interval`
++++Date and time interval of the data items contained within this meter reading.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#MeterReading.ValuesInterval[`cim:MeterReading.ValuesInterval`]
+| Cardinality
+| `1..*`
+| Destination class
+| xref::class/DateTimeInterval.adoc[`DateTimeInterval`]
+
+| Inherited from
+| xref::class/MeterReading.adoc[`MeterReading`]
+
+| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
+//[discrete]
+[#interval_blocks]
+==== `interval_blocks`
++++All interval blocks contained in this meter reading.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#MeterReading.IntervalBlocks[`cim:MeterReading.IntervalBlocks`]
+| Cardinality
+| `1..*`
+| Destination class
+| xref::class/IntervalBlock.adoc[`IntervalBlock`]
+
+| Inherited from
+| xref::class/MeterReading.adoc[`MeterReading`]
+
+| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
+//[discrete]
+[#names]
+==== `names`
++++All names of this identified object.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
+| Cardinality
+| `1..*`
+| Destination class
+| xref::class/Name.adoc[`Name`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
 
 

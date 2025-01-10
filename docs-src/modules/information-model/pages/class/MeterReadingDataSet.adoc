@@ -1,33 +1,25 @@
 = `MeterReadingDataSet`
+:toclevels: 3
 
 
++++A single instance of a published dataset.+++
 
---
+
 [cols="h,3",width=60%]
 |===
-| Kind
+| Type
 | Class
 
-| Abstract
-| 
 
-| Mixin
-| 
-
+| URI^xref:ROOT::uri_explanation.adoc[?]^
+| http://data.netbeheernederland.nl/dp-meetdata/def#MeterReadingDataSet[`this:MeterReadingDataSet`]
 
 |===
---
 
-== Class hierarchy
-* *`MeterReadingDataSet`*
+'''
 
 
-
-== Relations
-
-
-
-[d2,svg,theme=4,width=70%]
+[d2,svg,theme=4]
 ----
 vars: {
   d2-config: {
@@ -35,125 +27,312 @@ vars: {
   }
 }
 MeterReadingDataSet {
-  style.fill: "#cc0000"
+  style {
+    fill: "#cc0000"
+    shadow: true
+  }
 }
 
 
 MarketEvaluationPoint {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 
 MeterReadingDataSet -> MarketEvaluationPoint: market_evaluation_points
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
 ----
 
 
-[cols="1,1,1,1,1,1"]
+== Class hierarchy
+* *`MeterReadingDataSet`*
+
+
+== Fields
+
+
+.Reference of fields (attributes and relations)
+[cols="3,1,3,6",width=100%]
 |===
-| Name | URI | Cardinality | Destination class | Description | Inherited from
+| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
 
-| market_evaluation_points
-| http://data.netbeheernederland.nl/dp-meetdata/def#MeterReadingDataSet.marketEvaluationPoints[`this:MeterReadingDataSet.marketEvaluationPoints`]
-| 1..*
-| `MarketEvaluationPoint`
-| _+++Market evalution points.+++_
-| MeterReadingDataSet
+| <<market_evaluation_points,`market_evaluation_points`>>
+| `1..*`
+| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+//| +++Market evalution points.+++
+|+++Market evalution points.+++
+
+| <<identifier,`identifier`>>
+| `1..*`
+| `None` 
+//| +++None+++
+|+++None+++
+
+| <<contact_point,`contact_point`>>
+| `1..*`
+| `None` 
+//| +++None+++
+|+++None+++
+
+| <<conforms_to,`conforms_to`>>
+| `1..*`
+| `None` 
+//| +++None+++
+|+++None+++
+
+| <<release_date,`release_date`>>
+| `1..*`
+| `date` 
+//| +++None+++
+|+++None+++
+
+| <<version,`version`>>
+| `1..*`
+| `None` 
+//| +++None+++
+|+++None+++
 |===
 
-
-
-== Attributes
+=== Attributes
 
 
 
-[discrete]
-=== `identifier`
+//[discrete]
+[#identifier]
+==== `identifier`
 
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | http://purl.org/dc/terms/identifier[`dct:identifier`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `None`
 
 | Inherited from
 | xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
-[discrete]
-=== `contact_point`
+//[discrete]
+[#contact_point]
+==== `contact_point`
 
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | http://www.w3.org/ns/dcat#contactPoint[`dcat:contactPoint`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `None`
 
 | Inherited from
 | xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
-[discrete]
-=== `conforms_to`
+//[discrete]
+[#conforms_to]
+==== `conforms_to`
 
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | http://purl.org/dc/terms/conformsTo[`dct:conformsTo`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `None`
 
 | Inherited from
 | xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
-[discrete]
-=== `release_date`
+//[discrete]
+[#release_date]
+==== `release_date`
 
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | http://purl.org/dc/terms/issued[`dct:issued`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `date`
 
 | Inherited from
 | xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
-[discrete]
-=== `version`
+//[discrete]
+[#version]
+==== `version`
 
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | http://www.w3.org/2002/07/owl#versionInfo[`owl:versionInfo`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `None`
 
 | Inherited from
 | xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
+
+
+
+
+=== Relations
+
+
+
+//[discrete]
+[#market_evaluation_points]
+==== `market_evaluation_points`
++++Market evalution points.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| http://data.netbeheernederland.nl/dp-meetdata/def#MeterReadingDataSet.marketEvaluationPoints[`this:MeterReadingDataSet.marketEvaluationPoints`]
+| Cardinality
+| `1..*`
+| Destination class
+| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+
+| Inherited from
+| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
+
+| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
 
 

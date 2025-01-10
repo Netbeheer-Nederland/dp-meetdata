@@ -1,54 +1,83 @@
 = `ReadingQuality`
+:toclevels: 3
 
 
++++Quality of a specific reading value or interval reading value. Note that more than one quality may be applicable to a given reading. Typically not used unless problems or unusual conditions occur (i.e., quality for each reading is assumed to be good unless stated otherwise in associated reading quality type). It can also be used with the corresponding reading quality type to indicate that the validation has been performed and succeeded.+++
 
---
+
 [cols="h,3",width=60%]
 |===
-| Kind
+| Type
 | Class
 
-| Abstract
-| 
 
-| Mixin
-| 
-
+| URI^xref:ROOT::uri_explanation.adoc[?]^
+| https://cim.ucaiug.io/ns#ReadingQuality[`cim:ReadingQuality`]
 
 |===
---
+
+'''
+
+
 
 == Class hierarchy
 * *`ReadingQuality`*
 
 
-
-== Relations
-
-
-This class is not the source of any relationship.
+== Fields
 
 
-== Attributes
+.Reference of fields (attributes and relations)
+[cols="3,1,3,6",width=100%]
+|===
+| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
+
+| <<comment,`comment`>>
+| `1..*`
+| `string` 
+//| +++Elaboration on the quality code.+++
+|+++Elaboration on the quality code.+++
+|===
+
+=== Attributes
 
 
 
-[discrete]
-=== `comment`
+//[discrete]
+[#comment]
+==== `comment`
 +++Elaboration on the quality code.+++
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | https://cim.ucaiug.io/ns#ReadingQuality.comment[`cim:ReadingQuality.comment`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `string`
 
 | Inherited from
 | xref::class/ReadingQuality.adoc[`ReadingQuality`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
+
+
+
+=== Relations
+
+
+This class has no fields.
 

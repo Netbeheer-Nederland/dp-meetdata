@@ -1,35 +1,25 @@
 = `MarketEvaluationPoint`
+:toclevels: 3
 
 
++++The identification of an entity where energy products are measured or computed.+++
 
---
+
 [cols="h,3",width=60%]
 |===
-| Kind
+| Type
 | Class
 
-| Abstract
-| 
 
-| Mixin
-| 
-
+| URI^xref:ROOT::uri_explanation.adoc[?]^
+| https://cim.ucaiug.io/ns#MarketEvaluationPoint[`cim:MarketEvaluationPoint`]
 
 |===
---
 
-== Class hierarchy
-* xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-** xref::class/UsagePoint.adoc[`UsagePoint`]
-*** *`MarketEvaluationPoint`*
+'''
 
 
-
-== Relations
-
-
-
-[d2,svg,theme=4,width=70%]
+[d2,svg,theme=4]
 ----
 vars: {
   d2-config: {
@@ -37,102 +27,288 @@ vars: {
   }
 }
 MarketEvaluationPoint {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 
 MeterReading {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 Name {
-  style.fill: "#eccfcb"
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
 }
 
 
 MarketEvaluationPoint -> MeterReading: meter_readings
 MarketEvaluationPoint -> Name: names
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
 ----
 
 
-[cols="1,1,1,1,1,1"]
+== Class hierarchy
+* xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+** xref::class/UsagePoint.adoc[`UsagePoint`]
+*** *`MarketEvaluationPoint`*
+
+
+== Fields
+
+
+.Reference of fields (attributes and relations)
+[cols="3,1,3,6",width=100%]
 |===
-| Name | URI | Cardinality | Destination class | Description | Inherited from
+| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
 
-| meter_readings
-| https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/MarketEvaluationPoint.MeterReadings[`nbnl:MarketEvaluationPoint.MeterReadings`]
-| 1..*
-| `MeterReading`
-| _+++All meter readings provided by this meter.+++_
-| MarketEvaluationPoint
+| <<meter_readings,`meter_readings`>>
+| `1..*`
+| xref::class/MeterReading.adoc[`MeterReading`]
+//| +++All meter readings provided by this meter.+++
+|+++All meter readings provided by this meter.+++
 
-| names
-| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
-| 1..*
-| `Name`
-| _+++All names of this identified object.+++_
-| IdentifiedObject
+| <<names,`names`>>
+| `1..*`
+| xref::class/Name.adoc[`Name`]
+//| +++All names of this identified object.+++
+|+++All names of this identified object.+++
+
+| <<european_article_number_ean,`european_article_number_ean`>>
+| `1..*`
+| `string` 
+//| +++The attribute is used for an exchange of the EAN code (European Article Number). The length of...+++
+|+++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).+++
+
+| <<description,`description`>>
+| `1..*`
+| `string` 
+//| +++The description is a free human readable text describing or naming the object. It may be non...+++
+|+++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
+
+| <<m_rid,`m_rid`>>
+| `1..*`
+| `string` 
+//| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange...+++
+|+++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 |===
 
-
-
-== Attributes
+=== Attributes
 
 
 
-[discrete]
-=== `european_article_number_ean`
+//[discrete]
+[#european_article_number_ean]
+==== `european_article_number_ean`
 +++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).+++
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | http://iec.ch/TC57/CIM100-Netherlands#IdentifiedObject.europeanArticleNumberEAN[`nl:IdentifiedObject.europeanArticleNumberEAN`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `string`
 
 | Inherited from
 | xref::class/UsagePoint.adoc[`UsagePoint`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
-[discrete]
-=== `description`
+//[discrete]
+[#description]
+==== `description`
 +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | https://cim.ucaiug.io/ns#IdentifiedObject.description[`cim:IdentifiedObject.description`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `string`
 
 | Inherited from
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
 
-[discrete]
-=== `m_rid`
+//[discrete]
+[#m_rid]
+==== `m_rid`
 +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 
-[cols="h,2",width=60%]
+[cols="h,1",width=60%]
 |===
 | URI
 | https://cim.ucaiug.io/ns#IdentifiedObject.mRID[`cim:IdentifiedObject.mRID`]
 | Cardinality
-| 1..*
+| `1..*`
 | Data type
 | `string`
 
 | Inherited from
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
 |===
+
+
+
+
+=== Relations
+
+
+
+//[discrete]
+[#meter_readings]
+==== `meter_readings`
++++All meter readings provided by this meter.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/MarketEvaluationPoint.MeterReadings[`nbnl:MarketEvaluationPoint.MeterReadings`]
+| Cardinality
+| `1..*`
+| Destination class
+| xref::class/MeterReading.adoc[`MeterReading`]
+
+| Inherited from
+| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+
+| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
+//[discrete]
+[#names]
+==== `names`
++++All names of this identified object.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
+| Cardinality
+| `1..*`
+| Destination class
+| xref::class/Name.adoc[`Name`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
 
 
