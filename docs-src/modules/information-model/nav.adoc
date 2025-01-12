@@ -1,2 +1,35 @@
-* Index
+[.truncate]
+* Information model
 ** Classes
+*** xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
+
+*** xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+
+*** xref::class/MeterReading.adoc[`MeterReading`]
+
+*** xref::class/DateTimeInterval.adoc[`DateTimeInterval`]
+
+*** xref::class/IntervalBlock.adoc[`IntervalBlock`]
+
+*** xref::class/IntervalReading.adoc[`IntervalReading`]
+
+*** xref::class/ReadingType.adoc[`ReadingType`]
+
+*** xref::class/UsagePoint.adoc[`UsagePoint`]
+
+*** xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+*** xref::class/Name.adoc[`Name`]
+
+*** xref::class/NameType.adoc[`NameType`]
+
+*** xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
+
+*** xref::class/BaseReading.adoc[`BaseReading`]
+
+*** xref::class/ReadingQuality.adoc[`ReadingQuality`]
+
+*** xref::class/MeasurementValue.adoc[`MeasurementValue`]
+
+*** xref::class/IOPoint.adoc[`IOPoint`]
+

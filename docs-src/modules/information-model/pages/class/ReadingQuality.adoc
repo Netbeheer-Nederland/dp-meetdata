@@ -1,5 +1,5 @@
 = `ReadingQuality`
-:toclevels: 3
+:toclevels: 4
 
 
 +++Quality of a specific reading value or interval reading value. Note that more than one quality may be applicable to a given reading. Typically not used unless problems or unusual conditions occur (i.e., quality for each reading is assumed to be good unless stated otherwise in associated reading quality type). It can also be used with the corresponding reading quality type to indicate that the validation has been performed and succeeded.+++
@@ -16,36 +16,32 @@
 
 |===
 
-'''
-
-
-
 == Class hierarchy
 * *`ReadingQuality`*
 
 
-== Fields
+== Slots
 
 
-.Reference of fields (attributes and relations)
+
+
 [cols="3,1,3,6",width=100%]
 |===
-| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
+| Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
 | <<comment,`comment`>>
-| `1..*`
-| `string` 
+| 1
+| `string`
 //| +++Elaboration on the quality code.+++
-|+++Elaboration on the quality code.+++
+| +++Elaboration on the quality code.+++
 |===
 
-=== Attributes
-
+'''
 
 
 //[discrete]
 [#comment]
-==== `comment`
+=== `comment`
 +++Elaboration on the quality code.+++
 
 [cols="h,1",width=60%]
@@ -53,7 +49,7 @@
 | URI
 | https://cim.ucaiug.io/ns#ReadingQuality.comment[`cim:ReadingQuality.comment`]
 | Cardinality
-| `1..*`
+| 1
 | Data type
 | `string`
 
@@ -73,11 +69,4 @@ a|
 
 |===
 
-
-
-
-=== Relations
-
-
-This class has no fields.
 

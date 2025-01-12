@@ -1,5 +1,5 @@
 = `ReadingType`
-:toclevels: 3
+:toclevels: 4
 
 
 +++Detailed description for a type of a reading value. Values in attributes allow for the creation of recommended codes to be used for identifying reading value types as follows: <macroPeriod>.<aggregate>.<measuringPeriod>.<accumulation>.<flowDirection>.<commodity>.<measurementKind>.<interharmonic.numerator>.<interharmonic.denominator>.<argument.numerator>.<argument.denominator>.<tou>.<cpp>.<consumptionTier>.<phases>.<multiplier>.<unit>.<currency>.+++
@@ -16,9 +16,16 @@
 
 |===
 
-'''
+== Class hierarchy
+* xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+** *`ReadingType`*
 
 
+== Slots
+
+
+
+.Associated classes
 [d2,svg,theme=4]
 ----
 vars: {
@@ -94,70 +101,90 @@ legend: "" {
 ----
 
 
-== Class hierarchy
-* xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-** *`ReadingType`*
-
-
-== Fields
-
-
-.Reference of fields (attributes and relations)
 [cols="3,1,3,6",width=100%]
 |===
-| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
+| Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
 | <<names,`names`>>
-| `1..*`
+| 0..*
 | xref::class/Name.adoc[`Name`]
 //| +++All names of this identified object.+++
-|+++All names of this identified object.+++
+| +++All names of this identified object.+++
 
 | <<aggregate,`aggregate`>>
-| `1..*`
-| `AggregateKind` 
+| 0..1
+| `AggregateKind`
 //| +++Salient attribute of the reading data aggregated from individual endpoints. This is mainly used...+++
-|+++Salient attribute of the reading data aggregated from individual endpoints. This is mainly used to define a mathematical operation carried out over 'macroPeriod', but may also be used to describe an attribute of the data when the 'macroPeriod' is not defined.+++
+| +++Salient attribute of the reading data aggregated from individual endpoints. This is mainly used to define a mathematical operation carried out over 'macroPeriod', but may also be used to describe an attribute of the data when the 'macroPeriod' is not defined.+++
 
 | <<flow_direction,`flow_direction`>>
-| `1..*`
-| `FlowDirectionKind` 
+| 1
+| `FlowDirectionKind`
 //| +++Flow direction for a reading where the direction of flow of the commodity is important (for...+++
-|+++Flow direction for a reading where the direction of flow of the commodity is important (for electricity measurements this includes current, energy, power, and demand).+++
+| +++Flow direction for a reading where the direction of flow of the commodity is important (for electricity measurements this includes current, energy, power, and demand).+++
 
 | <<multiplier,`multiplier`>>
-| `1..*`
-| `UnitMultiplier` 
+| 1
+| `UnitMultiplier`
 //| +++Metering-specific multiplier.+++
-|+++Metering-specific multiplier.+++
+| +++Metering-specific multiplier.+++
 
 | <<unit,`unit`>>
-| `1..*`
-| `UnitSymbol` 
+| 1
+| `UnitSymbol`
 //| +++Metering-specific unit.+++
-|+++Metering-specific unit.+++
+| +++Metering-specific unit.+++
 
 | <<description,`description`>>
-| `1..*`
-| `string` 
+| 0..1
+| `string`
 //| +++The description is a free human readable text describing or naming the object. It may be non...+++
-|+++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
+| +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
 
 | <<m_rid,`m_rid`>>
-| `1..*`
-| `string` 
+| 0..1
+| `string`
 //| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange...+++
-|+++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 |===
 
-=== Attributes
-
+'''
 
 
 //[discrete]
+[#names]
+=== `names`
++++All names of this identified object.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
+| Cardinality
+| 0..*
+| Data type
+| xref::class/Name.adoc[`Name`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
+//[discrete]
 [#aggregate]
-==== `aggregate`
+=== `aggregate`
 +++Salient attribute of the reading data aggregated from individual endpoints. This is mainly used to define a mathematical operation carried out over 'macroPeriod', but may also be used to describe an attribute of the data when the 'macroPeriod' is not defined.+++
 
 [cols="h,1",width=60%]
@@ -165,7 +192,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | URI
 | https://cim.ucaiug.io/ns#ReadingType.aggregate[`cim:ReadingType.aggregate`]
 | Cardinality
-| `1..*`
+| 0..1
 | Data type
 | `AggregateKind`
 
@@ -187,7 +214,7 @@ a|
 
 //[discrete]
 [#flow_direction]
-==== `flow_direction`
+=== `flow_direction`
 +++Flow direction for a reading where the direction of flow of the commodity is important (for electricity measurements this includes current, energy, power, and demand).+++
 
 [cols="h,1",width=60%]
@@ -195,7 +222,7 @@ a|
 | URI
 | https://cim.ucaiug.io/ns#ReadingType.flowDirection[`cim:ReadingType.flowDirection`]
 | Cardinality
-| `1..*`
+| 1
 | Data type
 | `FlowDirectionKind`
 
@@ -217,7 +244,7 @@ a|
 
 //[discrete]
 [#multiplier]
-==== `multiplier`
+=== `multiplier`
 +++Metering-specific multiplier.+++
 
 [cols="h,1",width=60%]
@@ -225,7 +252,7 @@ a|
 | URI
 | https://cim.ucaiug.io/ns#ReadingType.multiplier[`cim:ReadingType.multiplier`]
 | Cardinality
-| `1..*`
+| 1
 | Data type
 | `UnitMultiplier`
 
@@ -247,7 +274,7 @@ a|
 
 //[discrete]
 [#unit]
-==== `unit`
+=== `unit`
 +++Metering-specific unit.+++
 
 [cols="h,1",width=60%]
@@ -255,7 +282,7 @@ a|
 | URI
 | https://cim.ucaiug.io/ns#ReadingType.unit[`cim:ReadingType.unit`]
 | Cardinality
-| `1..*`
+| 1
 | Data type
 | `UnitSymbol`
 
@@ -277,7 +304,7 @@ a|
 
 //[discrete]
 [#description]
-==== `description`
+=== `description`
 +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
 
 [cols="h,1",width=60%]
@@ -285,7 +312,7 @@ a|
 | URI
 | https://cim.ucaiug.io/ns#IdentifiedObject.description[`cim:IdentifiedObject.description`]
 | Cardinality
-| `1..*`
+| 0..1
 | Data type
 | `string`
 
@@ -307,7 +334,7 @@ a|
 
 //[discrete]
 [#m_rid]
-==== `m_rid`
+=== `m_rid`
 +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 
@@ -316,7 +343,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | URI
 | https://cim.ucaiug.io/ns#IdentifiedObject.mRID[`cim:IdentifiedObject.mRID`]
 | Cardinality
-| `1..*`
+| 0..1
 | Data type
 | `string`
 
@@ -335,43 +362,5 @@ a|
 !===
 
 |===
-
-
-
-
-=== Relations
-
-
-
-//[discrete]
-[#names]
-==== `names`
-+++All names of this identified object.+++
-
-[cols="h,1",width=60%]
-|===
-| URI
-| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
-| Cardinality
-| `1..*`
-| Destination class
-| xref::class/Name.adoc[`Name`]
-
-| Inherited from
-| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-
-| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
-
-|===
-
 
 

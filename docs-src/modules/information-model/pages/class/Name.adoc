@@ -1,5 +1,5 @@
 = `Name`
-:toclevels: 3
+:toclevels: 4
 
 
 +++The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.+++
@@ -16,9 +16,15 @@
 
 |===
 
-'''
+== Class hierarchy
+* *`Name`*
 
 
+== Slots
+
+
+
+.Associated classes
 [d2,svg,theme=4]
 ----
 vars: {
@@ -94,38 +100,23 @@ legend: "" {
 ----
 
 
-== Class hierarchy
-* *`Name`*
-
-
-== Fields
-
-
-.Reference of fields (attributes and relations)
 [cols="3,1,3,6",width=100%]
 |===
-| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
+| Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
 | <<name_type,`name_type`>>
-| `1..*`
+| 1
 | xref::class/NameType.adoc[`NameType`]
 //| +++Type of this name.+++
-|+++Type of this name.+++
+| +++Type of this name.+++
 |===
 
-=== Attributes
-
-
-This class has no attributes.
-
-
-=== Relations
-
+'''
 
 
 //[discrete]
 [#name_type]
-==== `name_type`
+=== `name_type`
 +++Type of this name.+++
 
 [cols="h,1",width=60%]
@@ -133,14 +124,14 @@ This class has no attributes.
 | URI
 | https://cim.ucaiug.io/ns#Name.NameType[`cim:Name.NameType`]
 | Cardinality
-| `1..*`
-| Destination class
+| 1
+| Data type
 | xref::class/NameType.adoc[`NameType`]
 
 | Inherited from
 | xref::class/Name.adoc[`Name`]
 
-| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
 a|
 !===
 ! Mapping type ! Term
@@ -152,6 +143,5 @@ a|
 !===
 
 |===
-
 
 

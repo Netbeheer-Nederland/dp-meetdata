@@ -1,1 +1,4 @@
-* xref:dp-meetdata:information-model:index.adoc[Information model]
+* xref:dp-meetdata::index.adoc[]
+** Conceptual model
+** Glossary
+** Process

@@ -1,5 +1,5 @@
 = `DateTimeInterval`
-:toclevels: 3
+:toclevels: 4
 
 
 +++Interval between two date and time points, where the interval includes the start time but excludes end time.+++
@@ -16,42 +16,38 @@
 
 |===
 
-'''
-
-
-
 == Class hierarchy
 * *`DateTimeInterval`*
 
 
-== Fields
+== Slots
 
 
-.Reference of fields (attributes and relations)
+
+
 [cols="3,1,3,6",width=100%]
 |===
-| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
+| Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
 | <<end,`end`>>
-| `1..*`
-| `date` 
+| 1
+| `date`
 //| +++End date and time of this interval. The end date and time where the interval is defined up to,...+++
-|+++End date and time of this interval. The end date and time where the interval is defined up to, but excluded.+++
+| +++End date and time of this interval. The end date and time where the interval is defined up to, but excluded.+++
 
 | <<start,`start`>>
-| `1..*`
-| `date` 
+| 1
+| `date`
 //| +++Start date and time of this interval. The start date and time is included in the defined interval.+++
-|+++Start date and time of this interval. The start date and time is included in the defined interval.+++
+| +++Start date and time of this interval. The start date and time is included in the defined interval.+++
 |===
 
-=== Attributes
-
+'''
 
 
 //[discrete]
 [#end]
-==== `end`
+=== `end`
 +++End date and time of this interval. The end date and time where the interval is defined up to, but excluded.+++
 
 [cols="h,1",width=60%]
@@ -59,7 +55,7 @@
 | URI
 | https://cim.ucaiug.io/ns#DateTimeInterval.end[`cim:DateTimeInterval.end`]
 | Cardinality
-| `1..*`
+| 1
 | Data type
 | `date`
 
@@ -81,7 +77,7 @@ a|
 
 //[discrete]
 [#start]
-==== `start`
+=== `start`
 +++Start date and time of this interval. The start date and time is included in the defined interval.+++
 
 [cols="h,1",width=60%]
@@ -89,7 +85,7 @@ a|
 | URI
 | https://cim.ucaiug.io/ns#DateTimeInterval.start[`cim:DateTimeInterval.start`]
 | Cardinality
-| `1..*`
+| 1
 | Data type
 | `date`
 
@@ -109,11 +105,4 @@ a|
 
 |===
 
-
-
-
-=== Relations
-
-
-This class has no fields.
 

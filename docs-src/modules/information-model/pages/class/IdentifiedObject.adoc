@@ -1,5 +1,5 @@
 = `IdentifiedObject`
-:toclevels: 3
+:toclevels: 4
 
 
 +++This is a root class to provide common identification for all classes needing identification and naming attributes.+++
@@ -16,9 +16,15 @@
 
 |===
 
-'''
+== Class hierarchy
+* *`IdentifiedObject`*
 
 
+== Slots
+
+
+
+.Associated classes
 [d2,svg,theme=4]
 ----
 vars: {
@@ -94,45 +100,66 @@ legend: "" {
 ----
 
 
-== Class hierarchy
-* *`IdentifiedObject`*
-
-
-== Fields
-
-
-.Reference of fields (attributes and relations)
 [cols="3,1,3,6",width=100%]
 |===
-| Name | Cardinality^xref:ROOT::cardinalities_explained.adoc[?]^ | Type | Description
+| Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
 | <<names,`names`>>
-| `1..*`
+| 0..*
 | xref::class/Name.adoc[`Name`]
 //| +++All names of this identified object.+++
-|+++All names of this identified object.+++
+| +++All names of this identified object.+++
 
 | <<description,`description`>>
-| `1..*`
-| `string` 
+| 0..1
+| `string`
 //| +++The description is a free human readable text describing or naming the object. It may be non...+++
-|+++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
+| +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
 
 | <<m_rid,`m_rid`>>
-| `1..*`
-| `string` 
+| 0..1
+| `string`
 //| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange...+++
-|+++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 |===
 
-=== Attributes
-
+'''
 
 
 //[discrete]
+[#names]
+=== `names`
++++All names of this identified object.+++
+
+[cols="h,1",width=60%]
+|===
+| URI
+| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
+| Cardinality
+| 0..*
+| Data type
+| xref::class/Name.adoc[`Name`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+a|
+!===
+! Mapping type ! Term
+
+! `closeMatch`
+! `nbnl:EAN`
+! `exactMatch`
+! `schema:gtin13`
+!===
+
+|===
+
+//[discrete]
 [#description]
-==== `description`
+=== `description`
 +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
 
 [cols="h,1",width=60%]
@@ -140,7 +167,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | URI
 | https://cim.ucaiug.io/ns#IdentifiedObject.description[`cim:IdentifiedObject.description`]
 | Cardinality
-| `1..*`
+| 0..1
 | Data type
 | `string`
 
@@ -162,7 +189,7 @@ a|
 
 //[discrete]
 [#m_rid]
-==== `m_rid`
+=== `m_rid`
 +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 
@@ -171,7 +198,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | URI
 | https://cim.ucaiug.io/ns#IdentifiedObject.mRID[`cim:IdentifiedObject.mRID`]
 | Cardinality
-| `1..*`
+| 0..1
 | Data type
 | `string`
 
@@ -190,43 +217,5 @@ a|
 !===
 
 |===
-
-
-
-
-=== Relations
-
-
-
-//[discrete]
-[#names]
-==== `names`
-+++All names of this identified object.+++
-
-[cols="h,1",width=60%]
-|===
-| URI
-| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
-| Cardinality
-| `1..*`
-| Destination class
-| xref::class/Name.adoc[`Name`]
-
-| Inherited from
-| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-
-| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
-
-|===
-
 
 
