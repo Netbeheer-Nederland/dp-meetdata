@@ -1,5 +1,5 @@
 name: dp-meetdata
-title: Dataproduct Meetdata
+title: Meetdata
 version: true
 nav:
 - modules/ROOT/nav.adoc
