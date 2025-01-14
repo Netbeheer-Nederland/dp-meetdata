@@ -5,14 +5,19 @@
 +++Interval between two date and time points, where the interval includes the start time but excludes end time.+++
 
 
-[cols="h,3",width=60%]
+[cols="h,3",width=65%]
 |===
 | Type
 | Class
 
-
 | URI^xref:ROOT::uri_explanation.adoc[?]^
-| https://cim.ucaiug.io/ns#DateTimeInterval[`cim:DateTimeInterval`]
+| `cim:DateTimeInterval`
+
+
+| CIM standard (perspective)
+| IEC61970 (Grid)
+
+
 
 |===
 
@@ -31,14 +36,12 @@
 
 | <<end,`end`>>
 | 1
-| `date`
-//| +++End date and time of this interval. The end date and time where the interval is defined up to,...+++
+| https://w3id.org/linkml/Date[`date`]
 | +++End date and time of this interval. The end date and time where the interval is defined up to, but excluded.+++
 
 | <<start,`start`>>
 | 1
-| `date`
-//| +++Start date and time of this interval. The start date and time is included in the defined interval.+++
+| https://w3id.org/linkml/Date[`date`]
 | +++Start date and time of this interval. The start date and time is included in the defined interval.+++
 |===
 
@@ -50,28 +53,15 @@
 === `end`
 +++End date and time of this interval. The end date and time where the interval is defined up to, but excluded.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#DateTimeInterval.end[`cim:DateTimeInterval.end`]
-| Cardinality
+| `cim:DateTimeInterval.end`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
-| `date`
+| Type
+| https://w3id.org/linkml/Date[`date`]
 
-| Inherited from
-| xref::class/DateTimeInterval.adoc[`DateTimeInterval`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 
@@ -80,28 +70,15 @@ a|
 === `start`
 +++Start date and time of this interval. The start date and time is included in the defined interval.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#DateTimeInterval.start[`cim:DateTimeInterval.start`]
-| Cardinality
+| `cim:DateTimeInterval.start`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
-| `date`
+| Type
+| https://w3id.org/linkml/Date[`date`]
 
-| Inherited from
-| xref::class/DateTimeInterval.adoc[`DateTimeInterval`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 

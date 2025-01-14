@@ -5,14 +5,19 @@
 +++The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.+++
 
 
-[cols="h,3",width=60%]
+[cols="h,3",width=65%]
 |===
 | Type
 | Class
 
-
 | URI^xref:ROOT::uri_explanation.adoc[?]^
-| https://cim.ucaiug.io/ns#Name[`cim:Name`]
+| `cim:Name`
+
+
+| CIM standard (perspective)
+| IEC61970 (Grid)
+
+
 
 |===
 
@@ -40,12 +45,15 @@ Name {
 }
 
 
+
 NameType {
   style {
     fill: "#eccfcb"
     shadow: true
   }
 }
+
+
 
 
 Name -> NameType: name_type
@@ -107,7 +115,6 @@ legend: "" {
 | <<name_type,`name_type`>>
 | 1
 | xref::class/NameType.adoc[`NameType`]
-//| +++Type of this name.+++
 | +++Type of this name.+++
 |===
 
@@ -119,28 +126,15 @@ legend: "" {
 === `name_type`
 +++Type of this name.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#Name.NameType[`cim:Name.NameType`]
-| Cardinality
+| `cim:Name.NameType`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
+| Type
 | xref::class/NameType.adoc[`NameType`]
 
-| Inherited from
-| xref::class/Name.adoc[`Name`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 

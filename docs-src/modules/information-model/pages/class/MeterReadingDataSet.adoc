@@ -5,14 +5,16 @@
 +++A single instance of a published dataset.+++
 
 
-[cols="h,3",width=60%]
+[cols="h,3",width=65%]
 |===
 | Type
 | Class
 
-
 | URI^xref:ROOT::uri_explanation.adoc[?]^
-| http://data.netbeheernederland.nl/dp-meetdata/def#MeterReadingDataSet[`this:MeterReadingDataSet`]
+| `this:MeterReadingDataSet`
+
+
+
 
 |===
 
@@ -40,12 +42,15 @@ MeterReadingDataSet {
 }
 
 
+
 MarketEvaluationPoint {
   style {
-    fill: "#eccfcb"
+    fill: "#fffbef"
     shadow: true
   }
 }
+
+
 
 
 MeterReadingDataSet -> MarketEvaluationPoint: market_evaluation_points
@@ -104,103 +109,54 @@ legend: "" {
 |===
 | Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
-| <<market_evaluation_points,`market_evaluation_points`>>
-| 1..*
-| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
-//| +++Market evalution points.+++
-| +++Market evalution points.+++
-
-| <<identifier,`identifier`>>
+| <<conforms_to,`conforms_to`>>
 | 1
-| `Any`
-//| +++None+++
+| n/a
 | n/a
 
 | <<contact_point,`contact_point`>>
 | 1
-| `Any`
-//| +++None+++
+| n/a
 | n/a
 
-| <<conforms_to,`conforms_to`>>
+| <<identifier,`identifier`>>
 | 1
-| `Any`
-//| +++None+++
+| n/a
 | n/a
 
 | <<release_date,`release_date`>>
 | 1
-| `date`
-//| +++None+++
+| https://w3id.org/linkml/Date[`date`]
 | n/a
 
 | <<version,`version`>>
 | 1
-| `Any`
-//| +++None+++
 | n/a
+| n/a
+
+| <<market_evaluation_points,`market_evaluation_points`>>
+| 1..*
+| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+| +++Market evalution points.+++
 |===
 
 '''
 
 
 //[discrete]
-[#market_evaluation_points]
-=== `market_evaluation_points`
-+++Market evalution points.+++
+[#conforms_to]
+=== `conforms_to`
 
-[cols="h,1",width=60%]
+
+[cols="h,4",width=65%]
 |===
 | URI
-| http://data.netbeheernederland.nl/dp-meetdata/def#MeterReadingDataSet.marketEvaluationPoints[`this:MeterReadingDataSet.marketEvaluationPoints`]
-| Cardinality
-| 1..*
-| Data type
-| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
-
-| Inherited from
-| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
-
-|===
-
-//[discrete]
-[#identifier]
-=== `identifier`
-
-
-[cols="h,1",width=60%]
-|===
-| URI
-| http://purl.org/dc/terms/identifier[`dct:identifier`]
-| Cardinality
+| http://purl.org/dc/terms/conformsTo[`dct:conformsTo`]
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
-| `Any`
+| Type
+| n/a
 
-| Inherited from
-| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 
@@ -209,58 +165,49 @@ a|
 === `contact_point`
 
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
 | http://www.w3.org/ns/dcat#contactPoint[`dcat:contactPoint`]
-| Cardinality
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
-| `Any`
+| Type
+| n/a
 
-| Inherited from
-| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 
 //[discrete]
-[#conforms_to]
-=== `conforms_to`
+[#identifier]
+=== `identifier`
 
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| http://purl.org/dc/terms/conformsTo[`dct:conformsTo`]
-| Cardinality
+| http://purl.org/dc/terms/identifier[`dct:identifier`]
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
-| `Any`
+| Type
+| n/a
 
-| Inherited from
-| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
 
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
+|===
 
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
+//[discrete]
+[#market_evaluation_points]
+=== `market_evaluation_points`
++++Market evalution points.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:MeterReadingDataSet.marketEvaluationPoints`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
+| 1..*
+| Type
+| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+
 
 |===
 
@@ -269,28 +216,15 @@ a|
 === `release_date`
 
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
 | http://purl.org/dc/terms/issued[`dct:issued`]
-| Cardinality
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
-| `date`
+| Type
+| https://w3id.org/linkml/Date[`date`]
 
-| Inherited from
-| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 
@@ -299,28 +233,15 @@ a|
 === `version`
 
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
 | http://www.w3.org/2002/07/owl#versionInfo[`owl:versionInfo`]
-| Cardinality
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
-| `Any`
+| Type
+| n/a
 
-| Inherited from
-| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 

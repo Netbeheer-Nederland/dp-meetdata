@@ -6,14 +6,19 @@
 The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.+++
 
 
-[cols="h,3",width=60%]
+[cols="h,3",width=65%]
 |===
 | Type
 | Class
 
-
 | URI^xref:ROOT::uri_explanation.adoc[?]^
-| https://cim.ucaiug.io/ns#NameType[`cim:NameType`]
+| `cim:NameType`
+
+
+| CIM standard (perspective)
+| IEC61970 (Grid)
+
+
 
 |===
 
@@ -41,12 +46,15 @@ NameType {
 }
 
 
+
 NameTypeAuthority {
   style {
     fill: "#eccfcb"
     shadow: true
   }
 }
+
+
 
 
 NameType -> NameTypeAuthority: name_type_authority
@@ -105,79 +113,51 @@ legend: "" {
 |===
 | Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
+| <<description,`description`>>
+| 0..1
+| https://w3id.org/linkml/String[`string`]
+| +++Description of the name type.+++
+
 | <<name_type_authority,`name_type_authority`>>
 | 0..1
 | xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
-//| +++Authority responsible for managing names of this type.+++
 | +++Authority responsible for managing names of this type.+++
-
-| <<description,`description`>>
-| 0..1
-| `string`
-//| +++Description of the name type.+++
-| +++Description of the name type.+++
 |===
 
 '''
 
 
 //[discrete]
-[#name_type_authority]
-=== `name_type_authority`
-+++Authority responsible for managing names of this type.+++
-
-[cols="h,1",width=60%]
-|===
-| URI
-| https://cim.ucaiug.io/ns#NameType.NameTypeAuthority[`cim:NameType.NameTypeAuthority`]
-| Cardinality
-| 0..1
-| Data type
-| xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
-
-| Inherited from
-| xref::class/NameType.adoc[`NameType`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
-
-|===
-
-//[discrete]
 [#description]
 === `description`
 +++Description of the name type.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#NameType.description[`cim:NameType.description`]
-| Cardinality
+| `cim:NameType.description`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 0..1
-| Data type
-| `string`
+| Type
+| https://w3id.org/linkml/String[`string`]
 
-| Inherited from
-| xref::class/NameType.adoc[`NameType`]
 
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
+|===
 
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
+//[discrete]
+[#name_type_authority]
+=== `name_type_authority`
++++Authority responsible for managing names of this type.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:NameType.NameTypeAuthority`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
+| 0..1
+| Type
+| xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
+
 
 |===
 

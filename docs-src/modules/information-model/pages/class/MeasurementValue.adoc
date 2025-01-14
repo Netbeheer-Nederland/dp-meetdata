@@ -5,14 +5,19 @@
 +++The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.+++
 
 
-[cols="h,3",width=60%]
+[cols="h,3",width=65%]
 |===
 | Type
 | Class
 
-
 | URI^xref:ROOT::uri_explanation.adoc[?]^
-| https://cim.ucaiug.io/ns#MeasurementValue[`cim:MeasurementValue`]
+| `cim:MeasurementValue`
+
+
+| CIM standard (perspective)
+| IEC61970 (Grid)
+
+
 
 |===
 
@@ -42,12 +47,15 @@ MeasurementValue {
 }
 
 
+
 Name {
   style {
     fill: "#eccfcb"
     shadow: true
   }
 }
+
+
 
 
 MeasurementValue -> Name: names
@@ -106,122 +114,48 @@ legend: "" {
 |===
 | Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
-| <<names,`names`>>
-| 0..*
-| xref::class/Name.adoc[`Name`]
-//| +++All names of this identified object.+++
-| +++All names of this identified object.+++
-
 | <<time_stamp,`time_stamp`>>
 | 1
-| `datetime`
-//| +++The time when the value was last updated, formatted as an ISO8601 datetime. NOTE follow the...+++
+| https://w3id.org/linkml/Datetime[`datetime`]
 | +++The time when the value was last updated, formatted as an ISO8601 datetime. NOTE follow the ECMAScript datetime notation convention, i.e. '2024-11-22T13:00:00Z'.+++
 
 | <<description,`description`>>
 | 0..1
-| `string`
-//| +++The description is a free human readable text describing or naming the object. It may be non...+++
+| https://w3id.org/linkml/String[`string`]
 | +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
 
 | <<m_rid,`m_rid`>>
 | 0..1
-| `string`
-//| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange...+++
+| https://w3id.org/linkml/String[`string`]
 | +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
+
+| <<names,`names`>>
+| 0..*
+| xref::class/Name.adoc[`Name`]
+| +++All names of this identified object.+++
 |===
 
 '''
 
 
 //[discrete]
-[#names]
-=== `names`
-+++All names of this identified object.+++
-
-[cols="h,1",width=60%]
-|===
-| URI
-| https://cim.ucaiug.io/ns#IdentifiedObject.Names[`cim:IdentifiedObject.Names`]
-| Cardinality
-| 0..*
-| Data type
-| xref::class/Name.adoc[`Name`]
-
-| Inherited from
-| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
-
-|===
-
-//[discrete]
-[#time_stamp]
-=== `time_stamp`
-+++The time when the value was last updated, formatted as an ISO8601 datetime. NOTE follow the ECMAScript datetime notation convention, i.e. '2024-11-22T13:00:00Z'.+++
-
-[cols="h,1",width=60%]
-|===
-| URI
-| https://cim.ucaiug.io/ns#MeasurementValue.timeStamp[`cim:MeasurementValue.timeStamp`]
-| Cardinality
-| 1
-| Data type
-| `datetime`
-
-| Inherited from
-| xref::class/MeasurementValue.adoc[`MeasurementValue`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
-
-|===
-
-//[discrete]
 [#description]
 === `description`
 +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#IdentifiedObject.description[`cim:IdentifiedObject.description`]
-| Cardinality
+| `cim:IdentifiedObject.description`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 0..1
-| Data type
-| `string`
+| Type
+| https://w3id.org/linkml/String[`string`]
 
 | Inherited from
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 
@@ -231,28 +165,72 @@ a|
 +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#IdentifiedObject.mRID[`cim:IdentifiedObject.mRID`]
-| Cardinality
+| `cim:IdentifiedObject.mRID`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 0..1
-| Data type
-| `string`
+| Type
+| https://w3id.org/linkml/String[`string`]
 
 | Inherited from
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
+
+|===
+
+//[discrete]
+[#names]
+=== `names`
++++All names of this identified object.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:IdentifiedObject.Names`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
+| 0..*
+| Type
+| xref::class/Name.adoc[`Name`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+
+|===
+
+//[discrete]
+[#time_stamp]
+=== `time_stamp`
++++The time when the value was last updated, formatted as an ISO8601 datetime. NOTE follow the ECMAScript datetime notation convention, i.e. '2024-11-22T13:00:00Z'.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:MeasurementValue.timeStamp`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
+| 1
+| Type
+| https://w3id.org/linkml/Datetime[`datetime`]
+
+
+| Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
 a|
+
+[cols="1,5"]
 !===
 ! Mapping type ! Term
 
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
+! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
+a! 
+
+http://data.liander.nl/markt/def#datumTijd[`liander:datumTijd`]
+
+
+
 !===
+
 
 |===
 

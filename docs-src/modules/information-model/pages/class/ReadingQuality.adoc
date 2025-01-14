@@ -5,14 +5,19 @@
 +++Quality of a specific reading value or interval reading value. Note that more than one quality may be applicable to a given reading. Typically not used unless problems or unusual conditions occur (i.e., quality for each reading is assumed to be good unless stated otherwise in associated reading quality type). It can also be used with the corresponding reading quality type to indicate that the validation has been performed and succeeded.+++
 
 
-[cols="h,3",width=60%]
+[cols="h,3",width=65%]
 |===
 | Type
 | Class
 
-
 | URI^xref:ROOT::uri_explanation.adoc[?]^
-| https://cim.ucaiug.io/ns#ReadingQuality[`cim:ReadingQuality`]
+| `cim:ReadingQuality`
+
+
+| CIM standard (perspective)
+| IEC61968 (Enterprise)
+
+
 
 |===
 
@@ -31,8 +36,7 @@
 
 | <<comment,`comment`>>
 | 1
-| `string`
-//| +++Elaboration on the quality code.+++
+| https://w3id.org/linkml/String[`string`]
 | +++Elaboration on the quality code.+++
 |===
 
@@ -44,28 +48,15 @@
 === `comment`
 +++Elaboration on the quality code.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#ReadingQuality.comment[`cim:ReadingQuality.comment`]
-| Cardinality
+| `cim:ReadingQuality.comment`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
-| `string`
+| Type
+| https://w3id.org/linkml/String[`string`]
 
-| Inherited from
-| xref::class/ReadingQuality.adoc[`ReadingQuality`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 

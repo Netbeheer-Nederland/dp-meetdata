@@ -6,14 +6,19 @@
 Note: Interval Data is sometimes also called *Interval Data Readings* (IDR).+++
 
 
-[cols="h,3",width=60%]
+[cols="h,3",width=65%]
 |===
 | Type
 | Class
 
-
 | URI^xref:ROOT::uri_explanation.adoc[?]^
-| https://cim.ucaiug.io/ns#IntervalBlock[`cim:IntervalBlock`]
+| `cim:IntervalBlock`
+
+
+| CIM standard (perspective)
+| IEC61968 (Enterprise)
+
+
 
 |===
 
@@ -35,28 +40,35 @@ vars: {
 }
 IntervalBlock {
   style {
-    fill: "#eccfcb"
+    fill: "#d1e7c2"
     shadow: true
   }
 }
+
 
 
 IntervalReading {
   style {
-    fill: "#eccfcb"
+    fill: "#d1e7c2"
     shadow: true
   }
 }
+
+
 
 ReadingType {
   style {
-    fill: "#eccfcb"
+    fill: "#d1e7c2"
     shadow: true
   }
 }
 
 
+
+
 IntervalBlock -> IntervalReading: interval_readings
+
+
 IntervalBlock -> ReadingType: reading_type
 
 
@@ -113,17 +125,15 @@ legend: "" {
 |===
 | Name | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"] | Type | Description
 
-| <<interval_readings,`interval_readings`>>
-| 1..*
-| xref::class/IntervalReading.adoc[`IntervalReading`]
-//| +++Interval reading contained in this block.+++
-| +++Interval reading contained in this block.+++
-
 | <<reading_type,`reading_type`>>
 | 1
 | xref::class/ReadingType.adoc[`ReadingType`]
-//| +++Type information for interval reading values contained in this block.+++
 | +++Type information for interval reading values contained in this block.+++
+
+| <<interval_readings,`interval_readings`>>
+| 1..*
+| xref::class/IntervalReading.adoc[`IntervalReading`]
+| +++Interval reading contained in this block.+++
 |===
 
 '''
@@ -134,28 +144,15 @@ legend: "" {
 === `interval_readings`
 +++Interval reading contained in this block.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#IntervalBlock.IntervalReadings[`cim:IntervalBlock.IntervalReadings`]
-| Cardinality
+| `cim:IntervalBlock.IntervalReadings`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1..*
-| Data type
+| Type
 | xref::class/IntervalReading.adoc[`IntervalReading`]
 
-| Inherited from
-| xref::class/IntervalBlock.adoc[`IntervalBlock`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 
@@ -164,28 +161,15 @@ a|
 === `reading_type`
 +++Type information for interval reading values contained in this block.+++
 
-[cols="h,1",width=60%]
+[cols="h,4",width=65%]
 |===
 | URI
-| https://cim.ucaiug.io/ns#IntervalBlock.ReadingType[`cim:IntervalBlock.ReadingType`]
-| Cardinality
+| `cim:IntervalBlock.ReadingType`
+| Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
-| Data type
+| Type
 | xref::class/ReadingType.adoc[`ReadingType`]
 
-| Inherited from
-| xref::class/IntervalBlock.adoc[`IntervalBlock`]
-
-| Glossary mappings ^xref:ROOT::what_are_glossary_mappings.adoc[?]^
-a|
-!===
-! Mapping type ! Term
-
-! `closeMatch`
-! `nbnl:EAN`
-! `exactMatch`
-! `schema:gtin13`
-!===
 
 |===
 
