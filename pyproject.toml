@@ -22,6 +22,3 @@ linkml-asciidoc-generator = { git = "https://github.com/Netbeheer-Nederland/link
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
-
-[project.scripts]
-gen_asciidoc = "linkml_asciidoc_generator.main"

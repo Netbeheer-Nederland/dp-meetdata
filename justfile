@@ -8,7 +8,7 @@ _default:
 
 # Generate everything
 [group("generators")]
-gen-all: clean gen-json-schema show-output
+gen-all: clean gen-json-schema gen-docs show-output
 
 # Generate JSON Schema
 [group("generators")]
@@ -34,34 +34,34 @@ gen-docs:
     @echo -en "\t"
     mkdir -p "$DP_MEETDATA_DOCS_IM_MODULE_DIR"
     @echo -en "\t"
-    poetry run linkml-gen-asciidoc \
+    poetry run python -m linkml_asciidoc_generator.main \
         "$DP_MEETDATA_SCHEMA" \
-        -o "$DP_MEETDATA_DOCS_IM_MODULE_DIR"
+        "$DP_MEETDATA_DOCS_IM_MODULE_DIR"
     @echo -n "… "
     @echo "OK."
     @echo
-    @echo -e "Generated documentation files at: $DP_MEETDATA_SCHEMAS_DIR/json_schema/$DP_MEETDATA_PROJECT_FILENAME.json_schema.json"
+    @echo -e "Generated documentation files at: $DP_MEETDATA_DOCS_IM_MODULE_DIR"
     @echo
 
 # Clean up the output directory
 [group("general")]
 clean:
-    @echo "Cleaning up: $DP_MEETDATA_SCHEMAS_DIR"
+    @echo "Cleaning up generated artefacts…"
+    @echo -en "\tCleaning up: $DP_MEETDATA_SCHEMAS_DIR… "
     @if [ -d "$DP_MEETDATA_SCHEMAS_DIR" ]; then \
         ( shopt -s dotglob; rm -rf "$DP_MEETDATA_SCHEMAS_DIR"/* ); \
     else \
         mkdir "$DP_MEETDATA_SCHEMAS_DIR"; \
     fi
-    @echo -n "… "
-    @echo -e "OK."
-    @echo "Cleaning up: $DP_MEETDATA_DOCS_IM_MODULE_DIR"
+    @echo "OK."
+    @echo -en "\tCleaning up: $DP_MEETDATA_DOCS_IM_MODULE_DIR… "
     @if [ -d "$DP_MEETDATA_DOCS_DIR" ]; then \
         ( shopt -s dotglob; rm -rf "$DP_MEETDATA_DOCS_IM_MODULE_DIR"/* ); \
     else \
         mkdir "$DP_MEETDATA_DOCS_IM_MODULE_DIR"; \
     fi
-    @echo -n "… "
-    @echo -e "OK."
+    @echo "OK."
+    @echo "OK."
     @echo
 
 # Show the contents of the output directory

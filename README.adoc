@@ -43,6 +43,8 @@ The documentation can be found https://netbeheer-nederland.github.io/docs-dev/dp
 
 == For developers
 
+=== Task runner
+
 Make sure to have the https://github.com/casey/just[Just task runner] installed.
 
 Then, for an overview of what tasks it can perform for you, simply run:
@@ -51,3 +53,9 @@ Then, for an overview of what tasks it can perform for you, simply run:
 ----
 $ just
 ----
+
+==== `.env` file
+
+Many tasks ran by the runner echo the exact command being fed to the shell. This is particularly useful for debugging. You'll notice, though, that many of these commands use environment variables. Those are defined in the `.env` file and can be sourced in your shell for your convenience when you want to copy/paste those commands and (after adjusting them) run them yourself.
+
+CAUTION: If you change or add environment variables, please adhere to the convention of prefixing their names such that it's clear for what project they are defined. This also avoids unintentionally applicable values being effective, or unfortunate name collisions.
