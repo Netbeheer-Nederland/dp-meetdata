@@ -26,6 +26,7 @@
 ** xref::class/IOPoint.adoc[`IOPoint`]
 *** xref::class/MeasurementValue.adoc[`MeasurementValue`]
 **** *`BaseReading`*
+ ***** xref::class/IntervalReading.adoc[`IntervalReading`]
 
 
 == Slots

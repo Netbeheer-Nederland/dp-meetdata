@@ -1,4 +1,3 @@
-* xref:dp-meetdata::index.adoc[]
 * Conceptual model
 * Glossary
 * Process

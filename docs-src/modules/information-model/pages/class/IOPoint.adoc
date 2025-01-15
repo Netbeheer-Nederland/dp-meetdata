@@ -24,6 +24,7 @@
 == Class hierarchy
 * xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 ** *`IOPoint`*
+ *** xref::class/MeasurementValue.adoc[`MeasurementValue`]
 
 
 == Slots

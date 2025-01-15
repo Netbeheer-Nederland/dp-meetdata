@@ -65,6 +65,7 @@
 
 
 
+
 ** Enumerations
 *** xref::enumeration/AccumulationKind.adoc[`AccumulationKind`]
 *** xref::enumeration/AggregateKind.adoc[`AggregateKind`]

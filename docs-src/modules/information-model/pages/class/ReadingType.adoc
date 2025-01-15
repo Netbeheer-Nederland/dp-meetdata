@@ -115,22 +115,22 @@ legend: "" {
 
 | <<flow_direction,`flow_direction`>>
 | 1
-| n/a
+| `FlowDirectionKind`
 | +++Flow direction for a reading where the direction of flow of the commodity is important (for electricity measurements this includes current, energy, power, and demand).+++
 
 | <<multiplier,`multiplier`>>
 | 1
-| n/a
+| `UnitMultiplier`
 | +++Metering-specific multiplier.+++
 
 | <<unit,`unit`>>
 | 1
-| n/a
+| `UnitSymbol`
 | +++Metering-specific unit.+++
 
 | <<aggregate,`aggregate`>>
 | 0..1
-| n/a
+| `AggregateKind`
 | +++Salient attribute of the reading data aggregated from individual endpoints. This is mainly used to define a mathematical operation carried out over 'macroPeriod', but may also be used to describe an attribute of the data when the 'macroPeriod' is not defined.+++
 
 | <<description,`description`>>
@@ -165,7 +165,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 0..1
 | Type
-| n/a
+| `AggregateKind`
 
 
 |===
@@ -202,7 +202,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
 | Type
-| n/a
+| `FlowDirectionKind`
 
 
 | Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^
@@ -257,7 +257,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
 | Type
-| n/a
+| `UnitMultiplier`
 
 
 |===
@@ -294,7 +294,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | Cardinalityxref:ROOT::cardinalities_explained.adoc[^?^,title="Explains stuff"]
 | 1
 | Type
-| n/a
+| `UnitSymbol`
 
 
 | Glossary mappings^xref:ROOT::what_are_glossary_mappings.adoc[?]^

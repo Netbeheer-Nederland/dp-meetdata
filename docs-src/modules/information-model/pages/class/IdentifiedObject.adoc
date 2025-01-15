@@ -23,6 +23,10 @@
 
 == Class hierarchy
 * *`IdentifiedObject`*
+ ** xref::class/IOPoint.adoc[`IOPoint`]
+ ** xref::class/MeterReading.adoc[`MeterReading`]
+ ** xref::class/ReadingType.adoc[`ReadingType`]
+ ** xref::class/UsagePoint.adoc[`UsagePoint`]
 
 
 == Slots

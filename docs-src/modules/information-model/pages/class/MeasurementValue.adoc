@@ -25,6 +25,7 @@
 * xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 ** xref::class/IOPoint.adoc[`IOPoint`]
 *** *`MeasurementValue`*
+ **** xref::class/BaseReading.adoc[`BaseReading`]
 
 
 == Slots
