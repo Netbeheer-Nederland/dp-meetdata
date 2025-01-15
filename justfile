@@ -17,7 +17,7 @@ gen-json-schema:
     @echo -en "\t"
     mkdir -p "$DP_MEETDATA_SCHEMAS_DIR"/json_schema
     @echo -en "\t"
-    linkml generate json-schema \
+    poetry run gen-json-schema \
         --not-closed \
         "$DP_MEETDATA_SCHEMA" \
         > "$DP_MEETDATA_SCHEMAS_DIR/json_schema/$DP_MEETDATA_PROJECT_FILENAME.json_schema.json"
