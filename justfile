@@ -51,13 +51,13 @@ clean:
     @if [ -d "$DP_MEETDATA_SCHEMAS_DIR" ]; then \
         ( shopt -s dotglob; rm -rf "$DP_MEETDATA_SCHEMAS_DIR"/* ); \
     else \
-        mkdir "$DP_MEETDATA_SCHEMAS_DIR"; \
+        mkdir -p "$DP_MEETDATA_SCHEMAS_DIR"; \
     fi
     @echo -e "\tCleaning up: $DP_MEETDATA_DOCS_IM_MODULE_DIR "
     @if [ -d "$DP_MEETDATA_DOCS_DIR" ]; then \
         ( shopt -s dotglob; rm -rf "$DP_MEETDATA_DOCS_IM_MODULE_DIR"/* ); \
     else \
-        mkdir "$DP_MEETDATA_DOCS_IM_MODULE_DIR"; \
+        mkdir -p "$DP_MEETDATA_DOCS_IM_MODULE_DIR"; \
     fi
     @echo "… OK."
     @echo
