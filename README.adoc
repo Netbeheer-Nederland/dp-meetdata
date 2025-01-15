@@ -2,7 +2,7 @@
 
 In this repository the data product _Meetdata_ is maintained.
 
-For all that's maintained here, see: <<Repository_structure>>.
+For all that's maintained here, see: <<Repository structure>>.
 
 == Documentation
 
