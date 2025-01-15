@@ -64,7 +64,7 @@ worden voor de toepassing;
 Het dataproduct is onderheving aan functionele eisen: wat het
 dataproduct moet _doen_.
 
-[width="100%",cols="1,4,3",options="header",]
+[width="100%",cols="1,4,3",options="header"]
 |===
 |Als |Wil ik |Want
 |GV-klant |Een uniform overzicht van gemeten energieverbruik (E&G,
@@ -126,9 +126,29 @@ deze stappen dienen apart beschreven en geïmplementeerd te worden.
 === Gebruiksscenario: centraal dataproduct
 
 .Gebruiksscenario
-image::use_case_01-20241125.svg[Gebruiksscenario]
+[d2,theme=4]
+----
+vars: {
+  d2-config: {
+    pad: 0
+  }
+}
+direction: right
+shape: sequence_diagram
+gvKlant: "GV-klant / Derde"
+register: "Meetdataregister (EDSN)"
+platform: "Toestemmingsplatform"
+aangeslotene: "Aangeslotene"
+gvKlant.vraagop -> register.vraagop: "1. Vraag meetgegevens op"
+register.vraagop -> platform.vraagop: "2. Is toestemming gegeven?"
+alt: "Alt" {
+  platform.vraagop -> aangeslotene.vraagop: "3. Toestemming vragen"
+  aangeslotene.vraagop -> platform.vraagop: "4. Toestemming geven"
+}
+platform.vraagop -> register.vraagop: "5. Toestemming gegeven"
+register.vraagop -> gvKlant.vraagop: "6. Lever meetgegevens"
+----
 
-[arabic]
 . een _GV-klant_ of een _derde_ (e.g. een ontwikkelbedrijf) vraagt
 meetgegevens op voor één of meerdere aansluitingen bij het _EDSN
 meetdataregister_. GV-klanten vragen meetdata aan voor eigen
@@ -162,9 +182,27 @@ geleverd. Niet alle netbeheerders kennen een dergelijke partneromgeving.
 === Gebruikersscenario: decentraal dataproduct
 
 .Gebruiksscenario
-image::use_case_02-20241125.svg[Gebruiksscenario]
+[d2,theme=4]
+----
+vars: {
+  d2-config: {
+    pad: 0
+  }
+}
+direction: right
+shape: sequence_diagram
+gvKlant: "GV-klant / Derde"
+netbeheerder: "Netbeheerder"
+aangeslotene: "Aangeslotene"
+gvKlant.vraagop -> netbeheerder.vraagop: "1. Vraag meetgegevens op"
+netbeheerder.toestemming -> netbeheerder.toestemming: "2. Is toestemming gegeven?"
+alt: "Alt" {
+  netbeheerder.vraagop -> aangeslotene.vraagop: "3. Toestemming vragen"
+  aangeslotene.vraagop -> netbeheerder.vraagop: "4. Toestemming geven"
+}
+netbeheerder.vraagop -> gvKlant.vraagop: "5. Lever meetgegevens"
+----
 
-[arabic]
 . een _GV-klant_ of een _derde_ (e.g. een ontwikkelbedrijf) vraagt
 meetgegevens op voor één of meerdere aansluitingen bij de netbeheerder.
 GV-klanten vragen meetdata aan voor eigen aansluiting(en), derden voor
