@@ -1,0 +1,29 @@
+name: Publish data product
+on: [workflow_dispatch, push, pull_request]
+jobs:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v4
+      - name: Setup Python 3.12.7
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.12.7"
+      - name: Install Poetry 1.8.4
+        run: curl -sSL https://install.python-poetry.org | python3 - --version 1.8.4
+      - name: Install Python project dependencies
+        run: $HOME/local/bin/poetry install --no-root
+      - name: Install Just 1.38.0
+        run: pip install rust-just==1.38.0
+      - name: Generate documentation and schemas
+        run: just gen-all
+      - name: Commit generated artefacts
+        run: |
+          git config --global user.name "Pipeline"
+          git add docs/modules/information-model schemas  # TODO: Use `.env` file
+          git diff-index --quiet HEAD || git commit -m 'Generated artefacts'
+          git push
