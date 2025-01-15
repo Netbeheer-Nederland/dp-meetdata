@@ -15,7 +15,7 @@ jobs:
       - name: Install Poetry 1.8.4
         run: curl -sSL https://install.python-poetry.org | python3 - --version 1.8.4
       - name: Install Python project dependencies
-        run: $HOME/local/bin/poetry install --no-root
+        run: $HOME/.local/bin/poetry install --no-root
       - name: Install Just 1.38.0
         run: pip install rust-just==1.38.0
       - name: Generate documentation and schemas
