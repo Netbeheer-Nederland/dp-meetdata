@@ -1,0 +1,41 @@
+= Meetdata
+
+Information model for the "`meetdata`" data product.
+
+== Documentation
+
+https://netbeheer-nederland.github.io/docs-dev/dp-meetdata/latest
+
+== Repository Structure
+
+[source]
+----
+├── definition
+│   └── dp_meetdata.dprod.linkml.yaml <1>
+├── docs <3>
+│   ├── antora.yml <4>
+│   └── modules
+│       ├── ROOT <5>
+│       └── information_model <6>
+├── examples <7>
+├── information_model <8>
+│   └── dp_meetdata.schema.linkml.yaml <9>
+├── justfile <10>
+├── LICENSE <11>
+├── poetry.lock <12>
+├── pyproject.toml <13>
+├── README.adoc
+└── schemas <14>
+----
+<1> Formal definition of the data product. This is metadata meant to describe the data product (information models, data services, catalog metadata, etc.) in a machine readable fashion such that it can be used for governance automation and cataloguing.
+
+== For developers
+
+Make sure to have the https://github.com/casey/just[`just` task runner] installed.
+
+Then, for an overview of what tasks it can perform for you, simply run:
+
+[source]
+----
+$ just
+----
