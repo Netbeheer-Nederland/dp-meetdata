@@ -20,7 +20,8 @@ jobs:
         run: just gen-all
       - name: Commit generated artefacts
         run: |
-          git config --global user.name "Pipeline"
+          git config user.name "CICD"
+          git config user.email "cicd@netbeheernederland.nl"
           git add docs/modules/information-model schemas  # TODO: Use `.env` file
           git diff-index --quiet HEAD || git commit -m 'Generated artefacts'
           git push
