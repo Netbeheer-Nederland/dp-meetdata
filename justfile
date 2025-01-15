@@ -46,7 +46,7 @@ gen-docs:
 # Clean up the output directory
 [group("general")]
 clean:
-    @echo "Cleaning up generated artefacts…"
+    @echo "Cleaning up generated artifacts…"
     @echo -e "\tCleaning up: $DP_MEETDATA_SCHEMAS_DIR"
     @if [ -d "$DP_MEETDATA_SCHEMAS_DIR" ]; then \
         ( shopt -s dotglob; rm -rf "$DP_MEETDATA_SCHEMAS_DIR"/* ); \
