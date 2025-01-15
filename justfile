@@ -47,21 +47,19 @@ gen-docs:
 [group("general")]
 clean:
     @echo "Cleaning up generated artefacts…"
-    @echo -en "\tCleaning up: $DP_MEETDATA_SCHEMAS_DIR… "
+    @echo -e "\tCleaning up: $DP_MEETDATA_SCHEMAS_DIR"
     @if [ -d "$DP_MEETDATA_SCHEMAS_DIR" ]; then \
         ( shopt -s dotglob; rm -rf "$DP_MEETDATA_SCHEMAS_DIR"/* ); \
     else \
         mkdir "$DP_MEETDATA_SCHEMAS_DIR"; \
     fi
-    @echo "OK."
-    @echo -en "\tCleaning up: $DP_MEETDATA_DOCS_IM_MODULE_DIR… "
+    @echo -e "\tCleaning up: $DP_MEETDATA_DOCS_IM_MODULE_DIR "
     @if [ -d "$DP_MEETDATA_DOCS_DIR" ]; then \
         ( shopt -s dotglob; rm -rf "$DP_MEETDATA_DOCS_IM_MODULE_DIR"/* ); \
     else \
         mkdir "$DP_MEETDATA_DOCS_IM_MODULE_DIR"; \
     fi
-    @echo "OK."
-    @echo "OK."
+    @echo "… OK."
     @echo
 
 # Show the contents of the output directory
