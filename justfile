@@ -27,6 +27,22 @@ gen-json-schema:
     @echo -e "Generated JSON Schema at: $DP_MEETDATA_SCHEMAS_DIR/json_schema/$DP_MEETDATA_PROJECT_FILENAME.json_schema.json"
     @echo
 
+# Generate schema documentation (as an Antora module)
+[group("generators")]
+gen-docs:
+    @echo "Generating documentation…"
+    @echo -en "\t"
+    mkdir -p "$DP_MEETDATA_DOCS_IM_MODULE_DIR"
+    @echo -en "\t"
+    poetry run linkml-gen-asciidoc \
+        "$DP_MEETDATA_SCHEMA" \
+        -o "$DP_MEETDATA_DOCS_IM_MODULE_DIR"
+    @echo -n "… "
+    @echo "OK."
+    @echo
+    @echo -e "Generated documentation files at: $DP_MEETDATA_SCHEMAS_DIR/json_schema/$DP_MEETDATA_PROJECT_FILENAME.json_schema.json"
+    @echo
+
 # Clean up the output directory
 [group("general")]
 clean:

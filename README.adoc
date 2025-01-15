@@ -12,37 +12,34 @@ The documentation can be found https://netbeheer-nederland.github.io/docs-dev/dp
 
 [source]
 ----
-├── definition
-│   └── dp_meetdata.dprod.linkml.yaml <1>
-├── docs <2>
-│   ├── antora.yml <3>
+├── docs <1>
+│   ├── antora.yml <2>
 │   └── modules
-│       ├── ROOT <4>
-│       └── information_model <5>
-├── examples <6>
-├── information_model <7>
-│   └── dp_meetdata.schema.linkml.yaml <8>
-├── justfile <9>
-├── LICENSE <10>
-├── poetry.lock <11>
-├── pyproject.toml <12>
-├── README.adoc <13>
-└── schemas <14>
+│       ├── ROOT <3>
+│       └── information_model <4>
+├── examples <5>
+├── information_model <6>
+│   └── dp_meetdata.schema.linkml.yaml <7>
+├── justfile <8>
+├── LICENSE <9>
+├── poetry.lock <10>
+├── pyproject.toml <11>
+├── README.adoc <12>
+└── schemas <13>
 ----
-<1> Formal definition of the data product. This is metadata meant to describe the data product (information models, data services, catalog metadata, etc.) in a machine readable fashion such that it can be used for governance automation and cataloguing.
-<2> The entirety of the documentation source is kept here. This includes manually written text and generated artefacts.
-<3> The documentation is defined as an https://docs.antora.org/antora/latest/component-version/[Antora component version]. Configuration is done through this file.
-<4> The `ROOT` module contains some of the core documentation pages such as the landing page, index and navigation page, but can (and tends to) also contain manually written content.
-<5> This module contains the documentation of the information model/schema. This should be generated using the AsciiDoc generator.
-<6> Example data can be found here.
-<7> All information models (i.e. technology-agnostic formal descriptions of the data) can be found here.
-<8> At least there must be a LinkML schema which follows the naming pattern: `<DATAPRODUCT_NAME>.schema.linkml.yaml`.
-<9> In this file all defined tasks for the Just task runner can be found. Very handy for developers.
-<10> A license file must always be present to indicate what license is adhered to.
-<11> Poetry lock file which describes the exact versions used of all Python dependencies of this project.
-<12> Poetry project file where Python dependencies are managed.
-<13> You are reading it right now.
-<14> Generated (technical) schemas are outputted here.
+<1> The entirety of the documentation source is kept here. This includes manually written text and generated artefacts.
+<2> The documentation is defined as an https://docs.antora.org/antora/latest/component-version/[Antora component version]. Configuration is done through this file.
+<3> The `ROOT` module contains some of the core documentation pages such as the landing page, index and navigation page, but can (and tends to) also contain manually written content.
+<4> This module contains the documentation of the information model/schema. This should be generated using the AsciiDoc generator.
+<5> Example data can be found here.
+<6> All information models (i.e. technology-agnostic formal descriptions of the data) can be found here.
+<7> At least there must be a LinkML schema which follows the naming pattern: `<DATAPRODUCT_NAME>.schema.linkml.yaml`.
+<8> In this file all defined tasks for the Just task runner can be found. Very handy for developers.
+<9> A license file must always be present to indicate what license is adhered to.
+<10> Poetry lock file which describes the exact versions used of all Python dependencies of this project.
+<11> Poetry project file where Python dependencies are managed.
+<12> You are reading it right now.
+<13> Generated (technical) schemas are outputted here.
 
 == For developers
 
