@@ -1,7 +1,5 @@
 name: Publish data product
 on: [workflow_dispatch, push, pull_request]
-permissions:
-  contents: read
 jobs:
   build:
     runs-on: ubuntu-latest
