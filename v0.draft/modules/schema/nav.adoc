@@ -1,0 +1,74 @@
+[.truncate]
+* Information model
+** xref::index.adoc[Index]
+** Classes
+*** xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet` (root)]
+
+*** xref::class/BaseReading.adoc[`BaseReading`]
+
+
+
+*** xref::class/DateTimeInterval.adoc[`DateTimeInterval`]
+
+
+
+*** xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+
+
+*** xref::class/IntervalBlock.adoc[`IntervalBlock`]
+
+
+
+*** xref::class/IntervalReading.adoc[`IntervalReading`]
+
+
+
+*** xref::class/IOPoint.adoc[`IOPoint`]
+
+
+
+*** xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+
+
+
+*** xref::class/MeasurementValue.adoc[`MeasurementValue`]
+
+
+
+*** xref::class/MeterReading.adoc[`MeterReading`]
+
+
+
+
+*** xref::class/Name.adoc[`Name`]
+
+
+
+*** xref::class/NameType.adoc[`NameType`]
+
+
+
+*** xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
+
+
+
+*** xref::class/ReadingQuality.adoc[`ReadingQuality`]
+
+
+
+*** xref::class/ReadingType.adoc[`ReadingType`]
+
+
+
+*** xref::class/UsagePoint.adoc[`UsagePoint`]
+
+
+
+
+** Enumerations
+*** xref::enumeration/AccumulationKind.adoc[`AccumulationKind`]
+*** xref::enumeration/AggregateKind.adoc[`AggregateKind`]
+*** xref::enumeration/FlowDirectionKind.adoc[`FlowDirectionKind`]
+*** xref::enumeration/UnitMultiplier.adoc[`UnitMultiplier`]
+*** xref::enumeration/UnitSymbol.adoc[`UnitSymbol`]

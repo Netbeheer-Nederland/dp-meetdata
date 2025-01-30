@@ -1,0 +1,151 @@
+= Meetdata
+
+The _Meetdata_ data product describes the metered data for a single or multiple
+market evaluation points (_Aansluiting_). The
+xref:solution-design.adoc[solution design] provides more detail on the use
+cases and implementation of the data product for DSOs. This data product
+follows the EUMED Profile, as standardised in _ISO/IEC 61968-9:2024: Interfaces
+for meter reading and control_. This data product aligns with the
+implementation by other EU Member States.
+
+.Data Product
+[d2,svg,theme=4]
+----
+grid-rows: 5
+grid-columns: 4
+
+horizontal-gap: 160
+vertical-gap: 80
+
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+
+MeterReadingDataSet.class: dataset
+MarketEvaluationPoint.class: market
+MeterReading.class: enterprise
+DateTimeInterval.class: enterprise
+
+1.class: empty
+EnergyConsumer.class: grid
+IntervalBlock.class: enterprise
+ReadingType.class: enterprise
+
+2.class: empty
+Location.class: enterprise
+IntervalReading.class: enterprise
+ReadingQuality.class: enterprise
+
+MeterReadingDataSet -> MarketEvaluationPoint: ""
+MarketEvaluationPoint -> MeterReading: "meter_readings"
+MeterReading -> DateTimeInterval: "values_interval"
+MeterReading -> IntervalBlock: "interval_blocks"
+IntervalBlock -> IntervalReading: "interval_readings"
+IntervalReading -> ReadingQuality: "reading_qualities"
+IntervalBlock -> ReadingType: "reading_type"
+MarketEvaluationPoint -> EnergyConsumer: "equipments"
+EnergyConsumer -> Location: "location"
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
+
+classes: {
+  empty: {
+    label: ""
+    style: {
+      fill: transparent
+      stroke: transparent
+    }
+  }
+  grid: {
+    style: {
+      fill: "#eccfcb"
+      shadow: true
+    }
+  }
+  enterprise: {
+    style: {
+      fill: "#d1e7c2"
+      shadow: true
+    }
+  }
+  market: {
+    style: {
+      fill: "#fffbef"
+      shadow: true
+    }
+  }
+  dataset: {
+    style: {
+      shadow: true
+    }
+  }
+}
+----
+
+The data is intended to be represented as a hierarchy with a
+xref:schema:class/MeterReadingDataSet.adoc[`MeterReadingDataSet`] at
+its root, followed by
+xref:schema:class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]s
+nested inside the `MeterReadingDataSet`. Each `MarketEvaluationPoint` has one
+or more xref:schema:class/MeterReading.adoc[`MeterReading`]s.
+
+A `MeterReading` has one or more
+xref:schema:class/IntervalBlock.adoc[`IntervalBlock`]s, which
+defines the time period for which the
+xref:schema:class/IntervalReading.adoc[`IntervalReading`]s are
+applicable. A xref:schema:class/ReadingType.adoc[`ReadingType`]
+defines attributes for the ``IntervalReading``s. Each `IntervalReading` can be
+provided a xref:schema:class/ReadingQuality.adoc[`ReadingQuality`],
+defining data quality for the `IntervalReading`.
+
+== Additional schemas
+
+* xref:schema:attachment$dp_meetdata.json_schema.json[JSON schema]
+* xref:schema:example$dp_meetdata.example.json[Example instance data]
