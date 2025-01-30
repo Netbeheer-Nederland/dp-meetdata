@@ -1,0 +1,7 @@
+_commit: v0.7.7
+_src_path: gh:Netbeheer-Nederland/tmpl-dp
+description: Information models for the Meetdata data product.
+name: dp-meetdata
+org: Netbeheer-Nederland
+schema_base_uri: http://data.netbeheernederland.nl/data-product
+title: Meetdata
