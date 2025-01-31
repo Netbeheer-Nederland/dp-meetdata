@@ -145,5 +145,5 @@ defining data quality for the `IntervalReading`.
 
 == Additional schemas
 
-* xref:schema:attachment$dp_meetdata.json_schema.json[JSON schema]
-* xref:schema:example$dp_meetdata.example.json[Example instance data]
+* xref:schema:attachment$schemas/json_schema/dp_meetdata.json_schema.json[JSON schema]
+* xref:schema:attachment$examples/dp_meetdata.example.json[Example instance data]
