@@ -1,0 +1,22 @@
+name: dp-meetdata
+version: v1.0.0
+description: |-
+  Information models for the Meetdata data product.
+title: Meetdata
+id: http://data.netbeheernederland.nl/data-product/dp-meetdata
+license: https://www.apache.org/licenses/LICENSE-2.0.txt
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  dcat: http://www.w3.org/ns/dcat#
+  dct: http://purl.org/dc/terms/
+  github: https://github.com/
+  liander: http://data.liander.nl/markt/def#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: http://iec.ch/TC57/CIM100-Netherlands#
+  owl: http://www.w3.org/2002/07/owl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  this: http://data.netbeheernederland.nl/data-product/dp-meetdata/def#
+classes: {}
