@@ -1,12 +1,10 @@
 = Meetdata
 
 The _Meetdata_ data product describes the metered data for a single or multiple
-market evaluation points (_Aansluiting_). The
-xref:solution-design.adoc[solution design] provides more detail on the use
-cases and implementation of the data product for DSOs. This data product
-follows the EUMED Profile, as standardised in _ISO/IEC 61968-9:2024: Interfaces
-for meter reading and control_. This data product aligns with the
-implementation by other EU Member States.
+market evaluation points (_Aansluiting_). This data product follows the EUMED
+Profile, as standardised in _ISO/IEC 61968-9:2024: Interfaces for meter reading
+and control_. This data product aligns with the implementation by other EU
+Member States.
 
 .Data Product
 [d2,svg,theme=4]
@@ -147,5 +145,5 @@ defining data quality for the `IntervalReading`.
 
 == Additional schemas
 
-* xref:schema:attachment$dp_meetdata.json_schema.json[JSON schema]
-* xref:schema:example$dp_meetdata.example.json[Example instance data]
+* xref:schema:attachment$schemas/json_schema/dp_meetdata.json_schema.json[JSON schema]
+* xref:schema:attachment$examples/dp_meetdata.example.json[Example instance data]
