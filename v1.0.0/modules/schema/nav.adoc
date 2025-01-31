@@ -1,6 +1,0 @@
-[.truncate]
-* Information model
-** xref::index.adoc[Index]
-** Classes
-*** xref::class/.adoc[`` (root)]
-

@@ -1,9 +1,0 @@
-{
-    "$id": "http://data.netbeheernederland.nl/data-product/dp-meetdata",
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "additionalProperties": true,
-    "metamodel_version": "1.7.0",
-    "title": "dp-meetdata",
-    "type": "object",
-    "version": "v1.0.0"
-}
