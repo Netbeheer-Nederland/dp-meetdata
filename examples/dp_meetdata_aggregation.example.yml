@@ -1,0 +1,72 @@
+identifier: 'test_dp_meetdata_aggregation'
+contact_point: 'ritger.teunissen@alliander.com'
+conforms_to: http://data.netbeheernederland.nl/data-product/dp-meetdata
+release_date: '2025-02-14'
+version: 1.1.0
+
+market_evaluation_points:
+  - meter_readings:
+      - values_interval:
+          start: '2023-10-17'
+          end: '2999-12-31'
+        interval_blocks:
+          - interval_readings:
+              - value: 131.224361068149
+                time_stamp: '2024-11-22T13:00:00Z'
+              - value: 131.299243022597
+                time_stamp: '2024-11-22T13:15:00Z'
+              - value: 132.0301537
+                time_stamp: '2024-11-22T13:30:00Z'
+              - value: 131.1734701
+                time_stamp: '2024-11-22T13:45:00Z'
+            reading_type:
+              flow_direction: forward
+              multiplier: k
+              unit: W
+      - values_interval:
+          start: '2023-10-17'
+          end: '2999-12-31'
+        interval_blocks:
+          - interval_readings:
+              - value: 82.8008133781673
+                time_stamp: '2024-11-22T13:00:00Z'
+              - value: 83.4262394054705
+                time_stamp: '2024-11-22T13:15:00Z'
+              - value: 87.0049577428511
+                time_stamp: '2024-11-22T13:30:00Z'
+              - value: 82.3364836277116
+                time_stamp: '2024-11-22T13:45:00Z'
+            reading_type:
+              aggregate: average
+              flow_direction: reverse
+              multiplier: k
+              unit: W
+    is_virtual: true
+    equipments:
+      - aggregate: true
+        location:
+          main_address:
+            postal_code: '1234AB'
+  - meter_readings:
+      - values_interval:
+          start: '2023-10-17'
+          end: '2999-12-31'
+        interval_blocks:
+          - interval_readings:
+              - value: 54.6734982
+                time_stamp: '2024-12-05T17:45:00Z'
+            reading_type:
+              aggregate: average
+              flow_direction: forward
+              multiplier: k
+              unit: W
+    is_virtual: true
+    equipments:
+      - aggregate: true
+        location:
+          main_address:
+            town_detail:
+              code: '4'
+              name: 'Arnhem'
+              section: 'Lombok'
+              state_or_province: 'Gelderland'
