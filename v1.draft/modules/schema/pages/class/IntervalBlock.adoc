@@ -1,0 +1,176 @@
+= `IntervalBlock`
+:toclevels: 4
+
+
++++Time sequence of readings of the same reading type. Contained interval readings may need conversion through the application of an offset and a scalar defined in associated pending. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.
+Note: Interval Data is sometimes also called *Interval Data Readings* (IDR).+++
+
+
+[cols="h,3",width=65%]
+|===
+| Type
+| Class
+
+| URI
+| `cim:IntervalBlock`
+
+
+| CIM standard (perspective)
+| IEC61968 (Enterprise)
+
+
+
+|===
+
+== Class hierarchy
+* *`IntervalBlock`*
+
+
+== Slots
+
+
+
+.Associated classes
+[d2,svg,theme=4]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+IntervalBlock {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
+
+
+
+IntervalReading {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
+
+
+
+ReadingType {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
+
+
+
+
+IntervalBlock -> IntervalReading: interval_readings
+
+
+IntervalBlock -> ReadingType: reading_type
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
+----
+
+
+[cols="3,1,3,6",width=100%]
+|===
+| Name | Cardinality | Type | Description
+
+| <<reading_type,`reading_type`>>
+| 1
+| xref::class/ReadingType.adoc[`ReadingType`]
+| +++Type information for interval reading values contained in this block.+++
+
+| <<interval_readings,`interval_readings`>>
+| 1..*
+| xref::class/IntervalReading.adoc[`IntervalReading`]
+| +++Interval reading contained in this block.+++
+|===
+
+'''
+
+
+//[discrete]
+[#interval_readings]
+=== `interval_readings`
++++Interval reading contained in this block.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:IntervalBlock.IntervalReadings`
+| Cardinality
+| 1..*
+| Type
+| xref::class/IntervalReading.adoc[`IntervalReading`]
+
+
+|===
+
+//[discrete]
+[#reading_type]
+=== `reading_type`
++++Type information for interval reading values contained in this block.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:IntervalBlock.ReadingType`
+| Cardinality
+| 1
+| Type
+| xref::class/ReadingType.adoc[`ReadingType`]
+
+
+|===
+
+
