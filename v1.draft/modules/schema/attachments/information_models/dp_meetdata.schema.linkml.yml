@@ -688,15 +688,15 @@ classes:
         multivalued: true
         description: All equipment connecting this usage point to the electrical grid.
       european_article_number_ean:
-        description: The attribute is used for an exchange of the EAN code (European
-          Article Number). The length of the string is 18 characters as defined by
-          the EAN code. For details on EAN scheme please refer to the [Codebesluit
-          toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).
+        description: The attribute is used for an exchange of the EAN code
+          (European Article Number). The length of the string is 18 characters
+          as defined by the EAN code. For details on the EAN scheme please
+          refer to the _Codebesluit toekenning EAN-codes elektriciteit_
         exact_mappings:
-        - nbnl:EAN
+          - nbnl:europeanArticleNumberEAN
         slot_uri: nl:IdentifiedObject.europeanArticleNumberEAN
         range: string
-        required: true
+        required: false
         multivalued: false
     class_uri: cim:UsagePoint
   IdentifiedObject:

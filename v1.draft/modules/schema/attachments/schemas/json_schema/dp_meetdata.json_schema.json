@@ -562,8 +562,11 @@
                     ]
                 },
                 "european_article_number_ean": {
-                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).",
-                    "type": "string"
+                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on the EAN scheme please refer to the _Codebesluit toekenning EAN-codes elektriciteit_",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "is_virtual": {
                     "description": "If true, this usage point is virtual, i.e., no physical location exists in the network where a meter could be located to collect the meter readings. For example, one may define a virtual usage point to serve as an aggregation of usage for all of a company's premises distributed widely across the distribution territory. Otherwise, the usage point is physical, i.e., there is a logical point in the network where a meter could be located to collect meter readings.",
@@ -598,8 +601,7 @@
                 }
             },
             "required": [
-                "meter_readings",
-                "european_article_number_ean"
+                "meter_readings"
             ],
             "title": "MarketEvaluationPoint",
             "type": "object"
@@ -1156,8 +1158,11 @@
                     ]
                 },
                 "european_article_number_ean": {
-                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).",
-                    "type": "string"
+                    "description": "The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on the EAN scheme please refer to the _Codebesluit toekenning EAN-codes elektriciteit_",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "is_virtual": {
                     "description": "If true, this usage point is virtual, i.e., no physical location exists in the network where a meter could be located to collect the meter readings. For example, one may define a virtual usage point to serve as an aggregation of usage for all of a company's premises distributed widely across the distribution territory. Otherwise, the usage point is physical, i.e., there is a logical point in the network where a meter could be located to collect meter readings.",
@@ -1184,9 +1189,6 @@
                     ]
                 }
             },
-            "required": [
-                "european_article_number_ean"
-            ],
             "title": "UsagePoint",
             "type": "object"
         }

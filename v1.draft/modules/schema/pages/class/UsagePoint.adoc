@@ -127,9 +127,9 @@ legend: "" {
 | Name | Cardinality | Type | Description
 
 | <<european_article_number_ean,`european_article_number_ean`>>
-| 1
+| 0..1
 | https://w3id.org/linkml/String[`string`]
-| +++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).+++
+| +++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on the EAN scheme please refer to the _Codebesluit toekenning EAN-codes elektriciteit_+++
 
 | <<is_virtual,`is_virtual`>>
 | 0..1
@@ -201,14 +201,14 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 //[discrete]
 [#european_article_number_ean]
 === `european_article_number_ean`
-+++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on EAN scheme please refer to the [Codebesluit toekenning EAN-codes elektriciteit](https://www.acm.nl/nl/publicaties/codebesluit-toekenning-ean-codes-elektriciteit).+++
++++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on the EAN scheme please refer to the _Codebesluit toekenning EAN-codes elektriciteit_+++
 
 [cols="h,4",width=65%]
 |===
 | URI
 | http://iec.ch/TC57/CIM100-Netherlands#IdentifiedObject.europeanArticleNumberEAN[`nl:IdentifiedObject.europeanArticleNumberEAN`]
 | Cardinality
-| 1
+| 0..1
 | Type
 | https://w3id.org/linkml/String[`string`]
 
@@ -223,7 +223,7 @@ a|
 ! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
 a! 
 
-https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/EAN[`nbnl:EAN`]
+https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/europeanArticleNumberEAN[`nbnl:europeanArticleNumberEAN`]
 
 
 
