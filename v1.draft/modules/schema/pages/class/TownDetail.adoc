@@ -34,10 +34,10 @@
 |===
 | Name | Cardinality | Type | Description
 
-| <<code,`code`>>
+| <<municipality,`municipality`>>
 | 0..1
 | https://w3id.org/linkml/String[`string`]
-| +++Town code.+++
+| +++Name of the municipality.+++
 
 | <<name,`name`>>
 | 0..1
@@ -59,14 +59,14 @@
 
 
 //[discrete]
-[#code]
-=== `code`
-+++Town code.+++
+[#municipality]
+=== `municipality`
++++Name of the municipality.+++
 
 [cols="h,4",width=65%]
 |===
 | URI
-| `cim:TownDetail.code`
+| `this:TownDetail.municipality`
 | Cardinality
 | 0..1
 | Type
@@ -83,7 +83,7 @@ a|
 ! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
 a! 
 
-https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/buurt[`cbs:buurt`]
+https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/gemeente--regionaal--[`cbs:gemeente--regionaal--`]
 
 
 
@@ -117,7 +117,7 @@ a|
 ! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
 a! 
 
-https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/gemeente--regionaal--[`cbs:gemeente--regionaal--`]
+https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/plaatsnaam[`cbs:plaatsnaam`]
 
 
 

@@ -74,17 +74,7 @@
           ]
         }
       ],
-      "is_virtual": false,
-      "equipments": [
-        {
-          "aggregate": false,
-          "location": {
-            "main_address": {
-              "postal_code": "1234AB"
-            }
-          }
-        }
-      ]
+      "is_virtual": false
     },
     {
       "meter_readings": [
@@ -110,22 +100,7 @@
           ]
         }
       ],
-      "is_virtual": false,
-      "equipments": [
-        {
-          "aggregate": false,
-          "location": {
-            "main_address": {
-              "town_detail": {
-                "code": "4",
-                "name": "Arnhem",
-                "section": "Lombok",
-                "state_or_province": "Gelderland"
-              }
-            }
-          }
-        }
-      ]
+      "is_virtual": false
     }
   ]
 }

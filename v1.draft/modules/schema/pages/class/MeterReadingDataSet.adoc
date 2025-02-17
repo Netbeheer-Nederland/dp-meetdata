@@ -135,7 +135,7 @@ legend: "" {
 | n/a
 
 | <<market_evaluation_points,`market_evaluation_points`>>
-| 1..*
+| 0..*
 | xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
 | +++Market evalution points.+++
 |===
@@ -204,7 +204,7 @@ legend: "" {
 | URI
 | `this:MeterReadingDataSet.marketEvaluationPoints`
 | Cardinality
-| 1..*
+| 0..*
 | Type
 | xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
 

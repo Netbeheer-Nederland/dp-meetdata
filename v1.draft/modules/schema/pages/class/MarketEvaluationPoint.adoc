@@ -160,6 +160,11 @@ legend: "" {
 | xref::class/MeterReading.adoc[`MeterReading`]
 | +++All meter readings provided by this meter.+++
 
+| <<sbi_codes,`sbi_codes`>>
+| 0..*
+| https://w3id.org/linkml/String[`string`]
+| +++Standaard BedrijfsIndeling code. Used by the Dutch Chamber of Commerce to classify activities performed by an organisation.+++
+
 | <<description,`description`>>
 | 0..1
 | https://w3id.org/linkml/String[`string`]
@@ -321,7 +326,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 [cols="h,4",width=65%]
 |===
 | URI
-| https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/MarketEvaluationPoint.MeterReadings[`nbnl:MarketEvaluationPoint.MeterReadings`]
+| `this:MarketEvaluationPoint.MeterReadings`
 | Cardinality
 | 1..*
 | Type
@@ -346,6 +351,23 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 | Inherited from
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+
+|===
+
+//[discrete]
+[#sbi_codes]
+=== `sbi_codes`
++++Standaard BedrijfsIndeling code. Used by the Dutch Chamber of Commerce to classify activities performed by an organisation.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:Organisation.sbiCode`
+| Cardinality
+| 0..*
+| Type
+| https://w3id.org/linkml/String[`string`]
 
 
 |===

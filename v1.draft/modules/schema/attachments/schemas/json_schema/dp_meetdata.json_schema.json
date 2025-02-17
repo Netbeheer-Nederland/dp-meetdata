@@ -598,6 +598,16 @@
                         "array",
                         "null"
                     ]
+                },
+                "sbi_codes": {
+                    "description": "Standaard BedrijfsIndeling code. Used by the Dutch Chamber of Commerce to classify activities performed by an organisation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -712,7 +722,10 @@
                     "items": {
                         "$ref": "#/$defs/MarketEvaluationPoint"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "release_date": {
                     "format": "date",
@@ -725,8 +738,7 @@
                 "contact_point",
                 "conforms_to",
                 "release_date",
-                "version",
-                "market_evaluation_points"
+                "version"
             ],
             "title": "MeterReadingDataSet",
             "type": "object"
@@ -909,6 +921,17 @@
                         "null"
                     ]
                 },
+                "street_detail": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/StreetDetail"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Street detail."
+                },
                 "town_detail": {
                     "anyOf": [
                         {
@@ -924,12 +947,27 @@
             "title": "StreetAddress",
             "type": "object"
         },
+        "StreetDetail": {
+            "additionalProperties": false,
+            "description": "Street details, in the context of address.",
+            "properties": {
+                "code": {
+                    "description": "(if applicable) Utilities often make use of external reference systems, such as those of the town-planner's department or surveyor general's mapping system, that allocate global reference codes to streets.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "StreetDetail",
+            "type": "object"
+        },
         "TownDetail": {
             "additionalProperties": false,
             "description": "Town details, in the context of address.",
             "properties": {
-                "code": {
-                    "description": "Town code.",
+                "municipality": {
+                    "description": "Name of the municipality.",
                     "type": [
                         "string",
                         "null"
@@ -1207,7 +1245,10 @@
             "items": {
                 "$ref": "#/$defs/MarketEvaluationPoint"
             },
-            "type": "array"
+            "type": [
+                "array",
+                "null"
+            ]
         },
         "release_date": {
             "format": "date",
@@ -1220,8 +1261,7 @@
         "contact_point",
         "conforms_to",
         "release_date",
-        "version",
-        "market_evaluation_points"
+        "version"
     ],
     "title": "dp-meetdata",
     "type": "object",

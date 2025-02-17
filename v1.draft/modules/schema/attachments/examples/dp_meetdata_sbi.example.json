@@ -2,7 +2,7 @@
   "identifier": "test_dp_meetdata_aggregation",
   "contact_point": "ritger.teunissen@alliander.com",
   "conforms_to": "http://data.netbeheernederland.nl/data-product/dp-meetdata",
-  "release_date": "2025-02-14",
+  "release_date": "2025-02-17",
   "version": "1.1.0",
   "market_evaluation_points": [
     {
@@ -76,59 +76,9 @@
         }
       ],
       "is_virtual": true,
-      "equipments": [
-        {
-          "aggregate": true,
-          "location": {
-            "main_address": {
-              "postal_code": "1234AB"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "meter_readings": [
-        {
-          "values_interval": {
-            "start": "2023-10-17",
-            "end": "2999-12-31"
-          },
-          "interval_blocks": [
-            {
-              "interval_readings": [
-                {
-                  "value": 54.6734982,
-                  "time_stamp": "2024-12-05T17:45:00Z"
-                }
-              ],
-              "reading_type": {
-                "aggregate": "average",
-                "flow_direction": "forward",
-                "multiplier": "k",
-                "unit": "W"
-              }
-            }
-          ]
-        }
-      ],
-      "is_virtual": true,
-      "equipments": [
-        {
-          "aggregate": true,
-          "location": {
-            "main_address": {
-              "street_detail": {
-                "code": "4"
-              },
-              "town_detail": {
-                "name": "Arnhem",
-                "section": "Lombok",
-                "state_or_province": "Gelderland"
-              }
-            }
-          }
-        }
+      "sbi_codes": [
+        "1234",
+        "4321"
       ]
     }
   ]

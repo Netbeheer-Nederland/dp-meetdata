@@ -77,6 +77,9 @@ The localName is a human readable name of the object. It is a free text name loc
 | xref::class/StreetAddress.adoc[`StreetAddress`]
 | +++General purpose street and postal address information.+++
 
+| xref::class/StreetDetail.adoc[`StreetDetail`]
+| +++Street details, in the context of address.+++
+
 | xref::class/TownDetail.adoc[`TownDetail`]
 | +++Town details, in the context of address.+++
 

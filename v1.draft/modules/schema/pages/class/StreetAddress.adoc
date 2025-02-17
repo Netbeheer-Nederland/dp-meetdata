@@ -46,6 +46,15 @@ StreetAddress {
 
 
 
+StreetDetail {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
+
+
+
 TownDetail {
   style {
     fill: "#d1e7c2"
@@ -54,6 +63,9 @@ TownDetail {
 }
 
 
+
+
+StreetAddress -> StreetDetail: street_detail
 
 
 StreetAddress -> TownDetail: town_detail
@@ -117,6 +129,11 @@ legend: "" {
 | https://w3id.org/linkml/String[`string`]
 | +++Postal code for the address. Must contain four (4) numbers followed by two (2) letters, without spaces.+++
 
+| <<street_detail,`street_detail`>>
+| 0..1
+| xref::class/StreetDetail.adoc[`StreetDetail`]
+| +++Street detail.+++
+
 | <<town_detail,`town_detail`>>
 | 0..1
 | xref::class/TownDetail.adoc[`TownDetail`]
@@ -156,6 +173,23 @@ https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/postcodegebied[`cbs:po
 
 
 !===
+
+
+|===
+
+//[discrete]
+[#street_detail]
+=== `street_detail`
++++Street detail.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:StreetAddress.streetDetail`
+| Cardinality
+| 0..1
+| Type
+| xref::class/StreetDetail.adoc[`StreetDetail`]
 
 
 |===

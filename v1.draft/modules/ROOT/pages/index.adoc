@@ -156,5 +156,6 @@ readings:
 
 * xref:schema:attachment$schemas/json_schema/dp_meetdata.json_schema.json[JSON schema]
 * xref:schema:attachment$examples/dp_meetdata_energiehubs.example.json[EnergieHubs example instance data]
+* xref:schema:attachment$examples/dp_meetdata_sbi.example.json[SBI-code gebiedsprofiel example instance data]
 * xref:schema:attachment$examples/dp_meetdata_aggregation.example.json[Aggregation example instance data]
 * xref:schema:attachment$examples/dp_meetdata_enumeration.example.json[Enumeration example instance data]

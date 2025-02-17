@@ -89,6 +89,10 @@
 
 
 
+*** xref::class/StreetDetail.adoc[`StreetDetail`]
+
+
+
 *** xref::class/TownDetail.adoc[`TownDetail`]
 
 
