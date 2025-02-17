@@ -538,7 +538,7 @@ classes:
       sbi_codes:
         description: Standaard BedrijfsIndeling code. Used by the Dutch Chamber
           of Commerce to classify activities performed by an organisation.
-        slot_uri: this:Organisation.sbiCode
+        slot_uri: this:MarketEvaluationPoint.sbiCodes
         range: string
         required: false
         multivalued: true
