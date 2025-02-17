@@ -150,7 +150,7 @@ readings:
 
 * enumeration of ``MeterReading``s for one or more ``MarketEvaluationPoint``s;
 * aggregation of ``MarketEvaluationPoint``s, where the ``MeterReading``s
-  describe an aggrigated enery profile.
+  describe an aggregated energy profile.
 
 == Additional artifacts
 
