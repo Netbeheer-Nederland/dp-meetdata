@@ -1,0 +1,6 @@
+name: dp-meetdata
+version: v1.1.0
+title: Meetdata
+nav:
+- modules/ROOT/nav.adoc
+- modules/schema/nav.adoc

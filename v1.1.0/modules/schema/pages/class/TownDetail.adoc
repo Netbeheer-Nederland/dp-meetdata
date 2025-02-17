@@ -1,0 +1,197 @@
+= `TownDetail`
+:toclevels: 4
+
+
++++Town details, in the context of address.+++
+
+
+[cols="h,3",width=65%]
+|===
+| Type
+| Class
+
+| URI
+| `cim:TownDetail`
+
+
+| CIM standard (perspective)
+| IEC61968 (Enterprise)
+
+
+
+|===
+
+== Class hierarchy
+* *`TownDetail`*
+
+
+== Slots
+
+
+
+
+[cols="3,1,3,6",width=100%]
+|===
+| Name | Cardinality | Type | Description
+
+| <<municipality,`municipality`>>
+| 0..1
+| https://w3id.org/linkml/String[`string`]
+| +++Name of the municipality.+++
+
+| <<name,`name`>>
+| 0..1
+| https://w3id.org/linkml/String[`string`]
+| +++Town name.+++
+
+| <<section,`section`>>
+| 0..1
+| https://w3id.org/linkml/String[`string`]
+| +++Town section. For example, it is common for there to be 36 sections per township.+++
+
+| <<state_or_province,`state_or_province`>>
+| 0..1
+| https://w3id.org/linkml/String[`string`]
+| +++Name of the state or province.+++
+|===
+
+'''
+
+
+//[discrete]
+[#municipality]
+=== `municipality`
++++Name of the municipality.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:TownDetail.municipality`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+| Glossary mappings
+a|
+
+[cols="1,5"]
+!===
+! Mapping type ! Term
+
+! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
+a! 
+
+https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/gemeente--regionaal--[`cbs:gemeente--regionaal--`]
+
+
+
+!===
+
+
+|===
+
+//[discrete]
+[#name]
+=== `name`
++++Town name.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:TownDetail.name`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+| Glossary mappings
+a|
+
+[cols="1,5"]
+!===
+! Mapping type ! Term
+
+! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
+a! 
+
+https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/plaatsnaam[`cbs:plaatsnaam`]
+
+
+
+!===
+
+
+|===
+
+//[discrete]
+[#section]
+=== `section`
++++Town section. For example, it is common for there to be 36 sections per township.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:TownDetail.section`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+| Glossary mappings
+a|
+
+[cols="1,5"]
+!===
+! Mapping type ! Term
+
+! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
+a! 
+
+https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/wijk[`cbs:wijk`]
+
+
+
+!===
+
+
+|===
+
+//[discrete]
+[#state_or_province]
+=== `state_or_province`
++++Name of the state or province.+++
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:TownDetail.stateOrProvince`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+| Glossary mappings
+a|
+
+[cols="1,5"]
+!===
+! Mapping type ! Term
+
+! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
+a! 
+
+https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/provincie--regionaal--[`cbs:provincie--regionaal--`]
+
+
+
+!===
+
+
+|===
+
+
