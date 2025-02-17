@@ -518,7 +518,7 @@ classes:
         description: Market evalution points.
         slot_uri: this:MeterReadingDataSet.marketEvaluationPoints
         range: MarketEvaluationPoint
-        required: true
+        required: false
         multivalued: true
     class_uri: this:MeterReadingDataSet
     tree_root: true
@@ -526,14 +526,21 @@ classes:
     description: The identification of an entity where energy products are measured
       or computed.
     exact_mappings:
-    - nbnl:aansluiting
+      - nbnl:aansluiting
     is_a: UsagePoint
     attributes:
       meter_readings:
         description: All meter readings provided by this meter.
-        slot_uri: nbnl:MarketEvaluationPoint.MeterReadings
+        slot_uri: this:MarketEvaluationPoint.MeterReadings
         range: MeterReading
         required: true
+        multivalued: true
+      sbi_codes:
+        description: Standaard BedrijfsIndeling code. Used by the Dutch Chamber
+          of Commerce to classify activities performed by an organisation.
+        slot_uri: this:Organisation.sbiCode
+        range: string
+        required: false
         multivalued: true
     class_uri: cim:MarketEvaluationPoint
   MeterReading:
@@ -887,6 +894,12 @@ classes:
         multivalued: false
         exact_mappings:
           - cbs:postcodegebied
+      street_detail:
+        slot_uri: cim:StreetAddress.streetDetail
+        range: StreetDetail
+        required: false
+        multivalued: false
+        description: Street detail.
       town_detail:
         description: Town detail.
         slot_uri: cim:StreetAddress.townDetail
@@ -894,18 +907,33 @@ classes:
         required: false
         multivalued: false
     class_uri: cim:StreetAddress
-  TownDetail:
-    description: "Town details, in the context of address.\r\n"
+  StreetDetail:
+    class_uri: cim:StreetDetail
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
+    description: "Street details, in the context of address.\r\n"
     attributes:
       code:
-        description: Town code.
-        slot_uri: cim:TownDetail.code
+        description: (if applicable) Utilities often make use of external reference
+          systems, such as those of the town-planner's department or surveyor general's
+          mapping system, that allocate global reference codes to streets.
+        slot_uri: cim:StreetDetail.code
         range: string
         required: false
         multivalued: false
         exact_mappings:
           - cbs:buurt
+  TownDetail:
+    description: "Town details, in the context of address.\r\n"
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
+    attributes:
+      municipality:
+        description: Name of the municipality.
+        slot_uri: this:TownDetail.municipality
+        range: string
+        required: false
+        multivalued: false
+        exact_mappings:
+          - cbs:gemeente--regionaal--
       name:
         description: Town name.
         slot_uri: cim:TownDetail.name
@@ -913,7 +941,7 @@ classes:
         required: false
         multivalued: false
         exact_mappings:
-          - cbs:gemeente--regionaal--
+          - cbs:plaatsnaam
       section:
         description: Town section. For example, it is common for there to be 36 sections
           per township.

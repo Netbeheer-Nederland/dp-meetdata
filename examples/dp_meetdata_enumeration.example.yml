@@ -40,11 +40,6 @@ market_evaluation_points:
               multiplier: k
               unit: W
     is_virtual: false
-    equipments:
-      - aggregate: false
-        location:
-          main_address:
-            postal_code: '1234AB'
   - meter_readings:
       - values_interval:
           start: '2023-10-17'
@@ -58,12 +53,3 @@ market_evaluation_points:
               multiplier: k
               unit: W
     is_virtual: false
-    equipments:
-      - aggregate: false
-        location:
-          main_address:
-            town_detail:
-              code: '4'
-              name: 'Arnhem'
-              section: 'Lombok'
-              state_or_province: 'Gelderland'
