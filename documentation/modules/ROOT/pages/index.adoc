@@ -21,23 +21,35 @@ vars: {
   }
 }
 
+1.class: empty
+MarketParticipant.class: market
+2.class: empty
+3.class: empty
+
+4.class: empty
+Series.class: market
+5.class: empty
+6.class: empty
+
 MeterReadingDataSet.class: dataset
 MarketEvaluationPoint.class: market
 MeterReading.class: enterprise
 DateTimeInterval.class: enterprise
 
-1.class: empty
+7.class: empty
 EnergyConsumer.class: grid
 IntervalBlock.class: enterprise
 ReadingType.class: enterprise
 
-2.class: empty
+8.class: empty
 Location.class: enterprise
 IntervalReading.class: enterprise
 ReadingQuality.class: enterprise
 
 MeterReadingDataSet -> MarketEvaluationPoint: ""
 MarketEvaluationPoint -> MeterReading: "meter_readings"
+MarketEvaluationPoint -> "Series": "time_series"
+Series -> MarketParticipant: "market_participant"
 MeterReading -> DateTimeInterval: "values_interval"
 MeterReading -> IntervalBlock: "interval_blocks"
 IntervalBlock -> IntervalReading: "interval_readings"
