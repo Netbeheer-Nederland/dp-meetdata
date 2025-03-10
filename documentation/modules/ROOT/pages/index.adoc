@@ -159,3 +159,4 @@ readings:
 * xref:schema:attachment$examples/dp_meetdata_sbi.example.json[SBI-code gebiedsprofiel example instance data]
 * xref:schema:attachment$examples/dp_meetdata_aggregation.example.json[Energiegebiedsprofiel (aggregation) example instance data]
 * xref:schema:attachment$examples/dp_meetdata_enumeration.example.json[Energiegebiedsprofiel (enumeration) example instance data]
+* xref:schema:attachment$examples/dp_meetdata_omgevingsdienst.example.json[Omgevingsdienst example instance data]
