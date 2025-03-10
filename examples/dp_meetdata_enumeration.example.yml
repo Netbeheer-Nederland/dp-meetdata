@@ -40,6 +40,7 @@ market_evaluation_points:
               multiplier: k
               unit: W
     is_virtual: false
+    european_article_number_ean: '123456789101112131'
   - meter_readings:
       - values_interval:
           start: '2023-10-17'
@@ -53,3 +54,4 @@ market_evaluation_points:
               multiplier: k
               unit: W
     is_virtual: false
+    european_article_number_ean: '131211101987654321'
