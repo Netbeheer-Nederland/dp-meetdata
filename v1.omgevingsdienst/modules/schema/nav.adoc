@@ -93,19 +93,11 @@
 
 
 
-*** xref::class/Series.adoc[`Series`]
-
-
-
 *** xref::class/StreetAddress.adoc[`StreetAddress`]
 
 
 
 *** xref::class/StreetDetail.adoc[`StreetDetail`]
-
-
-
-*** xref::class/TimeSeries.adoc[`TimeSeries`]
 
 
 

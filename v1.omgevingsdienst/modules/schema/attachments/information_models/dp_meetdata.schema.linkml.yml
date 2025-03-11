@@ -544,31 +544,12 @@ classes:
         range: string
         required: false
         multivalued: true
-      time_series:
-        slot_uri: cim:MarketEvaluationPoint.TimeSeries
-        range: Series
-        required: false
-        multivalued: false
-    class_uri: cim:MarketEvaluationPoint
-  Series:
-    description: A set of similar physical or conceptual objects defined for the same
-      period or point of time.
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC62325.MarketManagement
-    is_a: TimeSeries
-    class_uri: cim:Series
-  TimeSeries:
-    description: A set of regular time-ordered measurements or values of quantitative
-      nature of an individual or collective phenomenon taken at successive, in most
-      cases equidistant, periods / points of time.
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC62325.MarketManagement
-    is_a: IdentifiedObject
-    attributes:
       market_participant:
-        slot_uri: cim:TimeSeries.MarketParticipant
+        slot_uri: this:MarketEvaluationPoint.MarketParticipant
         range: MarketParticipant
         required: false
         multivalued: true
-    class_uri: cim:TimeSeries
+    class_uri: cim:MarketEvaluationPoint
   MarketParticipant:
     description: An identification of a party acting in a electricity market business
       process. This class is used to identify organizations that can participate in

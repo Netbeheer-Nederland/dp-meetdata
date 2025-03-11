@@ -86,14 +86,12 @@
         }
       ],
       "european_article_number_ean": "123456789101112131",
-      "time_series": {
-        "market_participant": [
-          {
-            "kvk_nummer": "12345678",
-            "description": "Bedrijfsnaam 01"
-          }
-        ]
-      }
+      "market_participant": [
+        {
+          "kvk_nummer": "12345678",
+          "description": "Bedrijfsnaam 01"
+        }
+      ]
     },
     {
       "meter_readings": [
@@ -131,14 +129,12 @@
         }
       ],
       "european_article_number_ean": "131211101987654321",
-      "time_series": {
-        "market_participant": [
-          {
-            "kvk_nummer": "12345678",
-            "description": "Bedrijfsnaam 01"
-          }
-        ]
-      }
+      "market_participant": [
+        {
+          "kvk_nummer": "87654321",
+          "description": "Bedrijfsnaam 02"
+        }
+      ]
     }
   ]
 }

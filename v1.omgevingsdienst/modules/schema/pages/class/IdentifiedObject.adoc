@@ -29,7 +29,6 @@
  ** xref::class/Organisation.adoc[`Organisation`]
  ** xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
  ** xref::class/ReadingType.adoc[`ReadingType`]
- ** xref::class/TimeSeries.adoc[`TimeSeries`]
  ** xref::class/UsagePoint.adoc[`UsagePoint`]
 
 

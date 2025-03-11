@@ -74,7 +74,7 @@ MeterReading {
 
 
 
-Series {
+MarketParticipant {
   style {
     fill: "#fffbef"
     shadow: true
@@ -105,7 +105,7 @@ Name {
 MarketEvaluationPoint -> MeterReading: meter_readings
 
 
-MarketEvaluationPoint -> Series: time_series
+MarketEvaluationPoint -> MarketParticipant: market_participant
 
 
 MarketEvaluationPoint -> Equipment: equipments
@@ -172,9 +172,9 @@ legend: "" {
 | xref::class/MeterReading.adoc[`MeterReading`]
 | +++All meter readings provided by this meter.+++
 
-| <<time_series,`time_series`>>
-| 0..1
-| xref::class/Series.adoc[`Series`]
+| <<market_participant,`market_participant`>>
+| 0..*
+| xref::class/MarketParticipant.adoc[`MarketParticipant`]
 | n/a
 
 | <<sbi_codes,`sbi_codes`>>
@@ -336,6 +336,23 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 |===
 
 //[discrete]
+[#market_participant]
+=== `market_participant`
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:MarketEvaluationPoint.MarketParticipant`
+| Cardinality
+| 0..*
+| Type
+| xref::class/MarketParticipant.adoc[`MarketParticipant`]
+
+
+|===
+
+//[discrete]
 [#meter_readings]
 === `meter_readings`
 +++All meter readings provided by this meter.+++
@@ -385,23 +402,6 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | 0..*
 | Type
 | https://w3id.org/linkml/String[`string`]
-
-
-|===
-
-//[discrete]
-[#time_series]
-=== `time_series`
-
-
-[cols="h,4",width=65%]
-|===
-| URI
-| `cim:MarketEvaluationPoint.TimeSeries`
-| Cardinality
-| 0..1
-| Type
-| xref::class/Series.adoc[`Series`]
 
 
 |===

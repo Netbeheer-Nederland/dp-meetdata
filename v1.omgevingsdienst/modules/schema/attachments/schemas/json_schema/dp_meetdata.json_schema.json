@@ -582,6 +582,15 @@
                         "null"
                     ]
                 },
+                "market_participant": {
+                    "items": {
+                        "$ref": "#/$defs/MarketParticipant"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "meter_readings": {
                     "description": "All meter readings provided by this meter.",
                     "items": {
@@ -607,16 +616,6 @@
                     "type": [
                         "array",
                         "null"
-                    ]
-                },
-                "time_series": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/Series"
-                        },
-                        {
-                            "type": "null"
-                        }
                     ]
                 }
             },
@@ -990,47 +989,6 @@
             "title": "ReadingType",
             "type": "object"
         },
-        "Series": {
-            "additionalProperties": false,
-            "description": "A set of similar physical or conceptual objects defined for the same period or point of time.",
-            "properties": {
-                "description": {
-                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "m_rid": {
-                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "market_participant": {
-                    "items": {
-                        "$ref": "#/$defs/MarketParticipant"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "names": {
-                    "description": "All names of this identified object.",
-                    "items": {
-                        "$ref": "#/$defs/Name"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                }
-            },
-            "title": "Series",
-            "type": "object"
-        },
         "StreetAddress": {
             "additionalProperties": false,
             "description": "General purpose street and postal address information.",
@@ -1088,47 +1046,6 @@
                 }
             },
             "title": "StreetDetail",
-            "type": "object"
-        },
-        "TimeSeries": {
-            "additionalProperties": false,
-            "description": "A set of regular time-ordered measurements or values of quantitative nature of an individual or collective phenomenon taken at successive, in most cases equidistant, periods / points of time.",
-            "properties": {
-                "description": {
-                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "m_rid": {
-                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "market_participant": {
-                    "items": {
-                        "$ref": "#/$defs/MarketParticipant"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "names": {
-                    "description": "All names of this identified object.",
-                    "items": {
-                        "$ref": "#/$defs/Name"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                }
-            },
-            "title": "TimeSeries",
             "type": "object"
         },
         "TownDetail": {
