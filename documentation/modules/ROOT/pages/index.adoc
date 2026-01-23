@@ -10,7 +10,7 @@ Member States.
 [d2,svg,theme=4]
 ----
 grid-rows: 5
-grid-columns: 4
+grid-columns: 3
 
 horizontal-gap: 160
 vertical-gap: 80
@@ -21,36 +21,26 @@ vars: {
   }
 }
 
-1.class: empty
-MarketParticipant.class: market
-2.class: empty
-3.class: empty
-
-MeterReadingDataSet.class: dataset
 MarketEvaluationPoint.class: market
 MeterReading.class: enterprise
 DateTimeInterval.class: enterprise
 
-4.class: empty
 EnergyConsumer.class: grid
 IntervalBlock.class: enterprise
 ReadingType.class: enterprise
 
-5.class: empty
 Location.class: enterprise
 IntervalReading.class: enterprise
 ReadingQuality.class: enterprise
 
-MeterReadingDataSet -> MarketEvaluationPoint: ""
-MarketEvaluationPoint -> MeterReading: "meter_readings"
-MarketEvaluationPoint -> "MarketParticipant": "market_participant"
-MeterReading -> DateTimeInterval: "values_interval"
-MeterReading -> IntervalBlock: "interval_blocks"
-IntervalBlock -> IntervalReading: "interval_readings"
-IntervalReading -> ReadingQuality: "reading_qualities"
-IntervalBlock -> ReadingType: "reading_type"
-MarketEvaluationPoint -> EnergyConsumer: "equipments"
-EnergyConsumer -> Location: "location"
+MeterReading -> DateTimeInterval
+MeterReading -> MarketEvaluationPoint
+IntervalBlock -> MeterReading
+IntervalBlock -> ReadingType
+IntervalReading -> IntervalBlock
+EnergyConsumer -> MarketEvaluationPoint
+EnergyConsumer -> Location
+ReadingQuality -> IntervalReading
 
 legend: "" {
   style: {

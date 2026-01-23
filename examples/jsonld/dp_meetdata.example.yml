@@ -1,0 +1,108 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cbs: https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/
+  cim: https://cim.ucaiug.io/ns#
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  github: https://github.com/
+'@graph':
+  - '@id': urn:uuid:50160159-76ae-41db-a2a3-da4d28bc6a5f
+    '@type': cim:MarketEvaluationPoint
+    nl:MarketEvaluationPoint.SBICodes: ''
+    cim:UsagePoint.isVirtual: true
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: ''
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:5732f1ff-998d-465f-b4ca-73925fbebf6e
+    '@type': cim:MeterReading
+    cim:MeterReading.valuesInterval:
+      '@id': urn:uuid:1ff29d34-8d3f-4c03-ad62-0d22d9e7c93d
+    cim:MeterReading.UsagePoint:
+      '@id': urn:uuid:a8aa2528-203e-41ec-b3f1-7a77cfb7863b
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: ''
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:1ff29d34-8d3f-4c03-ad62-0d22d9e7c93d
+    '@type': cim:DateTimeInterval
+    cim:DateTimeInterval.end:
+      '@value': '2026-01-23'
+      '@type': xsd:date
+    cim:DateTimeInterval.start:
+      '@value': '2026-01-23'
+      '@type': xsd:date
+  - '@id': urn:uuid:66c9b689-f0bf-4f5e-bdd7-4a1b73a527f8
+    '@type': cim:IntervalBlock
+    cim:IntervalBlock.MeterReading:
+      '@id': urn:uuid:5732f1ff-998d-465f-b4ca-73925fbebf6e
+    cim:IntervalBlock.ReadingType:
+      '@id': urn:uuid:b3b9d86d-3b22-450a-aa17-f86b9153b3f2
+  - '@id': urn:uuid:c81277a6-c89f-46d2-8959-04e4ca2252cf
+    '@type': cim:IntervalReading
+    cim:IntervalReading.IntervalBlocks:
+      - '@id': urn:uuid:66c9b689-f0bf-4f5e-bdd7-4a1b73a527f8
+    cim:BaseReading.value: ''
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-01-23'
+      '@type': xsd:date
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: ''
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:b3b9d86d-3b22-450a-aa17-f86b9153b3f2
+    '@type': cim:ReadingType
+    cim:ReadingType.aggregate:
+      '@id': cim:AggregateKind.average
+    cim:ReadingType.flowDirection:
+      '@id': cim:FlowDirectionKind.forward
+    cim:ReadingType.multiplier:
+      '@id': cim:UnitMultiplier.G
+    cim:ReadingType.unit:
+      '@id': cim:UnitSymbol.A
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: ''
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:9623c080-c284-42b9-85c7-78e5e62b6bc6
+    '@type': cim:EnergyConsumer
+    cim:Equipment.UsagePoints:
+      - '@id': urn:uuid:a8aa2528-203e-41ec-b3f1-7a77cfb7863b
+    cim:PowerSystemResource.Location:
+      '@id': urn:uuid:937aa966-44e2-4c10-aadc-cddc0fec1891
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: ''
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:937aa966-44e2-4c10-aadc-cddc0fec1891
+    '@type': cim:Location
+    cim:Location.mainAddress:
+      '@id': urn:uuid:5c993676-8c21-45bf-a832-bb7b5e3106ac
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: ''
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:5c993676-8c21-45bf-a832-bb7b5e3106ac
+    '@type': cim:StreetAddress
+    cim:StreetAddress.postalCode: ''
+    cim:StreetAddress.streetDetail:
+      '@id': urn:uuid:3c50d8eb-40ca-42db-8582-c1d6f91a9af8
+    cim:StreetAddress.townDetail:
+      '@id': urn:uuid:d790fecf-9524-477c-8296-d3f542e17184
+  - '@id': urn:uuid:3c50d8eb-40ca-42db-8582-c1d6f91a9af8
+    '@type': cim:StreetDetail
+    cim:StreetDetail.code: ''
+    cim:StreetDetail.number: ''
+  - '@id': urn:uuid:d790fecf-9524-477c-8296-d3f542e17184
+    '@type': cim:TownDetail
+    cim:TownDetail.name: ''
+    cim:TownDetail.section: ''
+    cim:TownDetail.stateOrProvince: ''
+  - '@id': urn:uuid:37502381-b8b7-4171-91a0-837d59f32eb0
+    '@type': cim:ReadingQuality
+    cim:ReadingQuality.comment: ''
+    cim:ReadingQuality.Reading:
+      '@id': urn:uuid:dd8f5c11-c814-470d-a4cb-3c2749169c25
