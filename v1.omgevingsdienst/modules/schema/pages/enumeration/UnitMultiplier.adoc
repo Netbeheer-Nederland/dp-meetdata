@@ -31,30 +31,6 @@ For example, the SI unit for mass is "kg" and not "g".  If the unit symbol is de
 |===
 | Value | URI | Description
 
-| `a`
-| `cim:UnitMultiplier.a`
-| n/a
-
-| `c`
-| `cim:UnitMultiplier.c`
-| n/a
-
-| `d`
-| `cim:UnitMultiplier.d`
-| n/a
-
-| `da`
-| `cim:UnitMultiplier.da`
-| n/a
-
-| `E`
-| `cim:UnitMultiplier.E`
-| n/a
-
-| `f`
-| `cim:UnitMultiplier.f`
-| n/a
-
 | `G`
 | `cim:UnitMultiplier.G`
 | n/a
@@ -79,39 +55,22 @@ For example, the SI unit for mass is "kg" and not "g".  If the unit symbol is de
 | `cim:UnitMultiplier.micro`
 | n/a
 
-| `n`
-| `cim:UnitMultiplier.n`
-| n/a
-
 | `none`
 | `cim:UnitMultiplier.none`
 | n/a
-
-| `p`
-| `cim:UnitMultiplier.p`
-| n/a
-
-| `P`
-| `cim:UnitMultiplier.P`
-| n/a
-
-| `T`
-| `cim:UnitMultiplier.T`
-| n/a
-
-| `y`
-| `cim:UnitMultiplier.y`
-| n/a
-
-| `Y`
-| `cim:UnitMultiplier.Y`
-| n/a
-
-| `z`
-| `cim:UnitMultiplier.z`
-| n/a
-
-| `Z`
-| `cim:UnitMultiplier.Z`
-| n/a
 |===
+
+== Used by
+
+
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/ReadingType.adoc[`ReadingType`] | xref::class/ReadingType.adoc#multiplier[`multiplier`]
+
+
+|===
+

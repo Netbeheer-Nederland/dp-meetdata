@@ -65,10 +65,10 @@ TownDetail {
 
 
 
-StreetAddress -> StreetDetail: street_detail
+StreetAddress -> StreetDetail: streetDetail
 
 
-StreetAddress -> TownDetail: town_detail
+StreetAddress -> TownDetail: townDetail
 
 
 legend: "" {
@@ -120,55 +120,40 @@ legend: "" {
 ----
 
 
-[cols="3,1,3,6",width=100%]
+[cols="1,1,2,1",width=100%]
 |===
-| Name | Cardinality | Type | Description
+| Name | Type | Description | Inherited from
 
-| <<ligplaats,`ligplaats`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
-| +++Een identificatiecode van een ligplaats is een authentiek gegeven en een unieke aanduiding van de ligplaats.+++
+| <<postalCode,`postalCode`>>
+//| [[slots_table.postalCode]]<<postalCode,`postalCode`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++Postal code for the address.+++
+| _n/a_
 
-| <<postal_code,`postal_code`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
-| +++Postal code for the address. Must contain four (4) numbers followed by two (2) letters, without spaces.+++
-
-| <<street_detail,`street_detail`>>
-| 0..1
-| xref::class/StreetDetail.adoc[`StreetDetail`]
+| <<streetDetail,`streetDetail`>>
+//| [[slots_table.streetDetail]]<<streetDetail,`streetDetail`>>
+| 0..1 +
+xref::class/StreetDetail.adoc[`StreetDetail`]
 | +++Street detail.+++
+| _n/a_
 
-| <<town_detail,`town_detail`>>
-| 0..1
-| xref::class/TownDetail.adoc[`TownDetail`]
+| <<townDetail,`townDetail`>>
+//| [[slots_table.townDetail]]<<townDetail,`townDetail`>>
+| 0..1 +
+xref::class/TownDetail.adoc[`TownDetail`]
 | +++Town detail.+++
+| _n/a_
 |===
 
 '''
 
 
 //[discrete]
-[#ligplaats]
-=== `ligplaats`
-+++Een identificatiecode van een ligplaats is een authentiek gegeven en een unieke aanduiding van de ligplaats.+++
+[#postalCode]
+=== `postalCode`
++++Postal code for the address.+++
 
-[cols="h,4",width=65%]
-|===
-| URI
-| http://bag.basisregistraties.overheid.nl/id/concept/IdentificatiecodeLigplaats[`bag:IdentificatiecodeLigplaats`]
-| Cardinality
-| 0..1
-| Type
-| https://w3id.org/linkml/String[`string`]
-
-
-|===
-
-//[discrete]
-[#postal_code]
-=== `postal_code`
-+++Postal code for the address. Must contain four (4) numbers followed by two (2) letters, without spaces.+++
 
 [cols="h,4",width=65%]
 |===
@@ -199,10 +184,19 @@ https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/postcodegebied[`cbs:po
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.postalCode,&#10548;>>
+--
+////
+
+
 //[discrete]
-[#street_detail]
-=== `street_detail`
+[#streetDetail]
+=== `streetDetail`
 +++Street detail.+++
+
 
 [cols="h,4",width=65%]
 |===
@@ -216,10 +210,19 @@ https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/postcodegebied[`cbs:po
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.streetDetail,&#10548;>>
+--
+////
+
+
 //[discrete]
-[#town_detail]
-=== `town_detail`
+[#townDetail]
+=== `townDetail`
 +++Town detail.+++
+
 
 [cols="h,4",width=65%]
 |===
@@ -233,4 +236,28 @@ https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/postcodegebied[`cbs:po
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.townDetail,&#10548;>>
+--
+////
+
+
+
+
+
+== Used by
+
+
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/Location.adoc[`Location`] | xref::class/Location.adoc#mainAddress[`mainAddress`]
+
+
+|===
 

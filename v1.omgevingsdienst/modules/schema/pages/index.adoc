@@ -30,8 +30,43 @@ EnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if t
 | +++This is a root class to provide common identification for all classes needing identification and naming attributes.+++
 
 | xref::class/IntervalBlock.adoc[`IntervalBlock`]
-| +++Time sequence of readings of the same reading type. Contained interval readings may need conversion through the application of an offset and a scalar defined in associated pending. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.
-Note: Interval Data is sometimes also called *Interval Data Readings* (IDR).+++
+| +++Time sequence of readings of the same reading type. Contained interval readings may need conversion through the application of an offset and a scalar defined in associated pending.
+Table 548 shows all association ends of IntervalBlock with other classes.
+Table 548 – Association ends of Metering::IntervalBlock with other classes
+Associations
+name
+mult to
+type
+description
+
+0..*
+PendingCalculation
+0..1
+PendingCalculation
+Pending calculation to apply to interval reading values contained by this block (after which the resulting reading type is different than the original because it reflects the conversion result).
+
+0..*
+IntervalReadings
+0..*
+IntervalReading
+Interval reading contained in this block.
+
+0..*
+ReadingType
+0..1
+ReadingType
+Type information for interval reading values contained in this block.
+
+0..*
+MeterReading
+0..1
+MeterReading
+Meter reading containing this interval block.
+
+
+IntervalReading
+Data captured at regular intervals of time. Interval data could be captured as incremental data, absolute data, or relative data. The source for the data is usually a tariff quantity or an engineering quantity. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.
+Note: Interval Data is sometimes also called "Interval Data Readings" (IDR).+++
 
 | xref::class/IntervalReading.adoc[`IntervalReading`]
 | +++Data captured at regular intervals of time. Interval data could be captured as incremental data, absolute data, or relative data. The source for the data is usually a tariff quantity or an engineering quantity. Data is typically captured in time-tagged, uniform, fixed-length intervals of 5 min, 10 min, 15 min, 30 min, or 60 min.
@@ -46,30 +81,11 @@ Note: Interval Data is sometimes also called "Interval Data Readings" (IDR).+++
 | xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
 | +++The identification of an entity where energy products are measured or computed.+++
 
-| xref::class/MarketParticipant.adoc[`MarketParticipant`]
-| +++An identification of a party acting in a electricity market business process. This class is used to identify organizations that can participate in market management and/or market operations.+++
-
 | xref::class/MeasurementValue.adoc[`MeasurementValue`]
 | +++The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.+++
 
 | xref::class/MeterReading.adoc[`MeterReading`]
 | +++Set of values obtained from the meter.+++
-
-| xref::class/MeterReadingDataSet.adoc[`MeterReadingDataSet`]
-| +++A single instance of a published dataset.+++
-
-| xref::class/Name.adoc[`Name`]
-| +++The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.+++
-
-| xref::class/NameType.adoc[`NameType`]
-| +++Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:
-The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them.+++
-
-| xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
-| +++Authority responsible for creation and management of names of a given type; typically an organization or an enterprise system.+++
-
-| xref::class/Organisation.adoc[`Organisation`]
-| +++Organisation that might have roles as utility, contractor, supplier, manufacturer, customer, etc.+++
 
 | xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
 | +++A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.+++
@@ -78,7 +94,7 @@ The localName is a human readable name of the object. It is a free text name loc
 | +++Quality of a specific reading value or interval reading value. Note that more than one quality may be applicable to a given reading. Typically not used unless problems or unusual conditions occur (i.e., quality for each reading is assumed to be good unless stated otherwise in associated reading quality type). It can also be used with the corresponding reading quality type to indicate that the validation has been performed and succeeded.+++
 
 | xref::class/ReadingType.adoc[`ReadingType`]
-| +++Detailed description for a type of a reading value. Values in attributes allow for the creation of recommended codes to be used for identifying reading value types as follows: <macroPeriod>.<aggregate>.<measuringPeriod>.<accumulation>.<flowDirection>.<commodity>.<measurementKind>.<interharmonic.numerator>.<interharmonic.denominator>.<argument.numerator>.<argument.denominator>.<tou>.<cpp>.<consumptionTier>.<phases>.<multiplier>.<unit>.<currency>.+++
+| +++Detailed description for a type of a reading value.+++
 
 | xref::class/StreetAddress.adoc[`StreetAddress`]
 | +++General purpose street and postal address information.+++

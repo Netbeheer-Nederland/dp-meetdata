@@ -31,131 +31,45 @@
 
 
 
-.Associated classes
-[d2,svg,theme=4]
-----
-vars: {
-  d2-config: {
-    pad: 20
-  }
-}
-UsagePoint {
-  style {
-    fill: "#d1e7c2"
-    shadow: true
-  }
-}
 
-
-
-Equipment {
-  style {
-    fill: "#eccfcb"
-    shadow: true
-  }
-}
-
-
-
-Name {
-  style {
-    fill: "#eccfcb"
-    shadow: true
-  }
-}
-
-
-
-
-UsagePoint -> Equipment: equipments
-
-
-UsagePoint -> Name: names
-
-
-legend: "" {
-  style: {
-    fill: transparent
-    stroke: transparent
-  }
-  grid-rows: 3
-  grid-columns: 2
-  grid-gap: 10
-  near: bottom-right
-  iec61968_color: "" {
-    style: {
-      fill: "#d1e7c2"
-      stroke: black
-      stroke-width: 1
-    }
-    width: 10
-    height: 10
-  }
-  iec61968_text: "IEC61968 (Enterprise)" {
-    shape: text
-  }
-  iec61970_color: "" {
-    style: {
-      fill: "#eccfcb"
-      stroke: black
-      stroke-width: 1
-    }
-    width: 10
-    height: 10
-  }
-  iec61970_text: "IEC61970 (Grid)" {
-    shape: text
-  }
-  iec62325_color: "" {
-    style: {
-      fill: "#fffbef"
-      stroke: black
-      stroke-width: 1
-    }
-    width: 10
-    height: 10
-  }
-  iec62325_text: "IEC62325 (Market)" {
-    shape: text
-  }
-}
-----
-
-
-[cols="3,1,3,6",width=100%]
+[cols="1,1,2,1",width=100%]
 |===
-| Name | Cardinality | Type | Description
+| Name | Type | Description | Inherited from
 
-| <<european_article_number_ean,`european_article_number_ean`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
-| +++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on the EAN scheme please refer to the _Codebesluit toekenning EAN-codes elektriciteit_+++
-
-| <<is_virtual,`is_virtual`>>
-| 0..1
-| https://w3id.org/linkml/Boolean[`boolean`]
-| +++If true, this usage point is virtual, i.e., no physical location exists in the network where a meter could be located to collect the meter readings. For example, one may define a virtual usage point to serve as an aggregation of usage for all of a company's premises distributed widely across the distribution territory. Otherwise, the usage point is physical, i.e., there is a logical point in the network where a meter could be located to collect meter readings.+++
-
-| <<equipments,`equipments`>>
-| 0..*
-| xref::class/Equipment.adoc[`Equipment`]
-| +++All equipment connecting this usage point to the electrical grid.+++
+| <<isVirtual,`isVirtual`>>
+//| [[slots_table.isVirtual]]<<isVirtual,`isVirtual`>>
+| 0..1 +
+https://w3id.org/linkml/Boolean[`boolean`]
+| +++If true, this usage point is virtual, i.e., no physical location exists in the network where a meter could be located to...+++
+| _n/a_
 
 | <<description,`description`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
-| +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
+//| [[slots_table.description]]<<description,`description`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to...+++
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
-| <<m_rid,`m_rid`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
-| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
-For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
+| <<europeanArticleNumberEAN,`europeanArticleNumberEAN`>>
+//| [[slots_table.europeanArticleNumberEAN]]<<europeanArticleNumberEAN,`europeanArticleNumberEAN`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 16 characters...+++
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
-| <<names,`names`>>
-| 0..*
-| xref::class/Name.adoc[`Name`]
-| +++All names of this identified object.+++
+| <<mRID,`mRID`>>
+//| [[slots_table.mRID]]<<mRID,`mRID`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is...+++
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+| <<name,`name`>>
+//| [[slots_table.name]]<<name,`name`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++The name is any free human readable and possibly non unique text naming the object.+++
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 |===
 
 '''
@@ -165,6 +79,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 [#description]
 === `description`
 +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
+
 
 [cols="h,4",width=65%]
 |===
@@ -181,61 +96,48 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.description,&#10548;>>
+--
+////
+
+
 //[discrete]
-[#equipments]
-=== `equipments`
-+++All equipment connecting this usage point to the electrical grid.+++
+[#europeanArticleNumberEAN]
+=== `europeanArticleNumberEAN`
++++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 16 characters as defined by the EAN code.+++
+
 
 [cols="h,4",width=65%]
 |===
 | URI
-| `cim:UsagePoint.Equipments`
-| Cardinality
-| 0..*
-| Type
-| xref::class/Equipment.adoc[`Equipment`]
-
-
-|===
-
-//[discrete]
-[#european_article_number_ean]
-=== `european_article_number_ean`
-+++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 18 characters as defined by the EAN code. For details on the EAN scheme please refer to the _Codebesluit toekenning EAN-codes elektriciteit_+++
-
-[cols="h,4",width=65%]
-|===
-| URI
-| http://iec.ch/TC57/CIM100-Netherlands#IdentifiedObject.europeanArticleNumberEAN[`nl:IdentifiedObject.europeanArticleNumberEAN`]
+| https://cim.ucaiug.io/ns/nl#IdentifiedObject.europeanArticleNumberEAN[`nl:IdentifiedObject.europeanArticleNumberEAN`]
 | Cardinality
 | 0..1
 | Type
 | https://w3id.org/linkml/String[`string`]
 
-
-| Glossary mappings
-a|
-
-[cols="1,5"]
-!===
-! Mapping type ! Term
-
-! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
-a! 
-
-https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/europeanArticleNumberEAN[`nbnl:europeanArticleNumberEAN`]
-
-
-
-!===
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.europeanArticleNumberEAN,&#10548;>>
+--
+////
+
+
 //[discrete]
-[#is_virtual]
-=== `is_virtual`
+[#isVirtual]
+=== `isVirtual`
 +++If true, this usage point is virtual, i.e., no physical location exists in the network where a meter could be located to collect the meter readings. For example, one may define a virtual usage point to serve as an aggregation of usage for all of a company's premises distributed widely across the distribution territory. Otherwise, the usage point is physical, i.e., there is a logical point in the network where a meter could be located to collect meter readings.+++
+
 
 [cols="h,4",width=65%]
 |===
@@ -249,11 +151,20 @@ https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/europeanArt
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.isVirtual,&#10548;>>
+--
+////
+
+
 //[discrete]
-[#m_rid]
-=== `m_rid`
+[#mRID]
+=== `mRID`
 +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
+
 
 [cols="h,4",width=65%]
 |===
@@ -270,19 +181,28 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.mRID,&#10548;>>
+--
+////
+
+
 //[discrete]
-[#names]
-=== `names`
-+++All names of this identified object.+++
+[#name]
+=== `name`
++++The name is any free human readable and possibly non unique text naming the object.+++
+
 
 [cols="h,4",width=65%]
 |===
 | URI
-| `cim:IdentifiedObject.Names`
+| `cim:IdentifiedObject.name`
 | Cardinality
-| 0..*
+| 0..1
 | Type
-| xref::class/Name.adoc[`Name`]
+| https://w3id.org/linkml/String[`string`]
 
 | Inherited from
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
@@ -290,4 +210,18 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.name,&#10548;>>
+--
+////
 
+
+
+
+
+== Used by
+
+
+This class is not used by any other classes as the range of a slot.

@@ -87,3 +87,18 @@
 | `cim:AggregateKind.thirdMaximum`
 | n/a
 |===
+
+== Used by
+
+
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/ReadingType.adoc[`ReadingType`] | xref::class/ReadingType.adoc#aggregate[`aggregate`]
+
+
+|===
+

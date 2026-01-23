@@ -30,43 +30,45 @@
 
 
 
-[cols="3,1,3,6",width=100%]
+[cols="1,1,2,1",width=100%]
 |===
-| Name | Cardinality | Type | Description
-
-| <<municipality,`municipality`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
-| +++Name of the municipality.+++
+| Name | Type | Description | Inherited from
 
 | <<name,`name`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
+//| [[slots_table.name]]<<name,`name`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
 | +++Town name.+++
+| _n/a_
 
 | <<section,`section`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
+//| [[slots_table.section]]<<section,`section`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
 | +++Town section. For example, it is common for there to be 36 sections per township.+++
+| _n/a_
 
-| <<state_or_province,`state_or_province`>>
-| 0..1
-| https://w3id.org/linkml/String[`string`]
+| <<stateOrProvince,`stateOrProvince`>>
+//| [[slots_table.stateOrProvince]]<<stateOrProvince,`stateOrProvince`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
 | +++Name of the state or province.+++
+| _n/a_
 |===
 
 '''
 
 
 //[discrete]
-[#municipality]
-=== `municipality`
-+++Name of the municipality.+++
+[#name]
+=== `name`
++++Town name.+++
+
 
 [cols="h,4",width=65%]
 |===
 | URI
-| `this:TownDetail.municipality`
+| `cim:TownDetail.name`
 | Cardinality
 | 0..1
 | Type
@@ -92,15 +94,24 @@ https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/gemeente--regionaal--[
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.name,&#10548;>>
+--
+////
+
+
 //[discrete]
-[#name]
-=== `name`
-+++Town name.+++
+[#section]
+=== `section`
++++Town section. For example, it is common for there to be 36 sections per township.+++
+
 
 [cols="h,4",width=65%]
 |===
 | URI
-| `cim:TownDetail.name`
+| `cim:TownDetail.section`
 | Cardinality
 | 0..1
 | Type
@@ -126,44 +137,19 @@ https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/plaatsnaam[`cbs:plaats
 
 |===
 
-//[discrete]
-[#section]
-=== `section`
-+++Town section. For example, it is common for there to be 36 sections per township.+++
+////
+[.text-left]
+--
+<<slots_table.section,&#10548;>>
+--
+////
 
-[cols="h,4",width=65%]
-|===
-| URI
-| `cim:TownDetail.section`
-| Cardinality
-| 0..1
-| Type
-| https://w3id.org/linkml/String[`string`]
-
-
-| Glossary mappings
-a|
-
-[cols="1,5"]
-!===
-! Mapping type ! Term
-
-! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
-a! 
-
-https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/wijk[`cbs:wijk`]
-
-
-
-!===
-
-
-|===
 
 //[discrete]
-[#state_or_province]
-=== `state_or_province`
+[#stateOrProvince]
+=== `stateOrProvince`
 +++Name of the state or province.+++
+
 
 [cols="h,4",width=65%]
 |===
@@ -194,4 +180,28 @@ https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/provincie--regionaal--
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.stateOrProvince,&#10548;>>
+--
+////
+
+
+
+
+
+== Used by
+
+
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/StreetAddress.adoc[`StreetAddress`] | xref::class/StreetAddress.adoc#townDetail[`townDetail`]
+
+
+|===
 

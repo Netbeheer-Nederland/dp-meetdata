@@ -29,15 +29,102 @@
 
 
 
+.Associated classes
+[d2,svg,theme=4]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+ReadingQuality {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
 
-[cols="3,1,3,6",width=100%]
+
+
+IntervalReading {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
+
+
+
+
+ReadingQuality -> IntervalReading: Reading
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
+----
+
+
+[cols="1,1,2,1",width=100%]
 |===
-| Name | Cardinality | Type | Description
+| Name | Type | Description | Inherited from
+
+| <<Reading,`Reading`>>
+//| [[slots_table.Reading]]<<Reading,`Reading`>>
+| 0..1 +
+xref::class/IntervalReading.adoc[`IntervalReading`]
+| +++Reading value to which this quality applies.+++
+| _n/a_
 
 | <<comment,`comment`>>
-| 1
-| https://w3id.org/linkml/String[`string`]
+//| [[slots_table.comment]]<<comment,`comment`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
 | +++Elaboration on the quality code.+++
+| _n/a_
 |===
 
 '''
@@ -48,16 +135,57 @@
 === `comment`
 +++Elaboration on the quality code.+++
 
+
 [cols="h,4",width=65%]
 |===
 | URI
 | `cim:ReadingQuality.comment`
 | Cardinality
-| 1
+| 0..1
 | Type
 | https://w3id.org/linkml/String[`string`]
 
 
 |===
 
+////
+[.text-left]
+--
+<<slots_table.comment,&#10548;>>
+--
+////
 
+
+//[discrete]
+[#Reading]
+=== `Reading`
++++Reading value to which this quality applies.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:ReadingQuality.Reading`
+| Cardinality
+| 0..1
+| Type
+| xref::class/IntervalReading.adoc[`IntervalReading`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.Reading,&#10548;>>
+--
+////
+
+
+
+
+
+== Used by
+
+
+This class is not used by any other classes as the range of a slot.
