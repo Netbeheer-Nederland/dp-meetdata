@@ -245,7 +245,8 @@ generate-documentation: _post-process-linkml-schema
     mkdir -p "artifacts/documentation/modules/schema"
     poetry run python -m linkml_asciidoc_generator.main \
         "artifacts/information_models/dp_meetdata.schema.linkml.yml" \
-        "artifacts/documentation/modules/schema"
+        "artifacts/documentation/modules/schema" \
+        --relations-diagrams
     echo "- modules/schema/nav.adoc" >> artifacts/documentation/antora.yml
     @echo "… OK."
     @echo
@@ -257,8 +258,8 @@ generate-documentation: _post-process-linkml-schema
 generate-example-data: _post-process-linkml-schema
     @echo "Generating JSON example data…"
     @echo
-    mkdir -p "artifacts/examples"
-    for example_file in examples/*.yml; do \
+    mkdir -p "artifacts/examples/json"
+    for example_file in examples/json/*.yml; do \
         [ -f "$example_file" ] || continue; \
         poetry run gen-linkml-profile  \
             convert \
@@ -267,7 +268,21 @@ generate-example-data: _post-process-linkml-schema
     done
     @echo "… OK."
     @echo
-    @echo -e "Generated example JSON data at: artifacts/examples"
+    @echo -e "Generated example JSON data at: artifacts/examples/json"
+    @echo
+    @echo "Generating JSON-LD example data…"
+    @echo
+    mkdir -p "artifacts/examples/jsonld"
+    for example_file in examples/jsonld/*.yml; do \
+        [ -f "$example_file" ] || continue; \
+        poetry run gen-linkml-profile  \
+            convert \
+            "$example_file" \
+            --out "artifacts/${example_file%.*}.jsonld"; \
+    done
+    @echo "… OK."
+    @echo
+    @echo -e "Generated example JSON-LD data at: artifacts/examples/jsonld"
     @echo
 
 # Generate JSON Schema
@@ -285,15 +300,37 @@ generate-json-schema: _post-process-linkml-schema
     @echo "Generated JSON Schema at: artifacts/schemas/json_schema/dp_meetdata.json_schema.json"
     @echo
 
+# Generate SHACL Schema
+[group("generators")]
+generate-shacl-schema: _post-process-linkml-schema
+    @echo "Generating SHACL Schema…"
+    @echo
+    mkdir -p "artifacts/schemas/shacl"
+    poetry run gen-shacl \
+        --non-closed \
+        "artifacts/information_models/dp_meetdata.schema.linkml.yml" \
+        > "artifacts/schemas/shacl/dp_meetdata.shacl.ttl"
+    @echo "… OK."
+    @echo
+    @echo "Generated SHACL at: artifacts/schemas/shacl/dp_meetdata.shacl.ttl"
+    @echo
+
 # Validate example data
 [group("validate")]
-validate-example-data: generate-json-schema generate-example-data
+validate-example-data: generate-json-schema generate-shacl-schema generate-example-data
     @echo "Validating example data against JSON schema…"
     @echo
-    for example_file in artifacts/examples/*.json; do \
+    for example_file in artifacts/examples/json/*.json; do \
         [ -f "$example_file" ] || continue; \
         poetry run check-jsonschema --schemafile "artifacts/schemas/json_schema/dp_meetdata.json_schema.json" $example_file; \
     done
     @echo "… OK."
     @echo
-
+    @echo "Validating example data against SHACL schema…"
+    @echo
+    for example_file in artifacts/examples/jsonld/*.jsonld; do \
+        [ -f "$example_file" ] || continue; \
+        poetry run pyshacl -s "artifacts/schemas/shacl/dp_meetdata.shacl.ttl" -df json-ld -f human $example_file; \
+    done
+    @echo "… OK."
+    @echo
