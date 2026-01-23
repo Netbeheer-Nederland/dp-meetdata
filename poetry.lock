@@ -323,7 +323,7 @@ files = [
 
 [[package]]
 name = "gen-linkml-profile"
-version = "0.21.0"
+version = "0.23.0"
 description = ""
 optional = false
 python-versions = "^3.10"
@@ -342,8 +342,8 @@ treelib = "^1.7.0"
 [package.source]
 type = "git"
 url = "https://github.com/Netbeheer-Nederland/gen-linkml-profile.git"
-reference = "HEAD"
-resolved_reference = "83cbc42492e5455492755b333035c32653562b54"
+reference = "v0.23.0"
+resolved_reference = "109885240b1d4fa4700e8e5e8e3069ce8254a6f4"
 
 [[package]]
 name = "graphviz"
@@ -2202,4 +2202,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "8649d689225367e11aa7b2e9fdac35bbad104c310ffdebb061584f20ec347ea3"
+content-hash = "fed15049d8ba618b6a3f6276eff63de2e271a56ff1c85301c3f38cceb5e257f3"
