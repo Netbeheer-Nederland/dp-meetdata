@@ -22,7 +22,7 @@
     cim:MeterReading.valuesInterval:
       '@id': urn:uuid:1ff29d34-8d3f-4c03-ad62-0d22d9e7c93d
     cim:MeterReading.UsagePoint:
-      '@id': urn:uuid:a8aa2528-203e-41ec-b3f1-7a77cfb7863b
+      '@id': urn:uuid:50160159-76ae-41db-a2a3-da4d28bc6a5f
     cim:IdentifiedObject.description: ''
     cim:IdentifiedObject.mRID: ''
     nl:IdentifiedObject.europeanArticleNumberEAN: ''
@@ -70,7 +70,7 @@
   - '@id': urn:uuid:9623c080-c284-42b9-85c7-78e5e62b6bc6
     '@type': cim:EnergyConsumer
     cim:Equipment.UsagePoints:
-      - '@id': urn:uuid:a8aa2528-203e-41ec-b3f1-7a77cfb7863b
+      - '@id': urn:uuid:50160159-76ae-41db-a2a3-da4d28bc6a5f
     cim:PowerSystemResource.Location:
       '@id': urn:uuid:937aa966-44e2-4c10-aadc-cddc0fec1891
     cim:IdentifiedObject.description: ''
@@ -105,4 +105,4 @@
     '@type': cim:ReadingQuality
     cim:ReadingQuality.comment: ''
     cim:ReadingQuality.Reading:
-      '@id': urn:uuid:dd8f5c11-c814-470d-a4cb-3c2749169c25
+      '@id': urn:uuid:c81277a6-c89f-46d2-8959-04e4ca2252cf

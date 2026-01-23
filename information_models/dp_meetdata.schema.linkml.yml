@@ -204,7 +204,7 @@ classes:
         description: All usage points connected to the electrical grid through this
           equipment.
         slot_uri: cim:Equipment.UsagePoints
-        range: UsagePoint
+        range: MarketEvaluationPoint
         required: false
         multivalued: true
     class_uri: cim:Equipment
@@ -224,7 +224,7 @@ classes:
         description: Usage point from which this meter reading (set of values) has
           been obtained.
         slot_uri: cim:MeterReading.UsagePoint
-        range: UsagePoint
+        range: MarketEvaluationPoint
         required: false
         multivalued: false
     class_uri: cim:MeterReading
@@ -534,7 +534,7 @@ classes:
       Reading:
         description: Reading value to which this quality applies.
         slot_uri: cim:ReadingQuality.Reading
-        range: BaseReading
+        range: IntervalReading
         required: false
         multivalued: false
     class_uri: cim:ReadingQuality
