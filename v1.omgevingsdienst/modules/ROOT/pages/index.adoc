@@ -150,9 +150,5 @@ readings:
 
 == Additional artifacts
 
-* xref:schema:attachment$schemas/json_schema/dp_meetdata.json_schema.json[JSON schema]
-* xref:schema:attachment$examples/dp_meetdata_energiehubs.example.json[EnergieHubs example instance data]
-* xref:schema:attachment$examples/dp_meetdata_sbi.example.json[SBI-code gebiedsprofiel example instance data]
-* xref:schema:attachment$examples/dp_meetdata_aggregation.example.json[Energiegebiedsprofiel (aggregation) example instance data]
-* xref:schema:attachment$examples/dp_meetdata_enumeration.example.json[Energiegebiedsprofiel (enumeration) example instance data]
-* xref:schema:attachment$examples/dp_meetdata_omgevingsdienst.example.json[Omgevingsdienst example instance data]
+* xref:schema:attachment$schemas/shacl/dp_meetdata.shacl.ttl[SHACL schema]
+* xref:schema:attachment$examples/jsonld/dp_meetdata.example.jsonld[Example JSONLD instance data]
