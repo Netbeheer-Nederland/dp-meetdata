@@ -136,6 +136,13 @@ xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
 | +++All usage points connected to the electrical grid through this equipment.+++
 | xref::class/Equipment.adoc[`Equipment`]
 
+| <<aggregate,`aggregate`>>
+//| [[slots_table.aggregate]]<<aggregate,`aggregate`>>
+| 0..1 +
+https://w3id.org/linkml/Boolean[`boolean`]
+| +++The aggregate flag provides an alternative way of representing an aggregated (equivalent) element. It is applicable in cases...+++
+| xref::class/Equipment.adoc[`Equipment`]
+
 | <<Location,`Location`>>
 //| [[slots_table.Location]]<<Location,`Location`>>
 | 0..1 +
@@ -173,6 +180,36 @@ https://w3id.org/linkml/String[`string`]
 |===
 
 '''
+
+
+//[discrete]
+[#aggregate]
+=== `aggregate`
++++The aggregate flag provides an alternative way of representing an aggregated (equivalent) element. It is applicable in cases when the dedicated classes for equivalent equipment do not have all of the attributes necessary to represent the required level of detail.  In case the flag is set to “true” the single instance of equipment represents multiple pieces of equipment that have been modelled together as an aggregate equivalent obtained by a network reduction procedure. Examples would be power transformers or synchronous machines operating in parallel modelled as a single aggregate power transformer or aggregate synchronous machine.  
+The attribute is not used for EquivalentBranch, EquivalentShunt and EquivalentInjection.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:Equipment.aggregate`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/Boolean[`boolean`]
+
+| Inherited from
+| xref::class/Equipment.adoc[`Equipment`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.aggregate,&#10548;>>
+--
+////
 
 
 //[discrete]
