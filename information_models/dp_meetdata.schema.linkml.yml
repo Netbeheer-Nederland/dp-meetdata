@@ -373,7 +373,8 @@ classes:
           \ attributes that identify CIM object elements."
         slot_uri: cim:IdentifiedObject.mRID
         range: string
-        required: false
+        identifier: true
+        required: true
         multivalued: false
       europeanArticleNumberEAN:
         description: The attribute is used for an exchange of the EAN code (European
