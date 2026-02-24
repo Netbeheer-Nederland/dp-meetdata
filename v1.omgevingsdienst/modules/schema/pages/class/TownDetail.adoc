@@ -41,6 +41,13 @@ https://w3id.org/linkml/String[`string`]
 | +++Town name.+++
 | _n/a_
 
+| <<neighbourhood,`neighbourhood`>>
+//| [[slots_table.neighbourhood]]<<neighbourhood,`neighbourhood`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++Town neighbourhood.+++
+| _n/a_
+
 | <<section,`section`>>
 //| [[slots_table.section]]<<section,`section`>>
 | 0..1 +
@@ -98,6 +105,49 @@ https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/gemeente--regionaal--[
 [.text-left]
 --
 <<slots_table.name,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#neighbourhood]
+=== `neighbourhood`
++++Town neighbourhood.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| http://modellen.netbeheernederland.nl/dp-meetdata/TownDetail.neighbourhood[`vocab:TownDetail.neighbourhood`]
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+| Glossary mappings
+a|
+
+[cols="1,5"]
+!===
+! Mapping type ! Term
+
+! http://www.w3.org/2004/02/skos/core#exactMatch[`skos:exactMatch`]
+a! 
+
+https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/wijk[`cbs:wijk`]
+
+
+
+!===
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.neighbourhood,&#10548;>>
 --
 ////
 

@@ -89,5 +89,6 @@
 ** Enumerations
 *** xref::enumeration/AggregateKind.adoc[AggregateKind]
 *** xref::enumeration/FlowDirectionKind.adoc[FlowDirectionKind]
+*** xref::enumeration/MarketSegment.adoc[MarketSegment]
 *** xref::enumeration/UnitMultiplier.adoc[UnitMultiplier]
 *** xref::enumeration/UnitSymbol.adoc[UnitSymbol]

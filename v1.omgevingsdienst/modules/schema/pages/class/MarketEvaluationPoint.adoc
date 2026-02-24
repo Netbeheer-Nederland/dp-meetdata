@@ -43,6 +43,13 @@ https://w3id.org/linkml/String[`string`]
 | +++Standaard BedrijfsIndeling code. Used by the Dutch Chamber of Commerce to classify activities performed by an organisation.+++
 | _n/a_
 
+| <<marketSegment,`marketSegment`>>
+//| [[slots_table.marketSegment]]<<marketSegment,`marketSegment`>>
+| 0..1 +
+xref::enumeration/MarketSegment.adoc[`MarketSegment`]
+| +++A subgroup of current or potential customers.+++
+| _n/a_
+
 | <<isVirtual,`isVirtual`>>
 //| [[slots_table.isVirtual]]<<isVirtual,`isVirtual`>>
 | 0..1 +
@@ -66,7 +73,7 @@ https://w3id.org/linkml/String[`string`]
 
 | <<mRID,`mRID`>>
 //| [[slots_table.mRID]]<<mRID,`mRID`>>
-| 0..1 +
+| 1 +
 https://w3id.org/linkml/String[`string`]
 | +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is...+++
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
@@ -170,6 +177,32 @@ https://w3id.org/linkml/String[`string`]
 
 
 //[discrete]
+[#marketSegment]
+=== `marketSegment`
++++A subgroup of current or potential customers.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| http://modellen.netbeheernederland.nl/dp-meetdata/MarketEvaluationPoint.marketSegment[`vocab:MarketEvaluationPoint.marketSegment`]
+| Cardinality
+| 0..1
+| Type
+| xref::enumeration/MarketSegment.adoc[`MarketSegment`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.marketSegment,&#10548;>>
+--
+////
+
+
+//[discrete]
 [#mRID]
 === `mRID`
 +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
@@ -181,7 +214,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | URI
 | `cim:IdentifiedObject.mRID`
 | Cardinality
-| 0..1
+| 1
 | Type
 | https://w3id.org/linkml/String[`string`]
 

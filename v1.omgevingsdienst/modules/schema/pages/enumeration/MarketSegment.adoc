@@ -1,0 +1,52 @@
+= `MarketSegment`
+:toclevels: 4
+
+
++++Division of the energy market into meaningful subgroups of current or potentional customers.+++
+
+
+[cols="h,3",width=65%]
+|===
+| Type
+| Enumeration
+
+| URI
+| http://modellen.netbeheernederland.nl/dp-meetdata/MarketSegment[`vocab:MarketSegment`]
+
+
+| CIM standard (perspective)
+| IEC61970 (Grid)
+
+
+
+|===
+
+== Values
+
+[cols="1,1,5",width=100%]
+|===
+| Value | URI | Description
+
+| `LRG`
+| http://modellen.netbeheernederland.nl/dp-meetdata/MarketSegment.largeAccounts[`vocab:MarketSegment.largeAccounts`]
+| n/a
+
+| `SML`
+| http://modellen.netbeheernederland.nl/dp-meetdata/MarketSegment.smallAccounts[`vocab:MarketSegment.smallAccounts`]
+| n/a
+|===
+
+== Used by
+
+
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`] | xref::class/MarketEvaluationPoint.adoc#marketSegment[`marketSegment`]
+
+
+|===
+

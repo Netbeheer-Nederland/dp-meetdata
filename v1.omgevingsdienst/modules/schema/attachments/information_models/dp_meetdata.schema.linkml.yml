@@ -16,6 +16,7 @@ prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
   github: https://github.com/
+  vocab: http://modellen.netbeheernederland.nl/dp-meetdata/
 default_prefix: http://modellen.netbeheernederland.nl/dp-meetdata/
 enums:
   AggregateKind:
@@ -66,6 +67,15 @@ enums:
         meaning: cim:FlowDirectionKind.none
       reverse:
         meaning: cim:FlowDirectionKind.reverse
+  MarketSegment:
+    description: Division of the energy market into meaningful subgroups of current or potentional customers.
+    from_schema: http://modellen.netbeheernederland.nl/dp-meetdata/
+    enum_uri: vocab:MarketSegment
+    permissible_values:
+      LRG:
+        meaning: vocab:MarketSegment.largeAccounts
+      SML:
+        meaning: vocab:MarketSegment.smallAccounts
   UnitMultiplier:
     description: "The unit multipliers defined for the CIM.  When applied to unit\
       \ symbols, the unit symbol is treated as a derived unit. Regardless of the contents\
@@ -140,6 +150,8 @@ enums:
         meaning: cim:UnitSymbol.A
       Ah:
         meaning: cim:UnitSymbol.Ah
+      J:
+        meaning: cim:UnitSymbol.J
       none:
         meaning: cim:UnitSymbol.none
       ohm:
@@ -167,6 +179,12 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC62325.MarketManagement
     is_a: UsagePoint
     attributes:
+      marketSegment:
+        description: A subgroup of current or potential customers.
+        slot_uri: vocab:MarketEvaluationPoint.marketSegment
+        range: MarketSegment
+        required: false
+        multivalued: false
       SBICodes:
         description: Standaard BedrijfsIndeling code. Used by the Dutch Chamber
           of Commerce to classify activities performed by an organisation.
@@ -374,7 +392,8 @@ classes:
           \ attributes that identify CIM object elements."
         slot_uri: cim:IdentifiedObject.mRID
         range: string
-        required: false
+        identifier: true
+        required: true
         multivalued: false
       europeanArticleNumberEAN:
         description: The attribute is used for an exchange of the EAN code (European
@@ -500,7 +519,15 @@ classes:
         required: false
         multivalued: false
         exact_mappings:
-          - cbs:gemeente--regionaal--
+          - cbs:gemeente--regionaal--      
+      neighbourhood:
+        description: Town neighbourhood.
+        slot_uri: vocab:TownDetail.neighbourhood
+        range: string
+        required: false
+        multivalued: false
+        exact_mappings:
+          - cbs:wijk
       section:
         description: Town section. For example, it is common for there to be 36 sections
           per township.

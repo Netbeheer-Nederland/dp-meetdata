@@ -13,31 +13,34 @@
   },
   "@graph": [
     {
-      "@id": "urn:uuid:3c10d213-1d6d-4487-a348-8985c4921aa0",
+      "@id": "urn:uuid:83f1f05d-087e-49b0-9651-6227d91fbe29",
       "@type": "cim:MarketEvaluationPoint",
+      "vocab:MarketEvaluationPoint.marketSegment": {
+        "@id": "vocab:MarketSegment.smallAccounts"
+      },
       "nl:MarketEvaluationPoint.SBICodes": "",
       "cim:UsagePoint.isVirtual": true,
       "cim:IdentifiedObject.description": "",
-      "cim:IdentifiedObject.mRID": "3c10d213-1d6d-4487-a348-8985c4921aa0",
+      "cim:IdentifiedObject.mRID": "83f1f05d-087e-49b0-9651-6227d91fbe29",
       "nl:IdentifiedObject.europeanArticleNumberEAN": "",
       "cim:IdentifiedObject.name": ""
     },
     {
-      "@id": "urn:uuid:5fd0868e-83b4-423c-8805-8d6bae3bb48c",
+      "@id": "urn:uuid:8f7fe0d4-514c-4c9b-b354-63882e5296ff",
       "@type": "cim:MeterReading",
       "cim:MeterReading.valuesInterval": {
-        "@id": "urn:uuid:789e720a-3dcf-48f4-8f32-8dab6aee494c"
+        "@id": "urn:uuid:02166291-d03b-445f-8463-6b010257e381"
       },
       "cim:MeterReading.UsagePoint": {
-        "@id": "urn:uuid:3c10d213-1d6d-4487-a348-8985c4921aa0"
+        "@id": "urn:uuid:83f1f05d-087e-49b0-9651-6227d91fbe29"
       },
       "cim:IdentifiedObject.description": "",
-      "cim:IdentifiedObject.mRID": "5fd0868e-83b4-423c-8805-8d6bae3bb48c",
+      "cim:IdentifiedObject.mRID": "8f7fe0d4-514c-4c9b-b354-63882e5296ff",
       "nl:IdentifiedObject.europeanArticleNumberEAN": "",
       "cim:IdentifiedObject.name": ""
     },
     {
-      "@id": "urn:uuid:789e720a-3dcf-48f4-8f32-8dab6aee494c",
+      "@id": "urn:uuid:02166291-d03b-445f-8463-6b010257e381",
       "@type": "cim:DateTimeInterval",
       "cim:DateTimeInterval.end": {
         "@value": "2026-02-23",
@@ -49,21 +52,21 @@
       }
     },
     {
-      "@id": "urn:uuid:a67b6fdd-e15f-4ecc-a92e-27e1e030244f",
+      "@id": "urn:uuid:1c7c51e5-02b9-473f-a92a-e2b2dcdc12d7",
       "@type": "cim:IntervalBlock",
       "cim:IntervalBlock.MeterReading": {
-        "@id": "urn:uuid:5fd0868e-83b4-423c-8805-8d6bae3bb48c"
+        "@id": "urn:uuid:8f7fe0d4-514c-4c9b-b354-63882e5296ff"
       },
       "cim:IntervalBlock.ReadingType": {
-        "@id": "urn:uuid:f3fa7825-dea6-4d0e-8276-2cb75d3e22df"
+        "@id": "urn:uuid:43025986-a0db-4bc3-ab37-acd724361b74"
       }
     },
     {
-      "@id": "urn:uuid:2618cc3b-c29e-4747-8991-f8075035acec",
+      "@id": "urn:uuid:3e11866e-d005-4faf-adc9-5d3784a4bffd",
       "@type": "cim:IntervalReading",
       "cim:IntervalReading.IntervalBlocks": [
         {
-          "@id": "urn:uuid:a67b6fdd-e15f-4ecc-a92e-27e1e030244f"
+          "@id": "urn:uuid:1c7c51e5-02b9-473f-a92a-e2b2dcdc12d7"
         }
       ],
       "cim:BaseReading.value": "",
@@ -72,15 +75,15 @@
         "@type": "xsd:date"
       },
       "cim:IdentifiedObject.description": "",
-      "cim:IdentifiedObject.mRID": "2618cc3b-c29e-4747-8991-f8075035acec",
+      "cim:IdentifiedObject.mRID": "3e11866e-d005-4faf-adc9-5d3784a4bffd",
       "nl:IdentifiedObject.europeanArticleNumberEAN": "",
       "cim:IdentifiedObject.name": ""
     },
     {
-      "@id": "urn:uuid:f3fa7825-dea6-4d0e-8276-2cb75d3e22df",
+      "@id": "urn:uuid:43025986-a0db-4bc3-ab37-acd724361b74",
       "@type": "cim:ReadingType",
       "cim:ReadingType.aggregate": {
-        "@id": "cim:AggregateKind.average"
+        "@id": "cim:AggregateKind.sum"
       },
       "cim:ReadingType.flowDirection": {
         "@id": "cim:FlowDirectionKind.forward"
@@ -89,60 +92,60 @@
         "@id": "cim:UnitMultiplier.G"
       },
       "cim:ReadingType.unit": {
-        "@id": "cim:UnitSymbol.A"
+        "@id": "cim:UnitSymbol.Wh"
       },
       "cim:IdentifiedObject.description": "",
-      "cim:IdentifiedObject.mRID": "f3fa7825-dea6-4d0e-8276-2cb75d3e22df",
+      "cim:IdentifiedObject.mRID": "43025986-a0db-4bc3-ab37-acd724361b74",
       "nl:IdentifiedObject.europeanArticleNumberEAN": "",
       "cim:IdentifiedObject.name": ""
     },
     {
-      "@id": "urn:uuid:bcd3a86c-93be-45be-acbb-ae4c65bd3d9e",
+      "@id": "urn:uuid:ac07b6d1-5b6c-44b3-8795-07a09f552b41",
       "@type": "cim:EnergyConsumer",
       "cim:Equipment.UsagePoints": [
         {
-          "@id": "urn:uuid:3c10d213-1d6d-4487-a348-8985c4921aa0"
+          "@id": "urn:uuid:83f1f05d-087e-49b0-9651-6227d91fbe29"
         }
       ],
       "cim:Equipment.aggregate": true,
       "cim:PowerSystemResource.Location": {
-        "@id": "urn:uuid:1936ab43-5754-48b3-8c6d-4422e8fd6c09"
+        "@id": "urn:uuid:31cffad2-d6ab-44eb-b15c-2d969bca14e9"
       },
       "cim:IdentifiedObject.description": "",
-      "cim:IdentifiedObject.mRID": "bcd3a86c-93be-45be-acbb-ae4c65bd3d9e",
+      "cim:IdentifiedObject.mRID": "ac07b6d1-5b6c-44b3-8795-07a09f552b41",
       "nl:IdentifiedObject.europeanArticleNumberEAN": "",
       "cim:IdentifiedObject.name": ""
     },
     {
-      "@id": "urn:uuid:1936ab43-5754-48b3-8c6d-4422e8fd6c09",
+      "@id": "urn:uuid:31cffad2-d6ab-44eb-b15c-2d969bca14e9",
       "@type": "cim:Location",
       "cim:Location.mainAddress": {
-        "@id": "urn:uuid:1722e8b9-6c17-410a-b8f5-82614754db94"
+        "@id": "urn:uuid:8f3e4013-7009-4109-a091-e100abf0390c"
       },
       "cim:IdentifiedObject.description": "",
-      "cim:IdentifiedObject.mRID": "1936ab43-5754-48b3-8c6d-4422e8fd6c09",
+      "cim:IdentifiedObject.mRID": "31cffad2-d6ab-44eb-b15c-2d969bca14e9",
       "nl:IdentifiedObject.europeanArticleNumberEAN": "",
       "cim:IdentifiedObject.name": ""
     },
     {
-      "@id": "urn:uuid:1722e8b9-6c17-410a-b8f5-82614754db94",
+      "@id": "urn:uuid:8f3e4013-7009-4109-a091-e100abf0390c",
       "@type": "cim:StreetAddress",
-      "cim:StreetAddress.postalCode": "",
+      "cim:StreetAddress.postalCode": "9999",
       "cim:StreetAddress.streetDetail": {
-        "@id": "urn:uuid:0b8fa639-ff39-473a-a4ab-071802e1595e"
+        "@id": "urn:uuid:5b821c29-9c78-4880-b6bd-b120907b003c"
       },
       "cim:StreetAddress.townDetail": {
-        "@id": "urn:uuid:51214d50-2915-4187-86a1-c353080d12ae"
+        "@id": "urn:uuid:fc1376af-d590-45c8-b1ff-096edf1b312e"
       }
     },
     {
-      "@id": "urn:uuid:0b8fa639-ff39-473a-a4ab-071802e1595e",
+      "@id": "urn:uuid:5b821c29-9c78-4880-b6bd-b120907b003c",
       "@type": "cim:StreetDetail",
       "cim:StreetDetail.code": "",
       "cim:StreetDetail.number": ""
     },
     {
-      "@id": "urn:uuid:51214d50-2915-4187-86a1-c353080d12ae",
+      "@id": "urn:uuid:fc1376af-d590-45c8-b1ff-096edf1b312e",
       "@type": "cim:TownDetail",
       "cim:TownDetail.name": "",
       "vocab:TownDetail.neighbourhood": "",
@@ -150,11 +153,11 @@
       "cim:TownDetail.stateOrProvince": ""
     },
     {
-      "@id": "urn:uuid:40460b52-39e6-4b6f-b8f6-4d36d9291721",
+      "@id": "urn:uuid:9a4165c3-b2fc-4ac0-bf02-b17e893f91f2",
       "@type": "cim:ReadingQuality",
       "cim:ReadingQuality.comment": "",
       "cim:ReadingQuality.Reading": {
-        "@id": "urn:uuid:2618cc3b-c29e-4747-8991-f8075035acec"
+        "@id": "urn:uuid:3e11866e-d005-4faf-adc9-5d3784a4bffd"
       }
     }
   ]

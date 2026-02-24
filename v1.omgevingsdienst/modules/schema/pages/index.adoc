@@ -128,6 +128,9 @@ No types are defined in the schema.
 | xref::enumeration/FlowDirectionKind.adoc[`FlowDirectionKind`]
 | +++Kind of flow direction for reading/measured  values proper to some commodities such as, for example, energy, power, demand.+++
 
+| xref::enumeration/MarketSegment.adoc[`MarketSegment`]
+| +++Division of the energy market into meaningful subgroups of current or potentional customers.+++
+
 | xref::enumeration/UnitMultiplier.adoc[`UnitMultiplier`]
 | +++The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. 
 

@@ -39,6 +39,10 @@ The integer values are used for harmonization with IEC 61850.+++
 | `cim:UnitSymbol.Ah`
 | n/a
 
+| `J`
+| `cim:UnitSymbol.J`
+| n/a
+
 | `none`
 | `cim:UnitSymbol.none`
 | n/a
