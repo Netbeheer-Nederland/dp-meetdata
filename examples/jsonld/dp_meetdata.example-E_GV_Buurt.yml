@@ -10,103 +10,105 @@
   github: https://github.com/
   vocab: http://modellen.netbeheernederland.nl/dp-meetdata/
 '@graph':
-  - '@id': urn:uuid:3c10d213-1d6d-4487-a348-8985c4921aa0
+  - '@id': urn:uuid:00831a11-2667-49cc-8856-a55bc521f510
     '@type': cim:MarketEvaluationPoint
+    vocab:MarketEvaluationPoint.marketSegment:
+      '@id': vocab:MarketSegment.largeAccounts
     nl:MarketEvaluationPoint.SBICodes: ''
     cim:UsagePoint.isVirtual: true
     cim:IdentifiedObject.description: ''
-    cim:IdentifiedObject.mRID: 3c10d213-1d6d-4487-a348-8985c4921aa0
+    cim:IdentifiedObject.mRID: 00831a11-2667-49cc-8856-a55bc521f510
     nl:IdentifiedObject.europeanArticleNumberEAN: ''
     cim:IdentifiedObject.name: ''
-  - '@id': urn:uuid:5fd0868e-83b4-423c-8805-8d6bae3bb48c
+  - '@id': urn:uuid:07f19b76-458f-4dd1-922c-20b76c0a59da
     '@type': cim:MeterReading
     cim:MeterReading.valuesInterval:
-      '@id': urn:uuid:789e720a-3dcf-48f4-8f32-8dab6aee494c
+      '@id': urn:uuid:98bcc5ab-79f4-4454-a243-998931e370c3
     cim:MeterReading.UsagePoint:
-      '@id': urn:uuid:3c10d213-1d6d-4487-a348-8985c4921aa0
+      '@id': urn:uuid:00831a11-2667-49cc-8856-a55bc521f510
     cim:IdentifiedObject.description: ''
-    cim:IdentifiedObject.mRID: 5fd0868e-83b4-423c-8805-8d6bae3bb48c
+    cim:IdentifiedObject.mRID: 07f19b76-458f-4dd1-922c-20b76c0a59da
     nl:IdentifiedObject.europeanArticleNumberEAN: ''
     cim:IdentifiedObject.name: ''
-  - '@id': urn:uuid:789e720a-3dcf-48f4-8f32-8dab6aee494c
+  - '@id': urn:uuid:98bcc5ab-79f4-4454-a243-998931e370c3
     '@type': cim:DateTimeInterval
     cim:DateTimeInterval.end:
-      '@value': '2026-02-23'
+      '@value': '2026-02-20'
       '@type': xsd:date
     cim:DateTimeInterval.start:
-      '@value': '2026-02-23'
+      '@value': '2026-02-20'
       '@type': xsd:date
-  - '@id': urn:uuid:a67b6fdd-e15f-4ecc-a92e-27e1e030244f
+  - '@id': urn:uuid:84808031-0ec2-4d84-b10f-92df2448d5a1
     '@type': cim:IntervalBlock
     cim:IntervalBlock.MeterReading:
-      '@id': urn:uuid:5fd0868e-83b4-423c-8805-8d6bae3bb48c
+      '@id': urn:uuid:07f19b76-458f-4dd1-922c-20b76c0a59da
     cim:IntervalBlock.ReadingType:
-      '@id': urn:uuid:f3fa7825-dea6-4d0e-8276-2cb75d3e22df
-  - '@id': urn:uuid:2618cc3b-c29e-4747-8991-f8075035acec
+      '@id': urn:uuid:cb3e0cb4-85aa-4fca-b65c-12dc7206b45c
+  - '@id': urn:uuid:bcdec021-ed4b-45c6-991e-004231186a86
     '@type': cim:IntervalReading
     cim:IntervalReading.IntervalBlocks:
-      - '@id': urn:uuid:a67b6fdd-e15f-4ecc-a92e-27e1e030244f
+      - '@id': urn:uuid:84808031-0ec2-4d84-b10f-92df2448d5a1
     cim:BaseReading.value: ''
     cim:MeasurementValue.timeStamp:
-      '@value': '2026-02-23'
+      '@value': '2026-02-20'
       '@type': xsd:date
     cim:IdentifiedObject.description: ''
-    cim:IdentifiedObject.mRID: 2618cc3b-c29e-4747-8991-f8075035acec
+    cim:IdentifiedObject.mRID: bcdec021-ed4b-45c6-991e-004231186a86
     nl:IdentifiedObject.europeanArticleNumberEAN: ''
     cim:IdentifiedObject.name: ''
-  - '@id': urn:uuid:f3fa7825-dea6-4d0e-8276-2cb75d3e22df
+  - '@id': urn:uuid:cb3e0cb4-85aa-4fca-b65c-12dc7206b45c
     '@type': cim:ReadingType
     cim:ReadingType.aggregate:
-      '@id': cim:AggregateKind.average
+      '@id': cim:AggregateKind.sum
     cim:ReadingType.flowDirection:
       '@id': cim:FlowDirectionKind.forward
     cim:ReadingType.multiplier:
       '@id': cim:UnitMultiplier.G
     cim:ReadingType.unit:
-      '@id': cim:UnitSymbol.A
+      '@id': cim:UnitSymbol.Wh
     cim:IdentifiedObject.description: ''
-    cim:IdentifiedObject.mRID: f3fa7825-dea6-4d0e-8276-2cb75d3e22df
+    cim:IdentifiedObject.mRID: cb3e0cb4-85aa-4fca-b65c-12dc7206b45c
     nl:IdentifiedObject.europeanArticleNumberEAN: ''
     cim:IdentifiedObject.name: ''
-  - '@id': urn:uuid:bcd3a86c-93be-45be-acbb-ae4c65bd3d9e
+  - '@id': urn:uuid:2a680656-8d85-42ec-ade3-26591dcadf3f
     '@type': cim:EnergyConsumer
     cim:Equipment.UsagePoints:
-      - '@id': urn:uuid:3c10d213-1d6d-4487-a348-8985c4921aa0
+      - '@id': urn:uuid:00831a11-2667-49cc-8856-a55bc521f510
     cim:Equipment.aggregate: true
     cim:PowerSystemResource.Location:
-      '@id': urn:uuid:1936ab43-5754-48b3-8c6d-4422e8fd6c09
+      '@id': urn:uuid:515242bb-0948-45f1-83e5-3538c4c7ddb9
     cim:IdentifiedObject.description: ''
-    cim:IdentifiedObject.mRID: bcd3a86c-93be-45be-acbb-ae4c65bd3d9e
+    cim:IdentifiedObject.mRID: 2a680656-8d85-42ec-ade3-26591dcadf3f
     nl:IdentifiedObject.europeanArticleNumberEAN: ''
     cim:IdentifiedObject.name: ''
-  - '@id': urn:uuid:1936ab43-5754-48b3-8c6d-4422e8fd6c09
+  - '@id': urn:uuid:515242bb-0948-45f1-83e5-3538c4c7ddb9
     '@type': cim:Location
     cim:Location.mainAddress:
-      '@id': urn:uuid:1722e8b9-6c17-410a-b8f5-82614754db94
+      '@id': urn:uuid:8f4994fe-03ea-4d18-88de-643bdb9cfcf4
     cim:IdentifiedObject.description: ''
-    cim:IdentifiedObject.mRID: 1936ab43-5754-48b3-8c6d-4422e8fd6c09
+    cim:IdentifiedObject.mRID: 515242bb-0948-45f1-83e5-3538c4c7ddb9
     nl:IdentifiedObject.europeanArticleNumberEAN: ''
     cim:IdentifiedObject.name: ''
-  - '@id': urn:uuid:1722e8b9-6c17-410a-b8f5-82614754db94
+  - '@id': urn:uuid:8f4994fe-03ea-4d18-88de-643bdb9cfcf4
     '@type': cim:StreetAddress
     cim:StreetAddress.postalCode: ''
     cim:StreetAddress.streetDetail:
-      '@id': urn:uuid:0b8fa639-ff39-473a-a4ab-071802e1595e
+      '@id': urn:uuid:a98945bf-c2d2-46a5-bbbb-884dce164826
     cim:StreetAddress.townDetail:
-      '@id': urn:uuid:51214d50-2915-4187-86a1-c353080d12ae
-  - '@id': urn:uuid:0b8fa639-ff39-473a-a4ab-071802e1595e
+      '@id': urn:uuid:9773e086-9ff0-47bf-b145-eb64ea776445
+  - '@id': urn:uuid:a98945bf-c2d2-46a5-bbbb-884dce164826
     '@type': cim:StreetDetail
-    cim:StreetDetail.code: ''
+    cim:StreetDetail.code: 'DeBuurt'
     cim:StreetDetail.number: ''
-  - '@id': urn:uuid:51214d50-2915-4187-86a1-c353080d12ae
+  - '@id': urn:uuid:9773e086-9ff0-47bf-b145-eb64ea776445
     '@type': cim:TownDetail
     cim:TownDetail.name: ''
     vocab:TownDetail.neighbourhood: ''
     cim:TownDetail.section: ''
     cim:TownDetail.stateOrProvince: ''
-  - '@id': urn:uuid:40460b52-39e6-4b6f-b8f6-4d36d9291721
+  - '@id': urn:uuid:8fe520bb-dafe-4c50-b69c-73fc9362c5f8
     '@type': cim:ReadingQuality
     cim:ReadingQuality.comment: ''
     cim:ReadingQuality.Reading:
-      '@id': urn:uuid:2618cc3b-c29e-4747-8991-f8075035acec
+      '@id': urn:uuid:bcdec021-ed4b-45c6-991e-004231186a86
 
